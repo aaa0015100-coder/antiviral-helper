@@ -42,6 +42,9 @@ const INV={
   hz(o,t){ if(!/72 小時|盡早/.test(t)) return "缺給藥時機"; },
   hbvtx(o,t,h,ds){ const c=cards(h); if(o.c==="dec"&&!/ent_1|1 mg/.test(h+t)) return "失代償缺 entecavir 1 mg"; if(o.c==="dec"&&!/peginterferon/.test(t)) return "失代償缺 peginterferon 禁用"; if(o.c==="no"&&o.p==="lo"&&c.length) return "低病毒量正常 ALT 仍列藥"; if((o.c!=="no"||o.p!=="lo")&&!c.length) return "應治療卻無方案"; if(o.c==="no"&&o.p==="gz"&&!/7 kPa/.test(t)||o.c==="no"&&o.p==="gz"&&!/8 kPa/.test(t)) return "灰色地帶缺 VCTE 7／8 kPa 衝突"; },
   hbvstop(o,t,h,ds){ if(ds.length) return "停藥情境列藥"; if(o.c==="cir"&&!/不停藥/.test(t)) return "肝硬化缺不停藥"; },
+  hivart(o,t,h,ds){ const k=o.s||"n"; if(!ds.length) return "初始治療沒有藥物卡"; if(k!=="n"&&k!=="p"&&ds.includes("dtg3")) return "HBV／基因型未回／CAB-LA 情境列 DTG/3TC"; if(k==="c"&&(ds.includes("bic")||ds.includes("dtg"))) return "CAB-LA 史列 INSTI 方案"; if(k==="b"&&(ds.includes("drv")||ds.includes("dtg3"))) return "HBsAg 陽性列無 HBV 活性方案"; },
+  hivsw(o,t,h,ds){ const NO=["dori","blen","crpv","dtg3","dtgr"]; if(o.h==="p"&&NO.some(x=>ds.includes(x))) return "HBsAg 陽性列無 HBV 活性方案"; if(o.r==="y"&&NO.some(x=>ds.includes(x))) return "失敗史或抗藥列兩藥或長效方案"; if(!ds.length) return "換藥沒有藥物卡"; },
+  hivvf(o,t,h,ds){ if(ds.length) return "病毒學失敗列固定方案藥物卡"; },
   hcvtx(o,t,h,ds){ if(o.st==="dc"&&(ds.includes("mav")||ds.includes("vox"))) return "失代償列蛋白酶抑制劑方案"; if(o.st==="dc"&&!(ds.includes("svl")&&ds.includes("rib"))) return "失代償缺 sofosbuvir/velpatasvir＋ribavirin"; if(o.st!=="dc"&&ds.includes("rib")) return "非失代償列 ribavirin"; if(o.st==="exp"&&!ds.includes("vox")) return "再治療缺 voxilaprevir"; if(!/HBsAg/.test(t)) return "缺 HBV 篩檢提醒"; },
   rsv(o,t,h,ds){ if(o.host==="gen"&&ds.length) return "一般成人 RSV 列藥"; },
   bkvan(o,t,h,ds){ const c=cards(h); const strat=c.filter(x=>/策略 1|策略 2/.test(txt(x))).length;

@@ -393,10 +393,10 @@ details.pf>summary{font-size:.86rem}
 <div id="ov" class="ov" hidden><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="ovT"><h3 id="ovT"></h3><div id="ovB"></div><button class="btn" type="button" data-act="ov-close">關閉</button></div></div>
 <div id="toast" class="toast" hidden></div>
 <script>
-const APP_VERSION = "1.3";
+const APP_VERSION = "1.4";
 const CHECKED = "2026-11-15";
 const VERSION = "v" + APP_VERSION, VERIFIED = CHECKED;
-const SCOPE = "成人・流感、COVID-19、RSV、HSV、VZV、CMV、HBV、HDV、HCV、HEV、HIV（PEP、PrEP）、BK、adenovirus、HHV-6、EBV／PTLD、mpox（治療、預防、抗藥、抗病毒譜）";
+const SCOPE = "成人・流感、COVID-19、RSV、HSV、VZV、CMV、HBV、HDV、HCV、HEV、HIV（初始治療、換藥、病毒學失敗、PEP、PrEP）、BK、adenovirus、HHV-6、EBV／PTLD、mpox（治療、預防、抗藥、抗病毒譜）";
 
 /* ---------------- 出處 ---------------- */
 const REF = {
@@ -509,6 +509,15 @@ const REF = {
   TW_CDC_HIV:{s:"疾管署簡報（PEP／PrEP）",f:"衛福部疾病管制署愛滋防治簡報（2021 年版，台南某校轉載，屬二手）：PEP 於高風險行為後 72 小時內盡早請醫師評估，每日服藥完整 28 天，藥費自費；PrEP 經醫師評估，每日 1 顆，或視需求服用（事件前 24 小時 2 顆、事件後 24 與 48 小時各 1 顆），藥費自費。簡報年份較舊，請以疾管署最新公告為準。",u:"https://www.tngs.tn.edu.tw/wp-content/uploads/sites/54/2021/11/2021年愛滋防治簡報.pdf"},
   TW_MOHW_PREP:{s:"衛福部 PrEP 澄清稿",f:"衛福部、疾管署新聞澄清稿：PrEP 不是健保給付項目，健保僅給付治療愛滋感染者，不給付 PrEP 服藥者；疾管署 2018–2019 年 PrEP 計畫補助對象為感染者的配偶或伴侶與 30 歲以下高風險行為者，須經醫師評估，服藥前評估 B 肝帶原與肝功能。計畫年份為過去，現行補助請向疾管署確認。",u:"https://mohw.gov.tw/cp-17-47820-1.html"},
   NYSDOH_PEP:{s:"NYSDOH AI PEP 2025",f:"New York State Department of Health AIDS Institute. PEP to Prevent HIV Infection, Tables 2–5（2025-12-05）。≥40 kg 首選：bictegravir 50 mg／TAF 25 mg／emtricitabine 200 mg 單錠每日 1 次，或 dolutegravir 50 mg 每日 1 次加 NRTI 骨幹；皆口服 28 天；dolutegravir 併用 metformin 限每日 1 g；基線 CrCl <50 mL/min 時 3TC／FTC ＋ TDF 需調整劑量。本版為搜尋摘錄，非全文。",u:"https://www.hivguidelines.org/wp-content/uploads/2025/11/NYSDOH-AI-PEP-to-Prevent-HIV-Infection-Tables-2-to-5_12-5-2025_HG.pdf"},
+  DHHS_ART26:{s:"DHHS 成人與青少年 ART 指引（2026-09、2026-10 更新）",f:"Panel on Antiretroviral Guidelines for Adults and Adolescents. Guidelines for the Use of Antiretroviral Agents in Adults and Adolescents With HIV（clinicalinfo.hiv.gov）。2026-09-24 更新；2026-10-27 的 What's New 將 bictegravir/lenacapavir（Bixlenvo）加入「Optimizing ART in the Setting of Viral Suppression」章節。本版取得：What's New 與 hiv.gov 公告摘要、What to Start 的搜尋摘錄（DTG/3TC 條件被截斷）、Optimizing 章節（node/9194；該頁文字未提 BIC/LEN，可能是更新前的版本）、Appendix B 劑量表、HBV 章節的二手報導（POZ、EATG、Contagion Live、epocrates）。各章全文與逐條評級未讀完，請以原文確認。評級：A 強、B 中、C 選擇；I 隨機試驗、II 非隨機或觀察、III 專家意見。2024-09 更新（POZ 報導）：DTG/ABC/3TC 由「多數人首選」移至「特定情境」。",u:"https://clinicalinfo.hiv.gov/en/guidelines/adult-and-adolescent-arv"},
+  DHHS_PERI26:{s:"DHHS 孕期 ART 指引（2026-03-31 更新）",f:"Panel on Treatment of HIV During Pregnancy and Prevention of Perinatal Transmission. Recommendations for the Use of Antiretroviral Drugs During Pregnancy and Interventions to Reduce Perinatal HIV Transmission in the United States（clinicalinfo.hiv.gov）。本版取得：What's New 與「Recommendations for Use of ARV During Pregnancy」章節摘錄：未曾用 CAB-LA PrEP 者，DTG 或 BIC ＋ 含 tenofovir 的雙 NRTI 為 Preferred；DTG/3TC 為 Alternative（無 CAB-LA PrEP 史、HIV RNA ≤500,000 copies/mL、無活動性 HBV…，摘錄在此截斷）；曾用 CAB-LA PrEP 者以 ritonavir 加強的 darunavir 為 Preferred，等 INSTI 基因型。其餘章節未逐條讀。",u:"https://clinicalinfo.hiv.gov/en/guidelines/perinatal"},
+  EACS25_ART:{s:"EACS v13.0（2025）初始治療表",f:"European AIDS Clinical Society Guidelines v13.0（2025-10）；Ambrosioni J, et al. HIV Med 2026;27:18–32，doi:10.1111/hiv.70120。摘要：初治成人首選為 TDF 或 TAF 加 3TC 或 FTC（XTC），搭配 DTG、BIC 或 DOR；或雙藥 XTC ＋ DTG。初始治療表取自 eacs.sanfordguide.com 的搜尋摘錄：XTC ＋ DTG 或 3TC/DTG 需 HBsAg 陰性、HIV RNA <500,000 copies/mL、PrEP 失敗後不建議。該網頁摘錄同時列 ABC/3TC ＋ DTG 與 raltegravir，這與 v13.0 摘要的首選清單不同，網頁版本與日期未顯示，因此 <500,000 這個門檻是否仍在 v13.0 請確認。",u:"https://eacs.sanfordguide.com/art/initial-regimens-arv-naive-adults"},
+  NYSDOH_ART26:{s:"NYSDOH AI 初始 ART（2026-01）與二線 ART（2026-02）",f:"New York State Department of Health AIDS Institute. Selecting an Initial ART Regimen（2026-01-29 版）：dolutegravir/lamivudine 的註解「基線 HIV RNA >500,000 copies/mL 不起始」已刪除；2025-03 版寫明「除 DTG/3TC 外，初始 ART 不應用雙藥（A3）」與開始 DTG/3TC 的前提（條件在摘錄被截斷）。Second-Line ART After Treatment Failure or for Regimen Simplification（2026-02-10 pocket guide）：病毒學失敗為確認的 HIV RNA ≥200 copies/mL；30 天內重測；基因型檢測規則；新方案至少 2 個完全有效藥且其中 1 個為高抗藥屏障藥（A2）；換藥後 4 週內與其後至少每 8 週測 HIV RNA（A3）。本版取自 PDF 與網頁摘錄。",u:"https://www.hivguidelines.org/guideline/hiv-2nd-line-art/"},
+  IDV_LABEL:{s:"Idvynso（doravirine/islatravir）美國仿單",f:"FDA 核准 2026-04-21（Merck；NDA 216964）。取得：仿單 highlights 與搜尋摘錄：成人每日 1 錠、不論食物；適用於病毒抑制（HIV RNA <50 copies/mL）、穩定方案、無病毒學失敗史、無已知 doravirine 抗藥相關變異者；禁忌：強效 CYP3A 誘導劑、併用 lamivudine 或 emtricitabine（降低 islatravir-triphosphate）；併用 rifabutin 時，Idvynso 後約 12 小時加服 doravirine 100 mg；臨床試驗排除活動性 HBV。仿單全文未讀完，請確認。",u:"https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/216964Orig1s000lbl.pdf"},
+  BLEN_LABEL:{s:"Bixlenvo（bictegravir/lenacapavir）美國仿單",f:"FDA 核准 2026-08-27（Gilead；NDA 221104）；bictegravir 75 mg／lenacapavir 50 mg。取得：仿單（摘要工具擷取）：完整方案，用於 HIV RNA <50 copies/mL、無已知或疑似對 bictegravir 或 lenacapavir 抗藥的成人換藥；第 1–2 天 Bixlenvo 1 錠 ＋ Sunlenca 600 mg，第 3 天起 1 錠每日；漏藥 >7 天需重新起始；CrCl ≥15 mL/min 不需調整（<15 未研究）；Child-Pugh A、B 不需調整、C 未研究；禁忌 dofetilide 與強效 CYP3A 誘導劑；rifampin 禁忌、rifabutin 與 rifapentine 不建議；對 HBV 無活性；孕期 bictegravir 暴露較低、需密切監測病毒量。全文未完整讀，請確認。",u:"https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/221104Orig1s000lbl.pdf"},
+  CAB_LABEL:{s:"Cabenuva（cabotegravir/rilpivirine）美國仿單（2025-06）",f:"ViiV Healthcare. Cabenuva prescribing information（2025-06；NIAID 轉載）與搜尋摘錄：每月或每 2 個月臀肌注射；口服 lead-in 約 1 個月為選項，也可直接注射；起始注射於最後一天原方案或 lead-in；可在預定日前後 7 天內給藥；停用後最遲 1 個月（每月給藥）或 2 個月（每 2 個月給藥）內改用其他方案。全文未讀完，請確認。",u:"https://rsc.niaid.nih.gov/sites/default/files/cabotegravir-and-rilpivirine-cabenuva-pi_june-2025.pdf"},
+  DOLCE26:{s:"DOLCE 試驗（CID 2026）",f:"Figueroa MI, et al. Efficacy and safety of dual therapy with dolutegravir/lamivudine in treatment-naive persons with CD4 counts <200/mm3: 48-week results of the DOLCE study. Clin Infect Dis 2026;82:122–131（依 Contagion Live 報導引用；原文未讀）。",u:"https://www.contagionlive.com/view/hhs-updates-guidelines-for-antiretroviral-treatment-of-hiv"},
+  ARTISTRY26:{s:"ARTISTRY-1／-2（BIC/LEN 換藥，2026）",f:"Orkin C, et al. Switch to single-tablet bictegravir-lenacapavir from a complex HIV regimen (ARTISTRY-1): a randomised, open-label, phase 3 trial. Lancet 2026;407(10535):1249–1258；ARTISTRY-2（double-blind，與 B/F/TAF 比較）。第 48 週 HIV RNA ≥50 copies/mL：ARTISTRY-1 兩組皆 1%，達非劣（依 Pharmacy Times 報導；原文未讀）。",u:"https://www.pharmacytimes.com/view/fda-approves-bixlenvo-once-daily-single-tablet-regimen-for-virologically-suppressed-adults-with-hiv"},
   HIV_LABELS:{s:"HIV 藥物仿單（未核對）",f:"Biktarvy、Tivicay、Truvada、Descovy、Apretude、Yeztugo 的美國仿單：本版未取得仿單全文。腎功能分段、交互作用與禁忌依一般臨床知識與上列指引整理，數字請以仿單與院內藥典逐項核對。BIC/FTC/TAF 與 FTC/TAF 的低腎功能切點（CrCl <30 不建議）、DTG 與 CAB 的交互作用、BIC 與 DTG 使血清肌酸酐上升（抑制腎小管分泌）均屬此類。"},
   IBASE_PEP:{s:"HIV i-Base 2025 報導",f:"Collins S. US CDC updated guidelines on PEP (May 2025). HIV i-Base（2025-05）：整理 CDC 2025 nPEP 更新；指出首選改為第二代 INSTI（bictegravir 或 dolutegravir）＋ tenofovir（TAF 或 TDF）＋ XTC，PEP 仍建議 24 小時內、不晚於 72 小時開始；並註記英國 BASHH/BHIVA 2021 指引仍建議 raltegravir ＋ 另開 TD/FTC。二手報導，英國指引原文本版未取得。",u:"https://i-base.info/htb/?p=51025"},
   // BK 病毒
@@ -536,6 +545,12 @@ const REF = {
 
 /* 縮寫 */
 const GLOSS = {
+  "DRV":"darunavir，需 ritonavir 或 cobicistat 加強的 HIV protease inhibitor。",
+  "DOR":"doravirine，HIV 的非核苷類反轉錄酶抑制劑（NNRTI）。",
+  "ISL":"islatravir，新型核苷類反轉錄酶抑制劑，含多種作用機轉（含阻斷 translocation）。",
+  "RPV":"rilpivirine，HIV 的 NNRTI；與 CAB 組成長效注射。",
+  "NNRTI":"non-nucleoside reverse transcriptase inhibitor，非核苷類反轉錄酶抑制劑。",
+  "CAB-LA":"long-acting cabotegravir，長效 cabotegravir 注射（PrEP 用法為 Apretude）。曾用 CAB-LA 作 PrEP 後感染者，可能帶有 INSTI 抗藥。",
   "ART":"antiretroviral therapy，HIV 的抗反轉錄病毒治療。",
   "M184V":"HIV 反轉錄酶的 M184V 變異，使 emtricitabine、lamivudine 敏感性下降；entecavir 在未接受 ART 的共感染者可能選出此變異。",
   "pUL54":"CMV 的 DNA polymerase，ganciclovir、cidofovir、foscarnet 的作用標的；突變可造成這幾種藥交叉抗藥。",
@@ -589,6 +604,13 @@ const D = {
   fta:{n:"emtricitabine/tenofovir alafenamide",brand:"Descovy",g:"hiv",tw:"q",preg:{l:"w",t:"懷孕資料較 F/TDF 少（請確認）"},ix:["PrEP：CDC 2021 列於男性與 transgender women；eCrCl ≥30 mL/min 可用（二手整理）。","TAF 腎與骨安全性優於 TDF；每年測 triglyceride、cholesterol 與體重（CDC 2021）。","禁止併用 rifampin 等強 P-gp 誘導劑（仿單；本版未核對）。","HBV 重疊感染者停藥可能急性 B 肝惡化。","台灣 PrEP 適應症許可證未查證。"],src:["CDC_PREP21","HIV_LABELS"]},
   cab:{n:"cabotegravir（長效注射）",brand:"Apretude",g:"hiv",tw:"q",preg:{l:"w",t:"懷孕資料有限，請會診（本版未核對）"},ix:["600 mg IM：第 0、1 個月，之後每 2 個月（CDC 2021）。","不需定期腎功能與血脂檢驗；HIV 檢驗每次注射前（約每 2 個月），含 HIV-1 RNA（CDC 2021）。","停藥後藥物濃度緩慢下降，期間仍可能暴露；需評估風險，必要時 8 週內改口服 PrEP（CDC 2021）。","在 CAB 期間感染 HIV 有 INSTI 抗藥風險：EACS 2025 建議起始治療含 boosted darunavir 的三藥，避免雙藥。","禁止併用 rifampin、carbamazepine、phenytoin 等誘導劑（仿單；本版未核對）。","台灣許可證與供應未查證。"],src:["CDC_PREP21","EACS25","HIV_LABELS"]},
   len:{n:"lenacapavir",brand:"Yeztugo（PrEP）",g:"hiv",tw:"q",preg:{l:"w",t:"懷孕者經共享決策可開始或繼續（CDC 2025）"},ix:["第 1 天 927 mg SC ＋口服 600 mg，第 2 天口服 600 mg，之後每 26 週 927 mg SC（±2 週）（CDC 2025）。","≥35 kg；每次注射前需血液 HIV Ag/Ab（實驗室或快篩，7 天內），不可用口腔唾液檢驗；起始建議加 HIV-1 RNA（CDC 2025）。","中度與強效 CYP3A 誘導劑需補充劑量；停藥後最長 9 個月內仍可升高部分藥物濃度（CDC 2025）。","漏打晚 ≥14 天：口服 300 mg 每週橋接（<6 個月）；停藥 6 個月後無保護，需銜接其他 PrEP（CDC 2025）。","腎功能：CDC 2025 本版取得的文字未論及，請確認仿單。","台灣許可證與供應未查證。"],src:["CDC_LEN25","HIV_LABELS"]},
+  dtg3:{n:"dolutegravir/lamivudine",brand:"Dovato",g:"hiv",tw:"q",preg:{l:"w",t:"孕期為 Alternative（DHHS 孕期 2026-03）：限無 CAB-LA PrEP 史、HIV RNA ≤500,000、無活動性 HBV…（原文在此截斷・請確認）"},ix:["兩藥單錠；lamivudine 單獨不足以控制 HBV，HBsAg 陽性者不可單獨使用（DHHS）。","有 M184V/I 病史者不建議換成 DTG/3TC（DHHS 2026・BIII）。","CrCl <30：仿單不建議；部分 DHHS panel 成員仍用全劑量 3TC（DHHS Appendix B）。","dolutegravir 的交互作用（二價陽離子、metformin、誘導劑）見 dolutegravir 條目；完整查詢用 Liverpool HIV Drug Interactions。","台灣許可證未查證。"],src:["DHHS_ART26","DHHS_PERI26"]},
+  drv:{n:"darunavir（boosted）",brand:"Prezista／Prezcobix",g:"hiv",tw:"q",preg:{l:"w",t:"曾用 CAB-LA PrEP 者，ritonavir 加強的 darunavir 為孕期 Preferred（DHHS 孕期）；cobicistat 加強型孕期是否可用請確認"},ix:["必須以 ritonavir 或 cobicistat 加強，隨餐服用（DHHS Appendix B）。","DRV/c 與 TDF 併用：CrCl <70 mL/min 不建議（DHHS Appendix B）。","ritonavir 或 cobicistat 是強 CYP3A 抑制劑，交互作用多；DHHS 2026 已改為轉介 Liverpool HIV Drug Interactions，不再提供表格。","DHHS 2026：boosted darunavir ＋ lamivudine 或 emtricitabine 新增為特定情境的兩藥初始選項；有 M184V/I 病史者不建議此兩藥方案。","台灣許可證未查證。"],src:["DHHS_ART26","DHHS_PERI26"]},
+  lam:{n:"lamivudine",brand:"Epivir（或學名藥）",g:"hiv",tw:"q",preg:{l:"w",t:"本版未核對孕期用藥・請確認"},ix:["本版只列於 boosted darunavir ＋ lamivudine 兩藥方案與 HBV 合併情境（作為 TAF 或 TDF 的搭檔）。","3TC 或 FTC 不可單獨作為 HBV 治療（DHHS・AII）；停用可能使 HBV 惡化。","與 islatravir（Idvynso）併用為禁忌（仿單）。","腎功能分段見劑量欄。","台灣許可證未查證。"],src:["DHHS_ART26","IDV_LABEL"]},
+  dori:{n:"doravirine/islatravir",brand:"Idvynso",g:"hiv",tw:"q",preg:{l:"w",t:"孕期資料有限；本版未取得仿單孕期段・請確認"},ix:["FDA 2026-04-21 核准：病毒抑制（<50 copies/mL）、穩定方案、無病毒學失敗史、無已知 doravirine 抗藥者的換藥用單錠（仿單）。","禁忌：強效 CYP3A 誘導劑；併用 lamivudine 或 emtricitabine（降低 islatravir-triphosphate；仿單）。換藥時原方案中的 3TC、FTC 要停用。","無足夠 HBV 資料：臨床試驗排除活動性 HBV；HBsAg 陽性者請會診。","eGFR <30：不建議（DHHS Appendix B 轉述仿單）。","多重抗藥、重度治療經驗者資料不足，islatravir 劑量低、達穩態需數週（Drug Topics 摘要）。DHHS：M184I/V 病史資料不足。","台灣許可證未查證。"],src:["IDV_LABEL","DHHS_ART26"]},
+  blen:{n:"bictegravir/lenacapavir",brand:"Bixlenvo",g:"hiv",tw:"q",preg:{l:"w",t:"孕期 bictegravir 暴露較低，需密切監測病毒量（仿單）"},ix:["FDA 2026-08-27 核准：病毒抑制（<50 copies/mL）、無已知或疑似對 bictegravir 或 lenacapavir 抗藥者的完整方案；起始需 2 天加服 Sunlenca 600 mg（仿單）。","禁忌：dofetilide、強效 CYP3A 誘導劑；rifampin 禁忌，rifabutin 與 rifapentine 不建議；carbamazepine、phenytoin 禁忌（仿單）。","多價陽離子：Al／Mg 制酸劑，Bixlenvo 於其前 ≥2 小時或後 6 小時；鈣、鐵：與食物同服（仿單）。","對 HBV 無活性：HBV 重疊感染者須另有 HBV 治療（仿單：密切監測、視情況加抗 HBV 藥）。","CrCl <15 未研究（仿單）。","DHHS 2026-10-27 更新已將其列入優化章節；條件與強度本版未取得原文・請確認。","台灣許可證未查證。"],src:["BLEN_LABEL","ARTISTRY26","DHHS_ART26"]},
+  crpv:{n:"cabotegravir/rilpivirine（長效注射）",brand:"Cabenuva",g:"hiv",tw:"q",preg:{l:"w",t:"孕期不建議起始（DHHS）；已在使用者請會診"},ix:["DHHS：病毒抑制 ≥3 個月、無已知或疑似對兩藥抗藥者可換；換藥後 4–8 週測 HIV RNA，>200–500 copies/mL 時做抗藥性檢測。","兩藥對 HBV 均無活性：HBsAg 陽性者轉換須另加 HBV 治療（DHHS 2024，二手報導）。","漏打或停用：停用後最遲 1 個月（每月）或 2 個月（每 2 個月）內改用其他方案，避免藥效消退與抗藥（仿單）。","與強效誘導劑（rifampin、carbamazepine 等）併用禁忌（仿單；本版未核對各藥）。","台灣許可證與供應未查證。"],src:["DHHS_ART26","CAB_LABEL"]},
+  dtgr:{n:"dolutegravir/rilpivirine",brand:"Juluca",g:"hiv",tw:"q",preg:{l:"w",t:"孕期資料有限；已用者的處理見 DHHS 孕期指引・請確認"},ix:["兩藥單錠，隨餐服用（DHHS Appendix B）。","DHHS：用於無病毒學失敗、無 DTG 或 RPV 抗藥者；孤立 K103N 或 NRTI 抗藥可用。","兩藥對 HBV 無活性：HBsAg 陽性者須另有 HBV 治療。","rilpivirine 與質子幫浦抑制劑等降低胃酸的藥有交互作用（本版未核對）；完整查詢用 Liverpool HIV Drug Interactions。","台灣許可證未查證。"],src:["DHHS_ART26"]},
   prit:{n:"pritelivir",brand:"Hovilpri",g:"herp",tw:"q",preg:{l:"w",t:"資料有限，請會診（本版未取得仿單）"},ix:["helicase-primase inhibitor：作用機轉不同於 acyclovir 與 foscarnet，對核苷類似物抗藥 HSV 株仍有活性（二手資料）。","質子幫浦抑制劑：避免 esomeprazole、rabeprazole；omeprazole、lansoprazole 每日 >20 mg、pantoprazole 每日 >40 mg 亦避免（二手整理・請以仿單確認）。","腎功能調整與其他交互作用本版未取得仿單・請確認。","FDA 核准範圍限免疫低下成人、對 acyclovir 類難治的黏膜皮膚 HSV；VZV 活性本版未查證。"],src:["PRIT_NEWS"]},
   bepi:{n:"bepirovirsen",brand:"Hibsago",g:"hbv",tw:"q",preg:{l:"w",t:"資料未取得，請確認"},ix:["與 NA 併用：NA 須持續到最後一次注射後至少 24 週（FDA 新聞、媒體整理）。","適用無肝硬化成人；B-Well 納入 HBsAg ≤3,000 IU/mL 者，HBsAg 更高者沒有試驗資料。","有 boxed warning，內容本版未取得仿單・請確認。","每劑為兩次皮下注射，部位間隔至少 5 cm 並每週輪替；首劑後可自行注射（媒體整理）。"],src:["BEPI_NEWS"]},
   blv:{n:"bulevirtide",brand:"Hepcludex",g:"hdv",tw:"q",preg:{l:"w",t:"資料未取得，請確認"},ix:["不降低 HBV 病毒量：HBV 仍須 NA 等另行治療。","停藥可能使 HDV 復發、肝炎惡化。","FDA（8.5 mg）與歐盟（2 mg）核准劑量不同，見劑量欄。","肝腎功能調整、交互作用與其他警語本版未取得仿單・請確認。"],src:["BLV_NEWS"]}
@@ -668,6 +690,17 @@ const REG = {
   len_prep:{d:"len",r:"PO＋SC",ind:"PrEP",b:[[30,"第 1 天 927 mg SC（2 針各 1.5 mL，相隔 ≥4 吋）＋口服 600 mg；第 2 天口服 600 mg；之後每 26 週（±2 週）927 mg SC"],[0,"CrCl <30：同上劑量，但腎功能不全的使用本版未核對仿單，請確認；第 1 天 927 mg SC＋口服 600 mg，第 2 天口服 600 mg，之後每 26 週 927 mg SC"]],hd:"劑量同上（每 26 週 927 mg SC）；透析病人使用本版未核對仿單，請確認",pd:"劑量同上（每 26 週 927 mg SC）；透析病人使用本版未核對仿單，請確認",crrt:"劑量同上（每 26 週 927 mg SC）；CRRT 使用本版未核對仿單，請確認",note:"腎功能：CDC 2025 本版取得的文字未論及，請確認仿單。",src:["CDC_LEN25","HIV_LABELS"]},
   cdv_adv_w:{d:"cdv",r:"IV",ind:"adenovirus（off-label）",b:[[55.01,"5 mg/kg 每週 1 次{KG:5}（併 probenecid 與充分水化）"],[0,"CrCl ≤55：仿單禁止開始；請會診感染科與腎臟科"]],hd:"仿單禁止開始",pd:"仿單禁止開始",crrt:"仿單禁止開始",note:"SCr >1.5 mg/dL 或尿蛋白 ≥2+ 也禁止開始（仿單）；腺病毒用法非仿單、無對照試驗。",src:["ADV_CDV","CDV_LABEL"]},
   cdv_adv_t:{d:"cdv",r:"IV",ind:"adenovirus（off-label）",b:[[55.01,"1 mg/kg 每週 3 次{KG:1}（併 probenecid 與充分水化）"],[0,"CrCl ≤55：仿單禁止開始；文獻有 0.5 mg/kg 每週 3 次（回溯研究、非指引）；請會診感染科與腎臟科"]],hd:"仿單禁止開始",pd:"仿單禁止開始",crrt:"仿單禁止開始",note:"腎毒性風險較低的做法（回溯研究），療效是否相同不明。",src:["ADV_CDV","CDV_LABEL"]},
+  bic_art:{d:"bic",r:"PO",ind:"HIV 治療",b:[[30,"1 錠（bictegravir 50／emtricitabine 200／TAF 25 mg）QD"],[0,"CrCl 15–29 或 <15 未透析：不建議（DHHS Appendix B）；長期血液透析：不需調整，透析日於透析後服用"]],hd:"不需調整；透析日於透析後服用（DHHS Appendix B）",pd:"本版未取得・請確認",crrt:"本版未取得・請確認",note:"肝：Child-Pugh A、B 不需調整，C 不建議（DHHS Appendix B）。孕期 bictegravir 暴露較低（Bixlenvo 仿單），需密切監測病毒量；Biktarvy 孕期用法請確認仿單。",src:["DHHS_ART26","BLEN_LABEL"]},
+  dtg_art:{d:"dtg",r:"PO",ind:"HIV 治療",b:[[0,"50 mg QD；與強效誘導劑（如 rifampin）併用或有 INSTI 抗藥時 50 mg BID（DHHS Appendix B 列 QD 與 BID；條件依仿單・請確認）"]],note:"腎功能不需調整；肝：Child-Pugh A、B 不需調整，C 不建議（DHHS Appendix B）。需與 2 種 NRTI（TAF 或 TDF 加 FTC 或 3TC）同時使用，雙藥只有 DTG/3TC 例外。",src:["DHHS_ART26"]},
+  dtg3_art:{d:"dtg3",r:"PO",ind:"HIV 治療（雙藥）",b:[[30,"1 錠 QD"],[0,"CrCl <30：仿單不建議；部分 DHHS panel 成員仍用全劑量 3TC（DHHS Appendix B）；請會診"]],hd:"仿單不建議；請會診（DHHS Appendix B）",pd:"本版未取得・請確認",crrt:"本版未取得・請確認",note:"肝：Child-Pugh A、B 不需調整，C 不建議（DHHS Appendix B）。HBsAg 陽性者不可單獨使用。",src:["DHHS_ART26"]},
+  drv_art:{d:"drv",r:"PO",ind:"HIV 治療",b:[[0,"darunavir 800 mg ＋ ritonavir 100 mg QD，隨餐（初治或無 darunavir 抗藥突變）；有 ≥1 個 darunavir 抗藥突變：600 mg ＋ ritonavir 100 mg BID，隨餐。cobicistat 劑型（Prezcobix）：1 錠 QD，隨餐"]],note:"腎功能不需調整；DRV/c 與 TDF 併用 CrCl <70 不建議。肝：Child-Pugh A、B 不需調整，C 不建議（DHHS Appendix B）。",src:["DHHS_ART26"]},
+  lam_art:{d:"lam",r:"PO",ind:"HIV 治療（與 boosted darunavir 併用）",b:[[50,"300 mg QD（或 150 mg BID）"],[30,"CrCl 30–49：DHHS 表不調整；Epivir 仿單減為 150 mg QD"],[15,"CrCl 15–29：仿單首劑 150 mg，之後 100 mg q24h（另有 100–150 mg q24h 的替代說法）"],[5,"CrCl 5–14：仿單首劑 150 mg，之後 50 mg q24h（替代 100–150 mg q24h）"],[0,"CrCl <5：仿單首劑 50 mg，之後 25 mg q24h（替代 100–150 mg q24h）"]],hd:"仿單：首劑 50 mg，之後 25 mg q24h（替代 100–150 mg q24h）；透析日於透析後（DHHS Appendix B）",pd:"本版未取得・請確認",crrt:"本版未取得・請確認",note:"CrCl <30 超過仿單的劑量資料有限，部分 DHHS panel 成員仍用全劑量。可用 emtricitabine 取代 lamivudine（DHHS 2026）。",src:["DHHS_ART26"]},
+  ftd_art:{d:"ftd",r:"PO",ind:"HIV 治療骨幹（TDF/FTC）",b:[[50,"200/300 mg QD"],[30,"CrCl 30–49：延長間隔（TDF 單方 300 mg q48h；FDC 仿單本版未核對・請確認）"],[0,"CrCl <30：不建議使用 TDF/FTC FDC；請改 TAF 骨幹並會診・請確認"]],hd:"請改用 TAF 骨幹並會診・請確認",pd:"請改用 TAF 骨幹並會診・請確認",crrt:"請會診・請確認",note:"DHHS Appendix B：TDF 在 CrCl <60 或腎功能持續下降時盡量避免；TDF 單方 CrCl 30–49 為 300 mg q48h、10–29 為 q72–96h。FTC 可換成 3TC（DHHS・AI）。",src:["DHHS_ART26"]},
+  fta_art:{d:"fta",r:"PO",ind:"HIV 治療骨幹（TAF/FTC）",b:[[30,"200/25 mg QD（與 dolutegravir 等非 cobicistat 方案；TAF 為 25 mg）"],[0,"CrCl <30：FTC 單方需調整（15–29 為 200 mg q72h；<15 未透析為 q96h，DHHS Appendix B）；FDC 是否可用本版未核對仿單・請確認"]],hd:"TAF 與 FTC 均不需調整，透析日於透析後（DHHS Appendix B；FDC 請確認仿單）",pd:"本版未取得・請確認",crrt:"本版未取得・請確認",note:"腎功能持續下降者考慮避免 TAF；CrCl <15 未透析不建議 TAF（DHHS Appendix B）。cobicistat 或 elvitegravir 方案的 TAF 為 10 mg，與此不同。",src:["DHHS_ART26"]},
+  dori_sw:{d:"dori",r:"PO",ind:"病毒抑制後換藥",b:[[30,"1 錠（doravirine 100／islatravir 0.25 mg）QD，不論食物"],[0,"eGFR <30：不建議（DHHS Appendix B 轉述仿單）"]],hd:"無劑量建議（DHHS Appendix B）",pd:"本版未取得・請確認",crrt:"本版未取得・請確認",note:"需停用原方案中的 lamivudine、emtricitabine；禁強效 CYP3A 誘導劑；併用 rifabutin 時，Idvynso 1 錠後約 12 小時加服 doravirine 100 mg（仿單）。肝：Child-Pugh A、B 不需調整，C 不建議（DHHS Appendix B）。",src:["IDV_LABEL","DHHS_ART26"]},
+  blen_sw:{d:"blen",r:"PO",ind:"病毒抑制後換藥",b:[[15,"第 1–2 天：Bixlenvo 1 錠 ＋ Sunlenca（lenacapavir）600 mg（2 錠 300 mg）；第 3 天起 Bixlenvo 1 錠 QD；不論食物"],[0,"CrCl <15 或透析：無劑量建議（仿單：未研究）"]],hd:"無劑量建議（仿單：CrCl <15 未研究）",pd:"無劑量建議・請確認",crrt:"無劑量建議・請確認",note:"漏藥超過 7 天：若臨床合適，從第 1 天起重新起始（仿單）。禁 dofetilide、強效 CYP3A 誘導劑；Al／Mg 制酸劑前 ≥2 小時或後 6 小時服用；鈣、鐵與食物同服。肝：Child-Pugh A、B 不需調整，C 未研究。對 HBV 無活性。",src:["BLEN_LABEL"]},
+  crpv_sw:{d:"crpv",r:"IM",ind:"病毒抑制後換藥",b:[[0,"每月：起始 cabotegravir 600 mg ＋ rilpivirine 900 mg 各 1 針（各 3 mL），之後 400／600 mg（各 2 mL）每 4 週。每 2 個月：第 1、2 個月各給 600／900 mg，之後 600／900 mg 每 2 個月。CrCl <30 或透析：不調整，需更密切監測不良反應"]],hd:"不調整；密切監測不良反應（DHHS Appendix B）",pd:"本版未取得・請確認",crrt:"本版未取得・請確認",note:"可先口服 lead-in 約 1 個月（cabotegravir 30 mg ＋ rilpivirine 25 mg，rilpivirine 隨餐），也可直接注射；起始注射在最後一天原方案或 lead-in；可在預定日前後 7 天內給藥；停用後最遲 1 個月（每月）或 2 個月（每 2 個月）內改用其他方案（仿單）。孕期不建議起始（DHHS）。",src:["CAB_LABEL","DHHS_ART26"]},
+  dtgr_sw:{d:"dtgr",r:"PO",ind:"病毒抑制後換藥",b:[[0,"1 錠 QD，隨餐（DHHS Appendix B）；CrCl <30 或透析：不調整，需更密切監測不良反應"]],hd:"不調整；密切監測不良反應（DHHS Appendix B）",pd:"本版未取得・請確認",crrt:"本版未取得・請確認",note:"肝：Child-Pugh A、B 不需調整，C 無劑量建議（DHHS Appendix B）。",src:["DHHS_ART26"]},
   prit:{d:"prit",r:"PO",ind:"難治黏膜皮膚 HSV（免疫低下）",b:[[0,"第 1 天 400 mg，之後 100 mg QD，用到病灶癒合（腎功能調整未取得・請確認）"]],note:"腎功能調整本版未取得仿單・請確認；避免特定 PPI（見藥物頁）。",src:["PRIT_NEWS"]},
   bepi:{d:"bepi",r:"SC",ind:"CHB 與 NA 併用（無肝硬化）",b:[[0,"300 mg 每週 × 24 週（B-Well 試驗用法；試驗另有第 4、11 天 loading）・仿單用法與腎功能調整請確認"]],note:"NA 持續到最後一次注射後至少 24 週。",src:["BEPI_NEWS"]},
   blv:{d:"blv",r:"SC",ind:"慢性 HDV",b:[[0,"美國 8.5 mg QD；歐盟 2 mg QD（核准劑量不同，請依當地仿單；腎功能調整未取得・請確認）"]],note:"持續到不再有反應；最佳療程未知；肝腎功能調整本版未取得・請確認。",src:["BLV_NEWS"]},
@@ -678,6 +711,13 @@ const REG = {
 const O = (tier,regs,x)=>Object.assign({tier,regs,alt:true},x||{});
 const N = (t,src,lvl,upd)=>({t,src,lvl,upd});
 const UPDN = {
+  DOLCE26:"DHHS 2026-09（依 DOLCE 試驗）：DTG/3TC 初始治療不再因基線 HIV RNA >500,000 copies/mL 排除；仍須無 3TC 基因型抗藥證據、確認無慢性 HBV。舊版（至少至 2025）排除 HIV RNA >500,000。ART 開始前是否仍須取得基因型與 HBV 結果，本版未取得完整原文・請確認。",
+  DRV3TC26:"DHHS 2026-09：boosted darunavir ＋ lamivudine 或 emtricitabine 兩藥，新增為「特定情境」的初始治療選項；適用情境與評級本版未取得原文。",
+  M184V26:"DHHS 2026-09：新增建議，有 M184V/I 病史者不要換成 DTG/3TC 或 boosted PI ＋ 3TC/FTC（BIII）。",
+  DORISL26:"Idvynso（doravirine/islatravir）：FDA 2026-04-21 核准；DHHS 2026-09 列為病毒抑制者的優化選項（持續抑制、無失敗史、無 DOR 或 ISL 抗藥）。",
+  BLEN26:"Bixlenvo（bictegravir/lenacapavir）：FDA 2026-08-27 核准。DHHS 2026-09-24 版稱審查中、未納入；2026-10-27 更新已加入「病毒抑制後優化」章節（條件與強度本版未取得原文）。",
+  HBVHIV26:"DHHS 2026-09 HBV/HIV：新增 HDV 篩檢；說明特定情境下 TAF 或 TDF 單獨（不加 3TC/FTC）可作為唯一 HBV 活性藥，須搭配有效 ARV；含 islatravir 的方案不可與 3TC/FTC 併用（依 Contagion Live、epocrates 摘要，條文未讀）。",
+  ABC24:"DHHS 2024-09：DTG/ABC/3TC 由「多數人首選」移至「特定情境」（依 POZ 報導）。",
   TABCEL26:"Tabelecleucel：FDA 2026-01 第二次 CRL，BLA 於 2026-10 再受理，PDUFA 2027-03-31；美國尚未核准 EBV+ PTLD 用藥。",
   ECIL10:"ECIL-10 CMV（Lancet Infect Dis 2025）：更新 2019 年 ECIL-7；涵蓋免疫監測、letermovir 預防、難治與抗藥 CMV；CAR-T 與 T 細胞接合型抗體為新增風險族群。",
   ECIL10C:"ECIL-10 呼吸道病毒（Lancet Infect Dis 2026）：更新 2013 年 ECIL-4；RSV 疫苗可依當地核准考慮；免疫缺陷評分高的 HCT 受者建議口服 ribavirin 或 IVIG 或併用。",
@@ -1062,6 +1102,118 @@ const DX = [
   r.tests=[["HBsAg 陽性者：anti-HDV 總抗體，陽性者測 HDV RNA；治療反應以 HDV RNA 下降與 ALT 正常化評估（核准依據）。",["EASL_HBV25","BLV_NEWS"]]];
   return r; }},
 
+/* ===== HIV 治療 ===== */
+{id:"hivart",g:"HIV",n:"HIV 初始治療（未曾用藥）",opts:[
+  {k:"s",q:"情境",ch:[["n","一般成人（HBsAg 陰性、未懷孕）"],["g","基因型尚未回報（快速開始）"],["b","HBsAg 陽性（HBV 合併）"],["p","懷孕或準備懷孕"],["c","曾使用 CAB-LA 作為 PrEP"]]},
+  {k:"v",q:"基線 HIV RNA",ch:[["u","未知"],["lo","≤500,000 copies/mL"],["hi",">500,000 copies/mL"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[],tests:[]};
+  const s=o.s||"n", S=["DHHS_ART26"];
+  const DUR="長期持續，無固定療程；不可自行中斷";
+  const NRTI=(tag)=>{
+    r.o.push(O("首選（組合 A）",["dtg_art","fta_art"],{alt:false,dur:DUR,src:S,note:"dolutegravir 與 2 種 NRTI 同時使用；FTC 可換 3TC（DHHS・AI）。"+(tag||"")}));
+    r.o.push(O("首選（組合 B）",["dtg_art","ftd_art"],{alt:false,dur:DUR,src:S,note:"TDF：CrCl <60 避免（DHHS Appendix B）。"}));
+  };
+  if(s==="n"){
+    r.key="首選：BIC/FTC/TAF 單錠，或 dolutegravir ＋（TAF 或 TDF）＋（FTC 或 3TC）（DHHS 2026・AI）；DTG/3TC 現不限基線病毒量，但須確認無 HBV 與 3TC 抗藥。";
+    r.o.push(O("首選",["bic_art"],{dur:DUR,src:S}));
+    NRTI();
+    r.o.push(O("首選（兩藥，須符合條件）",["dtg3_art"],{dur:DUR,src:["DHHS_ART26","DOLCE26"],upd:"DOLCE26",cond:"確認無慢性 HBV、無 3TC 基因型抗藥（DHHS 2026）；CrCl <30 仿單不建議。"}));
+    r.o.push(O("特定情境（非首選）",["drv_art","lam_art"],{alt:false,dur:DUR,src:S,upd:"DRV3TC26",cond:"boosted darunavir ＋ lamivudine（或 emtricitabine）兩藥；適用情境與評級本版未取得原文・請確認。"}));
+    if(o.v==="hi") r.post.push(N("基線 HIV RNA >500,000：DHHS 2026-09 的 DTG/3TC 已不排除；EACS 表與孕期指引仍設上限（見下方各來源說法）。",["DHHS_ART26","EACS25_ART","DHHS_PERI26"],"warn","DOLCE26"));
+    r.post.push(N("除 DTG/3TC 外，初始治療不應使用雙藥（NYSDOH 2025・A3）。含 abacavir 的 DTG/ABC/3TC 不在「多數人首選」（DHHS 2024）；用 abacavir 需 HLA-B*5701 陰性且無 HBV（DHHS 舊版文字，二手）。",["NYSDOH_ART26","DHHS_ART26"],"","ABC24"));
+  } else if(s==="g"){
+    r.key="不必等基因型：BIC/FTC/TAF 或 dolutegravir ＋ 2 種 NRTI 可先開始（DHHS）；DTG/3TC 需等特定檢驗回報（舊版 DHHS 與 NYSDOH 2025；2026 版是否放寬請確認）。";
+    r.o.push(O("首選",["bic_art"],{dur:DUR,src:S}));
+    NRTI();
+    r.pre.push(N("DTG/3TC 雙藥：NYSDOH 2025 寫明須在特定檢驗結果回報後才開始（條件在摘錄被截斷）；DHHS 舊版（2019，二手）把「基因型或 HBV 結果未回就開始 ART」列為排除。2026 版是否保留這條，本版未取得原文・請確認，因此這裡不列 DTG/3TC。",["NYSDOH_ART26","DHHS_ART26"],"warn"));
+    r.post.push(N("有近期暴露 CAB-LA PrEP 可能時，不要在 INSTI 基因型未回前用 INSTI 方案；改選「曾使用 CAB-LA 作為 PrEP」情境（DHHS）。",S,"warn"));
+  } else if(s==="b"){
+    r.key="HBsAg 陽性：方案須含 TAF 或 TDF 加 FTC 或 3TC（有 HBV 活性）；DTG/3TC、長效注射、含 islatravir 的方案單獨不可（DHHS、仿單）。";
+    r.o.push(O("首選",["bic_art"],{dur:DUR,src:S,note:"含 TAF ＋ FTC，同時控制 HBV。"}));
+    NRTI();
+    r.pre.push(N("不要在 HBsAg 陽性者用 DTG/3TC：lamivudine 單獨不足以控制 HBV（DHHS）；停用 TAF、TDF、3TC、FTC 可能使 HBV 嚴重惡化，不可自行停（DHHS・AII）。",S,"warn"));
+    r.post.push(N("HBV/HIV 章節新增 HDV 篩檢；特定情境下 TAF 或 TDF 單獨（不加 3TC/FTC）可作為唯一 HBV 活性藥，須搭配有效 ARV 方案（二手摘要，條件請確認）。HDV 見「B 型肝炎合併 D 型肝炎」頁。",["DHHS_ART26"],"","HBVHIV26"));
+    r.post.push(N("含 islatravir（Idvynso）的方案禁與 3TC 或 FTC 併用；bictegravir/lenacapavir 與 cabotegravir/rilpivirine 對 HBV 無活性（仿單、DHHS）。",["IDV_LABEL","BLEN_LABEL","DHHS_ART26"]));
+  } else if(s==="p"){
+    r.key="孕期 Preferred：dolutegravir 或 BIC ＋ 含 tenofovir 的雙 NRTI（DHHS 孕期指引）；DTG/3TC 為 Alternative，有條件限制。請會診 HIV 與婦產科。";
+    r.o.push(O("Preferred",["bic_art"],{dur:DUR,src:["DHHS_PERI26"],note:"孕期 bictegravir 暴露較低，需密切監測病毒量（仿單）。"}));
+    r.o.push(O("Preferred（組合 A）",["dtg_art","fta_art"],{alt:false,dur:DUR,src:["DHHS_PERI26"]}));
+    r.o.push(O("Preferred（組合 B）",["dtg_art","ftd_art"],{alt:false,dur:DUR,src:["DHHS_PERI26"]}));
+    r.o.push(O("Alternative（有條件）",["dtg3_art"],{dur:DUR,src:["DHHS_PERI26"],cond:"無 CAB-LA PrEP 史、HIV RNA ≤500,000 copies/mL、無活動性 HBV…（原文在此截斷・請確認）。"}));
+    r.post.push(N("其他雙藥方案因資料不足，不建議用於孕期初始治療（DHHS 孕期）。",["DHHS_PERI26"]));
+    r.diff.push(["DHHS 成人（2026-09）","DTG/3TC 不限基線 HIV RNA。",["DHHS_ART26"],"DOLCE26"],["DHHS 孕期（2026-03-31 版）","DTG/3TC 為 Alternative，限 HIV RNA ≤500,000 copies/mL 等條件。孕期版是否已跟進 DOLCE，本版未取得。",["DHHS_PERI26"]]);
+  } else {
+    r.key="曾用 CAB-LA 作 PrEP：INSTI 基因型未回前，不用 INSTI 方案與 DTG/3TC；孕期指引明列 ritonavir 加強的 darunavir ＋ tenofovir ＋ FTC 或 3TC（DHHS）。";
+    r.o.push(O("基因型回報前（組合 A）",["drv_art","fta_art"],{alt:false,dur:"待 INSTI 基因型回報後再決定是否改方案",src:["DHHS_PERI26","DHHS_ART26"],note:"孕期指引明列此組合（以 ritonavir 加強）；成人指引的具體替代方案本版未取得原文・請確認。"}));
+    r.o.push(O("基因型回報前（組合 B）",["drv_art","ftd_art"],{alt:false,dur:"待 INSTI 基因型回報後再決定是否改方案",src:["DHHS_PERI26","DHHS_ART26"]}));
+    r.post.push(N("EACS 2025（新聞摘要）：CAB 期間感染 HIV，起始治療用含 boosted darunavir 的三藥，避免雙藥；EACS 表 DTG/3TC「PrEP 失敗後不建議」。",["EACS25_ART","EACS25"],"warn"));
+  }
+  r.tests=[["基線：HIV RNA、基因型抗藥性（RT、PR；曾用 CAB-LA PrEP 者加 INSTI）、HBsAg、anti-HBs、anti-HBc（DHHS）。",S],["開始 ART 後 4 週內測 HIV RNA，確認初始反應（NYSDOH・A3）。",["NYSDOH_ART26"]]];
+  if(s==="n") r.diff.push(["DHHS（2026-09）","DTG/3TC 初始治療不限基線 HIV RNA；須無 3TC 抗藥與確認無慢性 HBV。",["DHHS_ART26","DOLCE26"],"DOLCE26"],["EACS 表（網頁摘錄，版本請確認）","XTC ＋ DTG 或 3TC/DTG：需 HBsAg 陰性、HIV RNA <500,000 copies/mL、PrEP 失敗後不建議。",["EACS25_ART"]],["NYSDOH（2026-01-29）","DTG/3TC 的「基線 HIV RNA >500,000 不起始」註解已刪除。",["NYSDOH_ART26"]]);
+  return r; }},
+{id:"hivsw",g:"HIV",n:"HIV 病毒已抑制：換藥",opts:[
+  {k:"h",q:"HBV",ch:[["n","HBsAg 陰性（或已確認免疫）"],["p","HBsAg 陽性"]]},
+  {k:"r",q:"病毒學失敗或抗藥史",ch:[["n","無失敗史、無已知抗藥"],["y","有失敗史、已知或疑似抗藥、M184V/I 病史"]]},
+  {k:"g",q:"換藥目的",ch:[["o","口服簡化，或避開 tenofovir"],["i","改長效針劑"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[],tests:[]};
+  const S=["DHHS_ART26"], DUR="長期持續，無固定療程；換藥後前 3 個月密切追蹤（DHHS・AIII）";
+  const h=o.h||"n", rr=o.r||"n", g=o.g||"o";
+  if(rr==="y"){
+    r.key="有失敗史或抗藥：先完整回顧 ART 與基因型史再選，請會診 HIV 專科（DHHS・AIII）；有 M184V/I 病史不建議換成 DTG/3TC 或 boosted PI ＋ 3TC/FTC（BIII）。";
+    r.o.push(O("可考慮（需專科確認）",["bic_art"],{dur:DUR,src:S,cond:"DHHS：BIC/FTC/TAF 在無或有限抗藥，或 NRTI 抗藥但方案含高抗藥屏障藥時證實有效；仍須看基因型史。"+(h==="p"?" HBsAg 陽性者此方案含 TAF ＋ FTC，可同時控制 HBV。":"")}));
+    r.o.push(O("NRTI 或 NNRTI 抗藥、不耐受時可考慮",["drv_art","dtg_art"],{alt:false,dur:DUR,src:S,cond:"boosted darunavir ＋ dolutegravir 兩藥（DHHS）；HBsAg 陽性者另需有 HBV 活性的藥。"}));
+    r.pre.push(N("有 M184V/I 病史者，DHHS 2026 新增建議：不要換成 DTG/3TC 或 boosted PI ＋ 3TC/FTC（BIII）。DOR/ISL 在 M184I/V 病史資料不足；仿單要求無病毒學失敗史。長效 CAB/RPV 與 BIC/LEN 要求無已知或疑似抗藥。",["DHHS_ART26","IDV_LABEL","BLEN_LABEL"],"warn","M184V26"));
+    if(h==="p") r.pre.push(N("HBsAg 陽性：任何新方案都要保留 TAF 或 TDF 加 3TC 或 FTC（HBV 活性藥），不可因抗藥而停；darunavir ＋ dolutegravir 等不含 HBV 藥的組合需另加（DHHS・AII）。",["DHHS_ART26"],"warn"));
+    r.post.push(N("病毒已抑制者可考慮對 proviral DNA 做次世代定序（archived genotype），尤其有複雜或半複雜抗藥時（DHHS）。",S));
+  } else {
+    r.key="無失敗史與抗藥者：可換到任何已在初治證實有效的二藥或三藥方案（DHHS・AI）；換前確認 HBV 狀態，換後 3 個月密切追蹤（AIII）。";
+    if(h==="p"){
+      r.key="HBsAg 陽性：必須續用 TDF 或 TAF 加 3TC 或 FTC（DHHS・AII）；其他方案需另有強效 HBV 藥（TAF、TDF 或 entecavir）；不可停 HBV 藥（AII）。";
+      if(g==="i") r.pre.push(N("你選了長效針劑：cabotegravir/rilpivirine 對 HBV 無活性，HBsAg 陽性者要換成長效針劑，須另外持續 TAF、TDF 或 entecavir，並請會診；下方列的是不需另加 HBV 藥的口服方案（DHHS、仿單）。",["DHHS_ART26","CAB_LABEL"],"warn"));
+      r.o.push(O("可續用／換入",["bic_art"],{dur:DUR,src:S}));
+      r.o.push(O("可換入（組合 A）",["dtg_art","fta_art"],{alt:false,dur:DUR,src:S}));
+      r.o.push(O("可換入（組合 B）",["dtg_art","ftd_art"],{alt:false,dur:DUR,src:S}));
+      r.pre.push(N("DTG/3TC、DTG/RPV、CAB/RPV、DOR/ISL、BIC/LEN 單獨使用都不夠 HBV 治療：3TC 單獨不足；CAB/RPV 與 BIC/LEN 對 HBV 無活性；DOR/ISL 禁與 3TC、FTC 併用。要用須另加 TAF、TDF 或 entecavir，並請會診（DHHS、仿單）。entecavir 不可在沒有完全抑制性 ARV 時使用（可能選出 M184V）。",["DHHS_ART26","IDV_LABEL","BLEN_LABEL"],"warn"));
+    } else if(g==="o"){
+      r.o.push(O("可考慮（擇一）",["dtg3_art"],{dur:DUR,src:S,upd:"M184V26",cond:"無病毒學失敗、無 DTG 與 3TC 抗藥；不用於 M184V/I 病史（BIII）。"}));
+      r.o.push(O("可考慮（擇一）",["dori_sw"],{dur:DUR,src:["IDV_LABEL","DHHS_ART26"],upd:"DORISL26",cond:"持續病毒抑制、無失敗史、無對 DOR 或 ISL 抗藥；原方案的 3TC／FTC 要停用。"}));
+      r.o.push(O("可考慮（擇一）",["blen_sw"],{dur:DUR,src:["BLEN_LABEL","ARTISTRY26","DHHS_ART26"],upd:"BLEN26",cond:"無已知或疑似對 bictegravir 或 lenacapavir 抗藥；起始需 2 天加服 Sunlenca。"}));
+      r.o.push(O("可考慮（擇一）",["dtgr_sw"],{dur:DUR,src:S,cond:"無失敗史、無 DTG 或 RPV 抗藥；孤立 K103N 或 NRTI 抗藥可用。"}));
+      r.o.push(O("可考慮（擇一）",["drv_art","lam_art"],{alt:false,dur:DUR,src:S,cond:"boosted darunavir ＋ lamivudine（或 emtricitabine）；無 3TC/FTC 或 PI 抗藥，不用於 M184V/I 病史。"}));
+      r.o.push(O("可繼續",["bic_art"],{dur:DUR,src:S,cond:"BIC/FTC/TAF 本身即為多數人的首選方案；腎功能下降時請看劑量欄。"}));
+      r.diff.push(["FDA 仿單（Idvynso，2026-04）","無病毒學失敗史、無已知 doravirine 抗藥變異。",["IDV_LABEL"]],["DHHS 2026-09（DOR/ISL）","持續病毒抑制、無失敗史、無對 DOR 或 ISL 抗藥；M184I/V 病史資料不足。",["DHHS_ART26"],"DORISL26"],["DHHS 2026-09-24 版（BIC/LEN）","Bixlenvo 審查中、未納入。",["DHHS_ART26"]],["DHHS 2026-10-27 更新（BIC/LEN）","已加入「病毒抑制後優化」章節；條件與強度本版未取得原文・請確認。",["DHHS_ART26"],"BLEN26"]);
+    } else {
+      r.o.push(O("可考慮",["crpv_sw"],{dur:DUR,src:["DHHS_ART26","CAB_LABEL"],cond:"病毒抑制 ≥3 個月、無已知或疑似對 CAB 或 RPV 抗藥；HBsAg 陰性；不建議在孕期起始。"}));
+      r.post.push(N("換藥後 4–8 週測 HIV RNA；>200–500 copies/mL 時做抗藥性檢測（DHHS）。停用注射後最遲 1 個月（每月）或 2 個月（每 2 個月）內改用其他方案（仿單）。",["DHHS_ART26","CAB_LABEL"],"warn"));
+    }
+    r.post.push(N("不建議用於優化：nevirapine、口服 zidovudine、lopinavir、atazanavir、EVG、raltegravir、efavirenz；不可單藥（DHHS・AI）。",S));
+  }
+  r.tests=[["換到不含 TAF 或 TDF 的方案前 3 個月內：HBsAg、anti-HBs、anti-HBc；anti-HBs <10 mIU/mL 者接種疫苗（DHHS）。",S],["anti-HBc 陽性、HBsAg 陰性：前 6 個月每 1–3 個月測 ALT，之後每 6 個月；ALT 上升時測 HBV DNA（DHHS；該頁未標評級）。",S]];
+  return r; }},
+{id:"hivvf",g:"HIV",n:"HIV 病毒學失敗（正在服藥）",opts:[
+  {k:"v",q:"服藥中的 HIV RNA",ch:[["l","50–199 copies/mL"],["m","200–499 copies/mL"],["h","500–999 copies/mL"],["x","≥1,000 copies/mL"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[],tests:[]};
+  const S=["DHHS_ART26","NYSDOH_ART26"];
+  const v=o.v||"x";
+  if(v==="l"){
+    r.key="低度病毒血症（50–199）：持續 ≥1 個月才算，先查順從性、交互作用與耐受性（NYSDOH）；不是病毒學失敗的定義（≥200）。";
+    r.pre.push(N("低度病毒血症（HIV RNA 50–199，連續 ≥1 個月）：檢查順從性與可能降低藥效的因素（NYSDOH・A2）；處置細節本版只取得摘要，請依原文。",["NYSDOH_ART26"]));
+  } else {
+    r.key="確認 ≥200 後，先處理順從性、交互作用與耐受性，再做基因型；新方案至少 2 個完全有效藥且含 1 個高抗藥屏障藥（DTG 或 boosted darunavir），沒有就盡量湊 3 個（DHHS、NYSDOH・A2）。";
+    r.pre.push(N("病毒學失敗：確認的 HIV RNA ≥200 copies/mL（初始治療 24 週後仍未達 <200，或抑制後回升）；30 天內重測確認（NYSDOH・A3）。",["NYSDOH_ART26"]));
+    if(v==="m") r.pre.push(N("<500 copies/mL：NYSDOH 的檢測表建議做 proviral DNA 基因型（或表型）；各病毒量對應的檢測選擇以原表為準。",["NYSDOH_ART26"]));
+    else r.pre.push(N(v==="h"?"500–999 copies/mL：做血漿 RNA 基因型，能否成功視檢驗平台的擴增門檻（NYSDOH 檢測表；≥500 都應做，A2）。":"≥1,000 copies/mL：做血漿 RNA 基因型；仍在服藥或停藥 4 週內做（DHHS・AII；NYSDOH）。",S,v==="x"?"warn":""));
+    r.post.push(N("新方案以基因型與完整 ART 史為基礎：回顧所有過去的基因型、表型與失敗史（NYSDOH・A1），請會診 HIV 專科。",["NYSDOH_ART26"]));
+    r.post.push(N("有 HBV/HIV 共感染：換藥時要保留有 HBV 活性的藥（DHHS）。",["DHHS_ART26"],"warn"));
+    r.post.push(N("不建議停藥或短暫中斷（HIV RNA 快速反彈、CD4 下降、臨床惡化風險；DHHS）。換藥後持續提供順從性支持（DHHS）。",["DHHS_ART26"]));
+    r.post.push(N("換藥後 4 週內測 HIV RNA，之後至少每 8 週一次直到抑制（NYSDOH・A3）。",["NYSDOH_ART26"]));
+  }
+  r.tests=[["順從性、藥物交互作用與耐受性；HIV RNA 與 CD4 趨勢、ART 史與先前抗藥檢測結果（DHHS）。",["DHHS_ART26"]]];
+  return r; }},
+
 /* ===== HCV ===== */
 {id:"hcvtx",g:"HCV",n:"慢性 C 型肝炎（DAA）",opts:[
   {k:"st",q:"狀況",ch:[["nc","未曾治療、無肝硬化"],["cc","未曾治療、代償性肝硬化"],["dc","失代償肝硬化"],["exp","DAA 治療失敗再治療"]]}],
@@ -1253,7 +1405,7 @@ const DX = [
   return r; }}
 ];
 const DX_OF = id=>DX.find(x=>x.id===id);
-const DX_G = ["呼吸道","VZV","HSV","中樞神經","CMV","HBV","HCV","BK","ADV","HEV","Mpox","HHV-6","EBV"];
+const DX_G = ["呼吸道","VZV","HSV","中樞神經","CMV","HBV","HCV","BK","ADV","HEV","Mpox","HHV-6","EBV","HIV"];
 /* ---------------- 預防 ---------------- */
 const PX = [
 {id:"flupep",n:"流感暴露後",opts:[{k:"k",q:"情境",ch:[["hh","家戶／密切接觸"],["ltc","機構群聚（長照）"]]}],
@@ -1849,6 +2001,13 @@ MX.fos.HHV6=["○","非仿單適應症；ECIL 與 JSHCT 建議用於 HHV-6B 腦�
 MX.gcv.HHV6=["○","非仿單適應症；ECIL 與 JSHCT 建議用於 HHV-6B 腦炎（JSHCT 次選）。見 HHV-6 診斷頁。",["ECIL7_HHV6","JSHCT_HHV6"]];
 MX.cdv.VZV=["○","體外對 VZV（含 acyclovir 抗藥的 TK 突變株）有活性（綜述）；非核准適應症，app 無此情境。",["CDV_REV10"]];
 MX.cdv.HHV6=["○","體外活性佳但腎毒性高，列為二線；ECIL 對 HHV-6B 腦炎使用 cidofovir 的資料評為不足、無建議。",["HHV6_CDV","ECIL7_HHV6"]];
+MX.dtg3={HIV:["●"],HBV:["⚠","lamivudine 單獨不足以控制 HBV；HBsAg 陽性者不可單獨使用 DTG/3TC（DHHS）。",["DHHS_ART26"]]};
+MX.drv={HIV:["●"]};
+MX.lam={HIV:["●"],HBV:["○","有 HBV 活性，但 3TC 或 FTC 單獨不建議用於 HBV（DHHS・AII）。",["DHHS_ART26"]]};
+MX.dori={HIV:["●"],HBV:["？","臨床試驗排除活動性 HBV；本版無足夠 HBV 資料。",["IDV_LABEL"]]};
+MX.blen={HIV:["●"],HBV:["⚠","對 HBV 無活性；HBV 重疊感染者須另有 HBV 治療（仿單）。",["BLEN_LABEL"]]};
+MX.crpv={HIV:["●"],HBV:["⚠","兩藥對 HBV 均無活性；HBsAg 陽性者轉換須另加 HBV 治療（DHHS，二手報導）。",["DHHS_ART26"]]};
+MX.dtgr={HIV:["●"],HBV:["⚠","兩藥對 HBV 無活性；HBsAg 陽性者須另有 HBV 治療。",["DHHS_ART26"]]};
 const XN=[
  {t:"同時作用 HBV 與 HIV 的藥",k:"tenofovir（TDF、TAF）與 emtricitabine 對 HBV 與 HIV 都有活性（lamivudine 亦同，本版未收錄藥物頁）。HIV/HBV 共感染者的 ART 要含 TDF 或 TAF 加 FTC 或 3TC。",
   it:[["IAS-USA 2023：骨幹為 TDF 或 TAF 加 emtricitabine 或 lamivudine，兩者同時涵蓋兩種病毒。",["IAS_HBVHIV23"]],["DHHS 2024（二手報導）：ARV 要有兩個對兩種病毒都有活性的藥；TAF 適合腎功能不全者。",["DHHS_HBV24"]],["ALLIANCE 試驗：B/F/TAF 對 HBV 抑制優於 dolutegravir＋F/TDF（初治共感染者）。",["BIC_LABEL","IAS_HBVHIV23"]]],
