@@ -19969,6 +19969,628 @@ tecovirimat 標準療程 14 天；必要時短期延長（例如再 3–7 天，
 診斷
 ：STOMP 第 29 天消退約 83% vs 84%，疼痛無差異；PALM007 無臨床效益；兩試驗提前停止。
 ：支持療法為主；tecovirimat 單用在臨床試驗未對輕中度 mpox 有效；無核准用藥。
+## tx hhv6 {"s":"enc"} none
+01
+02
+03
+5 mg/kg q12h
+60 mg/kg q8h 為另一誘導方案；維持 90–120 mg/kg QD。
+90 mg/kg q12h
+ASTCT 2021（含臍帶血）
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL（2017 更新）
+HHV-6B 指引比較（OFID 2022）
+HHV-6B 指引比較（OFID 2022）
+HHV-6B 腦炎：診斷評估同時即給經驗性 foscarnet 或 ganciclovir（盡量給足量），至少 3 週並追到 HHV-6 DNA 清除；嚴重者可考慮兩藥併用。
+HHV-6・HHV-6B（異體造血幹細胞移植後）
+IV
+IV
+JSHCT HHV-6B 腦炎建議
+JSHCT HHV-6B 腦炎建議
+JSHCT HHV-6B 腦炎建議
+JSHCT HHV-6B 腦炎建議
+JSHCT HHV-6B 腦炎建議
+JSHCT（GRADE）
+foscarnet
+ganciclovir
+仿單以 mg/kg 計，此處用實際體重。
+先排除染色體整合 HHV-6（ciHHV-6）：血中拷貝數極高且持續不變，不是再活化，不需抗病毒。
+出處 2
+出處 2
+可能時減免疫抑制（ECIL BIII）。cidofovir 資料不足，ECIL 無建議。
+台灣許可證未查證・請確認
+各指引說法（3）
+商品名：Cymevene／Cytovene
+商品名：Foscavir
+嚴重者可考慮 foscarnet 與 ganciclovir 併用（ECIL CIII；JSHCT weak）；可能減少長期神經後遺症，但未證實降低死亡率。
+建議
+情境
+擇一／次選
+更改
+染色體整合 HHV-6（ciHHV-6）
+條件：ECIL：5 mg/kg bid；JSHCT：最大劑量 10 mg/kg/日，兩者相同。骨髓抑制時偏向 foscarnet 或相反，依病人狀況。
+條件：ECIL：90 mg/kg bid；JSHCT：最大劑量 180 mg/kg/日，兩者相同。腎功能依下方劑量欄（為 CMV 誘導劑量的腎功能分級）。
+檢驗
+正常腎功能劑量・填腎功能 ›
+無症狀或無腦炎的血中 HHV-6 DNA 陽性
+疑似或確診 HHV-6B 腦炎
+療程
+療程
+結論：
+腦炎診斷依臨床（意識或記憶障礙、癲癇）、MRI 與腦脊髓液 HHV-6 PCR；治療中追蹤血中（可能時含腦脊髓液）HHV-6 DNA 至清除。
+至少 3 週，並到 HHV-6 DNA 清除
+至少 3 週，並到血中（可能時含腦脊髓液）HHV-6 DNA 清除
+藥物頁 ›
+藥物頁 ›
+複製
+複製
+診斷
+首選（JSHCT）／擇一（ECIL）
+：foscarnet 或 ganciclovir 擇一，依病人狀況；兩者並列（AIIu）。
+：foscarnet 首選（weak）、ganciclovir 次選（weak）；疑似即給經驗性治療（strong）。
+：本版未核對條文・請確認。
+## tx hhv6 {"s":"enc"} c35
+01
+02
+03
+2.5 mg/kg q24h
+60 mg/kg q24h
+60 mg/kg q8h 為另一誘導方案；維持 90–120 mg/kg QD。
+ASTCT 2021（含臍帶血）
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL（2017 更新）
+HHV-6B 指引比較（OFID 2022）
+HHV-6B 指引比較（OFID 2022）
+HHV-6B 腦炎：診斷評估同時即給經驗性 foscarnet 或 ganciclovir（盡量給足量），至少 3 週並追到 HHV-6 DNA 清除；嚴重者可考慮兩藥併用。
+HHV-6・HHV-6B（異體造血幹細胞移植後）
+IV
+IV
+JSHCT HHV-6B 腦炎建議
+JSHCT HHV-6B 腦炎建議
+JSHCT HHV-6B 腦炎建議
+JSHCT HHV-6B 腦炎建議
+JSHCT HHV-6B 腦炎建議
+JSHCT（GRADE）
+foscarnet
+ganciclovir
+≈ 150 mg（實際體重 60 kg）
+≈ 3600 mg（實際體重 60 kg）
+仿單以 mg/kg 計，此處用實際體重。
+先排除染色體整合 HHV-6（ciHHV-6）：血中拷貝數極高且持續不變，不是再活化，不需抗病毒。
+出處 2
+出處 2
+劑量依 CrCl 35 mL/min
+可能時減免疫抑制（ECIL BIII）。cidofovir 資料不足，ECIL 無建議。
+台灣許可證未查證・請確認
+各指引說法（3）
+商品名：Cymevene／Cytovene
+商品名：Foscavir
+嚴重者可考慮 foscarnet 與 ganciclovir 併用（ECIL CIII；JSHCT weak）；可能減少長期神經後遺症，但未證實降低死亡率。
+已依腎功能調整（CrCl 25–49）
+已依腎功能調整（CrCl/kg >0.5–0.6；目前 0.59 mL/min/kg）
+建議
+情境
+擇一／次選
+更改
+染色體整合 HHV-6（ciHHV-6）
+條件：ECIL：5 mg/kg bid；JSHCT：最大劑量 10 mg/kg/日，兩者相同。骨髓抑制時偏向 foscarnet 或相反，依病人狀況。
+條件：ECIL：90 mg/kg bid；JSHCT：最大劑量 180 mg/kg/日，兩者相同。腎功能依下方劑量欄（為 CMV 誘導劑量的腎功能分級）。
+檢驗
+無症狀或無腦炎的血中 HHV-6 DNA 陽性
+疑似或確診 HHV-6B 腦炎
+療程
+療程
+結論：
+腦炎診斷依臨床（意識或記憶障礙、癲癇）、MRI 與腦脊髓液 HHV-6 PCR；治療中追蹤血中（可能時含腦脊髓液）HHV-6 DNA 至清除。
+至少 3 週，並到 HHV-6 DNA 清除
+至少 3 週，並到血中（可能時含腦脊髓液）HHV-6 DNA 清除
+藥物頁 ›
+藥物頁 ›
+複製
+複製
+診斷
+首選（JSHCT）／擇一（ECIL）
+：foscarnet 或 ganciclovir 擇一，依病人狀況；兩者並列（AIIu）。
+：foscarnet 首選（weak）、ganciclovir 次選（weak）；疑似即給經驗性治療（strong）。
+：本版未核對條文・請確認。
+## tx hhv6 {"s":"enc"} hd
+01
+02
+03
+1.25 mg/kg 每週 3 次，HD 後給
+60 mg/kg q8h 為另一誘導方案；維持 90–120 mg/kg QD。
+ASTCT 2021（含臍帶血）
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL（2017 更新）
+HHV-6B 指引比較（OFID 2022）
+HHV-6B 指引比較（OFID 2022）
+HHV-6B 腦炎：診斷評估同時即給經驗性 foscarnet 或 ganciclovir（盡量給足量），至少 3 週並追到 HHV-6 DNA 清除；嚴重者可考慮兩藥併用。
+HHV-6・HHV-6B（異體造血幹細胞移植後）
+IV
+IV
+JSHCT HHV-6B 腦炎建議
+JSHCT HHV-6B 腦炎建議
+JSHCT HHV-6B 腦炎建議
+JSHCT HHV-6B 腦炎建議
+JSHCT HHV-6B 腦炎建議
+JSHCT（GRADE）
+foscarnet
+ganciclovir
+≈ 70 mg（實際體重 55 kg）
+仿單不建議
+仿單以 mg/kg 計，此處用實際體重。
+先排除染色體整合 HHV-6（ciHHV-6）：血中拷貝數極高且持續不變，不是再活化，不需抗病毒。
+出處 2
+出處 2
+劑量依 血液透析（HD）
+可能時減免疫抑制（ECIL BIII）。cidofovir 資料不足，ECIL 無建議。
+台灣許可證未查證・請確認
+各指引說法（3）
+商品名：Cymevene／Cytovene
+商品名：Foscavir
+嚴重者可考慮 foscarnet 與 ganciclovir 併用（ECIL CIII；JSHCT weak）；可能減少長期神經後遺症，但未證實降低死亡率。
+建議
+情境
+擇一／次選
+更改
+染色體整合 HHV-6（ciHHV-6）
+條件：ECIL：5 mg/kg bid；JSHCT：最大劑量 10 mg/kg/日，兩者相同。骨髓抑制時偏向 foscarnet 或相反，依病人狀況。
+條件：ECIL：90 mg/kg bid；JSHCT：最大劑量 180 mg/kg/日，兩者相同。腎功能依下方劑量欄（為 CMV 誘導劑量的腎功能分級）。
+檢驗
+無症狀或無腦炎的血中 HHV-6 DNA 陽性
+疑似或確診 HHV-6B 腦炎
+療程
+療程
+結論：
+腦炎診斷依臨床（意識或記憶障礙、癲癇）、MRI 與腦脊髓液 HHV-6 PCR；治療中追蹤血中（可能時含腦脊髓液）HHV-6 DNA 至清除。
+至少 3 週，並到 HHV-6 DNA 清除
+至少 3 週，並到血中（可能時含腦脊髓液）HHV-6 DNA 清除
+藥物頁 ›
+藥物頁 ›
+血液透析（HD） 劑量
+血液透析（HD） 劑量
+複製
+複製
+診斷
+首選（JSHCT）／擇一（ECIL）
+：foscarnet 或 ganciclovir 擇一，依病人狀況；兩者並列（AIIu）。
+：foscarnet 首選（weak）、ganciclovir 次選（weak）；疑似即給經驗性治療（strong）。
+：本版未核對條文・請確認。
+## tx hhv6 {"s":"vir"} none
+01
+02
+03
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL（2017 更新）
+HHV-6 短療程 foscarnet（回溯性）
+HHV-6・HHV-6B（異體造血幹細胞移植後）
+先排除染色體整合 HHV-6（ciHHV-6）：血中拷貝數極高且持續不變，不是再活化，不需抗病毒。
+各指引說法（2）
+單中心回溯性（非指引）
+建議
+情境
+更改
+染色體整合 HHV-6（ciHHV-6）
+正常腎功能劑量・填腎功能 ›
+無症狀或無腦炎的 HHV-6 DNA 陽性：不建議常規篩檢、預防或 preemptive 抗病毒（ECIL）；有症狀時先排除其他原因（如 aGVHD、藥物疹）。
+無症狀或無腦炎的血中 HHV-6 DNA 陽性
+疑似或確診 HHV-6B 腦炎
+結論：
+診斷
+：HSCT 後不建議常規篩檢血中 HHV-6 DNA；不建議預防或 preemptive 抗病毒（DIIu）。
+：preemptive foscarnet 60–90 mg/kg 每日一次 × 7 天，11 人第 7 天血漿 HHV-6 DNA 皆測不到；無對照、短期追蹤。
+## tx hhv6 {"s":"vir"} c35
+01
+02
+03
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL（2017 更新）
+HHV-6 短療程 foscarnet（回溯性）
+HHV-6・HHV-6B（異體造血幹細胞移植後）
+先排除染色體整合 HHV-6（ciHHV-6）：血中拷貝數極高且持續不變，不是再活化，不需抗病毒。
+劑量依 CrCl 35 mL/min
+各指引說法（2）
+單中心回溯性（非指引）
+建議
+情境
+更改
+染色體整合 HHV-6（ciHHV-6）
+無症狀或無腦炎的 HHV-6 DNA 陽性：不建議常規篩檢、預防或 preemptive 抗病毒（ECIL）；有症狀時先排除其他原因（如 aGVHD、藥物疹）。
+無症狀或無腦炎的血中 HHV-6 DNA 陽性
+疑似或確診 HHV-6B 腦炎
+結論：
+診斷
+：HSCT 後不建議常規篩檢血中 HHV-6 DNA；不建議預防或 preemptive 抗病毒（DIIu）。
+：preemptive foscarnet 60–90 mg/kg 每日一次 × 7 天，11 人第 7 天血漿 HHV-6 DNA 皆測不到；無對照、短期追蹤。
+## tx hhv6 {"s":"vir"} hd
+01
+02
+03
+ECIL-7 HHV-6 更新（2017 投影片）
+ECIL（2017 更新）
+HHV-6 短療程 foscarnet（回溯性）
+HHV-6・HHV-6B（異體造血幹細胞移植後）
+先排除染色體整合 HHV-6（ciHHV-6）：血中拷貝數極高且持續不變，不是再活化，不需抗病毒。
+劑量依 血液透析（HD）
+各指引說法（2）
+單中心回溯性（非指引）
+建議
+情境
+更改
+染色體整合 HHV-6（ciHHV-6）
+無症狀或無腦炎的 HHV-6 DNA 陽性：不建議常規篩檢、預防或 preemptive 抗病毒（ECIL）；有症狀時先排除其他原因（如 aGVHD、藥物疹）。
+無症狀或無腦炎的血中 HHV-6 DNA 陽性
+疑似或確診 HHV-6B 腦炎
+結論：
+診斷
+：HSCT 後不建議常規篩檢血中 HHV-6 DNA；不建議預防或 preemptive 抗病毒（DIIu）。
+：preemptive foscarnet 60–90 mg/kg 每日一次 × 7 天，11 人第 7 天血漿 HHV-6 DNA 皆測不到；無對照、短期追蹤。
+## tx ebv {"h":"hsct","s":"vir"} none
+01
+02
+03
+04
+DNAemia 門檻沒有明確共識、各中心不同，且各實驗室檢測未調和（AST 2019）；請依院內閾值。
+EBV DNAemia 上升、無終器官病變或 PTLD
+EBV DNAemia 上升：先減免疫抑制；ECIL-6 建議 preemptive rituximab，但沒有明確的 DNAemia 門檻（證據中等、非對照研究）。
+EBV 再活化先減免疫抑制（TID 2025）
+EBV 再活化先減免疫抑制（TID 2025）
+EBV 再活化先減免疫抑制（TID 2025）
+EBV 終器官病變或 PTLD
+EBV・EBV 再活化與 PTLD（移植後）
+ECIL-6（2016）
+ECIL-6（EBV 與 PTLD）2016
+ECIL-6（EBV 與 PTLD）2016
+rituximab 375 mg/m²、1–2 次每週為單中心回溯性使用方式（本版未取得 ECIL-6 劑量條文・請確認）。
+各指引說法（2）
+單中心回溯性（2025，非指引）
+實體器官移植
+建議
+情境
+抗病毒藥（acyclovir 類、ganciclovir 類）不用於 EBV 預防或治療（ECIL-6 摘要片段・請確認）。
+更改
+正常腎功能劑量・填腎功能 ›
+異體造血幹細胞移植
+移植類型
+結論：
+診斷
+：rituximab、減免疫抑制、EBV 特異性 T 細胞為一線；preemptive rituximab 被建議。各條強度本版未核對・請確認。
+：先減免疫抑制，328 人中 rituximab 只用 12 人（6.7%），無 PTLD；減量無效或終器官病變才加 rituximab。
+## tx ebv {"h":"hsct","s":"vir"} c35
+01
+02
+03
+04
+DNAemia 門檻沒有明確共識、各中心不同，且各實驗室檢測未調和（AST 2019）；請依院內閾值。
+EBV DNAemia 上升、無終器官病變或 PTLD
+EBV DNAemia 上升：先減免疫抑制；ECIL-6 建議 preemptive rituximab，但沒有明確的 DNAemia 門檻（證據中等、非對照研究）。
+EBV 再活化先減免疫抑制（TID 2025）
+EBV 再活化先減免疫抑制（TID 2025）
+EBV 再活化先減免疫抑制（TID 2025）
+EBV 終器官病變或 PTLD
+EBV・EBV 再活化與 PTLD（移植後）
+ECIL-6（2016）
+ECIL-6（EBV 與 PTLD）2016
+ECIL-6（EBV 與 PTLD）2016
+rituximab 375 mg/m²、1–2 次每週為單中心回溯性使用方式（本版未取得 ECIL-6 劑量條文・請確認）。
+劑量依 CrCl 35 mL/min
+各指引說法（2）
+單中心回溯性（2025，非指引）
+實體器官移植
+建議
+情境
+抗病毒藥（acyclovir 類、ganciclovir 類）不用於 EBV 預防或治療（ECIL-6 摘要片段・請確認）。
+更改
+異體造血幹細胞移植
+移植類型
+結論：
+診斷
+：rituximab、減免疫抑制、EBV 特異性 T 細胞為一線；preemptive rituximab 被建議。各條強度本版未核對・請確認。
+：先減免疫抑制，328 人中 rituximab 只用 12 人（6.7%），無 PTLD；減量無效或終器官病變才加 rituximab。
+## tx ebv {"h":"hsct","s":"vir"} hd
+01
+02
+03
+04
+DNAemia 門檻沒有明確共識、各中心不同，且各實驗室檢測未調和（AST 2019）；請依院內閾值。
+EBV DNAemia 上升、無終器官病變或 PTLD
+EBV DNAemia 上升：先減免疫抑制；ECIL-6 建議 preemptive rituximab，但沒有明確的 DNAemia 門檻（證據中等、非對照研究）。
+EBV 再活化先減免疫抑制（TID 2025）
+EBV 再活化先減免疫抑制（TID 2025）
+EBV 再活化先減免疫抑制（TID 2025）
+EBV 終器官病變或 PTLD
+EBV・EBV 再活化與 PTLD（移植後）
+ECIL-6（2016）
+ECIL-6（EBV 與 PTLD）2016
+ECIL-6（EBV 與 PTLD）2016
+rituximab 375 mg/m²、1–2 次每週為單中心回溯性使用方式（本版未取得 ECIL-6 劑量條文・請確認）。
+劑量依 血液透析（HD）
+各指引說法（2）
+單中心回溯性（2025，非指引）
+實體器官移植
+建議
+情境
+抗病毒藥（acyclovir 類、ganciclovir 類）不用於 EBV 預防或治療（ECIL-6 摘要片段・請確認）。
+更改
+異體造血幹細胞移植
+移植類型
+結論：
+診斷
+：rituximab、減免疫抑制、EBV 特異性 T 細胞為一線；preemptive rituximab 被建議。各條強度本版未核對・請確認。
+：先減免疫抑制，328 人中 rituximab 只用 12 人（6.7%），無 PTLD；減量無效或終器官病變才加 rituximab。
+## tx ebv {"h":"hsct","s":"ptld"} none
+01
+02
+03
+04
+AST-IDCOP PTLD／EBV（SOT）2019
+EBV DNAemia 上升、無終器官病變或 PTLD
+EBV 特異性 T 細胞 tabelecleucel：美國尚未核准（FDA 2026-01 第二次 CRL，BLA 於 2026-10 再受理，PDUFA 2027-03-31）；台灣可及性請確認。
+EBV 終器官病變或 PTLD
+EBV・EBV 再活化與 PTLD（移植後）
+ECIL-6（2016）
+ECIL-6（EBV 與 PTLD）2016
+ECIL-6（EBV 與 PTLD）2016
+HSCT 後 EBV-PTLD：減免疫抑制、rituximab、EBV 特異性 T 細胞為一線；未篩選 DLI 或化療為二線（ECIL-6）。
+PTLD 診斷以組織切片（WHO 分類）為標準；EBV DNAemia 輔助判斷。
+Tabelecleucel（tab-cel）FDA 進度 2026
+各指引說法（1）
+實體器官移植
+建議
+情境
+抗病毒藥（acyclovir 類、ganciclovir 類）不用於 EBV 預防或治療（ECIL-6 摘要片段・請確認）。
+更改
+更新
+檢驗
+正常腎功能劑量・填腎功能 ›
+異體造血幹細胞移植
+移植類型
+結論：
+診斷
+：rituximab、減免疫抑制、EBV 特異性 T 細胞為一線；未篩選 DLI 或化療為二線。各條強度與劑量本版未核對・請確認。
+## tx ebv {"h":"hsct","s":"ptld"} c35
+01
+02
+03
+04
+AST-IDCOP PTLD／EBV（SOT）2019
+EBV DNAemia 上升、無終器官病變或 PTLD
+EBV 特異性 T 細胞 tabelecleucel：美國尚未核准（FDA 2026-01 第二次 CRL，BLA 於 2026-10 再受理，PDUFA 2027-03-31）；台灣可及性請確認。
+EBV 終器官病變或 PTLD
+EBV・EBV 再活化與 PTLD（移植後）
+ECIL-6（2016）
+ECIL-6（EBV 與 PTLD）2016
+ECIL-6（EBV 與 PTLD）2016
+HSCT 後 EBV-PTLD：減免疫抑制、rituximab、EBV 特異性 T 細胞為一線；未篩選 DLI 或化療為二線（ECIL-6）。
+PTLD 診斷以組織切片（WHO 分類）為標準；EBV DNAemia 輔助判斷。
+Tabelecleucel（tab-cel）FDA 進度 2026
+劑量依 CrCl 35 mL/min
+各指引說法（1）
+實體器官移植
+建議
+情境
+抗病毒藥（acyclovir 類、ganciclovir 類）不用於 EBV 預防或治療（ECIL-6 摘要片段・請確認）。
+更改
+更新
+檢驗
+異體造血幹細胞移植
+移植類型
+結論：
+診斷
+：rituximab、減免疫抑制、EBV 特異性 T 細胞為一線；未篩選 DLI 或化療為二線。各條強度與劑量本版未核對・請確認。
+## tx ebv {"h":"hsct","s":"ptld"} hd
+01
+02
+03
+04
+AST-IDCOP PTLD／EBV（SOT）2019
+EBV DNAemia 上升、無終器官病變或 PTLD
+EBV 特異性 T 細胞 tabelecleucel：美國尚未核准（FDA 2026-01 第二次 CRL，BLA 於 2026-10 再受理，PDUFA 2027-03-31）；台灣可及性請確認。
+EBV 終器官病變或 PTLD
+EBV・EBV 再活化與 PTLD（移植後）
+ECIL-6（2016）
+ECIL-6（EBV 與 PTLD）2016
+ECIL-6（EBV 與 PTLD）2016
+HSCT 後 EBV-PTLD：減免疫抑制、rituximab、EBV 特異性 T 細胞為一線；未篩選 DLI 或化療為二線（ECIL-6）。
+PTLD 診斷以組織切片（WHO 分類）為標準；EBV DNAemia 輔助判斷。
+Tabelecleucel（tab-cel）FDA 進度 2026
+劑量依 血液透析（HD）
+各指引說法（1）
+實體器官移植
+建議
+情境
+抗病毒藥（acyclovir 類、ganciclovir 類）不用於 EBV 預防或治療（ECIL-6 摘要片段・請確認）。
+更改
+更新
+檢驗
+異體造血幹細胞移植
+移植類型
+結論：
+診斷
+：rituximab、減免疫抑制、EBV 特異性 T 細胞為一線；未篩選 DLI 或化療為二線。各條強度與劑量本版未核對・請確認。
+## tx ebv {"h":"sot","s":"vir"} none
+01
+02
+03
+04
+AST-IDCOP 2019（SOT）
+AST-IDCOP PTLD／EBV（SOT）2019
+DNAemia 門檻沒有明確共識、各中心不同，且各實驗室檢測未調和（AST 2019）；請依院內閾值。
+EBV DNAemia 上升、無終器官病變或 PTLD
+EBV DNAemia 上升（SOT）：減免疫抑制（RIS）是驗證最多的介入；預防性策略證據品質低（AST 2019）。
+EBV 再活化先減免疫抑制（TID 2025）
+EBV 終器官病變或 PTLD
+EBV・EBV 再活化與 PTLD（移植後）
+ECIL-6（EBV 與 PTLD）2016
+各指引說法（1）
+實體器官移植
+建議
+情境
+抗病毒藥（acyclovir 類、ganciclovir 類）不用於 EBV 預防或治療（ECIL-6 摘要片段・請確認）。
+更改
+正常腎功能劑量・填腎功能 ›
+異體造血幹細胞移植
+移植類型
+結論：
+診斷
+：預防性策略證據品質低；EBV DNA 以週邊血測定並合併降低病毒量的措施；RIS 是驗證最多的介入。全文本版未取得・請確認。
+## tx ebv {"h":"sot","s":"vir"} c35
+01
+02
+03
+04
+AST-IDCOP 2019（SOT）
+AST-IDCOP PTLD／EBV（SOT）2019
+DNAemia 門檻沒有明確共識、各中心不同，且各實驗室檢測未調和（AST 2019）；請依院內閾值。
+EBV DNAemia 上升、無終器官病變或 PTLD
+EBV DNAemia 上升（SOT）：減免疫抑制（RIS）是驗證最多的介入；預防性策略證據品質低（AST 2019）。
+EBV 再活化先減免疫抑制（TID 2025）
+EBV 終器官病變或 PTLD
+EBV・EBV 再活化與 PTLD（移植後）
+ECIL-6（EBV 與 PTLD）2016
+劑量依 CrCl 35 mL/min
+各指引說法（1）
+實體器官移植
+建議
+情境
+抗病毒藥（acyclovir 類、ganciclovir 類）不用於 EBV 預防或治療（ECIL-6 摘要片段・請確認）。
+更改
+異體造血幹細胞移植
+移植類型
+結論：
+診斷
+：預防性策略證據品質低；EBV DNA 以週邊血測定並合併降低病毒量的措施；RIS 是驗證最多的介入。全文本版未取得・請確認。
+## tx ebv {"h":"sot","s":"vir"} hd
+01
+02
+03
+04
+AST-IDCOP 2019（SOT）
+AST-IDCOP PTLD／EBV（SOT）2019
+DNAemia 門檻沒有明確共識、各中心不同，且各實驗室檢測未調和（AST 2019）；請依院內閾值。
+EBV DNAemia 上升、無終器官病變或 PTLD
+EBV DNAemia 上升（SOT）：減免疫抑制（RIS）是驗證最多的介入；預防性策略證據品質低（AST 2019）。
+EBV 再活化先減免疫抑制（TID 2025）
+EBV 終器官病變或 PTLD
+EBV・EBV 再活化與 PTLD（移植後）
+ECIL-6（EBV 與 PTLD）2016
+劑量依 血液透析（HD）
+各指引說法（1）
+實體器官移植
+建議
+情境
+抗病毒藥（acyclovir 類、ganciclovir 類）不用於 EBV 預防或治療（ECIL-6 摘要片段・請確認）。
+更改
+異體造血幹細胞移植
+移植類型
+結論：
+診斷
+：預防性策略證據品質低；EBV DNA 以週邊血測定並合併降低病毒量的措施；RIS 是驗證最多的介入。全文本版未取得・請確認。
+## tx ebv {"h":"sot","s":"ptld"} none
+01
+02
+03
+04
+AST-IDCOP 2019（SOT）
+AST-IDCOP PTLD／EBV（SOT）2019
+AST-IDCOP PTLD／EBV（SOT）2019
+EBV DNAemia 上升、無終器官病變或 PTLD
+EBV 特異性 T 細胞 tabelecleucel：美國尚未核准（FDA 2026-01 第二次 CRL，BLA 於 2026-10 再受理，PDUFA 2027-03-31）；台灣可及性請確認。
+EBV 終器官病變或 PTLD
+EBV・EBV 再活化與 PTLD（移植後）
+ECIL-6（EBV 與 PTLD）2016
+PTLD 診斷以組織切片（WHO 分類）為標準；EBV DNAemia 輔助判斷。
+SOT 後 CD20+ PTLD：依反應序貫使用減免疫抑制、rituximab、細胞毒性化療；組織病理（WHO 分類）為診斷標準（AST 2019）。
+Tabelecleucel（tab-cel）FDA 進度 2026
+各指引說法（1）
+實體器官移植
+建議
+情境
+抗病毒藥（acyclovir 類、ganciclovir 類）不用於 EBV 預防或治療（ECIL-6 摘要片段・請確認）。
+更改
+更新
+檢驗
+正常腎功能劑量・填腎功能 ›
+異體造血幹細胞移植
+移植類型
+結論：
+診斷
+：CD20+ PTLD 序貫使用 RIS、rituximab、細胞毒性化療；全文本版未取得・請確認。
+## tx ebv {"h":"sot","s":"ptld"} c35
+01
+02
+03
+04
+AST-IDCOP 2019（SOT）
+AST-IDCOP PTLD／EBV（SOT）2019
+AST-IDCOP PTLD／EBV（SOT）2019
+EBV DNAemia 上升、無終器官病變或 PTLD
+EBV 特異性 T 細胞 tabelecleucel：美國尚未核准（FDA 2026-01 第二次 CRL，BLA 於 2026-10 再受理，PDUFA 2027-03-31）；台灣可及性請確認。
+EBV 終器官病變或 PTLD
+EBV・EBV 再活化與 PTLD（移植後）
+ECIL-6（EBV 與 PTLD）2016
+PTLD 診斷以組織切片（WHO 分類）為標準；EBV DNAemia 輔助判斷。
+SOT 後 CD20+ PTLD：依反應序貫使用減免疫抑制、rituximab、細胞毒性化療；組織病理（WHO 分類）為診斷標準（AST 2019）。
+Tabelecleucel（tab-cel）FDA 進度 2026
+劑量依 CrCl 35 mL/min
+各指引說法（1）
+實體器官移植
+建議
+情境
+抗病毒藥（acyclovir 類、ganciclovir 類）不用於 EBV 預防或治療（ECIL-6 摘要片段・請確認）。
+更改
+更新
+檢驗
+異體造血幹細胞移植
+移植類型
+結論：
+診斷
+：CD20+ PTLD 序貫使用 RIS、rituximab、細胞毒性化療；全文本版未取得・請確認。
+## tx ebv {"h":"sot","s":"ptld"} hd
+01
+02
+03
+04
+AST-IDCOP 2019（SOT）
+AST-IDCOP PTLD／EBV（SOT）2019
+AST-IDCOP PTLD／EBV（SOT）2019
+EBV DNAemia 上升、無終器官病變或 PTLD
+EBV 特異性 T 細胞 tabelecleucel：美國尚未核准（FDA 2026-01 第二次 CRL，BLA 於 2026-10 再受理，PDUFA 2027-03-31）；台灣可及性請確認。
+EBV 終器官病變或 PTLD
+EBV・EBV 再活化與 PTLD（移植後）
+ECIL-6（EBV 與 PTLD）2016
+PTLD 診斷以組織切片（WHO 分類）為標準；EBV DNAemia 輔助判斷。
+SOT 後 CD20+ PTLD：依反應序貫使用減免疫抑制、rituximab、細胞毒性化療；組織病理（WHO 分類）為診斷標準（AST 2019）。
+Tabelecleucel（tab-cel）FDA 進度 2026
+劑量依 血液透析（HD）
+各指引說法（1）
+實體器官移植
+建議
+情境
+抗病毒藥（acyclovir 類、ganciclovir 類）不用於 EBV 預防或治療（ECIL-6 摘要片段・請確認）。
+更改
+更新
+檢驗
+異體造血幹細胞移植
+移植類型
+結論：
+診斷
+：CD20+ PTLD 序貫使用 RIS、rituximab、細胞毒性化療；全文本版未取得・請確認。
 ## px flupep {"k":"hh"} none
 01
 02
@@ -34411,12 +35033,13 @@ Ganciclovir 注射劑仿單
 Ganciclovir 注射劑仿單
 HD
 HD
+HHV-6B（異體造血幹細胞移植後）
 IV
 IV
 IV 輸注 ≥1 小時，濃度 ≤10 mg/mL。
 PD
 PD
-app 內出現的情境（3）
+app 內出現的情境（4）
 ganciclovir
 ganciclovir
 ganciclovir
@@ -34489,12 +35112,13 @@ Ganciclovir 注射劑仿單
 Ganciclovir 注射劑仿單
 HD
 HD
+HHV-6B（異體造血幹細胞移植後）
 IV
 IV
 IV 輸注 ≥1 小時，濃度 ≤10 mg/mL。
 PD
 PD
-app 內出現的情境（3）
+app 內出現的情境（4）
 ganciclovir
 ganciclovir
 ganciclovir
@@ -34571,12 +35195,13 @@ Ganciclovir 注射劑仿單
 Ganciclovir 注射劑仿單
 HD
 HD
+HHV-6B（異體造血幹細胞移植後）
 IV
 IV
 IV 輸注 ≥1 小時，濃度 ≤10 mg/mL。
 PD
 PD
-app 內出現的情境（3）
+app 內出現的情境（4）
 ganciclovir
 ganciclovir
 ganciclovir
@@ -34899,12 +35524,13 @@ Foscarnet 仿單
 Foscarnet 仿單
 HD
 HD
+HHV-6B（異體造血幹細胞移植後）
 IV
 IV
 PD
 PD
 acyclovir 抗藥 HSV／VZV・IV
-app 內出現的情境（1）
+app 內出現的情境（2）
 foscarnet
 foscarnet
 foscarnet
@@ -34985,12 +35611,13 @@ Foscarnet 仿單
 Foscarnet 仿單
 HD
 HD
+HHV-6B（異體造血幹細胞移植後）
 IV
 IV
 PD
 PD
 acyclovir 抗藥 HSV／VZV・IV
-app 內出現的情境（1）
+app 內出現的情境（2）
 foscarnet
 foscarnet
 foscarnet
@@ -35073,12 +35700,13 @@ Foscarnet 仿單
 Foscarnet 仿單
 HD
 HD
+HHV-6B（異體造血幹細胞移植後）
 IV
 IV
 PD
 PD
 acyclovir 抗藥 HSV／VZV・IV
-app 內出現的情境（1）
+app 內出現的情境（2）
 foscarnet
 foscarnet
 foscarnet
@@ -38680,6 +39308,7 @@ HCV
 HDV
 HDV
 HEV
+HHV-6
 HIV
 HIV
 HIV PrEP
@@ -39109,6 +39738,39 @@ zanamivir
 ·
 ·
 ·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+○
+○
 ○
 ○
 ○
@@ -39220,6 +39882,7 @@ APASL HBV 2026
 ASCO 癌症病人 HBV 篩檢 2020
 ASCO/IDSA 抗微生物預防 2018
 AST-IDCOP BK 2019
+AST-IDCOP PTLD／EBV（SOT）2019
 AST-IDCOP 腺病毒 2019
 ASTCT CMV 2025
 Acyclovir 口服仿單
@@ -39245,11 +39908,14 @@ EACS 2025（v13.0）
 EASL HBV 2025
 EASL HCV 2020
 EASL HEV 2018
+EBV 再活化先減免疫抑制（TID 2025）
 ECIL BK 膀胱炎 2018
 ECIL-10（CMV，2025）
 ECIL-10（呼吸道病毒，2025／26）
 ECIL-4 腺病毒 2012
 ECIL-4（RSV）
+ECIL-6（EBV 與 PTLD）2016
+ECIL-7 HHV-6 更新（2017 投影片）
 ECIL-7（CMV，2019；已被 ECIL-10 更新）
 ECIL-9（HBV、HCV、HEV，2025）
 EDF/EADV 帶狀疱疹 2017
@@ -39264,6 +39930,8 @@ Ganciclovir 美國仿單（微生物學）
 Glecaprevir/pibrentasvir 仿單
 HBV／HIV 共感染綜述（IAS-USA 2023）
 HCT 腺病毒綜述 2023
+HHV-6 短療程 foscarnet（回溯性）
+HHV-6B 指引比較（OFID 2022）
 HIV i-Base 2025 報導
 HIV 兒童 OI 指引（VZV）
 HIV 藥物仿單（未核對）
@@ -39272,6 +39940,7 @@ IDSA COVID 2025
 IDSA COVID（住院 remdesivir）
 IDSA 流感 2018
 IDSA 腦炎 2008
+JSHCT HHV-6B 腦炎建議
 Letermovir 仿單
 Letermovir 台灣（CDE 報告）
 Letermovir 延長到 200 天（Lancet Haematol 2024）
@@ -39297,6 +39966,7 @@ STOMP／PALM007（tecovirimat）
 Sofosbuvir/velpatasvir 仿單
 Sofosbuvir/velpatasvir/voxilaprevir 仿單
 TTS BK 2024
+Tabelecleucel（tab-cel）FDA 進度 2026
 Tenofovir alafenamide 仿單
 Tenofovir disoproxil 仿單
 US PHS oPEP 2025
@@ -39308,7 +39978,7 @@ WHO HBV 2024
 WHO 流感 2024
 Zanamivir 仿單
 cidofovir 腺病毒劑量
-v1.1（2026-11-15）
+v1.2（2026-11-15）
 「更新」綠色標籤：2024 年後的改版、新核准或已發表 phase 3。各指引說法不同時分別列出，不合併。
 不列台灣公費與健保條件。台灣許可證未查證的藥標示「請確認」。
 丹麥 HSV-1 腦炎世代（CID 2026）
@@ -39316,6 +39986,7 @@ v1.1（2026-11-15）
 劑量依左側病人卡的腎功能自動調整（Cockcroft-Gault；體重 >120% IBW 用 AdjBW）。依體重給藥的藥（acyclovir IV、ganciclovir、foscarnet、cidofovir）填體重後換算 mg；acyclovir 在 BMI ≥30 時並列 IBW（仿單）與 AdjBW（部分院內指引）。
 台灣感染症醫學會流感 2024
 台灣流感抗藥監測（新聞）
+染色體整合 HHV-6（ciHHV-6）
 水痘暴露後預防（CDC／AAP）
 無指引直接建議
 疾管署 COVID 口服藥 2026
@@ -39325,7 +39996,7 @@ v1.1（2026-11-15）
 英國 ABN/BIA 腦炎 2012
 英國腦膜炎指引 2016
 衛福部 PrEP 澄清稿
-資料來源（110）
+資料來源（119）
 院內 RSV 指引（UCSF、UNMC）
 院內血液腫瘤預防（UC Davis）
 ：2025 Clinical Practice Guideline Update by the IDSA on the Treatment and Management of COVID-19: Antiviral Treatment for Mild to Moderate COVID-19 in Adults（Clin Infect Dis；9 條建議）。高風險（例：≥75 歲、嚴重免疫低下、多重危險因子）：建議 nirmatrelvir/ritonavir 5 天（發病 5 天內）或 remdesivir 3 天（7 天內）；風險增加但非高風險：建議（conditional）同上；無危險因子：不建議抗病毒藥；molnupiravir 只在無其他選擇時（conditional）。本版依 NEJM Clinician Guideline Watch（2026-05-20）、SHM／Gilead pocket card（2026-03）與 CME Outfitters 2026-01 摘要核對，全文未讀到，強度與證據等級請確認。
@@ -39337,6 +40008,7 @@ v1.1（2026-11-15）
 ：Acyclovir sodium injection US PI／加拿大 monograph：免疫低下黏膜皮膚 HSV 5 mg/kg q8h × 7 天；HSV 腦炎 10 mg/kg q8h × 10 天；免疫低下 VZV 10 mg/kg q8h × 7 天；最大相當 20 mg/kg q8h。肥胖者以理想體重（IBW）計。腎調整：CrCl >50 q8h；>25–50 q12h；>10–25 q24h；≤10：50% 劑量 q24h；HD 6 小時約清除 60%，透析後給。英國 SmPC：CAPD 劑量減半 q24h；並註明依實際體重給藥的肥胖者血中濃度較高。
 ：Acyclovir tablets／capsules US PI：帶狀疱疹 800 mg q4h 5 次／日 × 7–10 天；初次生殖器疱疹 200 mg 5 次／日 × 10 天；抑制 400 mg BID；成人水痘 800 mg QID × 5 天。腎調整：800 mg q4h → CrCl 10–25：800 mg q8h；0–10：800 mg q12h；200 mg q4h 或 400 mg q12h → CrCl 0–10：200 mg q12h。
 ：Adenovirus infection in allogeneic hematopoietic cell transplantation. Transpl Infect Dis 2023;25 Suppl 1:e14173（綜述，只取得摘要）：異體 HCT 後前 3–4 個月 AdV 感染 0–20%，兒童較高；預防疾病靠早期偵測病毒複製增加，血中達 10^2–3 copies/mL（或糞便 10^6 copies/g）即 preemptive 開始 cidofovir；cidofovir 是目前唯一建議的抗病毒藥，療效有限且有腎毒性；brincidofovir 當時不可取得，仍在其他病毒的研究中。
+：Allen UD, Preiksaitis JK; AST Infectious Diseases Community of Practice. Post-transplant lymphoproliferative disorders, Epstein-Barr virus infection, and disease in solid organ transplantation. Clin Transplant 2019;33:e13652. doi:10.1111/ctr.13652。摘要：預防性策略證據品質低；EBV DNA 以週邊血測定（檢測需調和）合併降低病毒量的措施，減免疫抑制（RIS）是驗證最多的介入；組織病理（WHO 分類）是 PTLD 診斷標準；CD20+ PTLD 依反應序貫使用 RIS、rituximab、細胞毒性化療。全文本版未取得・請確認。
 ：Aurelius E, et al. Long-term valacyclovir suppressive treatment after herpes simplex virus type 2 meningitis: a double-blind, randomized controlled trial. Clin Infect Dis 2012;54:1304–13。101 名原發或復發 HSV-2 腦膜炎，先 valacyclovir 1 g TID 1 週，之後 0.5 g BID 或安慰劑 1 年：未減少復發，停藥後第 2 年復發風險反而較高；不建議用於預防復發。
 ：Baraclude（entecavir）US PI：未曾用 nucleoside 者 0.5 mg QD；lamivudine 難治或失代償肝病 1 mg QD；空腹（餐前後至少 2 小時）。腎調整（CrCl ≥50／30–<50／10–<30／<10 與 HD、CAPD）：0.5 mg 方案 0.5 mg QD／0.25 mg QD 或 0.5 mg q48h／0.15 mg QD 或 0.5 mg q72h／0.05 mg QD 或 0.5 mg q7d；1 mg 方案 1 mg QD／0.5 mg QD 或 1 mg q48h／0.3 mg QD 或 1 mg q72h／0.1 mg QD 或 1 mg q7d；HD 於透析後給。停藥可能急性惡化；乳酸中毒警語。Boxed warning：HIV/HBV 共感染者若未同時接受有效的 HIV 治療（HAART），不建議使用 entecavir，有選出 HIV M184V 變異的風險；M184V 變異對 entecavir 敏感性下降；entecavir 不算 HAART 的一部分。
 ：Biktarvy、Tivicay、Truvada、Descovy、Apretude、Yeztugo 的美國仿單：本版未取得仿單全文。腎功能分段、交互作用與禁忌依一般臨床知識與上列指引整理，數字請以仿單與院內藥典逐項核對。BIC/FTC/TAF 與 FTC/TAF 的低腎功能切點（CrCl <30 不建議）、DTG 與 CAB 的交互作用、BIC 與 DTG 使血清肌酸酐上升（抑制腎小管分泌）均屬此類。
@@ -39349,6 +40021,7 @@ v1.1（2026-11-15）
 ：Cesaro S, et al. ECIL guidelines for the prevention, diagnosis and treatment of BK polyomavirus-associated haemorrhagic cystitis in haematopoietic stem cell transplant recipients. J Antimicrob Chemother 2018;73(1):12–21。本版只取得摘要：BKPyV-HC 於異體 HSCT 兒童 8–25%、成人 7–54%；診斷需膀胱炎症狀、肉眼血尿、尿 BKPyV 負荷 >7 log10 copies/mL，並排除其他病因，血中病毒量可作較專一的追蹤指標；無隨機對照試驗支持抗病毒預防或治療；充分水化與膀胱沖洗預防價值有限；fluoroquinolone 預防與治療無效且增加抗藥；高壓氧或纖維蛋白膠僅小型病例系列顯示邊際效果；cidofovir 雖有降低病毒量的報告，現有資料不支持常規使用。全文建議強度本版未取得。
 ：Chrisp & Clissold, Drugs 1991;41:104。Foscarnet 抑制人類疱疹病毒 DNA polymerase 與 HIV 反轉錄酶；體外抑制 HIV 複製；acyclovir 抗藥 VZV 有部分病例報告成功使用。年代較早，僅作活性範圍參考。
 ：Clin Infect Dis 2026;82(6):e1384。丹麥全國 HSV-1 腦炎世代：LP 後延遲 acyclovir >6 小時，6 個月死亡相對風險 1.85（95% CI 1.01–3.45）；英、法、丹麥指引建議入院 6 小時內開始。觀察性研究。
+：Clinical practice recommendations for the diagnosis and management of human herpesvirus-6B encephalitis after allogeneic hematopoietic stem cell transplantation（日本造血細胞移植學會 JSHCT，GRADE）。來源為轉載全文，期刊卷頁本版未核對・請確認。重點：疑似 HHV-6B 腦炎時診斷同時即給經驗性抗病毒（strong）；foscarnet 為首選（weak）、ganciclovir 次選（weak）；嚴重確診者可考慮兩藥併用（weak）；盡可能給最大劑量（strong；foscarnet 180 mg/kg/日、ganciclovir 10 mg/kg/日）；至少治療 3 週（weak）。
 ：Collins S. US CDC updated guidelines on PEP (May 2025). HIV i-Base（2025-05）：整理 CDC 2025 nPEP 更新；指出首選改為第二代 INSTI（bictegravir 或 dolutegravir）＋ tenofovir（TAF 或 TDF）＋ XTC，PEP 仍建議 24 小時內、不晚於 72 小時開始；並註記英國 BASHH/BHIVA 2021 指引仍建議 raltegravir ＋ 另開 TD/FTC。二手報導，英國指引原文本版未取得。
 ：Copegus（ribavirin）US PI 與 EASL 2020：與 DAA 併用時，成人常用 1,000 mg／日（<75 kg）或 1,200 mg／日（≥75 kg）分次隨餐；Child-Pugh C 或貧血者可由 600 mg／日起，依耐受度調整。腎功能：CrCl 30–50 mL/min 隔日交替 200 mg 與 400 mg；CrCl <30 或 HD 200 mg QD（Copegus 仿單，與 DAA 併用的腎功能劑量請確認）。孕婦禁用、男女伴侶避孕至停藥後 6 個月。
 ：Corcorran & Kim, Top Antivir Med 2023;31:14。共感染者的 ART 以 TDF 或 TAF 加 emtricitabine 或 lamivudine 為骨幹（同時作用於 HBV 與 HIV）；考慮不含 tenofovir 的雙藥方案時需另評估 HBV。
@@ -39356,6 +40029,7 @@ v1.1（2026-11-15）
 ：EASL Clinical Practice Guidelines on hepatitis E virus infection. J Hepatol 2018;68:1256–71. doi:10.1016/j.jhep.2018.03.005。重點（來源：摘要與投影片整理，非全文）：嚴重急性 HEV 或 ACLF 可考慮 ribavirin（C2）；實體器官移植的慢性 HEV 診斷時盡可能減少免疫抑制（B1）；HEV RNA 偵測後 3 個月仍持續者建議 ribavirin 單用 12 週（B1）；12 週後血清或糞便仍可測得 HEV RNA 者可續用到共 6 個月（C2）。ribavirin 劑量本版未取得原文・請確認。
 ：EASL Clinical Practice Guidelines on the management of hepatitis B virus infection（J Hepatol 2025）。首選 entecavir、tenofovir disoproxil、tenofovir alafenamide；不建議 lamivudine、adefovir、telbivudine。PDF 表 14（治療分層）文字擷取不完整，分層細節請以原文確認。
 ：EASL recommendations on treatment of hepatitis C: Final update of the series（J Hepatol 2020;73:1170）。pangenotypic 方案：glecaprevir/pibrentasvir 8 週（無肝硬化）、sofosbuvir/velpatasvir 12 週；失代償肝硬化 sofosbuvir/velpatasvir ＋ ribavirin 12 週。2023 更新本版未取得・請確認。
+：ECIL-7 CMV and HHV-6 update group（Ljungman P, de la Camara R, Crocchiolo R, Einsele H, Hubacek P, Hill J）。HHV-6 update final slide set, 2017-09-23。本條來源為投影片（土耳其 EKMUD 轉載），期刊版（2019）本版未核對・請確認。重點：HSCT 後不建議常規篩檢血中 HHV-6 DNA，不建議預防或 preemptive 抗病毒（DIIu）；HHV-6B 腦炎用 foscarnet 或 ganciclovir（AIIu），依病人狀況選擇，foscarnet 90 mg/kg bid、ganciclovir 5 mg/kg bid（AIIu），至少 3 週並到血中（可能時含腦脊髓液）HHV-6 DNA 清除（BIII）；可考慮兩藥併用（CIII）；可能時減免疫抑制（BIII）；cidofovir 資料不足、無建議。
 ：Epclusa（sofosbuvir/velpatasvir）US PI：400/100 mg QD；無肝硬化或代償性肝硬化 12 週；Child-Pugh B、C 併用 ribavirin 12 週。美國仿單 sofosbuvir 已不限 eGFR（2019 起 eGFR <30 與透析可用）。避免併用 amiodarone（嚴重心搏過緩）、rifampin、St. John's Wort；質子幫浦抑制劑、H2 阻斷劑、制酸劑有交互作用（依仿單時程）。HBV 再活化警語。
 ：European AIDS Clinical Society Guidelines v13.0（2025-10）；Ambrosioni J, et al. HIV Med 2025。本版依新聞整理（aidsmap、EATG、HIV i-Base；標題與摘要），未取得全文：PEP 首選 BIC/FTC/TAF；PrEP 納入長效 CAB 與 lenacapavir；近 6 週有高風險暴露或使用長效藥時，PrEP 前建議 HIV RNA；對所有人支持事件型 PrEP（2:1:1 或 2:7）；已在口服 PrEP 者暴露後盡快服 2 錠，之後每日 1 錠直到醫師評估；在 PrEP 或長效 CAB 期間感染者，起始治療避免雙藥，CAB 感染者用含 boosted darunavir 的三藥。請以原文確認。
 ：Extended-duration letermovir prophylaxis after allogeneic HSCT（MK-8228-040）. Lancet Haematol 2024;11:e127–e135（phase 3，第一作者請確認）：高風險 R+ 延長至 200 天，降低晚發臨床顯著 CMV 感染，安全性相近。
@@ -39382,6 +40056,7 @@ v1.1（2026-11-15）
 ：Livtencity（maribavir）EMA 產品資訊：與 ganciclovir 或 valganciclovir 併用列為禁忌（maribavir 抑制 pUL97，可能拮抗其活性）。
 ：Livtencity（maribavir）US PI：400 mg BID（美國未定療程；EU 8 週），治療移植後對 ganciclovir、valganciclovir、cidofovir 或 foscarnet 難治（含或不含抗藥）之 CMV。美國：併用 carbamazepine 或 rifabutin 增為 800 mg BID，phenytoin 或 phenobarbital 增為 1,200 mg BID；EU：無法避免強或中度 CYP3A 誘導劑（carbamazepine、efavirenz、phenobarbital、phenytoin）時 1,200 mg BID，rifampin、rifabutin、St. John's Wort 不建議。禁止與 ganciclovir、valganciclovir 併用。會升高 CYP3A、P-gp、BCRP 敏感受質濃度（如 tacrolimus）。台灣：克巨染膜衣錠（台灣武田）。美國仿單：不建議與 ganciclovir、valganciclovir 併用（maribavir 抑制 pUL97，可能拮抗其活性）；EU SmPC 則列為禁忌（見 MAR_EU）。
 ：Ljungman P, et al. Lancet Infect Dis 2025;25(8):e451–e462. doi:10.1016/S1473-3099(25)00069-6。更新 ECIL-7（2019）：涵蓋 CMV 血清狀態評估、免疫監測、letermovir 預防、難治與抗藥 CMV、兒童；CAR-T 與 T 細胞接合型抗體列為新增風險族群。本版取得前言與關鍵訊息，建議強度（PDF 文字 OCR 錯亂）未核對・請確認。
+：MJHID 2018 病例報告與綜述：約 2% 人口帶染色體整合 HHV-6（ciHHV-6），每個體細胞都有病毒基因組，血中 DNA 拷貝數極高但沒有病毒再活化。來源為病例報告，比例請確認。
 ：MSD Manual Professional：herpes zoster（2026-05 更新）。famciclovir、valacyclovir 口服生體可用率較 acyclovir 好，為優先；一般 7–10 天；免疫低下者有專家建議延長到全部結痂；輕度免疫低下可口服，嚴重免疫低下用 IV acyclovir；懷孕以 acyclovir 優先、valacyclovir 可用，famciclovir 懷孕資料少一般不建議。
 ：Maribavir 體外對 CMV 與 EBV 有抑制作用，對 HSV-1、HSV-2、VZV、HHV-6、HHV-8 無活性；體外拮抗 ganciclovir（約 13 倍），對 cidofovir、foscarnet 無影響。
 ：Marin M, et al. MMWR 2013（VariZIG）與 AAP Red Book 2018（Lachiewicz, Prev Med Rep 2019 表 3 整理）：無免疫力且高風險（免疫低下、懷孕等）：VariZIG 125 IU/10 kg（最多 625 IU）IM，10 天內（理想 96 小時內）；無 VariZIG → IVIG 400 mg/kg；兩者皆無 → 暴露後第 7–10 天開始 acyclovir 或 valacyclovir 共 7 天（AAP：acyclovir 20 mg/kg QID、上限 800 mg／次；valacyclovir 20 mg/kg TID、上限 1 g／次）。可接種者 3–5 天內接種疫苗。
@@ -39394,20 +40069,24 @@ v1.1（2026-11-15）
 ：NIH／NIAID 2025-03-12 新聞稿（Wilkin T, et al. CROI 2025）：STOMP（clade II，7 國）tecovirimat 14 天單用未縮短病灶消退時間、也未改善疼痛（第 29 天消退約 83% vs 84%），安全性可接受；PALM007（clade I，剛果民主共和國，Tshiani O, et al. IDWeek 2024）同樣無臨床效益；兩試驗皆提前停止。兒童、孕婦、嚴重免疫低下或特定皮膚病者在 STOMP 分在 open-label 組，無隨機療效資料。
 ：New York State Department of Health AIDS Institute. PEP to Prevent HIV Infection, Tables 2–5（2025-12-05）。≥40 kg 首選：bictegravir 50 mg／TAF 25 mg／emtricitabine 200 mg 單錠每日 1 次，或 dolutegravir 50 mg 每日 1 次加 NRTI 骨幹；皆口服 28 天；dolutegravir 併用 metformin 限每日 1 g；基線 CrCl <50 mL/min 時 3TC／FTC ＋ TDF 需調整劑量。本版為搜尋摘錄，非全文。
 ：Ontario Health. Summary of Recommendations for Drug Therapy for Adults with COVID-19（2025-07）。嚴重度定義（SpO2 >92%）；remdesivir 若 nirmatrelvir/ritonavir 不能用，7 天內開始；嚴重者開始 remdesivir 後進展為危急仍完成療程。
+：Open Forum Infect Dis 2022;9(8):ofac398（綜述）：比較 ECIL 2019、JSHCT 2019、ASTCT 2021（含臍帶血移植）對 HHV-6B 監測與治療的建議；一線為 ganciclovir 與 foscarnet；兩藥併用可能減少長期神經後遺症但未證實降低死亡率，指引僅建議嚴重者考慮；無 HHV-6B 腦炎的隨機試驗，療程不明。ASTCT 2021 條文本版未核對・請確認。
 ：Open Forum Infect Dis 2022（ofac644）醫師問卷（223 人）：39% 一律治療、34% 重症才治療、10% 很少治療；最常用 IV acyclovir 後改 valacyclovir（61%）；IV 劑量多為 10 mg/kg TID（91%）；總療程中位數 7 天（IQR 7–10）；58% 對免疫低下者處置不同（延長療程或 IV）。屬實務調查，非指引。
 ：PAXLOVID（nirmatrelvir tablets; ritonavir tablets）US PI。eGFR ≥60：300/100 mg BID × 5 天；30–<60：150/100 mg BID；<30（含 HD）：第 1 天 300/100 mg 一次，第 2–5 天 150/100 mg QD，透析日於 HD 後給。Child-Pugh C 不建議。禁止併用：alfuzosin、amiodarone、apalutamide、carbamazepine、colchicine（腎或肝功能不全）、dihydroergotamine、dronedarone、eletriptan、enzalutamide、eplerenone、ergotamine、finerenone、flecainide、flibanserin、ivabradine、lomitapide、lovastatin、lumacaftor/ivacaftor、lurasidone、methylergonovine、口服 midazolam、naloxegol、phenobarbital、phenytoin、pimozide、primidone、propafenone、quinidine、ranolazine、rifampin、rifapentine、St. John's Wort、sildenafil（PAH 用）、silodosin、simvastatin、suzetrigine、tolvaptan、triazolam、ubrogepant、voclosporin。lovastatin、simvastatin 可暫停後使用。嚴重不良反應最常見的併用藥為 calcineurin inhibitor（tacrolimus、cyclosporine）。警語：ritonavir 為 HIV protease inhibitor，未控制或未診斷 HIV-1 感染者使用，HIV 可能對 protease inhibitor 產生抗藥。
 ：POZ 2024-12 報導 DHHS 更新：HIV/HBV 共感染者的 ARV 要有兩個對兩種病毒都有活性的藥（TDF 或 TAF 加 FTC 或 3TC）；採不含 NRTI 的方案（含長效 cabotegravir＋rilpivirine）需另加 HBV 治療，因兩者皆無 HBV 活性；避免未加 HBV 藥就轉 dolutegravir/lamivudine。僅取得二手報導，DHHS 原文請確認。
 ：Panel on Opportunistic Infections in Children with HIV. Varicella-Zoster Virus（clinicalinfo.hiv.gov）：acyclovir 抗藥的 VZV 對 valacyclovir、famciclovir、ganciclovir 也全部抗藥；懷疑抗藥時盡量做病毒分離與藥敏。
 ：Patel RR, et al. Clinical Recommendation for the Use of Injectable Lenacapavir as HIV Preexposure Prophylaxis — United States, 2025. MMWR Morb Mortal Wkly Rep 2025;74(35):541–549（2025-09-18）。strongly recommended，高證據確定性（PURPOSE 1、PURPOSE 2），≥35 kg 且可受益於 PrEP 者。第 1 天 927 mg SC（2 針各 1.5 mL，相隔至少 4 吋）＋口服 600 mg，第 2 天口服 600 mg，之後每 26 週（±2 週）927 mg SC。每次注射前需血液實驗室或快篩 HIV Ag/Ab（7 天內），不可用口腔唾液抗體檢驗；起始建議加 HIV-1 RNA；中度與強效 CYP3A 誘導劑需補充劑量，停藥後 9 個月內仍可升高部分藥物濃度；懷孕者經共享決策可開始或繼續；漏打：晚 ≥14 天可用口服 300 mg 每週橋接（<6 個月）。腎功能內容本版取得的文字未論及。
 ：Paxlovid EU／UK SmPC（emc）：重度腎功能不全（eGFR <30）或腎衰竭禁用（劑量未確定）；中度 150/100 mg BID。與美國仿單（eGFR <30 有劑量）不同；歐洲最新版是否已更新請確認。
+：Pierre Fabre／Atara 新聞（2026-10）：EBV 特異性異體 T 細胞（Ebvallo），用於 ≥2 歲 SOT 或 HCT 後 EBV+ PTLD 經治療失敗者。FDA 於 2025-01 與 2026-01 兩度發 CRL（第二次質疑 ALLELE 試驗可否支持加速核准）；BLA 於 2026-10-14 再次受理，PDUFA 目標日 2027-03-31。美國目前未核准。台灣可及性本版未查證・請確認。
 ：Prevymis（letermovir）SmPC／US PI：allo-HSCT CMV R+（≥30 kg）480 mg QD，移植日至移植後 28 天內開始，用到第 100 天，晚發風險高者可用到第 200 天；腎移植 D+/R−（≥40 kg）480 mg QD，移植日至 7 天內開始，用到第 200 天。併用 cyclosporine 時 240 mg QD。輕、中、重度腎功能不全不需調整；ESRD（含透析）無建議；靜脈劑型含 cyclodextrin，CrCl <50 可能蓄積。禁止併用 pimozide。無 HSV／VZV 活性。
 ：Rapivab（peramivir）US PI 與 CDC 表：單次 600 mg IV（CrCl ≥50）；CrCl 30–49：200 mg；10–29：100 mg；HD：透析後依 CrCl 給藥。台灣上市品為瑞貝塔（Rapiacta），用法與美國仿單不同，請以院內仿單確認。
 ：Relenza（zanamivir）吸入劑仿單與 CDC 表 1：治療 10 mg（2 吸）BID × 5 天、預防 10 mg QD；5 天療程不需腎調整；不建議用於有氣喘、COPD 等呼吸道疾病者。
 ：Solomon T, et al. Management of suspected viral encephalitis in adults – ABN and BIA National Guidelines. J Infect 2012（Hosp Med 2014 流程圖）。入院 6 小時內開始 IV acyclovir；確診 HSV/VZV 腦炎 14 天後重做 LP；免疫低下（及 3 個月–12 歲兒童）21 天；PCR 仍陽性則繼續。
+：Styczynski J, et al. Management of Epstein-Barr virus infections and post-transplant lymphoproliferative disorders in patients after allogeneic HSCT: Sixth European Conference on Infections in Leukemia (ECIL-6) guidelines. Haematologica 2016（卷頁本版未核對）。本版取得摘要與前言：allo-HSCT 病人與捐贈者移植前都應驗 EBV 抗體；治療策略含預防、preemptive、標靶治療；rituximab、減免疫抑制、EBV 特異性 T 細胞為一線，未篩選 DLI 或化療為二線；抗病毒藥不建議（摘要片段）。各條強度與 DNAemia 門檻未核對・請確認。2021 年綜述指出 HCT 最新指引仍是 ECIL-6。
 ：TVBS 2025-10-03 報導引述疾管署署長：本流感季 A(H1N1) 約 6.5% 對 oseltamivir 及 peramivir 出現抗藥突變（前一季 3.2%）；A(H3N2) 與 B 型未檢出；baloxavir 對所有病毒株仍有效。新聞來源，請以疾管署原始資料確認。
 ：Tamiflu（oseltamivir）US Prescribing Information。治療 75 mg BID × 5 天；預防 75 mg QD 至少 10 天（社區流行最多 6 週）。腎調整：治療 CrCl >30–60：30 mg BID；>10–30：30 mg QD；HD：30 mg 後每次 HD 後 30 mg（療程 ≤5 天）；CAPD：單次 30 mg；ESRD 未透析不建議。預防 CrCl >30–60：30 mg QD；>10–30：30 mg QOD；HD：隔次 HD 後 30 mg；CAPD：每週 30 mg。
 ：Tanner MR, et al. Antiretroviral Postexposure Prophylaxis After Sexual, Injection Drug Use, or Other Nonoccupational Exposure to HIV — CDC Recommendations, United States, 2025. MMWR Recomm Rep 2025;74(RR-1):1–56（2025-05-08）。本版依 CDC 網頁、PDF 前段與 PMC 摘要核對；劑量表（表 4–6）與 GRADE 附錄未取得。nPEP：暴露有實質傳播風險且來源 HIV 陽性未持續病毒抑制或狀態不明；72 小時內、最好 24 小時內開始，不因檢驗未回而延後；療程 28 天；首選 BIC/FTC/TAF，或 DTG ＋（TAF 或 TDF）＋（FTC 或 3TC）（very low certainty）；不建議 DTG/3TC 雙藥；超過 72 小時證據不足；來源已知持續病毒抑制一般不需 nPEP；懷孕與哺乳非禁忌，cobicistat 加強的 atazanavir、darunavir 與 elvitegravir 不建議用於懷孕；DTG 併用 metformin 限每日 1 g；基線 HIV Ag/Ab、Cr、ALT、AST、HBV、懷孕檢驗；追蹤 4–6 週與 12 週 Ag/Ab＋NAT；6 個月內曾打長效注射 PrEP 者起始加 HIV NAT；nPEP 結束可無縫銜接 PrEP。所有 nPEP 用藥皆為 off-label。
 ：Taplitz RA, et al. Antimicrobial Prophylaxis for Adult Patients With Cancer-Related Immunosuppression: ASCO and IDSA Clinical Practice Guideline Update. J Clin Oncol 2018;36:3043–54（2023-03 確認現行）。建議 3.1：HSV 血清陽性、接受 allo-HSCT 或白血病誘導化療者以 nucleoside analog（如 acyclovir）預防（evidence high, strong）；至白血球恢復或黏膜炎緩解（較晚者），反覆發作或 GVHD 可延長，可延續作 VZV 預防最多 1 年。
+：Transpl Infect Dis 2025（doi 10.1111/tid.70124，巴西單中心回溯性，allo-HCT 328 人）：EBV 再活化 178 人（累積 54.6%），先減免疫抑制、rituximab（375 mg/m²，1–2 次每週）只用於減量無效、終器官病變或 PTLD；rituximab 僅 12 人（6.7%），無 PTLD。為觀察性、單中心；該文指出 preemptive rituximab 被建議但沒有明確的 EBV DNAemia 門檻（證據強度中等、來自非對照研究）。
 ：Tunkel AR, et al. The Management of Encephalitis: Clinical Practice Guidelines by the IDSA. Clin Infect Dis 2008;47:303–27。HSV 腦炎：IV acyclovir 10 mg/kg q8h 14–21 天（A-III）；疑似時盡快經驗性開始。VZV 腦炎：acyclovir（B-III）。本版依二手摘要（MedLink、AMBOSS）核對 HSV 部分，VZV 劑量與療程請確認。
 ：UC Davis Health. Antimicrobial prophylaxis for adult hematology-oncology patients（引用 NCCN Prevention and Treatment of Cancer-Related Infections 1.2017、ASCO 2013、IDSA 2011）：proteasome inhibitor（bortezomib、carfilzomib）常規 VZV 預防；SCT 由 conditioning 前 1 天到移植後 365 天；acyclovir 400 mg PO BID（非移植），SCT 劑量依院內表。屬機構指引；NCCN 原文需登入。
 ：UCSF Medical Center Guideline for Management of Adult RSV（2022–2023）與 UNMC oral ribavirin guideline（2024 修訂）：ribavirin 只用於 HSCT／血液腫瘤與肺移植等特定族群，不經驗性使用；肺移植上呼吸道一般不治療（咳嗽痰多或 3 個月內移植／加強免疫抑制可考慮）、下呼吸道治療；口服劑量各中心不同（例：10–20 mg/kg/日分 3 次 × 7–10 天）。屬機構指引，非學會指引。
@@ -39418,6 +40097,7 @@ v1.1（2026-11-15）
 ：Vemlidy（tenofovir alafenamide）US PI：25 mg QD 隨餐。CrCl ≥15 不需調整；<15 未透析無建議；HD 病人 25 mg QD，透析日於 HD 後給。禁止併用 rifampin 等強 P-gp 誘導劑；停藥可能急性惡化。HIV：Vemlidy 單用不建議用於 HIV-1 感染（可能產生 HIV 抗藥），開始前先篩 HIV，共感染者須用適當的 HIV 完整方案。
 ：Viread（tenofovir disoproxil fumarate）US PI：300 mg QD。腎調整：CrCl ≥50 q24h；30–49 q48h；10–29 q72–96h；HD 每週 1 次（或累計 12 小時透析後）；未透析 <10 無建議。腎功能、骨密度（磷）監測；停藥可能急性惡化。
 ：Vistide（cidofovir）US PI：誘導 5 mg/kg IV 每週 1 次 × 2 週，維持 5 mg/kg 每 2 週；每次須併用 probenecid（輸注前 3 小時 2 g、輸注後 2 與 8 小時各 1 g）與 1 L 生理食鹽水預先水化。SCr >1.5 mg/dL、CrCl ≤55 mL/min 或尿蛋白 ≥100 mg/dL（≥2+）禁止開始；用藥中 Cr 上升 0.3–0.4 → 維持劑量降為 3 mg/kg，上升 ≥0.5 或 ≥3+ 蛋白尿停藥；每次給藥前 48 小時內檢查 Cr 與尿蛋白。
+：Vittayawacharin P, et al. Once-daily foscarnet is effective for human herpesvirus 6 reactivation after hematopoietic stem cell transplantation（單中心回溯性，allo-HSCT 成人 11 人，foscarnet 60–90 mg/kg 每日一次 × 7 天，第 7 天血漿 HHV-6 DNA 皆測不到）。非指引、無對照；與 ECIL「不建議 preemptive」不同方向，列作對照。
 ：Vosevi（sofosbuvir/velpatasvir/voxilaprevir）US PI：400/100/100 mg QD 隨餐，12 週；用於曾接受含 NS5A 抑制劑方案失敗者（或基因型 1a、3 曾接受不含 NS5A 的 sofosbuvir 方案）。Child-Pugh B、C 不建議。
 ：WHO. Clinical practice guidelines for influenza（2024-09-12；BMJ 2026;392:e087397 摘要）。非重症：高風險者 baloxavir（conditional）；oseltamivir、zanamivir 用於非重症為 strong against；peramivir、laninamivir conditional against；低風險者 baloxavir conditional against。重症：oseltamivir（conditional）、peramivir conditional against。暴露後預防：季節性流感只建議極高風險者（conditional）。
 ：WHO. Guidelines for the prevention, diagnosis, care and treatment for people with chronic hepatitis B infection（2024-03）。擴大治療條件（含 APRI >0.5 或 DNA >2,000 IU/mL 合併 ALT 異常等）；首選 tenofovir 或 entecavir。細節請確認。

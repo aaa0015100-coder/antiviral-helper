@@ -393,10 +393,10 @@ details.pf>summary{font-size:.86rem}
 <div id="ov" class="ov" hidden><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="ovT"><h3 id="ovT"></h3><div id="ovB"></div><button class="btn" type="button" data-act="ov-close">關閉</button></div></div>
 <div id="toast" class="toast" hidden></div>
 <script>
-const APP_VERSION = "1.1";
+const APP_VERSION = "1.2";
 const CHECKED = "2026-11-15";
 const VERSION = "v" + APP_VERSION, VERIFIED = CHECKED;
-const SCOPE = "成人・流感、COVID-19、RSV、HSV、VZV、CMV、HBV、HDV、HCV、HEV、HIV（PEP、PrEP）、BK、adenovirus、mpox（治療、預防、抗藥、抗病毒譜）";
+const SCOPE = "成人・流感、COVID-19、RSV、HSV、VZV、CMV、HBV、HDV、HCV、HEV、HIV（PEP、PrEP）、BK、adenovirus、HHV-6、EBV／PTLD、mpox（治療、預防、抗藥、抗病毒譜）";
 
 /* ---------------- 出處 ---------------- */
 const REF = {
@@ -457,6 +457,15 @@ const REF = {
   MAR_LABEL:{s:"Maribavir 仿單",f:"Livtencity（maribavir）US PI：400 mg BID（美國未定療程；EU 8 週），治療移植後對 ganciclovir、valganciclovir、cidofovir 或 foscarnet 難治（含或不含抗藥）之 CMV。美國：併用 carbamazepine 或 rifabutin 增為 800 mg BID，phenytoin 或 phenobarbital 增為 1,200 mg BID；EU：無法避免強或中度 CYP3A 誘導劑（carbamazepine、efavirenz、phenobarbital、phenytoin）時 1,200 mg BID，rifampin、rifabutin、St. John's Wort 不建議。禁止與 ganciclovir、valganciclovir 併用。會升高 CYP3A、P-gp、BCRP 敏感受質濃度（如 tacrolimus）。台灣：克巨染膜衣錠（台灣武田）。美國仿單：不建議與 ganciclovir、valganciclovir 併用（maribavir 抑制 pUL97，可能拮抗其活性）；EU SmPC 則列為禁忌（見 MAR_EU）。",u:"https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/215596s004lbl.pdf"},
   ECIL7_CMV:{s:"ECIL-7（CMV，2019；已被 ECIL-10 更新）",f:"【ECIL-10（2025）已更新此指引，本條保留供對照】Ljungman P, et al. Guidelines for the management of cytomegalovirus infection in patients with haematological malignancies and after stem cell transplantation from the 2017 ECIL-7. Lancet Infect Dis 2019;19:e260–e272。本版未取得全文，HSCT 的 preemptive 閾值與療程請確認；成大藥劑部摘要：高劑量 acyclovir／valacyclovir 可減少感染但不減少疾病，foscarnet 毒性大不適合長期預防，letermovir 減少感染且無明顯毒性。",u:"https://nckuhpharmacy.hosp.ncku.edu.tw/var/file/72/1072/img/723/653973735.pdf"},
   ECIL10_CMV:{s:"ECIL-10（CMV，2025）",f:"Ljungman P, et al. Lancet Infect Dis 2025;25(8):e451–e462. doi:10.1016/S1473-3099(25)00069-6。更新 ECIL-7（2019）：涵蓋 CMV 血清狀態評估、免疫監測、letermovir 預防、難治與抗藥 CMV、兒童；CAR-T 與 T 細胞接合型抗體列為新增風險族群。本版取得前言與關鍵訊息，建議強度（PDF 文字 OCR 錯亂）未核對・請確認。"},
+  ECIL7_HHV6:{s:"ECIL-7 HHV-6 更新（2017 投影片）",f:"ECIL-7 CMV and HHV-6 update group（Ljungman P, de la Camara R, Crocchiolo R, Einsele H, Hubacek P, Hill J）。HHV-6 update final slide set, 2017-09-23。本條來源為投影片（土耳其 EKMUD 轉載），期刊版（2019）本版未核對・請確認。重點：HSCT 後不建議常規篩檢血中 HHV-6 DNA，不建議預防或 preemptive 抗病毒（DIIu）；HHV-6B 腦炎用 foscarnet 或 ganciclovir（AIIu），依病人狀況選擇，foscarnet 90 mg/kg bid、ganciclovir 5 mg/kg bid（AIIu），至少 3 週並到血中（可能時含腦脊髓液）HHV-6 DNA 清除（BIII）；可考慮兩藥併用（CIII）；可能時減免疫抑制（BIII）；cidofovir 資料不足、無建議。"},
+  JSHCT_HHV6:{s:"JSHCT HHV-6B 腦炎建議",f:"Clinical practice recommendations for the diagnosis and management of human herpesvirus-6B encephalitis after allogeneic hematopoietic stem cell transplantation（日本造血細胞移植學會 JSHCT，GRADE）。來源為轉載全文，期刊卷頁本版未核對・請確認。重點：疑似 HHV-6B 腦炎時診斷同時即給經驗性抗病毒（strong）；foscarnet 為首選（weak）、ganciclovir 次選（weak）；嚴重確診者可考慮兩藥併用（weak）；盡可能給最大劑量（strong；foscarnet 180 mg/kg/日、ganciclovir 10 mg/kg/日）；至少治療 3 週（weak）。"},
+  OFID_HHV6_22:{s:"HHV-6B 指引比較（OFID 2022）",f:"Open Forum Infect Dis 2022;9(8):ofac398（綜述）：比較 ECIL 2019、JSHCT 2019、ASTCT 2021（含臍帶血移植）對 HHV-6B 監測與治療的建議；一線為 ganciclovir 與 foscarnet；兩藥併用可能減少長期神經後遺症但未證實降低死亡率，指引僅建議嚴重者考慮；無 HHV-6B 腦炎的隨機試驗，療程不明。ASTCT 2021 條文本版未核對・請確認。"},
+  FOS_HHV6_OBS:{s:"HHV-6 短療程 foscarnet（回溯性）",f:"Vittayawacharin P, et al. Once-daily foscarnet is effective for human herpesvirus 6 reactivation after hematopoietic stem cell transplantation（單中心回溯性，allo-HSCT 成人 11 人，foscarnet 60–90 mg/kg 每日一次 × 7 天，第 7 天血漿 HHV-6 DNA 皆測不到）。非指引、無對照；與 ECIL「不建議 preemptive」不同方向，列作對照。"},
+  CIHHV6:{s:"染色體整合 HHV-6（ciHHV-6）",f:"MJHID 2018 病例報告與綜述：約 2% 人口帶染色體整合 HHV-6（ciHHV-6），每個體細胞都有病毒基因組，血中 DNA 拷貝數極高但沒有病毒再活化。來源為病例報告，比例請確認。"},
+  ECIL6_EBV:{s:"ECIL-6（EBV 與 PTLD）2016",f:"Styczynski J, et al. Management of Epstein-Barr virus infections and post-transplant lymphoproliferative disorders in patients after allogeneic HSCT: Sixth European Conference on Infections in Leukemia (ECIL-6) guidelines. Haematologica 2016（卷頁本版未核對）。本版取得摘要與前言：allo-HSCT 病人與捐贈者移植前都應驗 EBV 抗體；治療策略含預防、preemptive、標靶治療；rituximab、減免疫抑制、EBV 特異性 T 細胞為一線，未篩選 DLI 或化療為二線；抗病毒藥不建議（摘要片段）。各條強度與 DNAemia 門檻未核對・請確認。2021 年綜述指出 HCT 最新指引仍是 ECIL-6。"},
+  AST_PTLD19:{s:"AST-IDCOP PTLD／EBV（SOT）2019",f:"Allen UD, Preiksaitis JK; AST Infectious Diseases Community of Practice. Post-transplant lymphoproliferative disorders, Epstein-Barr virus infection, and disease in solid organ transplantation. Clin Transplant 2019;33:e13652. doi:10.1111/ctr.13652。摘要：預防性策略證據品質低；EBV DNA 以週邊血測定（檢測需調和）合併降低病毒量的措施，減免疫抑制（RIS）是驗證最多的介入；組織病理（WHO 分類）是 PTLD 診斷標準；CD20+ PTLD 依反應序貫使用 RIS、rituximab、細胞毒性化療。全文本版未取得・請確認。"},
+  TID_EBV25:{s:"EBV 再活化先減免疫抑制（TID 2025）",f:"Transpl Infect Dis 2025（doi 10.1111/tid.70124，巴西單中心回溯性，allo-HCT 328 人）：EBV 再活化 178 人（累積 54.6%），先減免疫抑制、rituximab（375 mg/m²，1–2 次每週）只用於減量無效、終器官病變或 PTLD；rituximab 僅 12 人（6.7%），無 PTLD。為觀察性、單中心；該文指出 preemptive rituximab 被建議但沒有明確的 EBV DNAemia 門檻（證據強度中等、來自非對照研究）。"},
+  TABCEL26:{s:"Tabelecleucel（tab-cel）FDA 進度 2026",f:"Pierre Fabre／Atara 新聞（2026-10）：EBV 特異性異體 T 細胞（Ebvallo），用於 ≥2 歲 SOT 或 HCT 後 EBV+ PTLD 經治療失敗者。FDA 於 2025-01 與 2026-01 兩度發 CRL（第二次質疑 ALLELE 試驗可否支持加速核准）；BLA 於 2026-10-14 再次受理，PDUFA 目標日 2027-03-31。美國目前未核准。台灣可及性本版未查證・請確認。"},
   ASTCT_CMV25:{s:"ASTCT CMV 2025",f:"Khawaja F, Zamora D, Yong MK, Hakki M, et al. Series #11: Updated Cytomegalovirus Guidelines in Hematopoietic Cell Transplant and Cellular Therapy Recipients. Transplant Cell Ther 2025（2025-06-20 接受）。更新 2021 版：移植前血清、letermovir 預防期間、maribavir 的地位等。本版只看到摘要片段・內容請確認。"},
   ECIL10_CARV:{s:"ECIL-10（呼吸道病毒，2025／26）",f:"von Lilienfeld-Toal M, et al. Community-acquired respiratory virus infections in patients with haematological malignancies or haematopoietic cell transplantation: updated recommendations from ECIL-10. Lancet Infect Dis 2026;26(3):e193–e206（2025-08-27 線上發表）。doi:10.1016/S1473-3099(25)00365-2。更新 ECIL-4（2013）。摘要：RSV 已核准疫苗可依當地核准考慮（證據少）；免疫缺陷評分高的 HCT 受者建議口服 ribavirin 或 IVIG，或兩者併用。各條強度本版未取得全文・請確認。"},
   ECIL9_HEP:{s:"ECIL-9（HBV、HCV、HEV，2025）",f:"Mikulska M, et al. Updated recommendations for the management of hepatitis B, C, and E virus infections in patients with haematological malignancies and those undergoing HCT: ECIL-9. Lancet Haematol 2025（PMID 40306834）。本版只確認其存在，內容未核對・請確認。"},
@@ -667,6 +676,7 @@ const REG = {
 const O = (tier,regs,x)=>Object.assign({tier,regs,alt:true},x||{});
 const N = (t,src,lvl,upd)=>({t,src,lvl,upd});
 const UPDN = {
+  TABCEL26:"Tabelecleucel：FDA 2026-01 第二次 CRL，BLA 於 2026-10 再受理，PDUFA 2027-03-31；美國尚未核准 EBV+ PTLD 用藥。",
   ECIL10:"ECIL-10 CMV（Lancet Infect Dis 2025）：更新 2019 年 ECIL-7；涵蓋免疫監測、letermovir 預防、難治與抗藥 CMV；CAR-T 與 T 細胞接合型抗體為新增風險族群。",
   ECIL10C:"ECIL-10 呼吸道病毒（Lancet Infect Dis 2026）：更新 2013 年 ECIL-4；RSV 疫苗可依當地核准考慮；免疫缺陷評分高的 HCT 受者建議口服 ribavirin 或 IVIG 或併用。",
   ASTCT25:"ASTCT CMV 2025：更新 2021 版（移植前血清、letermovir 預防期間、maribavir 地位）。",
@@ -1195,11 +1205,53 @@ const DX = [
   r.post.push(N("tecovirimat 標準療程 14 天；必要時短期延長（例如再 3–7 天，並密切監測安全與反應）。",["CDPH_MPX25"]));
   r.post.push(N("台灣疾管署對 mpox 的通報與治療規定本版未查證・請確認。",["CDPH_MPX25"],"warn"));
   r.diff.push(["CDPH 2025","支持療法為主；tecovirimat 單用在臨床試驗未對輕中度 mpox 有效；無核准用藥。",["CDPH_MPX25"],"MPOX25"],["NIH／NIAID 2025（STOMP、PALM007）","STOMP 第 29 天消退約 83% vs 84%，疼痛無差異；PALM007 無臨床效益；兩試驗提前停止。",["STOMP25"],"MPOX25"]);
+  return r; }},
+/* ===== HHV-6 ===== */
+{id:"hhv6",g:"HHV-6",n:"HHV-6B（異體造血幹細胞移植後）",opts:[
+  {k:"s",q:"情境",ch:[["enc","疑似或確診 HHV-6B 腦炎"],["vir","無症狀或無腦炎的血中 HHV-6 DNA 陽性"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[],tests:[]};
+  r.pre.push(N("先排除染色體整合 HHV-6（ciHHV-6）：血中拷貝數極高且持續不變，不是再活化，不需抗病毒。",["CIHHV6"],"warn"));
+  if(o.s==="enc"){
+    r.key="HHV-6B 腦炎：診斷評估同時即給經驗性 foscarnet 或 ganciclovir（盡量給足量），至少 3 週並追到 HHV-6 DNA 清除；嚴重者可考慮兩藥併用。";
+    r.o.push(O("首選（JSHCT）／擇一（ECIL）",["fos_cmv"],{dur:"至少 3 週，並到血中（可能時含腦脊髓液）HHV-6 DNA 清除",cond:"ECIL：90 mg/kg bid；JSHCT：最大劑量 180 mg/kg/日，兩者相同。腎功能依下方劑量欄（為 CMV 誘導劑量的腎功能分級）。",src:["ECIL7_HHV6","JSHCT_HHV6"]}));
+    r.o.push(O("擇一／次選",["gcv_ind"],{dur:"至少 3 週，並到 HHV-6 DNA 清除",cond:"ECIL：5 mg/kg bid；JSHCT：最大劑量 10 mg/kg/日，兩者相同。骨髓抑制時偏向 foscarnet 或相反，依病人狀況。",src:["ECIL7_HHV6","JSHCT_HHV6"]}));
+    r.post.push(N("嚴重者可考慮 foscarnet 與 ganciclovir 併用（ECIL CIII；JSHCT weak）；可能減少長期神經後遺症，但未證實降低死亡率。",["ECIL7_HHV6","JSHCT_HHV6","OFID_HHV6_22"]));
+    r.post.push(N("可能時減免疫抑制（ECIL BIII）。cidofovir 資料不足，ECIL 無建議。",["ECIL7_HHV6"]));
+    r.diff.push(["ECIL（2017 更新）","foscarnet 或 ganciclovir 擇一，依病人狀況；兩者並列（AIIu）。",["ECIL7_HHV6"]],["JSHCT（GRADE）","foscarnet 首選（weak）、ganciclovir 次選（weak）；疑似即給經驗性治療（strong）。",["JSHCT_HHV6"]],["ASTCT 2021（含臍帶血）","本版未核對條文・請確認。",["OFID_HHV6_22"]]);
+    r.tests=[["腦炎診斷依臨床（意識或記憶障礙、癲癇）、MRI 與腦脊髓液 HHV-6 PCR；治療中追蹤血中（可能時含腦脊髓液）HHV-6 DNA 至清除。",["ECIL7_HHV6","JSHCT_HHV6"]]];
+  } else {
+    r.key="無症狀或無腦炎的 HHV-6 DNA 陽性：不建議常規篩檢、預防或 preemptive 抗病毒（ECIL）；有症狀時先排除其他原因（如 aGVHD、藥物疹）。";
+    r.diff.push(["ECIL（2017 更新）","HSCT 後不建議常規篩檢血中 HHV-6 DNA；不建議預防或 preemptive 抗病毒（DIIu）。",["ECIL7_HHV6"]],["單中心回溯性（非指引）","preemptive foscarnet 60–90 mg/kg 每日一次 × 7 天，11 人第 7 天血漿 HHV-6 DNA 皆測不到；無對照、短期追蹤。",["FOS_HHV6_OBS"]]);
+  }
+  return r; }},
+/* ===== EBV ===== */
+{id:"ebv",g:"EBV",n:"EBV 再活化與 PTLD（移植後）",opts:[
+  {k:"h",q:"移植類型",ch:[["hsct","異體造血幹細胞移植"],["sot","實體器官移植"]]},
+  {k:"s",q:"情境",ch:[["vir","EBV DNAemia 上升、無終器官病變或 PTLD"],["ptld","EBV 終器官病變或 PTLD"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[],tests:[]};
+  r.pre.push(N("抗病毒藥（acyclovir 類、ganciclovir 類）不用於 EBV 預防或治療（ECIL-6 摘要片段・請確認）。",["ECIL6_EBV"],"warn"));
+  if(o.s==="vir"){
+    r.key=o.h==="hsct"?"EBV DNAemia 上升：先減免疫抑制；ECIL-6 建議 preemptive rituximab，但沒有明確的 DNAemia 門檻（證據中等、非對照研究）。":"EBV DNAemia 上升（SOT）：減免疫抑制（RIS）是驗證最多的介入；預防性策略證據品質低（AST 2019）。";
+    r.post.push(N("DNAemia 門檻沒有明確共識、各中心不同，且各實驗室檢測未調和（AST 2019）；請依院內閾值。",["TID_EBV25"]));
+    if(o.h==="hsct"){
+      r.post.push(N("rituximab 375 mg/m²、1–2 次每週為單中心回溯性使用方式（本版未取得 ECIL-6 劑量條文・請確認）。",["TID_EBV25"]));
+      r.diff.push(["ECIL-6（2016）","rituximab、減免疫抑制、EBV 特異性 T 細胞為一線；preemptive rituximab 被建議。各條強度本版未核對・請確認。",["ECIL6_EBV"]],["單中心回溯性（2025，非指引）","先減免疫抑制，328 人中 rituximab 只用 12 人（6.7%），無 PTLD；減量無效或終器官病變才加 rituximab。",["TID_EBV25"]]);
+    } else {
+      r.diff.push(["AST-IDCOP 2019（SOT）","預防性策略證據品質低；EBV DNA 以週邊血測定並合併降低病毒量的措施；RIS 是驗證最多的介入。全文本版未取得・請確認。",["AST_PTLD19"]]);
+    }
+  } else {
+    r.key=o.h==="hsct"?"HSCT 後 EBV-PTLD：減免疫抑制、rituximab、EBV 特異性 T 細胞為一線；未篩選 DLI 或化療為二線（ECIL-6）。":"SOT 後 CD20+ PTLD：依反應序貫使用減免疫抑制、rituximab、細胞毒性化療；組織病理（WHO 分類）為診斷標準（AST 2019）。";
+    r.post.push(N("EBV 特異性 T 細胞 tabelecleucel：美國尚未核准（FDA 2026-01 第二次 CRL，BLA 於 2026-10 再受理，PDUFA 2027-03-31）；台灣可及性請確認。",["TABCEL26"],"","TABCEL26"));
+    if(o.h==="hsct") r.diff.push(["ECIL-6（2016）","rituximab、減免疫抑制、EBV 特異性 T 細胞為一線；未篩選 DLI 或化療為二線。各條強度與劑量本版未核對・請確認。",["ECIL6_EBV"]]);
+    else r.diff.push(["AST-IDCOP 2019（SOT）","CD20+ PTLD 序貫使用 RIS、rituximab、細胞毒性化療；全文本版未取得・請確認。",["AST_PTLD19"]]);
+    r.tests=[["PTLD 診斷以組織切片（WHO 分類）為標準；EBV DNAemia 輔助判斷。",["AST_PTLD19"]]];
+  }
   return r; }}
-
 ];
 const DX_OF = id=>DX.find(x=>x.id===id);
-const DX_G = ["呼吸道","VZV","HSV","中樞神經","CMV","HBV","HCV","BK","ADV","HEV","Mpox"];
+const DX_G = ["呼吸道","VZV","HSV","中樞神經","CMV","HBV","HCV","BK","ADV","HEV","Mpox","HHV-6","EBV"];
 /* ---------------- 預防 ---------------- */
 const PX = [
 {id:"flupep",n:"流感暴露後",opts:[{k:"k",q:"情境",ch:[["hh","家戶／密切接觸"],["ltc","機構群聚（長照）"]]}],
@@ -1759,7 +1811,7 @@ function navPush(sn,label,y){ sn.label=label; sn.y=y||0; sn.id=++NAV_ID; NAV.pus
 function navRestore(sn){ ["tab","dx","px","drug","res"].forEach(k=>{ S[k]=sn[k]; }); S.o=sn.o; S.po=sn.po; Object.assign(UI,sn.ui); }
 
 /* ---------------- 抗病毒譜 ---------------- */
-const VX=[["HSV","HSV"],["VZV","VZV"],["CMV","CMV"],["HBV","HBV"],["HCV","HCV"],["HIV","HIV"],["HDV","HDV"],["HEV","HEV"],["FLU","流感"],["COV","COVID"],["RSV","RSV"],["ADV","ADV"],["BK","BK"]];
+const VX=[["HSV","HSV"],["VZV","VZV"],["CMV","CMV"],["HBV","HBV"],["HCV","HCV"],["HIV","HIV"],["HDV","HDV"],["HEV","HEV"],["HHV6","HHV-6"],["FLU","流感"],["COV","COVID"],["RSV","RSV"],["ADV","ADV"],["BK","BK"]];
 const MXC={"●":["c1","仿單核准或指引建議用於此病毒"],"○":["c2","有活性，但非常規、證據有限或非核准適應症"],"✕":["c3","無活性，或指引不建議"],"⚠":["c4","有交叉風險：用在別的病毒時，會影響這個病毒"],"？":["c5","活性資料本版未查證，請確認"]};
 const MX={
   ose:{FLU:["●"]}, zan:{FLU:["●"]}, per:{FLU:["●"]}, bx:{FLU:["●"]},
@@ -1791,6 +1843,8 @@ const MX={
   cab:{HIV:["●"],HBV:["⚠","DHHS 2024（二手報導）：長效 cabotegravir＋rilpivirine 兩者皆無 HBV 活性，轉換須另加 HBV 治療。從含 tenofovir 的 PrEP 轉換時須確認 HBV 狀態（CDC 2025）。",["DHHS_HBV24","CDC_LEN25"]]},
   len:{HIV:["●"],HBV:["⚠","從含 tenofovir 的 PrEP 轉換時須確認 HBV 狀態，必要時給 HBV 治療或疫苗（CDC 2025）。lenacapavir 本身的 HBV 數據本版未取得仿單，請確認。",["CDC_LEN25"]]}
 };
+MX.fos.HHV6=["○","非仿單適應症；ECIL 與 JSHCT 建議用於 HHV-6B 腦炎（foscarnet 為 JSHCT 首選）。見 HHV-6 診斷頁。",["ECIL7_HHV6","JSHCT_HHV6"]];
+MX.gcv.HHV6=["○","非仿單適應症；ECIL 與 JSHCT 建議用於 HHV-6B 腦炎（JSHCT 次選）。見 HHV-6 診斷頁。",["ECIL7_HHV6","JSHCT_HHV6"]];
 const XN=[
  {t:"同時作用 HBV 與 HIV 的藥",k:"tenofovir（TDF、TAF）與 emtricitabine 對 HBV 與 HIV 都有活性（lamivudine 亦同，本版未收錄藥物頁）。HIV/HBV 共感染者的 ART 要含 TDF 或 TAF 加 FTC 或 3TC。",
   it:[["IAS-USA 2023：骨幹為 TDF 或 TAF 加 emtricitabine 或 lamivudine，兩者同時涵蓋兩種病毒。",["IAS_HBVHIV23"]],["DHHS 2024（二手報導）：ARV 要有兩個對兩種病毒都有活性的藥；TAF 適合腎功能不全者。",["DHHS_HBV24"]],["ALLIANCE 試驗：B/F/TAF 對 HBV 抑制優於 dolutegravir＋F/TDF（初治共感染者）。",["BIC_LABEL","IAS_HBVHIV23"]]],
