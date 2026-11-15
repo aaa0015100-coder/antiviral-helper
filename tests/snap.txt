@@ -39266,8 +39266,10 @@ zanamivir
 01
 02
 ADV
+ADV
 ALLIANCE 試驗：B/F/TAF 對 HBV 抑制優於 dolutegravir＋F/TDF（初治共感染者）。
 Adenovirus
+BK
 BK
 BK 出血性膀胱炎
 BK 出血性膀胱炎：ECIL 2018 不支持常規使用 cidofovir。
@@ -39281,7 +39283,9 @@ CDC 2025：從含 tenofovir 的 PrEP 轉換到 CAB 或 LEN 須確認 HBV 狀態�
 CDC lenacapavir PrEP 2025
 CMV
 CMV
+CMV
 CMV 抗藥
+COVID
 COVID
 COVID-19
 Cidofovir 仿單
@@ -39298,6 +39302,7 @@ FDA DAA 與 HBV 再活化警示
 Foscarnet 仿單
 HBV
 HBV
+HBV
 HBV 再活化預防
 HBV 再活化預防
 HBV 抗藥
@@ -39305,14 +39310,20 @@ HBV／HIV 共感染綜述（IAS-USA 2023）
 HBV／HIV 共感染綜述（IAS-USA 2023）
 HCV
 HCV
+HCV
+HDV
 HDV
 HDV
 HEV
+HEV
 HHV-6
+HHV-6
+HIV
 HIV
 HIV
 HIV PrEP
 HIV/HBV 共感染者停用 FTC 或 tenofovir（含 PrEP、PEP 結束、轉成 dolutegravir/lamivudine、長效 cabotegravir 或 lenacapavir）可能使 HBV 嚴重急性惡化；先確認 HBV 狀態，停藥後追蹤肝功能數月。
+HSV
 HSV
 HSV／VZV
 HSV／VZV 抗藥
@@ -39328,8 +39339,10 @@ Paxlovid 的 ritonavir：未控制或未診斷 HIV 者，HIV 可能對 protease 
 Pritelivir（Hovilpri）FDA 核准 2026
 RSV
 RSV
+RSV
 TTS BK 2024
 Tenofovir alafenamide 仿單
+VZV
 VZV
 Vemlidy：單用不建議用於 HIV，開始前先篩 HIV。
 acyclovir
@@ -39767,8 +39780,8 @@ zanamivir
 ·
 ·
 ·
-·
-·
+○
+○
 ○
 ○
 ○
@@ -39849,6 +39862,7 @@ zanamivir
 依據
 依據
 停用或轉換有 HBV 活性的藥
+全部病毒
 同時作用 HBV 與 HIV 的藥
 指引衝突：maribavir 併用 ganciclovir 或 valganciclovir
 有交叉風險：用在別的病毒時，會影響這個病毒
@@ -39856,6 +39870,7 @@ zanamivir
 本版未列（無活性或未評估，不代表沒有）
 歐盟 SmPC：列為禁忌。
 活性資料本版未查證，請確認
+流感
 流感
 流感
 無活性，或指引不建議
@@ -39903,6 +39918,7 @@ CDPH mpox tecovirimat 2025
 CENTERSTONE（NEJM 2025）
 CMV SOT 國際共識 2025
 Cidofovir 仿單
+Cidofovir 抗病毒活性綜述（Viruses 2010）
 DHHS 成人 ARV 指引 HBV 章節 2024（二手報導）
 EACS 2025（v13.0）
 EASL HBV 2025
@@ -39930,6 +39946,7 @@ Ganciclovir 美國仿單（微生物學）
 Glecaprevir/pibrentasvir 仿單
 HBV／HIV 共感染綜述（IAS-USA 2023）
 HCT 腺病毒綜述 2023
+HHV-6 抗病毒藥綜述表（PMC4910875）
 HHV-6 短療程 foscarnet（回溯性）
 HHV-6B 指引比較（OFID 2022）
 HIV i-Base 2025 報導
@@ -39978,7 +39995,7 @@ WHO HBV 2024
 WHO 流感 2024
 Zanamivir 仿單
 cidofovir 腺病毒劑量
-v1.2（2026-11-15）
+v1.3（2026-11-15）
 「更新」綠色標籤：2024 年後的改版、新核准或已發表 phase 3。各指引說法不同時分別列出，不合併。
 不列台灣公費與健保條件。台灣許可證未查證的藥標示「請確認」。
 丹麥 HSV-1 腦炎世代（CID 2026）
@@ -39996,7 +40013,7 @@ v1.2（2026-11-15）
 英國 ABN/BIA 腦炎 2012
 英國腦膜炎指引 2016
 衛福部 PrEP 澄清稿
-資料來源（119）
+資料來源（121）
 院內 RSV 指引（UCSF、UNMC）
 院內血液腫瘤預防（UC Davis）
 ：2025 Clinical Practice Guideline Update by the IDSA on the Treatment and Management of COVID-19: Antiviral Treatment for Mild to Moderate COVID-19 in Adults（Clin Infect Dis；9 條建議）。高風險（例：≥75 歲、嚴重免疫低下、多重危險因子）：建議 nirmatrelvir/ritonavir 5 天（發病 5 天內）或 remdesivir 3 天（7 天內）；風險增加但非高風險：建議（conditional）同上；無危險因子：不建議抗病毒藥；molnupiravir 只在無其他選擇時（conditional）。本版依 NEJM Clinician Guideline Watch（2026-05-20）、SHM／Gilead pocket card（2026-03）與 CME Outfitters 2026-01 摘要核對，全文未讀到，強度與證據等級請確認。
@@ -40009,6 +40026,7 @@ v1.2（2026-11-15）
 ：Acyclovir tablets／capsules US PI：帶狀疱疹 800 mg q4h 5 次／日 × 7–10 天；初次生殖器疱疹 200 mg 5 次／日 × 10 天；抑制 400 mg BID；成人水痘 800 mg QID × 5 天。腎調整：800 mg q4h → CrCl 10–25：800 mg q8h；0–10：800 mg q12h；200 mg q4h 或 400 mg q12h → CrCl 0–10：200 mg q12h。
 ：Adenovirus infection in allogeneic hematopoietic cell transplantation. Transpl Infect Dis 2023;25 Suppl 1:e14173（綜述，只取得摘要）：異體 HCT 後前 3–4 個月 AdV 感染 0–20%，兒童較高；預防疾病靠早期偵測病毒複製增加，血中達 10^2–3 copies/mL（或糞便 10^6 copies/g）即 preemptive 開始 cidofovir；cidofovir 是目前唯一建議的抗病毒藥，療效有限且有腎毒性；brincidofovir 當時不可取得，仍在其他病毒的研究中。
 ：Allen UD, Preiksaitis JK; AST Infectious Diseases Community of Practice. Post-transplant lymphoproliferative disorders, Epstein-Barr virus infection, and disease in solid organ transplantation. Clin Transplant 2019;33:e13652. doi:10.1111/ctr.13652。摘要：預防性策略證據品質低；EBV DNA 以週邊血測定（檢測需調和）合併降低病毒量的措施，減免疫抑制（RIS）是驗證最多的介入；組織病理（WHO 分類）是 PTLD 診斷標準；CD20+ PTLD 依反應序貫使用 RIS、rituximab、細胞毒性化療。全文本版未取得・請確認。
+：Andrei G, Snoeck R. Cidofovir activity against poxvirus infections. Viruses 2010;2(12):2803–2830（PMC3185586）。綜述指出 cidofovir 的體外活性包括：腺病毒、對 acyclovir 抗藥（病毒 TK 突變）的 HSV 與 VZV、UL97 突變的 CMV、EBV、polyoma 與乳突病毒，以及 orthopox（含 monkeypox、variola）。屬體外與動物資料，非核准適應症。
 ：Aurelius E, et al. Long-term valacyclovir suppressive treatment after herpes simplex virus type 2 meningitis: a double-blind, randomized controlled trial. Clin Infect Dis 2012;54:1304–13。101 名原發或復發 HSV-2 腦膜炎，先 valacyclovir 1 g TID 1 週，之後 0.5 g BID 或安慰劑 1 年：未減少復發，停藥後第 2 年復發風險反而較高；不建議用於預防復發。
 ：Baraclude（entecavir）US PI：未曾用 nucleoside 者 0.5 mg QD；lamivudine 難治或失代償肝病 1 mg QD；空腹（餐前後至少 2 小時）。腎調整（CrCl ≥50／30–<50／10–<30／<10 與 HD、CAPD）：0.5 mg 方案 0.5 mg QD／0.25 mg QD 或 0.5 mg q48h／0.15 mg QD 或 0.5 mg q72h／0.05 mg QD 或 0.5 mg q7d；1 mg 方案 1 mg QD／0.5 mg QD 或 1 mg q48h／0.3 mg QD 或 1 mg q72h／0.1 mg QD 或 1 mg q7d；HD 於透析後給。停藥可能急性惡化；乳酸中毒警語。Boxed warning：HIV/HBV 共感染者若未同時接受有效的 HIV 治療（HAART），不建議使用 entecavir，有選出 HIV M184V 變異的風險；M184V 變異對 entecavir 敏感性下降；entecavir 不算 HAART 的一部分。
 ：Biktarvy、Tivicay、Truvada、Descovy、Apretude、Yeztugo 的美國仿單：本版未取得仿單全文。腎功能分段、交互作用與禁忌依一般臨床知識與上列指引整理，數字請以仿單與院內藥典逐項核對。BIC/FTC/TAF 與 FTC/TAF 的低腎功能切點（CrCl <30 不建議）、DTG 與 CAB 的交互作用、BIC 與 DTG 使血清肌酸酐上升（抑制腎小管分泌）均屬此類。
@@ -40043,6 +40061,7 @@ v1.2（2026-11-15）
 ：Foscavir（foscarnet）US PI：CMV 誘導 90 mg/kg q12h 或 60 mg/kg q8h × 2–3 週，維持 90–120 mg/kg QD；acyclovir 抗藥 HSV 40 mg/kg q8–12h × 2–3 週或至癒合。腎調整以 CrCl（mL/min/kg）計：CMV 90 mg/kg q12h 欄 >1.4：90 q12h；>1.0–1.4：70 q12h；>0.8–1.0：50 q12h；>0.6–0.8：80 q24h；>0.5–0.6：60 q24h；0.4–0.5：50 q24h；<0.4 不建議。HSV 40 mg/kg q12h 欄：40 q12h／30 q12h／20 q12h／35 q24h／25 q24h／20 q24h。黑框：腎毒性為主要毒性，需水化並頻繁監測 Cr；電解質（Ca、Mg、K、P）異常可致癲癇。
 ：Ganciclovir 注射劑美國 PI 微生物學段：在人體臨床研究中對 CMV 與 HSV 有活性；核准適應症為 CMV（視網膜炎、移植預防）。VZV 活性未在取得的段落中出現，請確認。
 ：Ghany MG, Pan CQ, Lok AS, Feld JJ, Lim JK, Wang SH, Kim AY, Tang AS. AASLD/IDSA Practice Guideline on treatment of chronic hepatitis B. Hepatology 2026;83(4):974–997（2025-11-04 線上發表）。doi:10.1097/HEP.0000000000001549。本版已讀全文約前 100,000／125,031 字元（含 Table 1、Table 3、Recommendation 1–5、Figure 4–5）；HBV 再活化預防與失代償肝硬化的 entecavir 劑量在未讀段落・請確認。
+：HHV-6 治療綜述的藥物表（PMC4910875，標題與期刊本版未核對・請確認）：cidofovir 為無環核苷膦酸類，體外對 HHV-6 活性佳；因腎毒性列為二線；病毒 U38（DNA polymerase）突變可造成抗藥。ECIL 對 cidofovir 用於 HHV-6B 腦炎的資料評為不足、無建議（見 ECIL7_HHV6）。
 ：Hirsch HH, Randhawa PS; AST IDCOP. BK polyomavirus in solid organ transplantation — Guidelines from the American Society of Transplantation Infectious Diseases Community of Practice. Clin Transplant 2019;33(9):e13528。本版依 PubMed 摘要與 GuidelineCentral 條列核對，全文未取得：腎移植受者以 QNAT 篩檢血漿 BKPyV-DNAemia（Moderate, Strong）；無排斥風險升高且基線腎功能者，減免疫抑制前不需切片（Moderate, Strong）；喪失移植腎後可再移植，需定期篩檢病毒複製。
 ：Hwang JP, et al. Hepatitis B Virus Screening and Management for Patients With Cancer Prior to Therapy: ASCO Provisional Clinical Opinion Update. J Clin Oncol 2020;38:3698–3715。所有開始抗癌治療者篩檢 HBsAg、anti-HBc（total Ig 或 IgG）、anti-HBs；HBsAg 陽性者預防；HBsAg 陰性、anti-HBc 陽性者，接受 anti-CD20 或 HSCT 給預防，其他監測；預防持續到治療結束後至少 12 個月（anti-CD20 更久）。細節請確認。
 ：IDSA Guidelines on the Treatment and Management of Patients with COVID-19（living guideline，2025-05-30 版）。住院未用氧且 SpO2 >94%：建議不常規使用 remdesivir；用氧但未插管／ECMO：建議 remdesivir 5 天（優於 10 天）；插管或 ECMO：建議不常規開始 remdesivir（皆 conditional）。依 InpharmD 與 SHM pocket card 轉述，請以原文確認。

@@ -393,7 +393,7 @@ details.pf>summary{font-size:.86rem}
 <div id="ov" class="ov" hidden><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="ovT"><h3 id="ovT"></h3><div id="ovB"></div><button class="btn" type="button" data-act="ov-close">關閉</button></div></div>
 <div id="toast" class="toast" hidden></div>
 <script>
-const APP_VERSION = "1.2";
+const APP_VERSION = "1.3";
 const CHECKED = "2026-11-15";
 const VERSION = "v" + APP_VERSION, VERIFIED = CHECKED;
 const SCOPE = "成人・流感、COVID-19、RSV、HSV、VZV、CMV、HBV、HDV、HCV、HEV、HIV（PEP、PrEP）、BK、adenovirus、HHV-6、EBV／PTLD、mpox（治療、預防、抗藥、抗病毒譜）";
@@ -457,6 +457,8 @@ const REF = {
   MAR_LABEL:{s:"Maribavir 仿單",f:"Livtencity（maribavir）US PI：400 mg BID（美國未定療程；EU 8 週），治療移植後對 ganciclovir、valganciclovir、cidofovir 或 foscarnet 難治（含或不含抗藥）之 CMV。美國：併用 carbamazepine 或 rifabutin 增為 800 mg BID，phenytoin 或 phenobarbital 增為 1,200 mg BID；EU：無法避免強或中度 CYP3A 誘導劑（carbamazepine、efavirenz、phenobarbital、phenytoin）時 1,200 mg BID，rifampin、rifabutin、St. John's Wort 不建議。禁止與 ganciclovir、valganciclovir 併用。會升高 CYP3A、P-gp、BCRP 敏感受質濃度（如 tacrolimus）。台灣：克巨染膜衣錠（台灣武田）。美國仿單：不建議與 ganciclovir、valganciclovir 併用（maribavir 抑制 pUL97，可能拮抗其活性）；EU SmPC 則列為禁忌（見 MAR_EU）。",u:"https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/215596s004lbl.pdf"},
   ECIL7_CMV:{s:"ECIL-7（CMV，2019；已被 ECIL-10 更新）",f:"【ECIL-10（2025）已更新此指引，本條保留供對照】Ljungman P, et al. Guidelines for the management of cytomegalovirus infection in patients with haematological malignancies and after stem cell transplantation from the 2017 ECIL-7. Lancet Infect Dis 2019;19:e260–e272。本版未取得全文，HSCT 的 preemptive 閾值與療程請確認；成大藥劑部摘要：高劑量 acyclovir／valacyclovir 可減少感染但不減少疾病，foscarnet 毒性大不適合長期預防，letermovir 減少感染且無明顯毒性。",u:"https://nckuhpharmacy.hosp.ncku.edu.tw/var/file/72/1072/img/723/653973735.pdf"},
   ECIL10_CMV:{s:"ECIL-10（CMV，2025）",f:"Ljungman P, et al. Lancet Infect Dis 2025;25(8):e451–e462. doi:10.1016/S1473-3099(25)00069-6。更新 ECIL-7（2019）：涵蓋 CMV 血清狀態評估、免疫監測、letermovir 預防、難治與抗藥 CMV、兒童；CAR-T 與 T 細胞接合型抗體列為新增風險族群。本版取得前言與關鍵訊息，建議強度（PDF 文字 OCR 錯亂）未核對・請確認。"},
+  CDV_REV10:{s:"Cidofovir 抗病毒活性綜述（Viruses 2010）",f:"Andrei G, Snoeck R. Cidofovir activity against poxvirus infections. Viruses 2010;2(12):2803–2830（PMC3185586）。綜述指出 cidofovir 的體外活性包括：腺病毒、對 acyclovir 抗藥（病毒 TK 突變）的 HSV 與 VZV、UL97 突變的 CMV、EBV、polyoma 與乳突病毒，以及 orthopox（含 monkeypox、variola）。屬體外與動物資料，非核准適應症。"},
+  HHV6_CDV:{s:"HHV-6 抗病毒藥綜述表（PMC4910875）",f:"HHV-6 治療綜述的藥物表（PMC4910875，標題與期刊本版未核對・請確認）：cidofovir 為無環核苷膦酸類，體外對 HHV-6 活性佳；因腎毒性列為二線；病毒 U38（DNA polymerase）突變可造成抗藥。ECIL 對 cidofovir 用於 HHV-6B 腦炎的資料評為不足、無建議（見 ECIL7_HHV6）。"},
   ECIL7_HHV6:{s:"ECIL-7 HHV-6 更新（2017 投影片）",f:"ECIL-7 CMV and HHV-6 update group（Ljungman P, de la Camara R, Crocchiolo R, Einsele H, Hubacek P, Hill J）。HHV-6 update final slide set, 2017-09-23。本條來源為投影片（土耳其 EKMUD 轉載），期刊版（2019）本版未核對・請確認。重點：HSCT 後不建議常規篩檢血中 HHV-6 DNA，不建議預防或 preemptive 抗病毒（DIIu）；HHV-6B 腦炎用 foscarnet 或 ganciclovir（AIIu），依病人狀況選擇，foscarnet 90 mg/kg bid、ganciclovir 5 mg/kg bid（AIIu），至少 3 週並到血中（可能時含腦脊髓液）HHV-6 DNA 清除（BIII）；可考慮兩藥併用（CIII）；可能時減免疫抑制（BIII）；cidofovir 資料不足、無建議。"},
   JSHCT_HHV6:{s:"JSHCT HHV-6B 腦炎建議",f:"Clinical practice recommendations for the diagnosis and management of human herpesvirus-6B encephalitis after allogeneic hematopoietic stem cell transplantation（日本造血細胞移植學會 JSHCT，GRADE）。來源為轉載全文，期刊卷頁本版未核對・請確認。重點：疑似 HHV-6B 腦炎時診斷同時即給經驗性抗病毒（strong）；foscarnet 為首選（weak）、ganciclovir 次選（weak）；嚴重確診者可考慮兩藥併用（weak）；盡可能給最大劑量（strong；foscarnet 180 mg/kg/日、ganciclovir 10 mg/kg/日）；至少治療 3 週（weak）。"},
   OFID_HHV6_22:{s:"HHV-6B 指引比較（OFID 2022）",f:"Open Forum Infect Dis 2022;9(8):ofac398（綜述）：比較 ECIL 2019、JSHCT 2019、ASTCT 2021（含臍帶血移植）對 HHV-6B 監測與治療的建議；一線為 ganciclovir 與 foscarnet；兩藥併用可能減少長期神經後遺症但未證實降低死亡率，指引僅建議嚴重者考慮；無 HHV-6B 腦炎的隨機試驗，療程不明。ASTCT 2021 條文本版未核對・請確認。"},
@@ -1488,7 +1490,7 @@ const S = {
   preg:false, tab:"tx", dx:"flu", o:{}, px:"flupep", po:{}, drug:null, res:""
 };
 let R = null;
-const UI = {dxpick:false, pxpick:false, dpick:false, pt:null, mMore:false};
+const UI = {dxpick:false, pxpick:false, dpick:false, pt:null, mMore:false, spV:""};
 
 /* ---------------- 計算 ---------------- */
 const num = v=>{const n=parseFloat(v);return Number.isFinite(n)?n:null};
@@ -1845,6 +1847,8 @@ const MX={
 };
 MX.fos.HHV6=["○","非仿單適應症；ECIL 與 JSHCT 建議用於 HHV-6B 腦炎（foscarnet 為 JSHCT 首選）。見 HHV-6 診斷頁。",["ECIL7_HHV6","JSHCT_HHV6"]];
 MX.gcv.HHV6=["○","非仿單適應症；ECIL 與 JSHCT 建議用於 HHV-6B 腦炎（JSHCT 次選）。見 HHV-6 診斷頁。",["ECIL7_HHV6","JSHCT_HHV6"]];
+MX.cdv.VZV=["○","體外對 VZV（含 acyclovir 抗藥的 TK 突變株）有活性（綜述）；非核准適應症，app 無此情境。",["CDV_REV10"]];
+MX.cdv.HHV6=["○","體外活性佳但腎毒性高，列為二線；ECIL 對 HHV-6B 腦炎使用 cidofovir 的資料評為不足、無建議。",["HHV6_CDV","ECIL7_HHV6"]];
 const XN=[
  {t:"同時作用 HBV 與 HIV 的藥",k:"tenofovir（TDF、TAF）與 emtricitabine 對 HBV 與 HIV 都有活性（lamivudine 亦同，本版未收錄藥物頁）。HIV/HBV 共感染者的 ART 要含 TDF 或 TAF 加 FTC 或 3TC。",
   it:[["IAS-USA 2023：骨幹為 TDF 或 TAF 加 emtricitabine 或 lamivudine，兩者同時涵蓋兩種病毒。",["IAS_HBVHIV23"]],["DHHS 2024（二手報導）：ARV 要有兩個對兩種病毒都有活性的藥；TAF 適合腎功能不全者。",["DHHS_HBV24"]],["ALLIANCE 試驗：B/F/TAF 對 HBV 抑制優於 dolutegravir＋F/TDF（初治共感染者）。",["BIC_LABEL","IAS_HBVHIV23"]]],
@@ -1868,13 +1872,16 @@ const mxLink=([a,v,n])=>`<button class="chip" type="button" data-act="${a}" data
 function renderSpec(){
   let h=`<div class="step"><h3><span class="k">01</span>藥物 × 病毒</h3><div class="hint">點符號看說明與出處，點藥名到藥物頁。表格可左右捲動。</div>`;
   h+=`<div class="mxlg">${Object.entries(MXC).map(([c,[cl,t]])=>`<div><b class="mxc ${cl}" style="min-height:0">${c}</b> ${t}</div>`).join("")}<div><b class="mxe">·</b> 本版未列（無活性或未評估，不代表沒有）</div></div>`;
-  h+=`<div class="mxw"><table class="mx"><thead><tr><th class="mxn" scope="col">藥物</th>${VX.map(v=>`<th scope="col">${v[1]}</th>`).join("")}</tr></thead><tbody>`;
+  const cols=UI.spV?VX.filter(v=>v[0]===UI.spV):VX;
+  h+=`<div class="chips" style="margin:8px 0" role="group" aria-label="依病毒篩選"><button class="chip" type="button" data-act="spec-v" data-v="" aria-pressed="${!UI.spV}">全部病毒</button>${VX.map(([vk,vn])=>`<button class="chip" type="button" data-act="spec-v" data-v="${vk}" aria-pressed="${UI.spV===vk}">${vn}</button>`).join("")}</div>`;
+  if(UI.spV) h+=`<div class="hint">只顯示在「${(VX.find(v=>v[0]===UI.spV)||[])[1]}」欄有符號的藥物；本版未列的藥物不代表沒有活性。</div>`;
+  h+=`<div class="mxw"><table class="mx"><thead><tr><th class="mxn" scope="col">藥物</th>${cols.map(v=>`<th scope="col">${v[1]}</th>`).join("")}</tr></thead><tbody>`;
   DGRP.forEach(([gn,gk])=>{
-    const ks=Object.keys(D).filter(k=>D[k].g===gk); if(!ks.length) return;
-    h+=`<tr class="mxg"><td colspan="${VX.length+1}">${gn}</td></tr>`;
+    const ks=Object.keys(D).filter(k=>D[k].g===gk&&(!UI.spV||(MX[k]||{})[UI.spV])); if(!ks.length) return;
+    h+=`<tr class="mxg"><td colspan="${cols.length+1}">${gn}</td></tr>`;
     ks.forEach(k=>{
       h+=`<tr><td class="mxn"><button class="linkbtn" type="button" data-act="go-drug" data-v="${k}">${D[k].n}</button></td>`;
-      VX.forEach(([vk,vn])=>{
+      cols.forEach(([vk,vn])=>{
         const c=(MX[k]||{})[vk];
         h+=c?`<td><button class="mxc ${MXC[c[0]][0]}" type="button" data-mx="${k}|${vk}" aria-label="${esc(D[k].n)}、${vn}：${MXC[c[0]][1]}">${c[0]}</button></td>`:`<td class="mxe">·</td>`;
       });
@@ -2002,6 +2009,7 @@ if(typeof document!=="undefined"){
     else if(a==="pxo"){ S.po[S.px]=Object.assign({},S.po[S.px],{[b.dataset.k]:v}); }
     else if(a==="drug"){ S.drug=v; UI.dpick=false; }
     else if(a==="dpick") UI.dpick=!UI.dpick;
+    else if(a==="spec-v"){ UI.spV=(v&&UI.spV!==v)?v:""; }
     else if(a==="go-drug"){ S.tab="drug"; S.drug=v; UI.dpick=false; scrollTo(0,0); }
     else if(a==="go-dx"){ S.tab="tx"; S.dx=v; UI.dxpick=false; scrollTo(0,0); }
     else if(a==="go-px"){ S.tab="px"; S.px=v; UI.pxpick=false; scrollTo(0,0); }

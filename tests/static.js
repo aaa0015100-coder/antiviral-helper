@@ -50,6 +50,8 @@ for(const pt of PTS) for(const preg of [false,true]){
   for(const x of A.XN) for(const [t,sr] of x.it) sr.forEach(r=>{ if(!A.REF[r]) bad2.push("譜註記出處不存在 "+r); });
   const usedMX=new Set(); for(const row of Object.values(A.MX)) for(const c of Object.values(row)) (c[2]||[]).forEach(r=>usedMX.add(r)); for(const x of A.XN) for(const [t,sr] of x.it) sr.forEach(r=>usedMX.add(r));
   for(const r of ["GCV_US","FOS_ADIS91","VAL_CMV99","MAR_EU","MAR_REV22","LET_REV20","DAA_HBV17","BIC_LABEL","IAS_HBVHIV23","DHHS_HBV24"]) if(!usedMX.has(r)) bad2.push("REF 未被譜使用 "+r);
+  for(const [vk] of A.VX){ A.UI.spV=vk; set({tab:"spec"}); const hh=A.render("spec"); const nn=(hh.match(/data-mx="/g)||[]).length; if(!nn) bad2.push("譜篩選 "+vk+" 無列"); if(!new RegExp(`aria-pressed="true"[^>]*>|data-v="${vk}" aria-pressed="true"`).test(hh)) bad2.push("譜篩選 chip 未按下 "+vk); }
+  A.UI.spV="";
   if(bad2.length){ console.log("SPEC FAIL",bad2.length); bad2.slice(0,30).forEach(b=>console.log("  "+b)); process.exit(1); }
   console.log("SPEC OK");
 }
