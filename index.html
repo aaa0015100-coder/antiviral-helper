@@ -89,7 +89,7 @@ button{font:inherit;color:inherit}
 .tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
 
 .step{margin-bottom:18px}
-.step>h3{font-size:.95rem;font-weight:600;margin-bottom:8px;display:flex;gap:8px;align-items:baseline}
+.step>h3{font-size:.95rem;font-weight:600;margin-bottom:8px;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:baseline;min-width:0;overflow-wrap:anywhere}
 .step>h3 .k{font-family:var(--f-mono);font-size:.78rem;color:var(--accent)}
 .hint{font-size:.82rem;color:var(--muted);margin-top:6px}
 
@@ -393,7 +393,7 @@ details.pf>summary{font-size:.86rem}
 <div id="ov" class="ov" hidden><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="ovT"><h3 id="ovT"></h3><div id="ovB"></div><button class="btn" type="button" data-act="ov-close">關閉</button></div></div>
 <div id="toast" class="toast" hidden></div>
 <script>
-const APP_VERSION = "0.4";
+const APP_VERSION = "1.0";
 const CHECKED = "2026-11-15";
 const VERSION = "v" + APP_VERSION, VERIFIED = CHECKED;
 const SCOPE = "成人・流感、COVID-19、RSV、HSV、VZV、CMV、HBV、HCV、HIV（PEP、PrEP）、BK、adenovirus（治療、預防、抗藥、抗病毒譜）";
@@ -1615,7 +1615,7 @@ function renderRef(){
   <div class="note">劑量依左側病人卡的腎功能自動調整（Cockcroft-Gault；體重 >120% IBW 用 AdjBW）。依體重給藥的藥（acyclovir IV、ganciclovir、foscarnet、cidofovir）填體重後換算 mg；acyclovir 在 BMI ≥30 時並列 IBW（仿單）與 AdjBW（部分院內指引）。</div>
   <div class="note">「更新」綠色標籤：2024 年後的改版、新核准或已發表 phase 3。各指引說法不同時分別列出，不合併。</div>
   <div class="note">不列台灣公費與健保條件。台灣許可證未查證的藥標示「請確認」。</div>
-  <div class="note"><b>${VERSION}（${VERIFIED}）</b>：新增「抗病毒譜」分頁（藥物×病毒矩陣與交叉活性註記）。HBV、HCV、流感、COVID-19、RSV、HSV、VZV、CMV 同前。HIV（nPEP、oPEP、PrEP）、BK、adenovirus 同 v0.3。</div>
+  <div class="note"><b>${VERSION}（${VERIFIED}）</b>：完整測試（四種寬度、深淺色、全部選項）通過。含「抗病毒譜」分頁（藥物×病毒矩陣與交叉活性註記）。HBV、HCV、流感、COVID-19、RSV、HSV、VZV、CMV 同前。HIV（nPEP、oPEP、PrEP）、BK、adenovirus 同 v0.3。</div>
   </div></div>`;
   return h;
 }
