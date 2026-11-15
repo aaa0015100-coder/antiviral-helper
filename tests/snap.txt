@@ -34957,9 +34957,9 @@ maribavir
 所有腎功能
 更改
 正常腎功能劑量・填腎功能 ›
-禁止與 ganciclovir、valganciclovir 併用（拮抗）。
 腎功能
 腎功能不全不需調整（ESRD、透析資料有限・請確認）；併用 CYP3A 誘導劑時增量（見藥物頁）。
+與 ganciclovir、valganciclovir 併用：美國仿單不建議、EU SmPC 列為禁忌（拮抗）。
 藥物
 複製
 資料有限（大鼠胚胎存活下降）
@@ -34993,9 +34993,9 @@ maribavir
 所有腎功能
 更改
 無需腎調整
-禁止與 ganciclovir、valganciclovir 併用（拮抗）。
 腎功能
 腎功能不全不需調整（ESRD、透析資料有限・請確認）；併用 CYP3A 誘導劑時增量（見藥物頁）。
+與 ganciclovir、valganciclovir 併用：美國仿單不建議、EU SmPC 列為禁忌（拮抗）。
 藥物
 複製
 資料有限（大鼠胚胎存活下降）
@@ -35029,9 +35029,9 @@ maribavir
 所有腎功能
 更改
 無需腎調整
-禁止與 ganciclovir、valganciclovir 併用（拮抗）。
 腎功能
 腎功能不全不需調整（ESRD、透析資料有限・請確認）；併用 CYP3A 誘導劑時增量（見藥物頁）。
+與 ganciclovir、valganciclovir 併用：美國仿單不建議、EU SmPC 列為禁忌（拮抗）。
 藥物
 複製
 資料有限（大鼠胚胎存活下降）
@@ -37608,6 +37608,474 @@ zanamivir
 ：非重症：高風險者 baloxavir（conditional）；低風險者 baloxavir conditional against；oseltamivir、zanamivir 用於非重症 strong against；peramivir conditional against。
 ：高風險者盡快治療，oseltamivir、zanamivir、peramivir、baloxavir 四種皆可；懷孕用 oseltamivir。
 ：高風險門診病人盡快治療（同 CDC）。
+## spec
+01
+02
+ADV
+ALLIANCE 試驗：B/F/TAF 對 HBV 抑制優於 dolutegravir＋F/TDF（初治共感染者）。
+Adenovirus
+BK
+BK 出血性膀胱炎
+BK 出血性膀胱炎：ECIL 2018 不支持常規使用 cidofovir。
+BK 腎移植
+BK 腎移植：TTS 2024 反對 cidofovir。
+BK 與 adenovirus：沒有核准的專一藥
+Biktarvy 仿單 boxed warning：停用含 FTC、TDF 的產品可能嚴重急性惡化，至少追蹤數月。
+Biktarvy 仿單（2025）
+Biktarvy 仿單（2025）
+CDC 2025：從含 tenofovir 的 PrEP 轉換到 CAB 或 LEN 須確認 HBV 狀態，必要時治療或疫苗。
+CDC lenacapavir PrEP 2025
+CMV
+CMV
+CMV 抗藥
+COVID
+COVID-19
+Cidofovir 仿單
+Cidofovir 仿單
+DAA：HBsAg 陽性或 anti-HBc 陽性者，治療前篩檢、治療中與後監測；已有 HBV 活動者請會診肝膽科。
+DHHS 2024（二手報導）：ARV 要有兩個對兩種病毒都有活性的藥；TAF 適合腎功能不全者。
+DHHS 2024（二手報導）：長效 cabotegravir＋rilpivirine 皆無 HBV 活性，轉換須另加 HBV 治療。
+DHHS 成人 ARV 指引 HBV 章節 2024（二手報導）
+DHHS 成人 ARV 指引 HBV 章節 2024（二手報導）
+ECIL BK 膀胱炎 2018
+ECIL-4 腺病毒 2012
+Entecavir 仿單
+FDA DAA 與 HBV 再活化警示
+Foscarnet 仿單
+HBV
+HBV
+HBV 再活化預防
+HBV 再活化預防
+HBV 抗藥
+HBV／HIV 共感染綜述（IAS-USA 2023）
+HBV／HIV 共感染綜述（IAS-USA 2023）
+HCV
+HCV
+HIV
+HIV
+HIV PrEP
+HIV/HBV 共感染者停用 FTC 或 tenofovir（含 PrEP、PEP 結束、轉成 dolutegravir/lamivudine、長效 cabotegravir 或 lenacapavir）可能使 HBV 嚴重急性惡化；先確認 HBV 狀態，停藥後追蹤肝功能數月。
+HSV
+HSV／VZV
+HSV／VZV 抗藥
+IAS-USA 2023：骨幹為 TDF 或 TAF 加 emtricitabine 或 lamivudine，兩者同時涵蓋兩種病毒。
+Letermovir 仿單
+Letermovir 綜述（PMC7318821）
+Maribavir 仿單
+Maribavir 歐盟 SmPC
+Maribavir 綜述（PMC9487637）
+Maribavir 綜述（PMC9487637）
+Paxlovid 仿單
+Paxlovid 的 ritonavir：未控制或未診斷 HIV 者，HIV 可能對 protease inhibitor 產生抗藥。
+RSV
+RSV
+TTS BK 2024
+Tenofovir alafenamide 仿單
+VZV
+Vemlidy：單用不建議用於 HIV，開始前先篩 HIV。
+acyclovir
+adenovirus：cidofovir 最常用但無對照試驗；CrCl ≤55 仿單禁止開始。
+baloxavir
+bictegravir/emtricitabine/tenofovir alafenamide
+cabotegravir（長效注射）
+cidofovir
+cidofovir 是 adenovirus 最常用的 off-label 做法，BK 不建議用；兩者都以減免疫抑制為主。
+cidofovir 腺病毒劑量
+dolutegravir
+emtricitabine/tenofovir alafenamide
+emtricitabine/tenofovir disoproxil
+ensitrelvir
+entecavir
+entecavir、單用 TAF（Vemlidy）、ritonavir（Paxlovid）可能使未治療的 HIV 產生抗藥；HCV 的 DAA 可能使 HBV 再活化。開藥前先確認另一種病毒的狀態。
+entecavir：HIV/HBV 共感染未接受有效 ART 者不建議用，可能選出 M184V（boxed warning）。
+famciclovir
+foscarnet
+foscarnet 不需 TK 或其他激酶活化（仿單）。cidofovir 不需病毒的第一步磷酸化；但 pUL54 突變可造成 ganciclovir 與 cidofovir 交叉抗藥，foscarnet 亦有部分交叉。
+ganciclovir
+glecaprevir/pibrentasvir
+lenacapavir
+letermovir
+letermovir、maribavir 只涵蓋 CMV，不涵蓋 HSV／VZV；foscarnet、cidofovir 不依賴 HSV／VZV 的 TK，用於 acyclovir 抗藥株。
+letermovir：HSCT 預防期間另給 acyclovir 類涵蓋 HSV／VZV。
+maribavir
+maribavir：體外對 HSV、VZV 無活性；對 ganciclovir、cidofovir、foscarnet 抗藥的 CMV 仍有效。
+molnupiravir
+nirmatrelvir/ritonavir
+oseltamivir
+peramivir
+remdesivir
+ribavirin
+sofosbuvir/velpatasvir
+sofosbuvir/velpatasvir/voxilaprevir
+tenofovir alafenamide
+tenofovir disoproxil
+tenofovir（TDF、TAF）與 emtricitabine 對 HBV 與 HIV 都有活性（lamivudine 亦同，本版未收錄藥物頁）。HIV/HBV 共感染者的 ART 要含 TDF 或 TAF 加 FTC 或 3TC。
+valacyclovir
+valganciclovir
+zanamivir
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+○
+○
+○
+○
+○
+○
+○
+○
+○
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+⚠
+⚠
+⚠
+⚠
+⚠
+⚠
+⚠
+⚠
+⚠
+⚠
+✕
+✕
+✕
+✕
+✕
+✕
+交叉活性與跨病毒注意
+仿單核准或指引建議用於此病毒
+依據
+依據
+依據
+依據
+依據
+依據
+停用或轉換有 HBV 活性的藥
+同時作用 HBV 與 HIV 的藥
+指引衝突：maribavir 併用 ganciclovir 或 valganciclovir
+有交叉風險：用在別的病毒時，會影響這個病毒
+有活性，但非常規、證據有限或非核准適應症
+本版未列（無活性或未評估，不代表沒有）
+歐盟 SmPC：列為禁忌。
+活性資料本版未查證，請確認
+流感
+流感
+無活性，或指引不建議
+用在 A 病毒、卻會影響 B 病毒的藥
+疱疹類：涵蓋範圍與抗藥
+美國仿單：不建議併用（maribavir 抑制 pUL97，可能拮抗 ganciclovir 活化）。
+美國與歐盟仿單對併用的強度不同，兩者都認為會拮抗。
+藥物
+藥物 × 病毒
+體外：maribavir 使 ganciclovir IC50 上升至多約 13 倍，對 cidofovir、foscarnet 無影響。
+點符號看說明與出處，點藥名到藥物頁。表格可左右捲動。
+？
+？
+？
 ## ref
 01
 02
@@ -37624,6 +38092,7 @@ Acyclovir 注射劑仿單
 Aurelius RCT（CID 2012）
 BTS／UK BK 指引
 Baloxavir 台灣仿單 2024
+Biktarvy 仿單（2025）
 CDC PrEP 2021
 CDC STI 2021（生殖器疱疹）
 CDC lenacapavir PrEP 2025
@@ -37633,6 +38102,7 @@ CDC 流感抗病毒藥 2026
 CENTERSTONE（NEJM 2025）
 CMV SOT 國際共識 2025
 Cidofovir 仿單
+DHHS 成人 ARV 指引 HBV 章節 2024（二手報導）
 EACS 2025（v13.0）
 EASL HBV 2025
 EASL HCV 2020
@@ -37643,10 +38113,14 @@ ECIL-7（CMV，2019）
 EDF/EADV 帶狀疱疹 2017
 Ensitrelvir（台灣專案輸入）
 Entecavir 仿單
+FDA DAA 與 HBV 再活化警示
 Famciclovir 仿單
 Foscarnet 仿單
+Foscarnet 藥物評論（Adis 1991）
 Ganciclovir 注射劑仿單
+Ganciclovir 美國仿單（微生物學）
 Glecaprevir/pibrentasvir 仿單
+HBV／HIV 共感染綜述（IAS-USA 2023）
 HCT 腺病毒綜述 2023
 HIV i-Base 2025 報導
 HIV 兒童 OI 指引（VZV）
@@ -37659,9 +38133,12 @@ IDSA 腦炎 2008
 Letermovir 仿單
 Letermovir 台灣（CDE 報告）
 Letermovir 延長到 200 天（Lancet Haematol 2024）
+Letermovir 綜述（PMC7318821）
 MSD Manual 帶狀疱疹 2026
 Maribavir 仿單
 Maribavir 台灣
+Maribavir 歐盟 SmPC
+Maribavir 綜述（PMC9487637）
 Molnupiravir 說明書
 NIH COVID 2024（已封存）
 NYSDOH AI PEP 2025
@@ -37679,6 +38156,7 @@ TTS BK 2024
 Tenofovir alafenamide 仿單
 Tenofovir disoproxil 仿單
 US PHS oPEP 2025
+Valacyclovir CMV 預防（NEJM 1999）
 Valacyclovir 仿單
 Valganciclovir 仿單
 WHO COVID 2023
@@ -37686,7 +38164,7 @@ WHO HBV 2024
 WHO 流感 2024
 Zanamivir 仿單
 cidofovir 腺病毒劑量
-v0.3（2026-11-15）
+v0.4（2026-11-15）
 「更新」綠色標籤：2024 年後的改版、新核准或已發表 phase 3。各指引說法不同時分別列出，不合併。
 不列台灣公費與健保條件。台灣許可證未查證的藥標示「請確認」。
 丹麥 HSV-1 腦炎世代（CID 2026）
@@ -37703,7 +38181,7 @@ v0.3（2026-11-15）
 英國 ABN/BIA 腦炎 2012
 英國腦膜炎指引 2016
 衛福部 PrEP 澄清稿
-資料來源（89）
+資料來源（99）
 院內 RSV 指引（UCSF、UNMC）
 院內血液腫瘤預防（UC Davis）
 ：2025 Clinical Practice Guideline Update by the IDSA on the Treatment and Management of COVID-19: Antiviral Treatment for Mild to Moderate COVID-19 in Adults（Clin Infect Dis；9 條建議）。高風險（例：≥75 歲、嚴重免疫低下、多重危險因子）：建議 nirmatrelvir/ritonavir 5 天（發病 5 天內）或 remdesivir 3 天（7 天內）；風險增加但非高風險：建議（conditional）同上；無危險因子：不建議抗病毒藥；molnupiravir 只在無其他選擇時（conditional）。本版依 NEJM Clinician Guideline Watch（2026-05-20）、SHM／Gilead pocket card（2026-03）與 CME Outfitters 2026-01 摘要核對，全文未讀到，強度與證據等級請確認。
@@ -37717,37 +38195,46 @@ v0.3（2026-11-15）
 ：Acyclovir tablets／capsules US PI：帶狀疱疹 800 mg q4h 5 次／日 × 7–10 天；初次生殖器疱疹 200 mg 5 次／日 × 10 天；抑制 400 mg BID；成人水痘 800 mg QID × 5 天。腎調整：800 mg q4h → CrCl 10–25：800 mg q8h；0–10：800 mg q12h；200 mg q4h 或 400 mg q12h → CrCl 0–10：200 mg q12h。
 ：Adenovirus infection in allogeneic hematopoietic cell transplantation. Transpl Infect Dis 2023;25 Suppl 1:e14173（綜述，只取得摘要）：異體 HCT 後前 3–4 個月 AdV 感染 0–20%，兒童較高；預防疾病靠早期偵測病毒複製增加，血中達 10^2–3 copies/mL（或糞便 10^6 copies/g）即 preemptive 開始 cidofovir；cidofovir 是目前唯一建議的抗病毒藥，療效有限且有腎毒性；brincidofovir 當時不可取得，仍在其他病毒的研究中。
 ：Aurelius E, et al. Long-term valacyclovir suppressive treatment after herpes simplex virus type 2 meningitis: a double-blind, randomized controlled trial. Clin Infect Dis 2012;54:1304–13。101 名原發或復發 HSV-2 腦膜炎，先 valacyclovir 1 g TID 1 週，之後 0.5 g BID 或安慰劑 1 年：未減少復發，停藥後第 2 年復發風險反而較高；不建議用於預防復發。
-：Baraclude（entecavir）US PI：未曾用 nucleoside 者 0.5 mg QD；lamivudine 難治或失代償肝病 1 mg QD；空腹（餐前後至少 2 小時）。腎調整（CrCl ≥50／30–<50／10–<30／<10 與 HD、CAPD）：0.5 mg 方案 0.5 mg QD／0.25 mg QD 或 0.5 mg q48h／0.15 mg QD 或 0.5 mg q72h／0.05 mg QD 或 0.5 mg q7d；1 mg 方案 1 mg QD／0.5 mg QD 或 1 mg q48h／0.3 mg QD 或 1 mg q72h／0.1 mg QD 或 1 mg q7d；HD 於透析後給。停藥可能急性惡化；乳酸中毒警語。
+：Baraclude（entecavir）US PI：未曾用 nucleoside 者 0.5 mg QD；lamivudine 難治或失代償肝病 1 mg QD；空腹（餐前後至少 2 小時）。腎調整（CrCl ≥50／30–<50／10–<30／<10 與 HD、CAPD）：0.5 mg 方案 0.5 mg QD／0.25 mg QD 或 0.5 mg q48h／0.15 mg QD 或 0.5 mg q72h／0.05 mg QD 或 0.5 mg q7d；1 mg 方案 1 mg QD／0.5 mg QD 或 1 mg q48h／0.3 mg QD 或 1 mg q72h／0.1 mg QD 或 1 mg q7d；HD 於透析後給。停藥可能急性惡化；乳酸中毒警語。Boxed warning：HIV/HBV 共感染者若未同時接受有效的 HIV 治療（HAART），不建議使用 entecavir，有選出 HIV M184V 變異的風險；M184V 變異對 entecavir 敏感性下降；entecavir 不算 HAART 的一部分。
 ：Biktarvy、Tivicay、Truvada、Descovy、Apretude、Yeztugo 的美國仿單：本版未取得仿單全文。腎功能分段、交互作用與禁忌依一般臨床知識與上列指引整理，數字請以仿單與院內藥典逐項核對。BIC/FTC/TAF 與 FTC/TAF 的低腎功能切點（CrCl <30 不建議）、DTG 與 CAB 的交互作用、BIC 與 DTG 使血清肌酸酐上升（抑制腎小管分泌）均屬此類。
+：Biktarvy（bictegravir/emtricitabine/tenofovir alafenamide）US PI 2025：boxed warning——停用含 emtricitabine 與（或）tenofovir disoproxil 的產品，HIV-1 與 HBV 共感染者可能發生嚴重急性 B 肝惡化，停藥後至少數月密切追蹤肝功能，必要時給 HBV 治療。開始前需檢驗 HBV。
 ：British Transplantation Society. UK Guideline on Management of BK Polyomavirus (BKPyV) Infection and Disease Following Kidney Transplantation。本版依網頁摘要核對：尿 BKPyV PCR 不建議用於監測（1C）；病毒血症者小心減免疫抑制，避免誘發排斥（1C）；減或停 corticosteroid（2D）；未用類固醇者可加類固醇以便移除另一種免疫抑制（2D）；治療失敗者建議切片（1D）；清除後再活化的篩檢間隔 3、6、12 個月（2C）。發表年份與其他細節本版未核對。
 ：CDC. Clinical Guidance for People at Risk for Severe Varicella。VariZIG 暴露後盡快、10 天內；口服 acyclovir 或 valacyclovir 可用於中重度風險者（含 >12 歲未接種者），出疹 24 小時內給；IV acyclovir 用於重症（肺炎、腦炎、血小板低下、嚴重肝炎）、免疫低下（含高劑量類固醇 >14 天）、懷孕併發症；acyclovir 抗藥者用 foscarnet。
 ：CDC. Influenza Antiviral Medications: Summary for Clinicians（頁面更新 2026-03-10）。住院、重症／病情進展、高風險者盡快治療，不等檢驗；住院者 oseltamivir 口服或經腸道，>48 小時仍可能有效；住院者不常規用 zanamivir、baloxavir、peramivir；嚴重免疫低下不建議 baloxavir 單用；懷孕首選 oseltamivir、不建議 baloxavir；暴露後預防 7 天、機構群聚至少 2 週並持續到最後一例後 1 週；腎調整表（oseltamivir、peramivir）。
 ：CDC. Preexposure Prophylaxis for the Prevention of HIV Infection in the United States — 2021 Update: A Clinical Practice Guideline。本版未取得全文，依 CDC 臨床指引網頁與二手整理（CDC 快速指南、AETC、CCO 摘要）：口服 F/TDF（emtricitabine 200 mg／tenofovir DF 300 mg）每日，成人與青少年；F/TAF（200/25 mg）每日，男性與 transgender women；CAB 600 mg IM，第 0、1 個月，之後每 2 個月。F/TDF eCrCl <60 不建議；F/TAF eCrCl ≥30 可用；口服 PrEP 每 3 個月 HIV 檢驗，每次最多開 90 天；CAB 每次注射前 HIV 檢驗（含 HIV-1 RNA），不需定期腎功能與血脂檢驗；<50 歲且 eCrCl ≥90 者每年、其他每 6 個月評估腎功能；F/TAF 每年測 triglyceride、cholesterol 與體重；停 CAB 後 8 週內接口服 PrEP。2-1-1 事件型的新增指引內容本版未取得。
 ：Cesaro S, et al. ECIL guidelines for the prevention, diagnosis and treatment of BK polyomavirus-associated haemorrhagic cystitis in haematopoietic stem cell transplant recipients. J Antimicrob Chemother 2018;73(1):12–21。本版只取得摘要：BKPyV-HC 於異體 HSCT 兒童 8–25%、成人 7–54%；診斷需膀胱炎症狀、肉眼血尿、尿 BKPyV 負荷 >7 log10 copies/mL，並排除其他病因，血中病毒量可作較專一的追蹤指標；無隨機對照試驗支持抗病毒預防或治療；充分水化與膀胱沖洗預防價值有限；fluoroquinolone 預防與治療無效且增加抗藥；高壓氧或纖維蛋白膠僅小型病例系列顯示邊際效果；cidofovir 雖有降低病毒量的報告，現有資料不支持常規使用。全文建議強度本版未取得。
+：Chrisp & Clissold, Drugs 1991;41:104。Foscarnet 抑制人類疱疹病毒 DNA polymerase 與 HIV 反轉錄酶；體外抑制 HIV 複製；acyclovir 抗藥 VZV 有部分病例報告成功使用。年代較早，僅作活性範圍參考。
 ：Clin Infect Dis 2026;82(6):e1384。丹麥全國 HSV-1 腦炎世代：LP 後延遲 acyclovir >6 小時，6 個月死亡相對風險 1.85（95% CI 1.01–3.45）；英、法、丹麥指引建議入院 6 小時內開始。觀察性研究。
 ：Collins S. US CDC updated guidelines on PEP (May 2025). HIV i-Base（2025-05）：整理 CDC 2025 nPEP 更新；指出首選改為第二代 INSTI（bictegravir 或 dolutegravir）＋ tenofovir（TAF 或 TDF）＋ XTC，PEP 仍建議 24 小時內、不晚於 72 小時開始；並註記英國 BASHH/BHIVA 2021 指引仍建議 raltegravir ＋ 另開 TD/FTC。二手報導，英國指引原文本版未取得。
 ：Copegus（ribavirin）US PI 與 EASL 2020：與 DAA 併用時，成人常用 1,000 mg／日（<75 kg）或 1,200 mg／日（≥75 kg）分次隨餐；Child-Pugh C 或貧血者可由 600 mg／日起，依耐受度調整。腎功能：CrCl 30–50 mL/min 隔日交替 200 mg 與 400 mg；CrCl <30 或 HD 200 mg QD（Copegus 仿單，與 DAA 併用的腎功能劑量請確認）。孕婦禁用、男女伴侶避孕至停藥後 6 個月。
+：Corcorran & Kim, Top Antivir Med 2023;31:14。共感染者的 ART 以 TDF 或 TAF 加 emtricitabine 或 lamivudine 為骨幹（同時作用於 HBV 與 HIV）；考慮不含 tenofovir 的雙藥方案時需另評估 HBV。
 ：Cymevene（ganciclovir）SmPC（EMA referral annex）：治療誘導 5 mg/kg q12h × 14–21 天；preemptive 誘導 5 mg/kg q12h × 7–14 天；維持 5 mg/kg QD。腎調整（誘導／維持）CrCl ≥70：5 q12h／5 q24h；50–69：2.5 q12h／2.5 q24h；25–49：2.5 q24h／1.25 q24h；10–24：1.25 q24h／0.625 q24h；<10（HD）：1.25／0.625 mg/kg 每週 3 次於透析後。ANC <500 或血小板 <25,000 避免使用。
 ：EASL Clinical Practice Guidelines on the management of hepatitis B virus infection（J Hepatol 2025）。首選 entecavir、tenofovir disoproxil、tenofovir alafenamide；不建議 lamivudine、adefovir、telbivudine。PDF 表 14（治療分層）文字擷取不完整，分層細節請以原文確認。
 ：EASL recommendations on treatment of hepatitis C: Final update of the series（J Hepatol 2020;73:1170）。pangenotypic 方案：glecaprevir/pibrentasvir 8 週（無肝硬化）、sofosbuvir/velpatasvir 12 週；失代償肝硬化 sofosbuvir/velpatasvir ＋ ribavirin 12 週。2023 更新本版未取得・請確認。
 ：Epclusa（sofosbuvir/velpatasvir）US PI：400/100 mg QD；無肝硬化或代償性肝硬化 12 週；Child-Pugh B、C 併用 ribavirin 12 週。美國仿單 sofosbuvir 已不限 eGFR（2019 起 eGFR <30 與透析可用）。避免併用 amiodarone（嚴重心搏過緩）、rifampin、St. John's Wort；質子幫浦抑制劑、H2 阻斷劑、制酸劑有交互作用（依仿單時程）。HBV 再活化警語。
 ：European AIDS Clinical Society Guidelines v13.0（2025-10）；Ambrosioni J, et al. HIV Med 2025。本版依新聞整理（aidsmap、EATG、HIV i-Base；標題與摘要），未取得全文：PEP 首選 BIC/FTC/TAF；PrEP 納入長效 CAB 與 lenacapavir；近 6 週有高風險暴露或使用長效藥時，PrEP 前建議 HIV RNA；對所有人支持事件型 PrEP（2:1:1 或 2:7）；已在口服 PrEP 者暴露後盡快服 2 錠，之後每日 1 錠直到醫師評估；在 PrEP 或長效 CAB 期間感染者，起始治療避免雙藥，CAB 感染者用含 boosted darunavir 的三藥。請以原文確認。
 ：Extended-duration letermovir prophylaxis after allogeneic HSCT（MK-8228-040）. Lancet Haematol 2024;11:e127–e135（phase 3，第一作者請確認）：高風險 R+ 延長至 200 天，降低晚發臨床顯著 CMV 感染，安全性相近。
+：FDA Drug Safety Communication（2016-10，2017 全類別仿單加 boxed warning）：HCV 直接作用抗病毒藥（DAA）治療的 HBV 共感染者，包含 HBsAg 陽性與 HBsAg 陰性但 anti-HBc 陽性者，可能發生 HBV 再活化，部分致猛爆性肝炎、肝衰竭或死亡；須治療前篩檢，治療中與治療後監測。
 ：Famvir（famciclovir）US PI：帶狀疱疹 500 mg q8h × 7 天（CrCl 40–59：q12h；20–39：q24h；<20：250 mg q24h；HD：每次透析後 250 mg）；復發生殖器 1 g BID × 1 天（40–59：500 mg q12h × 1 天；20–39：500 mg 單次；<20：250 mg 單次；HD 後 250 mg）；口唇 1500 mg 單次（40–59：750 mg；20–39：500 mg；<20：250 mg）；抑制 250 mg BID（20–39：125 mg q12h；<20：125 mg q24h；HD 後 125 mg）；HIV 復發 500 mg BID × 7 天（20–39：500 mg q24h；<20：250 mg q24h）。
 ：Florescu DF, Schaenman JM; AST IDCOP. Adenovirus in solid organ transplant recipients — Guidelines from the American Society of Transplantation Infectious Diseases Community of Practice. Clin Transplant 2019;33(9):e13527。本版依 PubMed 摘要與 GuidelineCentral 核對：無症狀受者不應做腺病毒監測；症狀者定量 PCR 可輔助決定是否治療與評估反應；支持治療與減免疫抑制是首要；抗病毒藥缺乏前瞻隨機試驗，但嚴重、進展或播散性疾病在多數移植中心以 IV cidofovir 為標準做法；cidofovir 應併充分水化與 probenecid，最佳劑量與頻率未知；IVIG 可能對低 γ-球蛋白血症者有益；腺病毒特異 T 細胞治療為未來方向。
 ：Foolad F, et al. Oral versus aerosolized ribavirin for the treatment of RSV infections in HCT recipients. Clin Infect Dis 2019（124 例）：上→下呼吸道進展與 30 天死亡率兩組相近，口服可作替代。
 ：Foscavir（foscarnet）US PI：CMV 誘導 90 mg/kg q12h 或 60 mg/kg q8h × 2–3 週，維持 90–120 mg/kg QD；acyclovir 抗藥 HSV 40 mg/kg q8–12h × 2–3 週或至癒合。腎調整以 CrCl（mL/min/kg）計：CMV 90 mg/kg q12h 欄 >1.4：90 q12h；>1.0–1.4：70 q12h；>0.8–1.0：50 q12h；>0.6–0.8：80 q24h；>0.5–0.6：60 q24h；0.4–0.5：50 q24h；<0.4 不建議。HSV 40 mg/kg q12h 欄：40 q12h／30 q12h／20 q12h／35 q24h／25 q24h／20 q24h。黑框：腎毒性為主要毒性，需水化並頻繁監測 Cr；電解質（Ca、Mg、K、P）異常可致癲癇。
+：Ganciclovir 注射劑美國 PI 微生物學段：在人體臨床研究中對 CMV 與 HSV 有活性；核准適應症為 CMV（視網膜炎、移植預防）。VZV 活性未在取得的段落中出現，請確認。
 ：Hirsch HH, Randhawa PS; AST IDCOP. BK polyomavirus in solid organ transplantation — Guidelines from the American Society of Transplantation Infectious Diseases Community of Practice. Clin Transplant 2019;33(9):e13528。本版依 PubMed 摘要與 GuidelineCentral 條列核對，全文未取得：腎移植受者以 QNAT 篩檢血漿 BKPyV-DNAemia（Moderate, Strong）；無排斥風險升高且基線腎功能者，減免疫抑制前不需切片（Moderate, Strong）；喪失移植腎後可再移植，需定期篩檢病毒複製。
 ：Hirsch HH, et al. Fourth European Conference on Infections in Leukaemia (ECIL-4): guidelines for diagnosis and treatment of human respiratory syncytial virus, parainfluenza virus, metapneumovirus, rhinovirus, and coronavirus. Clin Infect Dis 2013;56:258–66。HSCT／血液惡性腫瘤 RSV：可延後 conditioning、aerosolized ribavirin，或 off-label 全身性 ribavirin 及／或 IVIG。各條強度本版未逐條核對。
 ：Hwang JP, et al. Hepatitis B Virus Screening and Management for Patients With Cancer Prior to Therapy: ASCO Provisional Clinical Opinion Update. J Clin Oncol 2020;38:3698–3715。所有開始抗癌治療者篩檢 HBsAg、anti-HBc（total Ig 或 IgG）、anti-HBs；HBsAg 陽性者預防；HBsAg 陰性、anti-HBc 陽性者，接受 anti-CD20 或 HSCT 給預防，其他監測；預防持續到治療結束後至少 12 個月（anti-CD20 更久）。細節請確認。
 ：IDSA Guidelines on the Treatment and Management of Patients with COVID-19（living guideline，2025-05-30 版）。住院未用氧且 SpO2 >94%：建議不常規使用 remdesivir；用氧但未插管／ECMO：建議 remdesivir 5 天（優於 10 天）；插管或 ECMO：建議不常規開始 remdesivir（皆 conditional）。依 InpharmD 與 SHM pocket card 轉述，請以原文確認。
+：International Valacyclovir Cytomegalovirus Prophylaxis Transplantation Study Group. Valacyclovir for the prevention of cytomegalovirus disease after renal transplantation. N Engl J Med 1999;340:1462-70。全文未取得，僅引用題目與出處；各國仿單適應症請確認。
 ：Kofman AD, et al. 2025 US Public Health Service Guidelines for the Management of Occupational Exposures to HIV and Recommendations for Postexposure Prophylaxis in Healthcare Settings. Infect Control Hosp Epidemiol 2025;46:863–73。本版全文未取得，只依摘要與二手整理（UIC 藥學 FAQ、EATG 與 SHEA 新聞）：首選 BIC/FTC/TAF，或 DTG ＋（TAF 或 TDF）＋（FTC 或 3TC）；替代為 darunavir（併 cobicistat 或 ritonavir）＋（TAF 或 TDF）＋（FTC 或 3TC）；移除 2013 版首選 raltegravir＋TDF/FTC（因需多次給藥）；基線檢驗正常時不再常規追蹤藥物毒性檢驗；最終 HIV 檢驗（實驗室 Ag/Ab＋NAT）不晚於暴露後 12 週；12 個月內用過 CAB 長效 PrEP 的暴露者需加做 HIV 檢驗；有來源病毒量測不到與暴露者正在用 PrEP 的專門建議；腎功能不全（CrCl 30–49、<30）與肝功能不全另有用藥指引。療程、起始時效、劑量與懷孕建議本版未取得。
 ：Kotton CN, et al. The Fourth International Consensus Guidelines on the Management of Cytomegalovirus in Solid Organ Transplantation. Transplantation 2025;109:1066–1110（GRADE）。預防：腎 D+/R− prophylaxis（valganciclovir、ganciclovir 或 letermovir；strong, high）6 個月；腎 R+ 3 個月；肝 D+/R− 3–6 個月、R+ 3 個月；心 D+/R− 3–6 個月、R+ 3 個月；肺 D+/R− 12 個月、R+ 6–12 個月；胰、腸、VCA 建議 prophylaxis。D−/R−（用去白血球或 CMV 陰性血品）不需 CMV 預防，應考慮其他疱疹病毒預防（strong, high）。Preemptive：至少每週 12–16 週。不建議低劑量 valganciclovir。治療：valganciclovir 900 mg q12h 或 IV ganciclovir 5 mg/kg q12h（strong, moderate），輕中度可口服者口服優先；危及生命或重症用 IV（strong, low）；不用 acyclovir、valacyclovir、口服 ganciclovir；至少 2 週並至臨床緩解且 DNAemia 低於院內閾值（高敏感度單次 <LLOQ，或兩次每週檢體）；前 2 週病毒量持平或上升但臨床改善不換藥；不因白血球低而減量；用未標準化 GFR（如 CG mL/min）調劑量。難治：≥2 週適當治療後下降 ≤1 log10；累積 ≥4 週且 ≥2 週反應不佳時做基因型（檢體 >3 log10 IU/mL；UL97、UL54，letermovir 看 UL56）；maribavir 為抗藥主要替代（strong, high），避免用於 CNS 或視網膜炎、不可與 ganciclovir 併用；foscarnet 用於病況差、病毒量高（常用 ≥4.7 log10）者（weak, low）；cidofovir 試驗表現差；letermovir 單用治療證據不足；IVIG 可考慮於重症（weak, low）；次級預防不常規，高風險 8–12 週。
 ：Kotton CN, et al. The Second International Consensus Guidelines on the Management of BK Polyomavirus in Kidney Transplantation. Transplantation 2024;108(9):1834–66（GRADE）。本版依全文 PDF 前半（表 4–7）核對，治療失敗與再移植段落被截斷。所有腎移植受者血漿 BKPyV-DNAemia 篩檢：每月至第 9 個月，之後每 3 個月至 2 年（兒童 3 年）（strong, B）；1,000–10,000 copies/mL 於 2–3 週內複驗（weak, B）；>10,000 單次或 1,000–10,000 兩次相隔 2–3 週 → 減免疫抑制（strong B／weak B）；策略 1 先減抗代謝藥 ≥50%，4 週未下降 ≥10 倍則停抗代謝藥並將 prednisone 降至 5–10 mg/日，再降 CNI 至 tacrolimus 約 5 ng/mL 或 cyclosporine 約 100 ng/mL（weak, C）；策略 2 先減 CNI 25–50% 至 tacrolimus 3–5 ng/mL 或 cyclosporine 75–125 ng/mL，4 週未下降再減抗代謝藥（weak, C）；兩種策略無隨機試驗比較；切片證實 PyVAN 即使血漿確認尚未回也減免疫抑制（strong, B）；成人無移植腎功能異常且無高免疫風險不需切片；IHC（SV40 LTag）確診（strong, A）；IVIG 輔助（weak, D）；cidofovir、leflunomide（strong, B）、fluoroquinolone、statin（strong, A）不使用；mTOR 抑制劑轉換證據不足；喪失移植腎後再移植可行，需血漿 DNAemia 測不到，不常規摘除移植腎。
 ：Lagevrio（molnupiravir）FDA EUA／台灣專案輸入：800 mg（4 × 200 mg）BID × 5 天，發病 5 天內，≥18 歲；不需腎調整；不建議用於懷孕。
-：Livtencity（maribavir）US PI：400 mg BID（美國未定療程；EU 8 週），治療移植後對 ganciclovir、valganciclovir、cidofovir 或 foscarnet 難治（含或不含抗藥）之 CMV。美國：併用 carbamazepine 或 rifabutin 增為 800 mg BID，phenytoin 或 phenobarbital 增為 1,200 mg BID；EU：無法避免強或中度 CYP3A 誘導劑（carbamazepine、efavirenz、phenobarbital、phenytoin）時 1,200 mg BID，rifampin、rifabutin、St. John's Wort 不建議。禁止與 ganciclovir、valganciclovir 併用。會升高 CYP3A、P-gp、BCRP 敏感受質濃度（如 tacrolimus）。台灣：克巨染膜衣錠（台灣武田）。
+：Letermovir 只對 CMV 有活性；因對 HSV、VZV 無活性，HSCT 預防期間需另給 acyclovir、valacyclovir 或 famciclovir。
+：Livtencity（maribavir）EMA 產品資訊：與 ganciclovir 或 valganciclovir 併用列為禁忌（maribavir 抑制 pUL97，可能拮抗其活性）。
+：Livtencity（maribavir）US PI：400 mg BID（美國未定療程；EU 8 週），治療移植後對 ganciclovir、valganciclovir、cidofovir 或 foscarnet 難治（含或不含抗藥）之 CMV。美國：併用 carbamazepine 或 rifabutin 增為 800 mg BID，phenytoin 或 phenobarbital 增為 1,200 mg BID；EU：無法避免強或中度 CYP3A 誘導劑（carbamazepine、efavirenz、phenobarbital、phenytoin）時 1,200 mg BID，rifampin、rifabutin、St. John's Wort 不建議。禁止與 ganciclovir、valganciclovir 併用。會升高 CYP3A、P-gp、BCRP 敏感受質濃度（如 tacrolimus）。台灣：克巨染膜衣錠（台灣武田）。美國仿單：不建議與 ganciclovir、valganciclovir 併用（maribavir 抑制 pUL97，可能拮抗其活性）；EU SmPC 則列為禁忌（見 MAR_EU）。
 ：Ljungman P, et al. Guidelines for the management of cytomegalovirus infection in patients with haematological malignancies and after stem cell transplantation from the 2017 ECIL-7. Lancet Infect Dis 2019;19:e260–e272。本版未取得全文，HSCT 的 preemptive 閾值與療程請確認；成大藥劑部摘要：高劑量 acyclovir／valacyclovir 可減少感染但不減少疾病，foscarnet 毒性大不適合長期預防，letermovir 減少感染且無明顯毒性。
 ：MSD Manual Professional：herpes zoster（2026-05 更新）。famciclovir、valacyclovir 口服生體可用率較 acyclovir 好，為優先；一般 7–10 天；免疫低下者有專家建議延長到全部結痂；輕度免疫低下可口服，嚴重免疫低下用 IV acyclovir；懷孕以 acyclovir 優先、valacyclovir 可用，famciclovir 懷孕資料少一般不建議。
+：Maribavir 體外對 CMV 與 EBV 有抑制作用，對 HSV-1、HSV-2、VZV、HHV-6、HHV-8 無活性；體外拮抗 ganciclovir（約 13 倍），對 cidofovir、foscarnet 無影響。
 ：Marin M, et al. MMWR 2013（VariZIG）與 AAP Red Book 2018（Lachiewicz, Prev Med Rep 2019 表 3 整理）：無免疫力且高風險（免疫低下、懷孕等）：VariZIG 125 IU/10 kg（最多 625 IU）IM，10 天內（理想 96 小時內）；無 VariZIG → IVIG 400 mg/kg；兩者皆無 → 暴露後第 7–10 天開始 acyclovir 或 valacyclovir 共 7 天（AAP：acyclovir 20 mg/kg QID、上限 800 mg／次；valacyclovir 20 mg/kg TID、上限 1 g／次）。可接種者 3–5 天內接種疫苗。
 ：Matthes-Martin S, et al. European guidelines for diagnosis and treatment of adenovirus infection in leukemia and stem cell transplantation: summary of ECIL-4 (2011). Transpl Infect Dis 2012;14(6):555–63。本版只取得摘要：兒童風險較高；T 細胞清除、非血緣或臍帶血移植、GVHD III–IV 級與淋巴球低下是風險因子；高風險者以定量 PCR 監測；cidofovir 是最常用的抗病毒藥，但未做對照試驗；腺病毒特異 T 細胞治療發展中。全文建議強度與閾值本版未取得。
 ：Mavyret（glecaprevir/pibrentasvir）US PI：300/120 mg（3 錠）QD 隨餐。未治療無肝硬化 8 週；代償性肝硬化 8 週（美國仿單）。任何腎功能（含透析）不需調整。Child-Pugh B 不建議、C 禁用。禁止併用 atazanavir、rifampin 等；HBsAg 陽性或 anti-HBc 陽性者有 HBV 再活化風險。
@@ -37757,7 +38244,8 @@ v0.3（2026-11-15）
 ：New York State Department of Health AIDS Institute. PEP to Prevent HIV Infection, Tables 2–5（2025-12-05）。≥40 kg 首選：bictegravir 50 mg／TAF 25 mg／emtricitabine 200 mg 單錠每日 1 次，或 dolutegravir 50 mg 每日 1 次加 NRTI 骨幹；皆口服 28 天；dolutegravir 併用 metformin 限每日 1 g；基線 CrCl <50 mL/min 時 3TC／FTC ＋ TDF 需調整劑量。本版為搜尋摘錄，非全文。
 ：Ontario Health. Summary of Recommendations for Drug Therapy for Adults with COVID-19（2025-07）。嚴重度定義（SpO2 >92%）；remdesivir 若 nirmatrelvir/ritonavir 不能用，7 天內開始；嚴重者開始 remdesivir 後進展為危急仍完成療程。
 ：Open Forum Infect Dis 2022（ofac644）醫師問卷（223 人）：39% 一律治療、34% 重症才治療、10% 很少治療；最常用 IV acyclovir 後改 valacyclovir（61%）；IV 劑量多為 10 mg/kg TID（91%）；總療程中位數 7 天（IQR 7–10）；58% 對免疫低下者處置不同（延長療程或 IV）。屬實務調查，非指引。
-：PAXLOVID（nirmatrelvir tablets; ritonavir tablets）US PI。eGFR ≥60：300/100 mg BID × 5 天；30–<60：150/100 mg BID；<30（含 HD）：第 1 天 300/100 mg 一次，第 2–5 天 150/100 mg QD，透析日於 HD 後給。Child-Pugh C 不建議。禁止併用：alfuzosin、amiodarone、apalutamide、carbamazepine、colchicine（腎或肝功能不全）、dihydroergotamine、dronedarone、eletriptan、enzalutamide、eplerenone、ergotamine、finerenone、flecainide、flibanserin、ivabradine、lomitapide、lovastatin、lumacaftor/ivacaftor、lurasidone、methylergonovine、口服 midazolam、naloxegol、phenobarbital、phenytoin、pimozide、primidone、propafenone、quinidine、ranolazine、rifampin、rifapentine、St. John's Wort、sildenafil（PAH 用）、silodosin、simvastatin、suzetrigine、tolvaptan、triazolam、ubrogepant、voclosporin。lovastatin、simvastatin 可暫停後使用。嚴重不良反應最常見的併用藥為 calcineurin inhibitor（tacrolimus、cyclosporine）。
+：PAXLOVID（nirmatrelvir tablets; ritonavir tablets）US PI。eGFR ≥60：300/100 mg BID × 5 天；30–<60：150/100 mg BID；<30（含 HD）：第 1 天 300/100 mg 一次，第 2–5 天 150/100 mg QD，透析日於 HD 後給。Child-Pugh C 不建議。禁止併用：alfuzosin、amiodarone、apalutamide、carbamazepine、colchicine（腎或肝功能不全）、dihydroergotamine、dronedarone、eletriptan、enzalutamide、eplerenone、ergotamine、finerenone、flecainide、flibanserin、ivabradine、lomitapide、lovastatin、lumacaftor/ivacaftor、lurasidone、methylergonovine、口服 midazolam、naloxegol、phenobarbital、phenytoin、pimozide、primidone、propafenone、quinidine、ranolazine、rifampin、rifapentine、St. John's Wort、sildenafil（PAH 用）、silodosin、simvastatin、suzetrigine、tolvaptan、triazolam、ubrogepant、voclosporin。lovastatin、simvastatin 可暫停後使用。嚴重不良反應最常見的併用藥為 calcineurin inhibitor（tacrolimus、cyclosporine）。警語：ritonavir 為 HIV protease inhibitor，未控制或未診斷 HIV-1 感染者使用，HIV 可能對 protease inhibitor 產生抗藥。
+：POZ 2024-12 報導 DHHS 更新：HIV/HBV 共感染者的 ARV 要有兩個對兩種病毒都有活性的藥（TDF 或 TAF 加 FTC 或 3TC）；採不含 NRTI 的方案（含長效 cabotegravir＋rilpivirine）需另加 HBV 治療，因兩者皆無 HBV 活性；避免未加 HBV 藥就轉 dolutegravir/lamivudine。僅取得二手報導，DHHS 原文請確認。
 ：Panel on Opportunistic Infections in Children with HIV. Varicella-Zoster Virus（clinicalinfo.hiv.gov）：acyclovir 抗藥的 VZV 對 valacyclovir、famciclovir、ganciclovir 也全部抗藥；懷疑抗藥時盡量做病毒分離與藥敏。
 ：Patel RR, et al. Clinical Recommendation for the Use of Injectable Lenacapavir as HIV Preexposure Prophylaxis — United States, 2025. MMWR Morb Mortal Wkly Rep 2025;74(35):541–549（2025-09-18）。strongly recommended，高證據確定性（PURPOSE 1、PURPOSE 2），≥35 kg 且可受益於 PrEP 者。第 1 天 927 mg SC（2 針各 1.5 mL，相隔至少 4 吋）＋口服 600 mg，第 2 天口服 600 mg，之後每 26 週（±2 週）927 mg SC。每次注射前需血液實驗室或快篩 HIV Ag/Ab（7 天內），不可用口腔唾液抗體檢驗；起始建議加 HIV-1 RNA；中度與強效 CYP3A 誘導劑需補充劑量，停藥後 9 個月內仍可升高部分藥物濃度；懷孕者經共享決策可開始或繼續；漏打：晚 ≥14 天可用口服 300 mg 每週橋接（<6 個月）。腎功能內容本版取得的文字未論及。
 ：Paxlovid EU／UK SmPC（emc）：重度腎功能不全（eGFR <30）或腎衰竭禁用（劑量未確定）；中度 150/100 mg BID。與美國仿單（eGFR <30 有劑量）不同；歐洲最新版是否已更新請確認。
@@ -37776,7 +38264,7 @@ v0.3（2026-11-15）
 ：Valcyte（valganciclovir）仿單：誘導 900 mg BID（CMV 視網膜炎 21 天），維持／預防 900 mg QD；美國：腎移植預防至移植後 200 天，心、腎胰至 100 天；英國：SOT 至 100 天，腎移植可延到 200 天。腎調整（錠劑）CrCl 40–59：450 mg BID／450 mg QD；25–39：450 mg QD／450 mg QOD；10–24：450 mg QOD／450 mg 每週 2 次；<10（HD）錠劑不建議；口服液（英國）HD：誘導 200 mg、維持 100 mg 每週 3 次於透析後。
 ：Valtrex（valacyclovir）US PI：帶狀疱疹 1 g TID × 7 天；初次生殖器疱疹 1 g BID × 10 天；復發 500 mg BID × 3 天；抑制 1 g QD（≤9 次／年可 500 mg QD；HIV 500 mg BID）；口唇疱疹 2 g BID × 1 天。腎調整表（CrCl 30–49／10–29／<10）：帶狀疱疹 1 g q12h／1 g q24h／500 mg q24h；初次 不變／1 g q24h／500 mg q24h；復發 不變／500 mg q24h／500 mg q24h；抑制 1 g 不變／500 mg q24h／500 mg q24h，500 mg 不變／500 mg q48h／500 mg q48h；口唇 1 g ×2／500 mg ×2／500 mg 單次。HD 後給。
 ：Veklury（remdesivir）US PI：住院者 200 mg IV 第 1 天，之後 100 mg QD（未插管 5 天，插管／ECMO 10 天）；門診高風險 200 mg 第 1 天、100 mg 第 2–3 天（PINETREE）。2023-07 FDA 核准用於任何腎功能（含透析）不需調整、不需 eGFR 檢查（REDPINE）。ALT ≥10 倍上限不建議開始。
-：Vemlidy（tenofovir alafenamide）US PI：25 mg QD 隨餐。CrCl ≥15 不需調整；<15 未透析無建議；HD 病人 25 mg QD，透析日於 HD 後給。禁止併用 rifampin 等強 P-gp 誘導劑；停藥可能急性惡化。
+：Vemlidy（tenofovir alafenamide）US PI：25 mg QD 隨餐。CrCl ≥15 不需調整；<15 未透析無建議；HD 病人 25 mg QD，透析日於 HD 後給。禁止併用 rifampin 等強 P-gp 誘導劑；停藥可能急性惡化。HIV：Vemlidy 單用不建議用於 HIV-1 感染（可能產生 HIV 抗藥），開始前先篩 HIV，共感染者須用適當的 HIV 完整方案。
 ：Viread（tenofovir disoproxil fumarate）US PI：300 mg QD。腎調整：CrCl ≥50 q24h；30–49 q48h；10–29 q72–96h；HD 每週 1 次（或累計 12 小時透析後）；未透析 <10 無建議。腎功能、骨密度（磷）監測；停藥可能急性惡化。
 ：Vistide（cidofovir）US PI：誘導 5 mg/kg IV 每週 1 次 × 2 週，維持 5 mg/kg 每 2 週；每次須併用 probenecid（輸注前 3 小時 2 g、輸注後 2 與 8 小時各 1 g）與 1 L 生理食鹽水預先水化。SCr >1.5 mg/dL、CrCl ≤55 mL/min 或尿蛋白 ≥100 mg/dL（≥2+）禁止開始；用藥中 Cr 上升 0.3–0.4 → 維持劑量降為 3 mg/kg，上升 ≥0.5 或 ≥3+ 蛋白尿停藥；每次給藥前 48 小時內檢查 Cr 與尿蛋白。
 ：Vosevi（sofosbuvir/velpatasvir/voxilaprevir）US PI：400/100/100 mg QD 隨餐，12 週；用於曾接受含 NS5A 抑制劑方案失敗者（或基因型 1a、3 曾接受不含 NS5A 的 sofosbuvir 方案）。Child-Pugh B、C 不建議。
@@ -37788,7 +38276,7 @@ v0.3（2026-11-15）
 ：cidofovir 用於腺病毒為 off-label，無仿單劑量，各中心不同，以下為文獻中常見做法而非指引：5 mg/kg 每週 1 次併 probenecid（EBMT 中心調查中最常用，Cesaro S, et al.，年份與期刊本版未核對）；1 mg/kg 每週 3 次，腎毒性較低（兒童 HSCT 與 SOT 回溯研究，PMC3031399、Pediatr Transplant 2018;22）；CrCl <50 mL/min 者曾用 0.5 mg/kg 每週 3 次（Bruminhent J, et al. Open Forum Infect Dis 2019，腎移植回溯研究）。probenecid 常用 1.25 g/m²：給藥前 3 小時及給藥後 2、8 小時（PMC4863673 回溯研究）。仿單（美國）對 CMV 視網膜炎的限制仍適用於此類腎毒性風險：SCr >1.5、CrCl ≤55 或尿蛋白 ≥2+ 禁止開始。
 ：健保署藥品給付規定 10.7.14 Maribavir（如 Livtencity）（113/11/1 生效）：對一種或多種先前療法具抗藥性、難治或耐受度不佳之成人 HSCT 或 SOT 後 CMV 感染或疾病；首次療程限 8 週、需事前審查。本 app 不判定健保給付，此處只用來確認台灣已上市。
 ：台灣感染症醫學會「抗流感病毒藥物使用建議（2024 年修訂版）」（2024-11 公告，見 MyGoPen 2025-02-12 轉述）。本版未取得全文，個別建議請確認。
-：新增 HBV（是否治療、NA 停藥、再活化預防、抗藥）與 HCV（DAA 治療、失敗再治療）。流感、COVID-19、RSV、HSV、VZV、CMV 同前。下一版：HIV PEP／PrEP、BK virus、adenovirus、抗病毒譜。
+：新增「抗病毒譜」分頁（藥物×病毒矩陣與交叉活性註記）。HBV、HCV、流感、COVID-19、RSV、HSV、VZV、CMV 同前。HIV（nPEP、oPEP、PrEP）、BK、adenovirus 同 v0.3。
 ：查到的指引沒有直接針對此情境的建議；此處為一般做法或依相近情境類推，請依臨床判斷並會診感染科。
 ：紓伏效膜衣錠 20 mg（Xofluza）衛部藥輸字第 027693 號，版本日期 2024-04-12。適用 ≥5 歲且 ≥20 kg 之 A、B 型流感治療，及密切接觸後預防。CrCl ≥30 不需調整，<30 無資料；避免與乳製品、制酸劑、鈣鐵鎂鋅硒等多價陽離子併服。成人 20–<80 kg 單次 40 mg、≥80 kg 單次 80 mg（CDC 表）。
 ：衛生福利部疾病管制署「公費 COVID-19 治療用口服抗病毒藥物領用方案」第 14 次修訂（115-03-10），引用「新型冠狀病毒（SARS-CoV-2）感染臨床處置指引」之臨床條件：Paxlovid 具任一重症風險因子、未用氧且發病 5 天內之成人；molnupiravir 為無法用 Paxlovid 或 remdesivir 之 ≥18 歲（不用於懷孕）；ensitrelvir 為無法用 Paxlovid 或 remdesivir 之 ≥12 歲、發病 3 天內（孕婦禁用）。本 app 只列臨床條件，不列公費資格。

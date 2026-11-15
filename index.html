@@ -248,6 +248,18 @@ details.more{border-top:1px solid var(--line);padding-top:8px}
 details.more>summary{font-size:.86rem}
 details.more>.notes,details.more>.paths,details.more>.ctx{margin-top:8px}
 .dgrp+.dgrp{border-top:1px solid var(--line);margin-top:8px;padding-top:8px}
+.mxw{overflow-x:auto;border:1px solid var(--line);border-radius:8px;margin:8px 0}
+table.mx{border-collapse:collapse;font-size:.78rem;width:100%}
+table.mx th,table.mx td{padding:3px 2px;text-align:center;border-bottom:1px solid var(--line)}
+table.mx thead th{font-weight:600;color:var(--muted);font-size:.72rem;white-space:nowrap;padding:6px 2px}
+table.mx .mxn{position:sticky;left:0;text-align:left;background:var(--surface);min-width:118px;max-width:128px;padding:3px 6px;z-index:1;border-right:1px solid var(--line)}
+table.mx .mxg td{background:var(--accent-weak);text-align:left;font-size:.72rem;color:var(--muted);letter-spacing:.04em;padding:3px 6px}
+table.mx .mxn .linkbtn{font-size:.76rem;text-align:left;text-decoration:none;color:var(--ink);line-height:1.25;word-break:break-word}
+button.mxc{background:none;border:0;min-width:30px;min-height:30px;font-size:1rem;cursor:pointer;line-height:1;padding:0}
+.mxc.c1{color:var(--accent)}.mxc.c2{color:var(--info)}.mxc.c3{color:var(--danger)}.mxc.c4{color:var(--warn)}.mxc.c5{color:var(--muted)}
+.mxe{color:var(--muted);opacity:.5}
+.mxlg{display:grid;gap:3px;font-size:.82rem;margin-top:6px}
+.mxlg b{display:inline-block;min-width:1.4em;text-align:center}
 .dg-h{font-size:.74rem;color:var(--muted);letter-spacing:.04em;margin-bottom:5px}
 details.pathsel{border-top:0;padding-top:0;margin:-6px 0 18px}
 details.pathsel>summary{font-size:.92rem}
@@ -381,10 +393,10 @@ details.pf>summary{font-size:.86rem}
 <div id="ov" class="ov" hidden><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="ovT"><h3 id="ovT"></h3><div id="ovB"></div><button class="btn" type="button" data-act="ov-close">關閉</button></div></div>
 <div id="toast" class="toast" hidden></div>
 <script>
-const APP_VERSION = "0.3";
+const APP_VERSION = "0.4";
 const CHECKED = "2026-11-15";
 const VERSION = "v" + APP_VERSION, VERIFIED = CHECKED;
-const SCOPE = "成人・流感、COVID-19、RSV、HSV、VZV、CMV、HBV、HCV、HIV（PEP、PrEP）、BK、adenovirus（治療、預防、抗藥）";
+const SCOPE = "成人・流感、COVID-19、RSV、HSV、VZV、CMV、HBV、HCV、HIV（PEP、PrEP）、BK、adenovirus（治療、預防、抗藥、抗病毒譜）";
 
 /* ---------------- 出處 ---------------- */
 const REF = {
@@ -406,7 +418,7 @@ const REF = {
   WHO_COV23:{s:"WHO COVID 2023",f:"A living WHO guideline on drugs for covid-19（BMJ 2023-11-10 更新）。非重症：高與中風險者 nirmatrelvir/ritonavir；remdesivir、molnupiravir 不用於中低風險（高風險者 conditional）；低風險者 remdesivir、molnupiravir strong against。"},
   TW_COV_OAV:{s:"疾管署 COVID 口服藥 2026",f:"衛生福利部疾病管制署「公費 COVID-19 治療用口服抗病毒藥物領用方案」第 14 次修訂（115-03-10），引用「新型冠狀病毒（SARS-CoV-2）感染臨床處置指引」之臨床條件：Paxlovid 具任一重症風險因子、未用氧且發病 5 天內之成人；molnupiravir 為無法用 Paxlovid 或 remdesivir 之 ≥18 歲（不用於懷孕）；ensitrelvir 為無法用 Paxlovid 或 remdesivir 之 ≥12 歲、發病 3 天內（孕婦禁用）。本 app 只列臨床條件，不列公費資格。",u:"https://health.tainan.gov.tw/warehouse/B972CCC7-8E95-43A2-B339-39C5366979DD/F_1773215365517e.pdf"},
   TW_COV_MOL:{s:"疾管署 molnupiravir 說明",f:"衛福部新聞稿（疾管署）：WHO 與我國臨床處置指引優先使用 Paxlovid 與 remdesivir；molnupiravir 效果有限且機轉有安全疑慮，列為「有條件下使用」，對象包括重度肝腎功能不全、與 Paxlovid 有嚴重交互作用且無法停藥或換藥者。Paxlovid 已取得藥證（112 年 5 月）。",u:"https://mohw.gov.tw/cp-16-79185-1.html"},
-  PAX_LABEL:{s:"Paxlovid 仿單",f:"PAXLOVID（nirmatrelvir tablets; ritonavir tablets）US PI。eGFR ≥60：300/100 mg BID × 5 天；30–<60：150/100 mg BID；<30（含 HD）：第 1 天 300/100 mg 一次，第 2–5 天 150/100 mg QD，透析日於 HD 後給。Child-Pugh C 不建議。禁止併用：alfuzosin、amiodarone、apalutamide、carbamazepine、colchicine（腎或肝功能不全）、dihydroergotamine、dronedarone、eletriptan、enzalutamide、eplerenone、ergotamine、finerenone、flecainide、flibanserin、ivabradine、lomitapide、lovastatin、lumacaftor/ivacaftor、lurasidone、methylergonovine、口服 midazolam、naloxegol、phenobarbital、phenytoin、pimozide、primidone、propafenone、quinidine、ranolazine、rifampin、rifapentine、St. John's Wort、sildenafil（PAH 用）、silodosin、simvastatin、suzetrigine、tolvaptan、triazolam、ubrogepant、voclosporin。lovastatin、simvastatin 可暫停後使用。嚴重不良反應最常見的併用藥為 calcineurin inhibitor（tacrolimus、cyclosporine）。",u:"https://www.pfizermedical.com/paxlovid/highlights"},
+  PAX_LABEL:{s:"Paxlovid 仿單",f:"PAXLOVID（nirmatrelvir tablets; ritonavir tablets）US PI。eGFR ≥60：300/100 mg BID × 5 天；30–<60：150/100 mg BID；<30（含 HD）：第 1 天 300/100 mg 一次，第 2–5 天 150/100 mg QD，透析日於 HD 後給。Child-Pugh C 不建議。禁止併用：alfuzosin、amiodarone、apalutamide、carbamazepine、colchicine（腎或肝功能不全）、dihydroergotamine、dronedarone、eletriptan、enzalutamide、eplerenone、ergotamine、finerenone、flecainide、flibanserin、ivabradine、lomitapide、lovastatin、lumacaftor/ivacaftor、lurasidone、methylergonovine、口服 midazolam、naloxegol、phenobarbital、phenytoin、pimozide、primidone、propafenone、quinidine、ranolazine、rifampin、rifapentine、St. John's Wort、sildenafil（PAH 用）、silodosin、simvastatin、suzetrigine、tolvaptan、triazolam、ubrogepant、voclosporin。lovastatin、simvastatin 可暫停後使用。嚴重不良反應最常見的併用藥為 calcineurin inhibitor（tacrolimus、cyclosporine）。警語：ritonavir 為 HIV protease inhibitor，未控制或未診斷 HIV-1 感染者使用，HIV 可能對 protease inhibitor 產生抗藥。",u:"https://www.pfizermedical.com/paxlovid/highlights"},
   PAX_EU:{s:"Paxlovid 歐英 SmPC",f:"Paxlovid EU／UK SmPC（emc）：重度腎功能不全（eGFR <30）或腎衰竭禁用（劑量未確定）；中度 150/100 mg BID。與美國仿單（eGFR <30 有劑量）不同；歐洲最新版是否已更新請確認。",u:"https://www.medicines.org.uk/emc/search?q=paxlovid"},
   RDV_LABEL:{s:"Remdesivir 仿單",f:"Veklury（remdesivir）US PI：住院者 200 mg IV 第 1 天，之後 100 mg QD（未插管 5 天，插管／ECMO 10 天）；門診高風險 200 mg 第 1 天、100 mg 第 2–3 天（PINETREE）。2023-07 FDA 核准用於任何腎功能（含透析）不需調整、不需 eGFR 檢查（REDPINE）。ALT ≥10 倍上限不建議開始。",u:"https://www.gilead.com/news/news-details/2023/fda-approves-veklury-remdesivir-for-covid-19-treatment-in-patients-with-severe-renal-impairment-including-those-on-dialysis"},
   MOL_LABEL:{s:"Molnupiravir 說明書",f:"Lagevrio（molnupiravir）FDA EUA／台灣專案輸入：800 mg（4 × 200 mg）BID × 5 天，發病 5 天內，≥18 歲；不需腎調整；不建議用於懷孕。"},
@@ -442,7 +454,7 @@ const REF = {
   CDV_LABEL:{s:"Cidofovir 仿單",f:"Vistide（cidofovir）US PI：誘導 5 mg/kg IV 每週 1 次 × 2 週，維持 5 mg/kg 每 2 週；每次須併用 probenecid（輸注前 3 小時 2 g、輸注後 2 與 8 小時各 1 g）與 1 L 生理食鹽水預先水化。SCr >1.5 mg/dL、CrCl ≤55 mL/min 或尿蛋白 ≥100 mg/dL（≥2+）禁止開始；用藥中 Cr 上升 0.3–0.4 → 維持劑量降為 3 mg/kg，上升 ≥0.5 或 ≥3+ 蛋白尿停藥；每次給藥前 48 小時內檢查 Cr 與尿蛋白。",u:"https://www.gilead.com/-/media/files/pdfs/medicines/other/vistide/vistide.pdf"},
   LET_LABEL:{s:"Letermovir 仿單",f:"Prevymis（letermovir）SmPC／US PI：allo-HSCT CMV R+（≥30 kg）480 mg QD，移植日至移植後 28 天內開始，用到第 100 天，晚發風險高者可用到第 200 天；腎移植 D+/R−（≥40 kg）480 mg QD，移植日至 7 天內開始，用到第 200 天。併用 cyclosporine 時 240 mg QD。輕、中、重度腎功能不全不需調整；ESRD（含透析）無建議；靜脈劑型含 cyclodextrin，CrCl <50 可能蓄積。禁止併用 pimozide。無 HSV／VZV 活性。",u:"https://www.medicines.org.uk/emc/product/11943/smpc"},
   LET_200:{s:"Letermovir 延長到 200 天（Lancet Haematol 2024）",f:"Extended-duration letermovir prophylaxis after allogeneic HSCT（MK-8228-040）. Lancet Haematol 2024;11:e127–e135（phase 3，第一作者請確認）：高風險 R+ 延長至 200 天，降低晚發臨床顯著 CMV 感染，安全性相近。"},
-  MAR_LABEL:{s:"Maribavir 仿單",f:"Livtencity（maribavir）US PI：400 mg BID（美國未定療程；EU 8 週），治療移植後對 ganciclovir、valganciclovir、cidofovir 或 foscarnet 難治（含或不含抗藥）之 CMV。美國：併用 carbamazepine 或 rifabutin 增為 800 mg BID，phenytoin 或 phenobarbital 增為 1,200 mg BID；EU：無法避免強或中度 CYP3A 誘導劑（carbamazepine、efavirenz、phenobarbital、phenytoin）時 1,200 mg BID，rifampin、rifabutin、St. John's Wort 不建議。禁止與 ganciclovir、valganciclovir 併用。會升高 CYP3A、P-gp、BCRP 敏感受質濃度（如 tacrolimus）。台灣：克巨染膜衣錠（台灣武田）。",u:"https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/215596s004lbl.pdf"},
+  MAR_LABEL:{s:"Maribavir 仿單",f:"Livtencity（maribavir）US PI：400 mg BID（美國未定療程；EU 8 週），治療移植後對 ganciclovir、valganciclovir、cidofovir 或 foscarnet 難治（含或不含抗藥）之 CMV。美國：併用 carbamazepine 或 rifabutin 增為 800 mg BID，phenytoin 或 phenobarbital 增為 1,200 mg BID；EU：無法避免強或中度 CYP3A 誘導劑（carbamazepine、efavirenz、phenobarbital、phenytoin）時 1,200 mg BID，rifampin、rifabutin、St. John's Wort 不建議。禁止與 ganciclovir、valganciclovir 併用。會升高 CYP3A、P-gp、BCRP 敏感受質濃度（如 tacrolimus）。台灣：克巨染膜衣錠（台灣武田）。美國仿單：不建議與 ganciclovir、valganciclovir 併用（maribavir 抑制 pUL97，可能拮抗其活性）；EU SmPC 則列為禁忌（見 MAR_EU）。",u:"https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/215596s004lbl.pdf"},
   ECIL7_CMV:{s:"ECIL-7（CMV，2019）",f:"Ljungman P, et al. Guidelines for the management of cytomegalovirus infection in patients with haematological malignancies and after stem cell transplantation from the 2017 ECIL-7. Lancet Infect Dis 2019;19:e260–e272。本版未取得全文，HSCT 的 preemptive 閾值與療程請確認；成大藥劑部摘要：高劑量 acyclovir／valacyclovir 可減少感染但不減少疾病，foscarnet 毒性大不適合長期預防，letermovir 減少感染且無明顯毒性。",u:"https://nckuhpharmacy.hosp.ncku.edu.tw/var/file/72/1072/img/723/653973735.pdf"},
   TW_LET:{s:"Letermovir 台灣（CDE 報告）",f:"財團法人醫藥品查驗中心 HTA 報告：滅巨斯（PREVYMIS）膜衣錠 240 mg、輸注液 240 mg/12 mL，美商默沙東台灣分公司；許可適應症為異體 HSCT 成人 CMV R+ 之預防。腎移植適應症在台灣是否核准請確認。",u:"https://www.nhi.gov.tw/ch/dl-11648-4166709930df4521b24ba9de9c8667ad-1.pdf"},
   TW_MAR:{s:"Maribavir 台灣",f:"健保署藥品給付規定 10.7.14 Maribavir（如 Livtencity）（113/11/1 生效）：對一種或多種先前療法具抗藥性、難治或耐受度不佳之成人 HSCT 或 SOT 後 CMV 感染或疾病；首次療程限 8 週、需事前審查。本 app 不判定健保給付，此處只用來確認台灣已上市。",u:"https://www.nhi.gov.tw/ch/dl-75354-22ad8c06512243009d07e3f45eda5b3f-1.pdf"},
@@ -456,9 +468,9 @@ const REF = {
   AGA_HBV25:{s:"AGA HBV 再活化 2025",f:"AGA Clinical Practice Guideline on the prevention and treatment of hepatitis B virus reactivation in at-risk individuals（Gastroenterology 2025）。依免疫抑制治療的再活化風險分層，高風險者給預防。本版未取得全文與完整分層表・請確認。"},
   ASCO_HBV20:{s:"ASCO 癌症病人 HBV 篩檢 2020",f:"Hwang JP, et al. Hepatitis B Virus Screening and Management for Patients With Cancer Prior to Therapy: ASCO Provisional Clinical Opinion Update. J Clin Oncol 2020;38:3698–3715。所有開始抗癌治療者篩檢 HBsAg、anti-HBc（total Ig 或 IgG）、anti-HBs；HBsAg 陽性者預防；HBsAg 陰性、anti-HBc 陽性者，接受 anti-CD20 或 HSCT 給預防，其他監測；預防持續到治療結束後至少 12 個月（anti-CD20 更久）。細節請確認。"},
   WHO_HBV24:{s:"WHO HBV 2024",f:"WHO. Guidelines for the prevention, diagnosis, care and treatment for people with chronic hepatitis B infection（2024-03）。擴大治療條件（含 APRI >0.5 或 DNA >2,000 IU/mL 合併 ALT 異常等）；首選 tenofovir 或 entecavir。細節請確認。"},
-  ENT_LABEL:{s:"Entecavir 仿單",f:"Baraclude（entecavir）US PI：未曾用 nucleoside 者 0.5 mg QD；lamivudine 難治或失代償肝病 1 mg QD；空腹（餐前後至少 2 小時）。腎調整（CrCl ≥50／30–<50／10–<30／<10 與 HD、CAPD）：0.5 mg 方案 0.5 mg QD／0.25 mg QD 或 0.5 mg q48h／0.15 mg QD 或 0.5 mg q72h／0.05 mg QD 或 0.5 mg q7d；1 mg 方案 1 mg QD／0.5 mg QD 或 1 mg q48h／0.3 mg QD 或 1 mg q72h／0.1 mg QD 或 1 mg q7d；HD 於透析後給。停藥可能急性惡化；乳酸中毒警語。"},
+  ENT_LABEL:{s:"Entecavir 仿單",f:"Baraclude（entecavir）US PI：未曾用 nucleoside 者 0.5 mg QD；lamivudine 難治或失代償肝病 1 mg QD；空腹（餐前後至少 2 小時）。腎調整（CrCl ≥50／30–<50／10–<30／<10 與 HD、CAPD）：0.5 mg 方案 0.5 mg QD／0.25 mg QD 或 0.5 mg q48h／0.15 mg QD 或 0.5 mg q72h／0.05 mg QD 或 0.5 mg q7d；1 mg 方案 1 mg QD／0.5 mg QD 或 1 mg q48h／0.3 mg QD 或 1 mg q72h／0.1 mg QD 或 1 mg q7d；HD 於透析後給。停藥可能急性惡化；乳酸中毒警語。Boxed warning：HIV/HBV 共感染者若未同時接受有效的 HIV 治療（HAART），不建議使用 entecavir，有選出 HIV M184V 變異的風險；M184V 變異對 entecavir 敏感性下降；entecavir 不算 HAART 的一部分。"},
   TDF_LABEL:{s:"Tenofovir disoproxil 仿單",f:"Viread（tenofovir disoproxil fumarate）US PI：300 mg QD。腎調整：CrCl ≥50 q24h；30–49 q48h；10–29 q72–96h；HD 每週 1 次（或累計 12 小時透析後）；未透析 <10 無建議。腎功能、骨密度（磷）監測；停藥可能急性惡化。"},
-  TAF_LABEL:{s:"Tenofovir alafenamide 仿單",f:"Vemlidy（tenofovir alafenamide）US PI：25 mg QD 隨餐。CrCl ≥15 不需調整；<15 未透析無建議；HD 病人 25 mg QD，透析日於 HD 後給。禁止併用 rifampin 等強 P-gp 誘導劑；停藥可能急性惡化。"},
+  TAF_LABEL:{s:"Tenofovir alafenamide 仿單",f:"Vemlidy（tenofovir alafenamide）US PI：25 mg QD 隨餐。CrCl ≥15 不需調整；<15 未透析無建議；HD 病人 25 mg QD，透析日於 HD 後給。禁止併用 rifampin 等強 P-gp 誘導劑；停藥可能急性惡化。HIV：Vemlidy 單用不建議用於 HIV-1 感染（可能產生 HIV 抗藥），開始前先篩 HIV，共感染者須用適當的 HIV 完整方案。"},
   // HCV
   AASLD_HCV:{s:"AASLD/IDSA HCV Guidance（2026）",f:"AASLD-IDSA HCV Guidance（hcvguidelines.org；2026-05 簡化治療文件）。未曾治療、無肝硬化或代償性肝硬化：glecaprevir/pibrentasvir 8 週，或 sofosbuvir/velpatasvir 12 週。基因型 3 代償性肝硬化的 NS5A Y93H 與 ribavirin 條件、腎功能不全與失代償章節的網頁無法開啟，內容來自搜尋摘要・請確認。"},
   EASL_HCV20:{s:"EASL HCV 2020",f:"EASL recommendations on treatment of hepatitis C: Final update of the series（J Hepatol 2020;73:1170）。pangenotypic 方案：glecaprevir/pibrentasvir 8 週（無肝硬化）、sofosbuvir/velpatasvir 12 週；失代償肝硬化 sofosbuvir/velpatasvir ＋ ribavirin 12 週。2023 更新本版未取得・請確認。"},
@@ -487,11 +499,25 @@ const REF = {
   AST_ADV19:{s:"AST-IDCOP 腺病毒 2019",f:"Florescu DF, Schaenman JM; AST IDCOP. Adenovirus in solid organ transplant recipients — Guidelines from the American Society of Transplantation Infectious Diseases Community of Practice. Clin Transplant 2019;33(9):e13527。本版依 PubMed 摘要與 GuidelineCentral 核對：無症狀受者不應做腺病毒監測；症狀者定量 PCR 可輔助決定是否治療與評估反應；支持治療與減免疫抑制是首要；抗病毒藥缺乏前瞻隨機試驗，但嚴重、進展或播散性疾病在多數移植中心以 IV cidofovir 為標準做法；cidofovir 應併充分水化與 probenecid，最佳劑量與頻率未知；IVIG 可能對低 γ-球蛋白血症者有益；腺病毒特異 T 細胞治療為未來方向。",u:"https://pubmed.ncbi.nlm.nih.gov/30859626"},
   TID_ADV23:{s:"HCT 腺病毒綜述 2023",f:"Adenovirus infection in allogeneic hematopoietic cell transplantation. Transpl Infect Dis 2023;25 Suppl 1:e14173（綜述，只取得摘要）：異體 HCT 後前 3–4 個月 AdV 感染 0–20%，兒童較高；預防疾病靠早期偵測病毒複製增加，血中達 10^2–3 copies/mL（或糞便 10^6 copies/g）即 preemptive 開始 cidofovir；cidofovir 是目前唯一建議的抗病毒藥，療效有限且有腎毒性；brincidofovir 當時不可取得，仍在其他病毒的研究中。",u:"https://pubmed.ncbi.nlm.nih.gov/37846850/"},
   ADV_CDV:{s:"cidofovir 腺病毒劑量",f:"cidofovir 用於腺病毒為 off-label，無仿單劑量，各中心不同，以下為文獻中常見做法而非指引：5 mg/kg 每週 1 次併 probenecid（EBMT 中心調查中最常用，Cesaro S, et al.，年份與期刊本版未核對）；1 mg/kg 每週 3 次，腎毒性較低（兒童 HSCT 與 SOT 回溯研究，PMC3031399、Pediatr Transplant 2018;22）；CrCl <50 mL/min 者曾用 0.5 mg/kg 每週 3 次（Bruminhent J, et al. Open Forum Infect Dis 2019，腎移植回溯研究）。probenecid 常用 1.25 g/m²：給藥前 3 小時及給藥後 2、8 小時（PMC4863673 回溯研究）。仿單（美國）對 CMV 視網膜炎的限制仍適用於此類腎毒性風險：SCr >1.5、CrCl ≤55 或尿蛋白 ≥2+ 禁止開始。",u:"https://pmc.ncbi.nlm.nih.gov/articles/PMC3031399"},
+  MAR_EU:{s:"Maribavir 歐盟 SmPC",f:"Livtencity（maribavir）EMA 產品資訊：與 ganciclovir 或 valganciclovir 併用列為禁忌（maribavir 抑制 pUL97，可能拮抗其活性）。",u:"https://www.ema.europa.eu/documents/product-information/livtencity-epar-product-information_es.pdf"},
+  MAR_REV22:{s:"Maribavir 綜述（PMC9487637）",f:"Maribavir 體外對 CMV 與 EBV 有抑制作用，對 HSV-1、HSV-2、VZV、HHV-6、HHV-8 無活性；體外拮抗 ganciclovir（約 13 倍），對 cidofovir、foscarnet 無影響。",u:"https://pmc.ncbi.nlm.nih.gov/articles/PMC9487637"},
+  LET_REV20:{s:"Letermovir 綜述（PMC7318821）",f:"Letermovir 只對 CMV 有活性；因對 HSV、VZV 無活性，HSCT 預防期間需另給 acyclovir、valacyclovir 或 famciclovir。",u:"https://pmc.ncbi.nlm.nih.gov/articles/PMC7318821"},
+  GCV_US:{s:"Ganciclovir 美國仿單（微生物學）",f:"Ganciclovir 注射劑美國 PI 微生物學段：在人體臨床研究中對 CMV 與 HSV 有活性；核准適應症為 CMV（視網膜炎、移植預防）。VZV 活性未在取得的段落中出現，請確認。",u:"https://ndclist.com/ndc/42023-173/label"},
+  FOS_ADIS91:{s:"Foscarnet 藥物評論（Adis 1991）",f:"Chrisp & Clissold, Drugs 1991;41:104。Foscarnet 抑制人類疱疹病毒 DNA polymerase 與 HIV 反轉錄酶；體外抑制 HIV 複製；acyclovir 抗藥 VZV 有部分病例報告成功使用。年代較早，僅作活性範圍參考。",u:"https://link.springer.com/content/pdf/10.2165%2F00003495-199141010-00009.pdf"},
+  VAL_CMV99:{s:"Valacyclovir CMV 預防（NEJM 1999）",f:"International Valacyclovir Cytomegalovirus Prophylaxis Transplantation Study Group. Valacyclovir for the prevention of cytomegalovirus disease after renal transplantation. N Engl J Med 1999;340:1462-70。全文未取得，僅引用題目與出處；各國仿單適應症請確認。"},
+  DAA_HBV17:{s:"FDA DAA 與 HBV 再活化警示",f:"FDA Drug Safety Communication（2016-10，2017 全類別仿單加 boxed warning）：HCV 直接作用抗病毒藥（DAA）治療的 HBV 共感染者，包含 HBsAg 陽性與 HBsAg 陰性但 anti-HBc 陽性者，可能發生 HBV 再活化，部分致猛爆性肝炎、肝衰竭或死亡；須治療前篩檢，治療中與治療後監測。",u:"https://www.fda.gov/drugs/drugsafety/ucm522932.htm"},
+  BIC_LABEL:{s:"Biktarvy 仿單（2025）",f:"Biktarvy（bictegravir/emtricitabine/tenofovir alafenamide）US PI 2025：boxed warning——停用含 emtricitabine 與（或）tenofovir disoproxil 的產品，HIV-1 與 HBV 共感染者可能發生嚴重急性 B 肝惡化，停藥後至少數月密切追蹤肝功能，必要時給 HBV 治療。開始前需檢驗 HBV。",u:"https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/210251s023lbl.pdf"},
+  IAS_HBVHIV23:{s:"HBV／HIV 共感染綜述（IAS-USA 2023）",f:"Corcorran & Kim, Top Antivir Med 2023;31:14。共感染者的 ART 以 TDF 或 TAF 加 emtricitabine 或 lamivudine 為骨幹（同時作用於 HBV 與 HIV）；考慮不含 tenofovir 的雙藥方案時需另評估 HBV。",u:"https://www.iasusa.org/wp-content/uploads/2023/03/31-1-14.pdf"},
+  DHHS_HBV24:{s:"DHHS 成人 ARV 指引 HBV 章節 2024（二手報導）",f:"POZ 2024-12 報導 DHHS 更新：HIV/HBV 共感染者的 ARV 要有兩個對兩種病毒都有活性的藥（TDF 或 TAF 加 FTC 或 3TC）；採不含 NRTI 的方案（含長效 cabotegravir＋rilpivirine）需另加 HBV 治療，因兩者皆無 HBV 活性；避免未加 HBV 藥就轉 dolutegravir/lamivudine。僅取得二手報導，DHHS 原文請確認。",u:"https://newprod1.poz.com/article/dhhs-updates-hepatitis-b-guidelines-people-hiv"},
   NOGL:{s:"無指引直接建議",f:"查到的指引沒有直接針對此情境的建議；此處為一般做法或依相近情境類推，請依臨床判斷並會診感染科。"}
 };
 
 /* 縮寫 */
 const GLOSS = {
+  "ART":"antiretroviral therapy，HIV 的抗反轉錄病毒治療。",
+  "M184V":"HIV 反轉錄酶的 M184V 變異，使 emtricitabine、lamivudine 敏感性下降；entecavir 在未接受 ART 的共感染者可能選出此變異。",
+  "pUL54":"CMV 的 DNA polymerase，ganciclovir、cidofovir、foscarnet 的作用標的；突變可造成這幾種藥交叉抗藥。",
+  "UL97":"CMV 的蛋白激酶，ganciclovir 要靠它第一步磷酸化；突變造成 ganciclovir 抗藥，maribavir 即抑制此酶。",
   "HSCT":"hematopoietic stem cell transplantation，造血幹細胞移植","SOT":"solid organ transplantation，器官移植","HSV":"herpes simplex virus","VZV":"varicella-zoster virus","CMV":"cytomegalovirus",
   "RSV":"respiratory syncytial virus","HZO":"herpes zoster ophthalmicus，眼部帶狀疱疹","ARN":"acute retinal necrosis，急性視網膜壞死","HSE":"HSV encephalitis","CSF":"cerebrospinal fluid，腦脊髓液",
   "PCR":"polymerase chain reaction","NAAT":"nucleic acid amplification test，核酸增幅檢驗","LP":"lumbar puncture，腰椎穿刺","IVIG":"intravenous immunoglobulin","VariZIG":"varicella zoster immune globulin（美國產品名）",
@@ -528,7 +554,7 @@ const D = {
   fos:{n:"foscarnet",brand:"Foscavir",g:"cmv",tw:"q",preg:{l:"w",t:"資料有限，請會診"},ix:["黑框：腎毒性為主要毒性，每次給藥前後充分水化、頻繁監測 Cr（仿單）。","監測 Ca、Mg、K、P；離子鈣低可致癲癇。","腎調整以 CrCl（mL/min）除以體重（kg）計。"],src:["FOS_LABEL"]},
   cdv:{n:"cidofovir",brand:"Vistide",g:"cmv",tw:"q",preg:{l:"x",t:"動物致畸、致癌（仿單）"},ix:["每次需 probenecid（前 3 小時 2 g、後 2 與 8 小時各 1 g）及 1 L 生理食鹽水預先水化。","SCr >1.5、CrCl ≤55 或尿蛋白 ≥2+ 禁止開始；給藥前 48 小時內檢查 Cr 與尿蛋白。","避免與其他腎毒性藥併用；監測中性球與眼壓。"],src:["CDV_LABEL"]},
   let:{n:"letermovir",brand:"Prevymis（滅巨斯）",g:"cmv",preg:{l:"w",t:"資料有限，請確認"},ix:["併用 cyclosporine 時劑量降為 240 mg QD（仿單）。","禁止併用 pimozide（仿單）。","沒有 HSV／VZV 活性：HSCT 預防需另加 acyclovir 或 valacyclovir。","單用治療 CMV 感染證據不足，抗藥門檻低（UL56 C325 突變完全抗藥）。","靜脈劑型含 cyclodextrin，CrCl <50 可能蓄積；ESRD 無建議。"],src:["LET_LABEL","CMV_SOT25","TW_LET"]},
-  mar:{n:"maribavir",brand:"Livtencity（克巨染）",g:"cmv",preg:{l:"w",t:"資料有限（大鼠胚胎存活下降）"},ix:["禁止與 ganciclovir、valganciclovir 併用（拮抗）。","CYP3A 誘導劑：美國仿單 carbamazepine、rifabutin → 800 mg BID，phenytoin、phenobarbital → 1,200 mg BID；EU 仿單：無法避免強或中度誘導劑 → 1,200 mg BID，rifampin、rifabutin 不建議。","升高 tacrolimus 等 CYP3A／P-gp／BCRP 受質濃度，需監測。","不用於 CNS 感染或視網膜炎（CMV 國際共識 2025）。"],src:["MAR_LABEL","CMV_SOT25","TW_MAR"]},
+  mar:{n:"maribavir",brand:"Livtencity（克巨染）",g:"cmv",preg:{l:"w",t:"資料有限（大鼠胚胎存活下降）"},ix:["與 ganciclovir、valganciclovir 併用：美國仿單不建議、EU SmPC 列為禁忌（拮抗）。","CYP3A 誘導劑：美國仿單 carbamazepine、rifabutin → 800 mg BID，phenytoin、phenobarbital → 1,200 mg BID；EU 仿單：無法避免強或中度誘導劑 → 1,200 mg BID，rifampin、rifabutin 不建議。","升高 tacrolimus 等 CYP3A／P-gp／BCRP 受質濃度，需監測。","不用於 CNS 感染或視網膜炎（CMV 國際共識 2025）。"],src:["MAR_LABEL","CMV_SOT25","TW_MAR"]},
   ent:{n:"entecavir",brand:"Baraclude（貝樂克）",g:"hbv",preg:{l:"w",t:"懷孕資料有限，不是首選；已在使用者請會診肝膽科與婦產科（請確認）"},ix:["空腹服用（餐前後至少 2 小時）。","停藥可能急性惡化；監測肝功能。","lamivudine 難治或失代償肝病用 1 mg。","乳酸中毒、嚴重肝腫大警語（仿單）。"],src:["ENT_LABEL","EASL_HBV25"]},
   tdf:{n:"tenofovir disoproxil",brand:"Viread（惠立妥）",g:"hbv",preg:{l:"ok",t:"懷孕可用，常用於預防母嬰傳染（請確認各指引起始週數）"},ix:["腎毒性與骨密度下降：開始前與期間監測 Cr、磷、尿蛋白；腎功能不全需延長間隔。","停藥可能急性惡化。","避免與其他腎毒性藥併用。"],src:["TDF_LABEL","EASL_HBV25"]},
   taf:{n:"tenofovir alafenamide",brand:"Vemlidy（韋立得）",g:"hbv",preg:{l:"w",t:"懷孕資料較 TDF 少（請確認）"},ix:["腎與骨安全性優於 TDF；CrCl <15 未透析無建議。","禁止併用 rifampin 等強 P-gp 誘導劑。","停藥可能急性惡化。"],src:["TAF_LABEL","EASL_HBV25"]},
@@ -1589,7 +1615,7 @@ function renderRef(){
   <div class="note">劑量依左側病人卡的腎功能自動調整（Cockcroft-Gault；體重 >120% IBW 用 AdjBW）。依體重給藥的藥（acyclovir IV、ganciclovir、foscarnet、cidofovir）填體重後換算 mg；acyclovir 在 BMI ≥30 時並列 IBW（仿單）與 AdjBW（部分院內指引）。</div>
   <div class="note">「更新」綠色標籤：2024 年後的改版、新核准或已發表 phase 3。各指引說法不同時分別列出，不合併。</div>
   <div class="note">不列台灣公費與健保條件。台灣許可證未查證的藥標示「請確認」。</div>
-  <div class="note"><b>${VERSION}（${VERIFIED}）</b>：新增 HBV（是否治療、NA 停藥、再活化預防、抗藥）與 HCV（DAA 治療、失敗再治療）。流感、COVID-19、RSV、HSV、VZV、CMV 同前。下一版：HIV PEP／PrEP、BK virus、adenovirus、抗病毒譜。</div>
+  <div class="note"><b>${VERSION}（${VERIFIED}）</b>：新增「抗病毒譜」分頁（藥物×病毒矩陣與交叉活性註記）。HBV、HCV、流感、COVID-19、RSV、HSV、VZV、CMV 同前。HIV（nPEP、oPEP、PrEP）、BK、adenovirus 同 v0.3。</div>
   </div></div>`;
   return h;
 }
@@ -1646,7 +1672,7 @@ function goHit(x){
   else if(g.tab==="res") S.res=g.res;
 }
 /* ---------------- 主畫面、返回 ---------------- */
-const TABS=[["tx","治療"],["px","預防"],["drug","藥物"],["res","抗藥"],["ref","出處"]];
+const TABS=[["tx","治療"],["px","預防"],["drug","藥物"],["spec","抗病毒譜"],["res","抗藥"],["ref","出處"]];
 const tabName=k=>(TABS.find(t=>t[0]===k)||[])[1]||"";
 const NAV=[]; let NAV_ID=0; const NAV_MAX=20;
 const navSnap=()=>({tab:S.tab,dx:S.dx,px:S.px,drug:S.drug,res:S.res,o:JSON.parse(JSON.stringify(S.o)),po:JSON.parse(JSON.stringify(S.po)),ui:{dxpick:UI.dxpick,pxpick:UI.pxpick,dpick:UI.dpick}});
@@ -1658,7 +1684,82 @@ function navLabel(){
 }
 function navPush(sn,label,y){ sn.label=label; sn.y=y||0; sn.id=++NAV_ID; NAV.push(sn); if(NAV.length>NAV_MAX) NAV.shift(); try{ history.pushState({nav:sn.id},""); }catch(e){} }
 function navRestore(sn){ ["tab","dx","px","drug","res"].forEach(k=>{ S[k]=sn[k]; }); S.o=sn.o; S.po=sn.po; Object.assign(UI,sn.ui); }
-const RENDER={tx:renderTx,px:renderPx,drug:renderDrug,res:renderRes,ref:renderRef};
+
+/* ---------------- 抗病毒譜 ---------------- */
+const VX=[["HSV","HSV"],["VZV","VZV"],["CMV","CMV"],["HBV","HBV"],["HCV","HCV"],["HIV","HIV"],["FLU","流感"],["COV","COVID"],["RSV","RSV"],["ADV","ADV"],["BK","BK"]];
+const MXC={"●":["c1","仿單核准或指引建議用於此病毒"],"○":["c2","有活性，但非常規、證據有限或非核准適應症"],"✕":["c3","無活性，或指引不建議"],"⚠":["c4","有交叉風險：用在別的病毒時，會影響這個病毒"],"？":["c5","活性資料本版未查證，請確認"]};
+const MX={
+  ose:{FLU:["●"]}, zan:{FLU:["●"]}, per:{FLU:["●"]}, bx:{FLU:["●"]},
+  pax:{COV:["●"],HIV:["⚠","ritonavir 是 HIV protease inhibitor。未控制或未診斷 HIV 感染者使用，HIV 可能對 protease inhibitor 產生抗藥（仿單警語）。已在 ART 者的交互作用見藥物頁。",["PAX_LABEL"]]},
+  mol:{COV:["●"]}, rdv:{COV:["●"]}, ens:{COV:["●"]},
+  rib:{HCV:["●","與 DAA 於特定情境併用，見 HCV 診斷頁。",["RBV_HCV"]],RSV:["○","證據有限，見 RSV 診斷頁的說法與出處。",["ECIL4_RSV","INST_RSV"]]},
+  acv:{HSV:["●"],VZV:["●"]},
+  val:{HSV:["●"],VZV:["●"],CMV:["○","腎移植 CMV 預防曾有隨機試驗（NEJM 1999）；app 的 CMV 預防方案不含 valacyclovir，只用於 HSV／VZV 預防。各國仿單適應症不同，請確認。",["VAL_CMV99","VAL_LABEL"]]},
+  fam:{HSV:["●"],VZV:["●"]},
+  gcv:{CMV:["●"],HSV:["○","美國仿單：在人體臨床研究中對 HSV 有活性；HSV 不是核准適應症，app 無此情境。",["GCV_US"]],VZV:["？","ganciclovir 對 VZV 的活性本版未查證。",["GCV_US"]]},
+  vgc:{CMV:["●"],HSV:["○","valganciclovir 是 ganciclovir 的前驅藥，HSV 活性依 ganciclovir 推論（美國仿單）；非核准適應症。",["GCV_US","VGC_LABEL"]],VZV:["？","活性本版未查證。",["GCV_US"]]},
+  fos:{CMV:["●"],HSV:["●","acyclovir 抗藥之免疫低下黏膜皮膚 HSV 為仿單適應症；不需病毒 TK 或其他激酶活化。",["FOS_LABEL"]],VZV:["○","acyclovir 抗藥 VZV 有部分病例報告成功使用，非仿單適應症（1991 年評論，年代較早）。",["FOS_ADIS91"]],HIV:["○","體外抑制 HIV 反轉錄酶；非 HIV 的核准或常規用藥。",["FOS_ADIS91"]]},
+  cdv:{CMV:["●","仿單唯一適應症：AIDS 病人 CMV 視網膜炎。",["CDV_LABEL"]],HSV:["○","仿單體外數據：HSV-1／2 IC50 12.7–31.7 μM（CMV 0.5–2.8 μM）；非仿單適應症。",["CDV_LABEL"]],ADV:["○","off-label，最常用但無對照試驗；CrCl ≤55 仿單禁止開始。見 adenovirus 診斷頁。",["ECIL4_ADV","ADV_CDV","CDV_LABEL"]],BK:["✕","TTS 2024 反對用於 BK DNAemia／腎病變（strong, B）；ECIL 2018 不支持常規用於 BK 出血性膀胱炎。",["TTS_BK24","ECIL7_BKHC"]]},
+  let:{CMV:["●","僅用於預防，不用於治療。",["LET_LABEL"]],HSV:["✕","對 CMV 以外的疱疹病毒無活性；HSV／VZV 預防需另給 acyclovir 類。",["LET_REV20","LET_LABEL"]],VZV:["✕","同上。",["LET_REV20","LET_LABEL"]]},
+  mar:{CMV:["●","僅限對其他藥難治的移植後 CMV。與 ganciclovir、valganciclovir 併用：美國不建議、EU 禁忌（見下方註記）。",["MAR_LABEL","MAR_EU"]],HSV:["✕","體外對 HSV-1／2 無活性；需要涵蓋時另給 acyclovir 類。EBV 體外有活性，無臨床資料。",["MAR_REV22"]],VZV:["✕","體外對 VZV 無活性。",["MAR_REV22"]]},
+  ent:{HBV:["●"],HIV:["⚠","HIV/HBV 共感染者若未同時接受有效的 ART，不建議使用：可能選出 HIV 的 M184V 變異（仿單 boxed warning）。entecavir 不算 ART 的一部分。",["ENT_LABEL"]]},
+  tdf:{HBV:["●"],HIV:["●","HIV 須與其他藥組成完整方案，不單用；共感染的 ART 骨幹為 TDF 或 TAF 加 FTC 或 3TC。",["IAS_HBVHIV23"]]},
+  taf:{HBV:["●"],HIV:["⚠","Vemlidy 單用不建議用於 HIV，可能產生 HIV 抗藥；共感染須用適當的 HIV 完整方案（仿單）。",["TAF_LABEL"]]},
+  mav:{HCV:["●"],HBV:["⚠","所有 DAA 的仿單有 boxed warning：HBV 共感染者（HBsAg 陽性，或 HBsAg 陰性但 anti-HBc 陽性）治療中或治療後可能 HBV 再活化；須治療前篩檢、治療中與後監測。",["DAA_HBV17"]]},
+  svl:{HCV:["●"],HBV:["⚠","同 glecaprevir/pibrentasvir：DAA 類別警語，HBV 再活化。",["DAA_HBV17"]]},
+  vox:{HCV:["●"],HBV:["⚠","同上：DAA 類別警語，HBV 再活化。",["DAA_HBV17"]]},
+  bic:{HIV:["●"],HBV:["●","FTC 與 TAF 對 HBV 有活性，HIV/HBV 共感染者可用（ALLIANCE 試驗）；HBV 不是獨立適應症。停藥可能使 B 肝嚴重惡化（boxed warning）。",["BIC_LABEL","IAS_HBVHIV23","DHHS_HBV24"]]},
+  dtg:{HIV:["●"],HBV:["⚠","本身不是 HBV 藥；HBsAg 陽性者的方案須有 TDF 或 TAF 加 FTC 或 3TC。避免在沒有其他 HBV 藥時轉成 dolutegravir/lamivudine（DHHS 2024，二手報導）。",["DHHS_HBV24","IAS_HBVHIV23"]]},
+  ftd:{HIV:["●"],HBV:["●","FTC 與 tenofovir 對 HBV 有活性；停用（含 PrEP、PEP 結束或轉換）可能使 HBV 嚴重急性惡化，須先確認 HBV 狀態、停藥後監測（同類藥 Biktarvy 仿單 boxed warning；CDC 2025）。",["BIC_LABEL","CDC_LEN25","DHHS_HBV24"]]},
+  fta:{HIV:["●"],HBV:["●","同 emtricitabine/TDF：對 HBV 有活性，停用可能使 HBV 嚴重急性惡化。",["BIC_LABEL","CDC_LEN25","DHHS_HBV24"]]},
+  cab:{HIV:["●"],HBV:["⚠","DHHS 2024（二手報導）：長效 cabotegravir＋rilpivirine 兩者皆無 HBV 活性，轉換須另加 HBV 治療。從含 tenofovir 的 PrEP 轉換時須確認 HBV 狀態（CDC 2025）。",["DHHS_HBV24","CDC_LEN25"]]},
+  len:{HIV:["●"],HBV:["⚠","從含 tenofovir 的 PrEP 轉換時須確認 HBV 狀態，必要時給 HBV 治療或疫苗（CDC 2025）。lenacapavir 本身的 HBV 數據本版未取得仿單，請確認。",["CDC_LEN25"]]}
+};
+const XN=[
+ {t:"同時作用 HBV 與 HIV 的藥",k:"tenofovir（TDF、TAF）與 emtricitabine 對 HBV 與 HIV 都有活性（lamivudine 亦同，本版未收錄藥物頁）。HIV/HBV 共感染者的 ART 要含 TDF 或 TAF 加 FTC 或 3TC。",
+  it:[["IAS-USA 2023：骨幹為 TDF 或 TAF 加 emtricitabine 或 lamivudine，兩者同時涵蓋兩種病毒。",["IAS_HBVHIV23"]],["DHHS 2024（二手報導）：ARV 要有兩個對兩種病毒都有活性的藥；TAF 適合腎功能不全者。",["DHHS_HBV24"]],["ALLIANCE 試驗：B/F/TAF 對 HBV 抑制優於 dolutegravir＋F/TDF（初治共感染者）。",["BIC_LABEL","IAS_HBVHIV23"]]],
+  go:[["res-go","hbv","HBV 抗藥"],["go-px","hbvpx","HBV 再活化預防"]]},
+ {t:"用在 A 病毒、卻會影響 B 病毒的藥",k:"entecavir、單用 TAF（Vemlidy）、ritonavir（Paxlovid）可能使未治療的 HIV 產生抗藥；HCV 的 DAA 可能使 HBV 再活化。開藥前先確認另一種病毒的狀態。",
+  it:[["entecavir：HIV/HBV 共感染未接受有效 ART 者不建議用，可能選出 M184V（boxed warning）。",["ENT_LABEL"]],["Vemlidy：單用不建議用於 HIV，開始前先篩 HIV。",["TAF_LABEL"]],["Paxlovid 的 ritonavir：未控制或未診斷 HIV 者，HIV 可能對 protease inhibitor 產生抗藥。",["PAX_LABEL"]],["DAA：HBsAg 陽性或 anti-HBc 陽性者，治療前篩檢、治療中與後監測；已有 HBV 活動者請會診肝膽科。",["DAA_HBV17"]]],
+  go:[["go-px","hbvpx","HBV 再活化預防"]]},
+ {t:"停用或轉換有 HBV 活性的藥",k:"HIV/HBV 共感染者停用 FTC 或 tenofovir（含 PrEP、PEP 結束、轉成 dolutegravir/lamivudine、長效 cabotegravir 或 lenacapavir）可能使 HBV 嚴重急性惡化；先確認 HBV 狀態，停藥後追蹤肝功能數月。",
+  it:[["Biktarvy 仿單 boxed warning：停用含 FTC、TDF 的產品可能嚴重急性惡化，至少追蹤數月。",["BIC_LABEL"]],["CDC 2025：從含 tenofovir 的 PrEP 轉換到 CAB 或 LEN 須確認 HBV 狀態，必要時治療或疫苗。",["CDC_LEN25"]],["DHHS 2024（二手報導）：長效 cabotegravir＋rilpivirine 皆無 HBV 活性，轉換須另加 HBV 治療。",["DHHS_HBV24"]]],
+  go:[["go-px","hivprep","HIV PrEP"]]},
+ {t:"疱疹類：涵蓋範圍與抗藥",k:"letermovir、maribavir 只涵蓋 CMV，不涵蓋 HSV／VZV；foscarnet、cidofovir 不依賴 HSV／VZV 的 TK，用於 acyclovir 抗藥株。",
+  it:[["letermovir：HSCT 預防期間另給 acyclovir 類涵蓋 HSV／VZV。",["LET_REV20","LET_LABEL"]],["maribavir：體外對 HSV、VZV 無活性；對 ganciclovir、cidofovir、foscarnet 抗藥的 CMV 仍有效。",["MAR_REV22"]],["foscarnet 不需 TK 或其他激酶活化（仿單）。cidofovir 不需病毒的第一步磷酸化；但 pUL54 突變可造成 ganciclovir 與 cidofovir 交叉抗藥，foscarnet 亦有部分交叉。",["FOS_LABEL","CDV_LABEL"]]],
+  go:[["res-go","hsv","HSV／VZV 抗藥"],["res-go","cmv","CMV 抗藥"]]},
+ {t:"指引衝突：maribavir 併用 ganciclovir 或 valganciclovir",k:"美國與歐盟仿單對併用的強度不同，兩者都認為會拮抗。",
+  it:[["美國仿單：不建議併用（maribavir 抑制 pUL97，可能拮抗 ganciclovir 活化）。",["MAR_LABEL"]],["歐盟 SmPC：列為禁忌。",["MAR_EU"]],["體外：maribavir 使 ganciclovir IC50 上升至多約 13 倍，對 cidofovir、foscarnet 無影響。",["MAR_REV22"]]]},
+ {t:"BK 與 adenovirus：沒有核准的專一藥",k:"cidofovir 是 adenovirus 最常用的 off-label 做法，BK 不建議用；兩者都以減免疫抑制為主。",
+  it:[["adenovirus：cidofovir 最常用但無對照試驗；CrCl ≤55 仿單禁止開始。",["ECIL4_ADV","ADV_CDV","CDV_LABEL"]],["BK 腎移植：TTS 2024 反對 cidofovir。",["TTS_BK24"]],["BK 出血性膀胱炎：ECIL 2018 不支持常規使用 cidofovir。",["ECIL7_BKHC"]]],
+  go:[["go-dx","adv","Adenovirus"],["go-dx","bkvan","BK 腎移植"],["go-dx","bkhc","BK 出血性膀胱炎"]]}
+];
+const mxLink=([a,v,n])=>`<button class="chip" type="button" data-act="${a}" data-v="${v}">${n}</button>`;
+function renderSpec(){
+  let h=`<div class="step"><h3><span class="k">01</span>藥物 × 病毒</h3><div class="hint">點符號看說明與出處，點藥名到藥物頁。表格可左右捲動。</div>`;
+  h+=`<div class="mxlg">${Object.entries(MXC).map(([c,[cl,t]])=>`<div><b class="mxc ${cl}" style="min-height:0">${c}</b> ${t}</div>`).join("")}<div><b class="mxe">·</b> 本版未列（無活性或未評估，不代表沒有）</div></div>`;
+  h+=`<div class="mxw"><table class="mx"><thead><tr><th class="mxn" scope="col">藥物</th>${VX.map(v=>`<th scope="col">${v[1]}</th>`).join("")}</tr></thead><tbody>`;
+  DGRP.forEach(([gn,gk])=>{
+    const ks=Object.keys(D).filter(k=>D[k].g===gk); if(!ks.length) return;
+    h+=`<tr class="mxg"><td colspan="${VX.length+1}">${gn}</td></tr>`;
+    ks.forEach(k=>{
+      h+=`<tr><td class="mxn"><button class="linkbtn" type="button" data-act="go-drug" data-v="${k}">${D[k].n}</button></td>`;
+      VX.forEach(([vk,vn])=>{
+        const c=(MX[k]||{})[vk];
+        h+=c?`<td><button class="mxc ${MXC[c[0]][0]}" type="button" data-mx="${k}|${vk}" aria-label="${esc(D[k].n)}、${vn}：${MXC[c[0]][1]}">${c[0]}</button></td>`:`<td class="mxe">·</td>`;
+      });
+      h+=`</tr>`;
+    });
+  });
+  h+=`</tbody></table></div></div>`;
+  h+=`<div class="step"><h3><span class="k">02</span>交叉活性與跨病毒注意</h3><div class="notes">`;
+  XN.forEach(x=>{
+    h+=`<div class="note"><b>${x.t}</b><div class="mt">${lt(x.k)}</div><details class="more"><summary>依據</summary><ul class="difl">${x.it.map(([t,sr])=>`<li>${lt(t)}${srcTags(sr)}</li>`).join("")}</ul></details>${x.go?`<div class="chips mt">${x.go.map(mxLink).join("")}</div>`:""}</div>`;
+  });
+  h+=`</div></div>`;
+  return h;
+}
+const RENDER={tx:renderTx,px:renderPx,drug:renderDrug,spec:renderSpec,res:renderRes,ref:renderRef};
 function renderMain(){
   R=getRenal();
   $("tabs").innerHTML=TABS.filter(t=>t[0]!=="ref").map(([k,n])=>`<button class="tab" role="tab" type="button" data-act="tab" data-v="${k}" aria-selected="${S.tab===k}">${n}</button>`).join("");
@@ -1731,6 +1832,8 @@ if(typeof document!=="undefined"){
   document.addEventListener("click",e=>{
     const sb=e.target.closest("button.src[data-ref]");
     if(sb){ const r=REF[sb.dataset.ref]; if(r) showOv(r.s,`<p>${esc(r.f)}</p>${r.u?`<p><a href="${esc(r.u)}" target="_blank" rel="noopener noreferrer">開啟原文 ›</a></p>`:""}`); return; }
+    const mb=e.target.closest("button.mxc[data-mx]");
+    if(mb){ const [k,vk]=mb.dataset.mx.split("|"), c=MX[k][vk], vn=(VX.find(v=>v[0]===vk)||[])[1]; showOv(D[k].n+"・"+vn,`<p><b>${c[0]}</b> ${MXC[c[0]][1]}</p>${c[1]?`<p>${lt(c[1])}</p>`:`<p class="small">依 app 內該病毒的治療或預防情境與仿單。</p>`}${srcTags(c[2]||D[k].src)}`); return; }
     const ub=e.target.closest("button.upd[data-upd]");
     if(ub){ showOv("更新",`<p>${esc(ub.dataset.upd)}</p>`); return; }
     const gb=e.target.closest("button.gl[data-gl]");

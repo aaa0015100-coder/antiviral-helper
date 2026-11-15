@@ -32,6 +32,27 @@ for(const pt of PTS) for(const preg of [false,true]){
   for(const k of Object.keys(A.D)){ set(Object.assign({tab:"drug",drug:k,preg},JSON.parse(JSON.stringify(pt)))); scan(A.render("drug")); }
   for(const r of A.RES){ set(Object.assign({tab:"res",res:r.id,preg},JSON.parse(JSON.stringify(pt)))); scan(A.render("res")); }
 }
+
+// 抗病毒譜（v0.4）
+{ const bad2=[];
+  const api=A; const h=(function(){ set({tab:"spec"}); return A.render("spec"); })();
+  scan(h);
+  for(const k of Object.keys(A.D)) if(!h.includes(`data-v="${k}"`)) bad2.push("譜缺藥物 "+k);
+  for(const m of h.matchAll(/data-mx="([^|]+)\|([^"]+)"/g)){ if(!A.D[m[1]]) bad2.push("譜藥物不存在 "+m[1]); }
+  const must=[["ent","HIV","⚠"],["taf","HIV","⚠"],["pax","HIV","⚠"],["dtg","HBV","⚠"],["cab","HBV","⚠"],["len","HBV","⚠"],["mav","HBV","⚠"],["svl","HBV","⚠"],["vox","HBV","⚠"],["let","HSV","✕"],["let","VZV","✕"],["mar","HSV","✕"],["mar","VZV","✕"],["cdv","BK","✕"],["fos","HSV","●"],["bic","HBV","●"],["ftd","HBV","●"],["fta","HBV","●"],["ose","FLU","●"],["acv","HSV","●"],["acv","VZV","●"],["vgc","CMV","●"],["let","CMV","●"],["ent","HBV","●"],["svl","HCV","●"],["len","HIV","●"],["cdv","ADV","○"]];
+  for(const [d,v,c] of must){ const re=new RegExp(`data-mx="${d}\\|${v}"[^>]*>${c}<`); if(!re.test(h)) bad2.push(`譜 ${d}×${v} 應為 ${c}`); }
+  // 每個藥至少一個 ●；每個在 app 情境出現的藥都要在譜裡有 ●
+  for(const k of Object.keys(A.D)){ const re=new RegExp(`data-mx="${k}\\|[A-Z]+"[^>]*>●<`); if(!re.test(h)) bad2.push("譜沒有 ● "+k); }
+  // 所有 ● 與病毒的對應：該藥所屬分組應與病毒相符的藥不得出現在不相干病毒
+  const nope=[["ose","HBV"],["pax","HBV"],["acv","HIV"],["let","HBV"],["dtg","HCV"],["mav","HIV"],["cab","HSV"],["bx","COV"]];
+  for(const [d,v] of nope) if(new RegExp(`data-mx="${d}\\|${v}"`).test(h)) bad2.push(`譜不應有 ${d}×${v}`);
+  for(const [k,row] of Object.entries(A.MX)) for(const [v,c] of Object.entries(row)){ if(!A.MXC[c[0]]) bad2.push(`譜符號無效 ${k}×${v}`); if(!A.VX.some(x=>x[0]===v)) bad2.push(`譜病毒無效 ${k}×${v}`); (c[2]||[]).forEach(r=>{ if(!A.REF[r]) bad2.push(`譜出處不存在 ${k}×${v} ${r}`); }); if(c[0]!=="●"&&!c[1]) bad2.push(`譜非 ● 缺說明 ${k}×${v}`); }
+  for(const x of A.XN) for(const [t,sr] of x.it) sr.forEach(r=>{ if(!A.REF[r]) bad2.push("譜註記出處不存在 "+r); });
+  const usedMX=new Set(); for(const row of Object.values(A.MX)) for(const c of Object.values(row)) (c[2]||[]).forEach(r=>usedMX.add(r)); for(const x of A.XN) for(const [t,sr] of x.it) sr.forEach(r=>usedMX.add(r));
+  for(const r of ["GCV_US","FOS_ADIS91","VAL_CMV99","MAR_EU","MAR_REV22","LET_REV20","DAA_HBV17","BIC_LABEL","IAS_HBVHIV23","DHHS_HBV24"]) if(!usedMX.has(r)) bad2.push("REF 未被譜使用 "+r);
+  if(bad2.length){ console.log("SPEC FAIL",bad2.length); bad2.slice(0,30).forEach(b=>console.log("  "+b)); process.exit(1); }
+  console.log("SPEC OK");
+}
 // 更新標籤鍵存在
 const jsU=js.match(/upd:"([A-Z0-9]+)"/g)||[]; jsU.forEach(m=>{ const k=m.slice(5,-1); if(!A.UPDN[k]) bad.push("UPDN 缺 "+k); });
 set({tab:"ref"}); const refHtml=A.render("ref");

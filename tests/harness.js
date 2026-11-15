@@ -6,7 +6,7 @@ function load(file){
   const ctx={console,setTimeout,clearTimeout}; vm.createContext(ctx);
   vm.runInContext(js+`
 ;this.__api={S,UI,REF,GLOSS,REG,D,DGRP,DX,PX,RES,UPDN,TABS,getRenal,weights,doseOf,bandRange,fillW,optsOf,allOpts,regsIn,searchHits,goHit,DX_OF,PX_OF,RES_OF,
-  setR(){R=getRenal();},
+  MX,XN,VX,MXC,setR(){R=getRenal();},
   render(tab){R=getRenal(); return RENDER[tab]();}
 };`,ctx);
   return {A:ctx.__api,html};

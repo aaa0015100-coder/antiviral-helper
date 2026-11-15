@@ -39,7 +39,7 @@ with sync_playwright() as p:
             pg.on("request", lambda r: net.append(r.url) if not r.url.startswith(("file:", "data:")) else None)
             pg.goto(HTML); pg.wait_for_timeout(150)
             check(pg, W, "load")
-            if pg.locator("#tabs .tab").count() != 4: issues.append(f"{W}: 分頁不是 4 個")
+            if pg.locator("#tabs .tab").count() != 5: issues.append(f"{W}: 分頁不是 5 個")
             if pg.evaluate("document.getElementById('tabs').scrollWidth") > pg.locator("#tabs").bounding_box()["width"] + 1: issues.append(f"{W}: 分頁需橫捲")
             # 病人卡
             if W <= 920: pg.locator("#ptBar").click()
@@ -96,6 +96,23 @@ with sync_playwright() as p:
                 pg.locator(f"#main [data-act=drug][data-v={k}]").click()
                 pg.evaluate("document.querySelectorAll('#main details').forEach(d=>d.open=true)")
                 check(pg, W, f"drug {k}")
+            # 抗病毒譜：點每個符號、開彈出層、點藥名到藥物頁再返回
+            tab(pg, "spec"); check(pg, W, "spec")
+            n = pg.locator("#main button.mxc").count()
+            if n < 60: issues.append(f"{W}: 譜符號只有 {n}")
+            for i in range(0, n, 7):
+                pg.locator("#main button.mxc").nth(i).click()
+                if pg.locator("#ov").is_hidden() or not pg.inner_text("#ovB").strip(): issues.append(f"{W}: 譜彈出層無內容 #{i}")
+                check(pg, W, f"spec cell#{i}")
+                pg.locator("#ov [data-act=ov-close]").click()
+            pg.evaluate("document.querySelectorAll('#main details').forEach(d=>d.open=true)"); check(pg, W, "spec notes")
+            pg.locator("#main [data-act=go-drug]").first.click()
+            if pg.evaluate("S.tab") != "drug": issues.append(f"{W}: 譜點藥名未到藥物頁")
+            pg.locator(".backbar").click()
+            if pg.evaluate("S.tab") != "spec": issues.append(f"{W}: 譜返回失敗")
+            for a in ("go-dx","go-px","res-go"):
+                loc = pg.locator(f"#main [data-act={a}]").first
+                loc.click(); check(pg, W, f"spec {a}"); pg.locator(".backbar").click()
             # 抗藥：每項展開
             tab(pg, "res")
             for r in pg.evaluate("RES.map(x=>x.id)"):

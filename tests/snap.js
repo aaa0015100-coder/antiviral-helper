@@ -12,6 +12,7 @@ for(const x of A.PX) for(const o of A.allOpts(x)) for(const pk of Object.keys(PT
 for(const k of Object.keys(A.D)) for(const pk of Object.keys(PT)) snap(`drug ${k} ${pk}`,Object.assign({tab:"drug",drug:k},cp(PT[pk])),"drug");
 for(const r of [""].concat(A.RES.map(x=>x.id))) snap(`res ${r}`,Object.assign({tab:"res",res:r},cp(PT.c35)),"res");
 snap("tx covid preg",{tab:"tx",dx:"covid",preg:true},"tx"); snap("tx flu preg",{tab:"tx",dx:"flu",preg:true},"tx");
+snap("spec",{tab:"spec"},"spec");
 snap("ref",{tab:"ref"},"ref");
 const s=out.join("\n")+"\n", f=path.join(__dirname,'snap.txt');
 if(process.argv.includes('--update')||!fs.existsSync(f)){ fs.writeFileSync(f,s); console.log("snap written",out.length,"scenarios"); process.exit(0); }
