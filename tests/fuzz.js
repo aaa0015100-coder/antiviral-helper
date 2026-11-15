@@ -40,9 +40,13 @@ const INV={
   hse(o,t){ if(o.k==="conf"&&!/14–21 天/.test(t)) return "確診 HSE 缺 14–21 天"; if(o.k==="ic"&&!/21 天/.test(t)) return "免疫低下缺 21 天"; },
   cmvdis(o,t,h){ const c=cards(h); if(o.sev==="sev"&&!/ganciclovir IV/.test(txt(c[0]||""))) return "重度第一張不是 IV ganciclovir"; if(o.sev==="mild"&&!/valganciclovir/.test(txt(c[0]||""))) return "輕中度第一張不是 valganciclovir"; },
   hz(o,t){ if(!/72 小時|盡早/.test(t)) return "缺給藥時機"; },
+  hbvtx(o,t,h,ds){ const c=cards(h); if(o.c==="dec"&&!/ent_1|1 mg/.test(h+t)) return "失代償缺 entecavir 1 mg"; if(o.c==="dec"&&!/peginterferon/.test(t)) return "失代償缺 peginterferon 禁用"; if(o.c==="no"&&o.p==="lo"&&c.length) return "低病毒量正常 ALT 仍列藥"; if((o.c!=="no"||o.p!=="lo")&&!c.length) return "應治療卻無方案"; if(o.c==="no"&&o.p==="gz"&&!/7 kPa/.test(t)||o.c==="no"&&o.p==="gz"&&!/8 kPa/.test(t)) return "灰色地帶缺 VCTE 7／8 kPa 衝突"; },
+  hbvstop(o,t,h,ds){ if(ds.length) return "停藥情境列藥"; if(o.c==="cir"&&!/不停藥/.test(t)) return "肝硬化缺不停藥"; },
+  hcvtx(o,t,h,ds){ if(o.st==="dc"&&(ds.includes("mav")||ds.includes("vox"))) return "失代償列蛋白酶抑制劑方案"; if(o.st==="dc"&&!(ds.includes("svl")&&ds.includes("rib"))) return "失代償缺 sofosbuvir/velpatasvir＋ribavirin"; if(o.st!=="dc"&&ds.includes("rib")) return "非失代償列 ribavirin"; if(o.st==="exp"&&!ds.includes("vox")) return "再治療缺 voxilaprevir"; if(!/HBsAg/.test(t)) return "缺 HBV 篩檢提醒"; },
   rsv(o,t,h,ds){ if(o.host==="gen"&&ds.length) return "一般成人 RSV 列藥"; }
 };
 const PINV={
+  hbvpx(o,t,h,ds){ const c=cards(h); if(o.s==="sag"&&!c.length) return "HBsAg 陽性未列預防"; if(o.s==="core"&&o.t==="o"&&c.length) return "低風險 anti-HBc 陽性仍列預防"; if(o.s==="core"&&o.t==="b"&&!c.length) return "anti-HBc 陽性＋anti-CD20 未列預防"; if(ds.includes("rib")) return "HBV 預防列 ribavirin"; },
   cmvsot(o,t,h,ds){ if(o.sero==="nn"&&ds.includes("vgc")) return "D−/R− 列 valganciclovir"; if(o.sero!=="nn"&&!ds.includes("vgc")) return "缺 valganciclovir 預防"; if(ds.includes("let")&&!(o.org==="kid"&&o.sero==="dr")) return "letermovir 出現在非腎 D+/R−"; },
   flupep(o,t,h,ds){ if(ds.includes("per")) return "peramivir 用於預防"; },
   cmvhsct(o,t,h,ds){ if(!/HSV／VZV 活性/.test(t)) return "缺 letermovir 無 HSV 活性提醒"; }
@@ -88,7 +92,7 @@ if(on("dose")){
 }
 if(on("search")){
   const q=(s,re)=>{ n++; const h=A.searchHits(s).map(x=>x.n).join("|"); if(!re.test(h)) F("search "+s,{},"找不到："+h); };
-  q("paxlovid",/nirmatrelvir/); q("紓伏效",/baloxavir/); q("帶狀",/帶狀疱疹/); q("cmv",/CMV/); q("letermovir",/letermovir/); q("水痘",/水痘/); q("克巨染",/maribavir/);
+  q("paxlovid",/nirmatrelvir/); q("entecavir",/entecavir/); q("B 型",/B 型肝炎/); q("hcv",/HCV/); q("hbv",/HBV/); q("紓伏效",/baloxavir/); q("帶狀",/帶狀疱疹/); q("cmv",/CMV/); q("letermovir",/letermovir/); q("水痘",/水痘/); q("克巨染",/maribavir/);
 }
 const by={}; for(const f of fails){ const k=f[0].split(" ").slice(0,2).join(" ")+" | "+String(f[2]).slice(0,100); (by[k]=by[k]||[]).push(f); }
 console.log("FUZZ TOTAL",n,"FAILS",fails.length);
