@@ -8447,6 +8447,8 @@ HSCT／血液惡性腫瘤
 02
 03
 04
+ECIL-10（2025／26）
+ECIL-10（呼吸道病毒，2025／26）
 ECIL-4（2013）
 ECIL-4（RSV）
 ECIL-4（RSV）
@@ -8459,7 +8461,7 @@ ribavirin
 ribavirin
 一般成人
 上呼吸道
-上呼吸道：進展高風險者（例：ISI 高、淋巴球低）可考慮 ribavirin，以預防進展到下呼吸道（ECIL-4）。
+上呼吸道：進展高風險者（例：ISI 高、淋巴球低）可考慮 ribavirin 預防進展到下呼吸道（ECIL-4）；ECIL-10 摘要：免疫缺陷評分高的 HCT 受者建議口服 ribavirin 或 IVIG 或併用。
 下呼吸道
 以下 2 種擇一，單用即可
 依院內規範（文獻例：10–20 mg/kg/日分 3 次 × 7–10 天）・請確認
@@ -8470,7 +8472,7 @@ ribavirin
 可考慮（高風險）
 台灣許可證未查證・請確認
 台灣許可證未查證・請確認
-各指引說法（1）
+各指引說法（2）
 吸入
 呼吸道・RSV
 商品名：Virazole（吸入）／Rebetol、Copegus（口服）
@@ -8480,6 +8482,7 @@ ribavirin
 建議
 或
 更改
+更新
 檢驗
 正常腎功能劑量・填腎功能 ›
 用法：
@@ -8495,11 +8498,14 @@ ribavirin
 部位
 霧化給藥，劑量與時程依院內規範・請確認
 ：延後 conditioning、aerosolized ribavirin，或 off-label 全身性 ribavirin 及／或 IVIG。各條強度本版未逐條核對。
+：更新 ECIL-4：RSV 已核准疫苗可依當地核准考慮（證據少）；免疫缺陷評分高的 HCT 受者建議口服 ribavirin 或 IVIG 或併用。各條強度本版未取得全文・請確認。
 ## tx rsv {"host":"hsct","site":"u"} c35
 01
 02
 03
 04
+ECIL-10（2025／26）
+ECIL-10（呼吸道病毒，2025／26）
 ECIL-4（2013）
 ECIL-4（RSV）
 ECIL-4（RSV）
@@ -8512,7 +8518,7 @@ ribavirin
 ribavirin
 一般成人
 上呼吸道
-上呼吸道：進展高風險者（例：ISI 高、淋巴球低）可考慮 ribavirin，以預防進展到下呼吸道（ECIL-4）。
+上呼吸道：進展高風險者（例：ISI 高、淋巴球低）可考慮 ribavirin 預防進展到下呼吸道（ECIL-4）；ECIL-10 摘要：免疫缺陷評分高的 HCT 受者建議口服 ribavirin 或 IVIG 或併用。
 下呼吸道
 以下 2 種擇一，單用即可
 依院內規範（文獻例：10–20 mg/kg/日分 3 次 × 7–10 天）・請確認
@@ -8524,7 +8530,7 @@ ribavirin
 可考慮（高風險）
 台灣許可證未查證・請確認
 台灣許可證未查證・請確認
-各指引說法（1）
+各指引說法（2）
 吸入
 呼吸道・RSV
 商品名：Virazole（吸入）／Rebetol、Copegus（口服）
@@ -8534,6 +8540,7 @@ ribavirin
 建議
 或
 更改
+更新
 檢驗
 無需腎調整
 無需腎調整
@@ -8550,11 +8557,14 @@ ribavirin
 部位
 霧化給藥，劑量與時程依院內規範・請確認
 ：延後 conditioning、aerosolized ribavirin，或 off-label 全身性 ribavirin 及／或 IVIG。各條強度本版未逐條核對。
+：更新 ECIL-4：RSV 已核准疫苗可依當地核准考慮（證據少）；免疫缺陷評分高的 HCT 受者建議口服 ribavirin 或 IVIG 或併用。各條強度本版未取得全文・請確認。
 ## tx rsv {"host":"hsct","site":"u"} hd
 01
 02
 03
 04
+ECIL-10（2025／26）
+ECIL-10（呼吸道病毒，2025／26）
 ECIL-4（2013）
 ECIL-4（RSV）
 ECIL-4（RSV）
@@ -8567,7 +8577,7 @@ ribavirin
 ribavirin
 一般成人
 上呼吸道
-上呼吸道：進展高風險者（例：ISI 高、淋巴球低）可考慮 ribavirin，以預防進展到下呼吸道（ECIL-4）。
+上呼吸道：進展高風險者（例：ISI 高、淋巴球低）可考慮 ribavirin 預防進展到下呼吸道（ECIL-4）；ECIL-10 摘要：免疫缺陷評分高的 HCT 受者建議口服 ribavirin 或 IVIG 或併用。
 下呼吸道
 以下 2 種擇一，單用即可
 依院內規範（文獻例：10–20 mg/kg/日分 3 次 × 7–10 天）・請確認
@@ -8579,7 +8589,7 @@ ribavirin
 可考慮（高風險）
 台灣許可證未查證・請確認
 台灣許可證未查證・請確認
-各指引說法（1）
+各指引說法（2）
 吸入
 呼吸道・RSV
 商品名：Virazole（吸入）／Rebetol、Copegus（口服）
@@ -8589,6 +8599,7 @@ ribavirin
 建議
 或
 更改
+更新
 檢驗
 無需腎調整
 無需腎調整
@@ -8605,11 +8616,14 @@ ribavirin
 部位
 霧化給藥，劑量與時程依院內規範・請確認
 ：延後 conditioning、aerosolized ribavirin，或 off-label 全身性 ribavirin 及／或 IVIG。各條強度本版未逐條核對。
+：更新 ECIL-4：RSV 已核准疫苗可依當地核准考慮（證據少）；免疫缺陷評分高的 HCT 受者建議口服 ribavirin 或 IVIG 或併用。各條強度本版未取得全文・請確認。
 ## tx rsv {"host":"hsct","site":"l"} none
 01
 02
 03
 04
+ECIL-10（2025／26）
+ECIL-10（呼吸道病毒，2025／26）
 ECIL-4（2013）
 ECIL-4（RSV）
 ECIL-4（RSV）
@@ -8622,7 +8636,7 @@ ribavirin
 一般成人
 上呼吸道
 下呼吸道
-下呼吸道：ribavirin（吸入或口服）± IVIG，證據有限（ECIL-4）。
+下呼吸道：口服（或吸入）ribavirin ± IVIG，證據有限（ECIL-4；ECIL-10 摘要同方向，各條強度請確認）。
 以下 2 種擇一，單用即可
 依院內規範（文獻例：10–20 mg/kg/日分 3 次 × 7–10 天）・請確認
 其他器官移植
@@ -8631,7 +8645,7 @@ ribavirin
 可考慮
 台灣許可證未查證・請確認
 台灣許可證未查證・請確認
-各指引說法（1）
+各指引說法（2）
 吸入
 呼吸道・RSV
 商品名：Virazole（吸入）／Rebetol、Copegus（口服）
@@ -8641,6 +8655,7 @@ ribavirin
 建議
 或
 更改
+更新
 檢驗
 正常腎功能劑量・填腎功能 ›
 用法：
@@ -8656,11 +8671,14 @@ ribavirin
 部位
 霧化給藥，劑量與時程依院內規範・請確認
 ：延後 conditioning、aerosolized ribavirin，或 off-label 全身性 ribavirin 及／或 IVIG。各條強度本版未逐條核對。
+：更新 ECIL-4：RSV 已核准疫苗可依當地核准考慮（證據少）；免疫缺陷評分高的 HCT 受者建議口服 ribavirin 或 IVIG 或併用。各條強度本版未取得全文・請確認。
 ## tx rsv {"host":"hsct","site":"l"} c35
 01
 02
 03
 04
+ECIL-10（2025／26）
+ECIL-10（呼吸道病毒，2025／26）
 ECIL-4（2013）
 ECIL-4（RSV）
 ECIL-4（RSV）
@@ -8673,7 +8691,7 @@ ribavirin
 一般成人
 上呼吸道
 下呼吸道
-下呼吸道：ribavirin（吸入或口服）± IVIG，證據有限（ECIL-4）。
+下呼吸道：口服（或吸入）ribavirin ± IVIG，證據有限（ECIL-4；ECIL-10 摘要同方向，各條強度請確認）。
 以下 2 種擇一，單用即可
 依院內規範（文獻例：10–20 mg/kg/日分 3 次 × 7–10 天）・請確認
 其他器官移植
@@ -8683,7 +8701,7 @@ ribavirin
 可考慮
 台灣許可證未查證・請確認
 台灣許可證未查證・請確認
-各指引說法（1）
+各指引說法（2）
 吸入
 呼吸道・RSV
 商品名：Virazole（吸入）／Rebetol、Copegus（口服）
@@ -8693,6 +8711,7 @@ ribavirin
 建議
 或
 更改
+更新
 檢驗
 無需腎調整
 無需腎調整
@@ -8709,11 +8728,14 @@ ribavirin
 部位
 霧化給藥，劑量與時程依院內規範・請確認
 ：延後 conditioning、aerosolized ribavirin，或 off-label 全身性 ribavirin 及／或 IVIG。各條強度本版未逐條核對。
+：更新 ECIL-4：RSV 已核准疫苗可依當地核准考慮（證據少）；免疫缺陷評分高的 HCT 受者建議口服 ribavirin 或 IVIG 或併用。各條強度本版未取得全文・請確認。
 ## tx rsv {"host":"hsct","site":"l"} hd
 01
 02
 03
 04
+ECIL-10（2025／26）
+ECIL-10（呼吸道病毒，2025／26）
 ECIL-4（2013）
 ECIL-4（RSV）
 ECIL-4（RSV）
@@ -8726,7 +8748,7 @@ ribavirin
 一般成人
 上呼吸道
 下呼吸道
-下呼吸道：ribavirin（吸入或口服）± IVIG，證據有限（ECIL-4）。
+下呼吸道：口服（或吸入）ribavirin ± IVIG，證據有限（ECIL-4；ECIL-10 摘要同方向，各條強度請確認）。
 以下 2 種擇一，單用即可
 依院內規範（文獻例：10–20 mg/kg/日分 3 次 × 7–10 天）・請確認
 其他器官移植
@@ -8736,7 +8758,7 @@ ribavirin
 可考慮
 台灣許可證未查證・請確認
 台灣許可證未查證・請確認
-各指引說法（1）
+各指引說法（2）
 吸入
 呼吸道・RSV
 商品名：Virazole（吸入）／Rebetol、Copegus（口服）
@@ -8746,6 +8768,7 @@ ribavirin
 建議
 或
 更改
+更新
 檢驗
 無需腎調整
 無需腎調整
@@ -8762,6 +8785,7 @@ ribavirin
 部位
 霧化給藥，劑量與時程依院內規範・請確認
 ：延後 conditioning、aerosolized ribavirin，或 off-label 全身性 ribavirin 及／或 IVIG。各條強度本版未逐條核對。
+：更新 ECIL-4：RSV 已核准疫苗可依當地核准考慮（證據少）；免疫缺陷評分高的 HCT 受者建議口服 ribavirin 或 IVIG 或併用。各條強度本版未取得全文・請確認。
 ## tx rsv {"host":"lung","site":"u"} none
 01
 02
@@ -12203,7 +12227,9 @@ IV 2–7 天或至改善（CDC 2021）；仿單 7 天
 IV acyclovir，改善後改口服，總療程 ≥10 天（CDC 2021）。
 IV＋口服總療程 ≥10 天（CDC 2021）
 PO
+Pritelivir（Hovilpri）FDA 核准 2026
 acyclovir
+acyclovir 類難治者另有口服 pritelivir（FDA 2026-10 核准；用法見抗藥分頁與藥物頁）。
 valacyclovir
 仿單
 出處 2
@@ -12214,6 +12240,7 @@ valacyclovir
 抗藥：HSV／VZV：acyclovir 抗藥 ›
 改善後改口服
 更改
+更新
 正常腎功能劑量・填腎功能 ›
 治療 7–10 天無改善 → 考慮 acyclovir 抗藥（見抗藥分頁）。
 療程
@@ -12246,7 +12273,9 @@ IV 2–7 天或至改善（CDC 2021）；仿單 7 天
 IV acyclovir，改善後改口服，總療程 ≥10 天（CDC 2021）。
 IV＋口服總療程 ≥10 天（CDC 2021）
 PO
+Pritelivir（Hovilpri）FDA 核准 2026
 acyclovir
+acyclovir 類難治者另有口服 pritelivir（FDA 2026-10 核准；用法見抗藥分頁與藥物頁）。
 valacyclovir
 ≈ 300 mg（實際體重 60 kg）
 仿單
@@ -12260,6 +12289,7 @@ valacyclovir
 抗藥：HSV／VZV：acyclovir 抗藥 ›
 改善後改口服
 更改
+更新
 正常劑量（CrCl ≥30）
 治療 7–10 天無改善 → 考慮 acyclovir 抗藥（見抗藥分頁）。
 療程
@@ -12292,7 +12322,9 @@ IV 2–7 天或至改善（CDC 2021）；仿單 7 天
 IV acyclovir，改善後改口服，總療程 ≥10 天（CDC 2021）。
 IV＋口服總療程 ≥10 天（CDC 2021）
 PO
+Pritelivir（Hovilpri）FDA 核准 2026
 acyclovir
+acyclovir 類難治者另有口服 pritelivir（FDA 2026-10 核准；用法見抗藥分頁與藥物頁）。
 valacyclovir
 ≈ 140 mg（實際體重 55 kg；肥胖者請填身高）
 仿單
@@ -12305,6 +12337,7 @@ valacyclovir
 抗藥：HSV／VZV：acyclovir 抗藥 ›
 改善後改口服
 更改
+更新
 治療 7–10 天無改善 → 考慮 acyclovir 抗藥（見抗藥分頁）。
 療程
 療程
@@ -13525,10 +13558,10 @@ CMV SOT 國際共識 2025
 CMV SOT 國際共識 2025
 CMV SOT 國際共識 2025
 CMV・CMV DNAemia（preemptive）
-ECIL-7（2019）
-ECIL-7（CMV，2019）
-ECIL-7（CMV，2019）
-ECIL-7（CMV，2019）
+ECIL-10（2025）
+ECIL-10（CMV，2025）
+ECIL-10（CMV，2025）
+ECIL-10（CMV，2025）
 Foscarnet 仿單
 Ganciclovir 注射劑仿單
 IV
@@ -13540,7 +13573,7 @@ ganciclovir
 valganciclovir
 不因白血球低而減量；改用 G-CSF 或調整其他骨髓抑制藥（共識 2025・strong）。
 以下 2 種擇一，單用即可
-仿單 preemptive 誘導 7–14 天；之後依院內閾值（ECIL-7 未核對）
+仿單 preemptive 誘導 7–14 天；之後依院內閾值（ECIL-10 條文未核對）
 仿單以 mg/kg 計，此處用實際體重。
 依院內 preemptive 閾值開始 ganciclovir 或 valganciclovir；ECIL-7（2019）本版未取得全文，閾值與療程請確認。
 依院內閾值・請確認
@@ -13560,6 +13593,7 @@ valganciclovir
 或
 抗藥：CMV：難治或抗藥 ›
 更改
+更新
 檢驗
 正常腎功能劑量・填腎功能 ›
 用法：
@@ -13575,7 +13609,7 @@ valganciclovir
 診斷
 造血幹細胞移植
 骨髓抑制時
-：本版未核對全文・請確認。
+：更新 ECIL-7（2019）：涵蓋血清狀態、免疫監測、letermovir 預防、難治／抗藥 CMV；preemptive 閾值與各條強度本版未核對全文・請確認。
 ## tx cmvpre {"host":"hsct"} c35
 01
 02
@@ -13589,10 +13623,10 @@ CMV SOT 國際共識 2025
 CMV SOT 國際共識 2025
 CMV SOT 國際共識 2025
 CMV・CMV DNAemia（preemptive）
-ECIL-7（2019）
-ECIL-7（CMV，2019）
-ECIL-7（CMV，2019）
-ECIL-7（CMV，2019）
+ECIL-10（2025）
+ECIL-10（CMV，2025）
+ECIL-10（CMV，2025）
+ECIL-10（CMV，2025）
 Foscarnet 仿單
 Ganciclovir 注射劑仿單
 IV
@@ -13606,7 +13640,7 @@ valganciclovir
 ≈ 3600 mg（實際體重 60 kg）
 不因白血球低而減量；改用 G-CSF 或調整其他骨髓抑制藥（共識 2025・strong）。
 以下 2 種擇一，單用即可
-仿單 preemptive 誘導 7–14 天；之後依院內閾值（ECIL-7 未核對）
+仿單 preemptive 誘導 7–14 天；之後依院內閾值（ECIL-10 條文未核對）
 仿單以 mg/kg 計，此處用實際體重。
 依院內 preemptive 閾值開始 ganciclovir 或 valganciclovir；ECIL-7（2019）本版未取得全文，閾值與療程請確認。
 依院內閾值・請確認
@@ -13630,6 +13664,7 @@ valganciclovir
 或
 抗藥：CMV：難治或抗藥 ›
 更改
+更新
 檢驗
 用法：
 療程
@@ -13644,7 +13679,7 @@ valganciclovir
 診斷
 造血幹細胞移植
 骨髓抑制時
-：本版未核對全文・請確認。
+：更新 ECIL-7（2019）：涵蓋血清狀態、免疫監測、letermovir 預防、難治／抗藥 CMV；preemptive 閾值與各條強度本版未核對全文・請確認。
 ## tx cmvpre {"host":"hsct"} hd
 01
 02
@@ -13656,10 +13691,10 @@ CMV SOT 國際共識 2025
 CMV SOT 國際共識 2025
 CMV SOT 國際共識 2025
 CMV・CMV DNAemia（preemptive）
-ECIL-7（2019）
-ECIL-7（CMV，2019）
-ECIL-7（CMV，2019）
-ECIL-7（CMV，2019）
+ECIL-10（2025）
+ECIL-10（CMV，2025）
+ECIL-10（CMV，2025）
+ECIL-10（CMV，2025）
 Foscarnet 仿單
 Ganciclovir 注射劑仿單
 IV
@@ -13672,7 +13707,7 @@ valganciclovir
 ≈ 70 mg（實際體重 55 kg）
 不因白血球低而減量；改用 G-CSF 或調整其他骨髓抑制藥（共識 2025・strong）。
 以下 2 種擇一，單用即可
-仿單 preemptive 誘導 7–14 天；之後依院內閾值（ECIL-7 未核對）
+仿單 preemptive 誘導 7–14 天；之後依院內閾值（ECIL-10 條文未核對）
 仿單不建議
 仿單以 mg/kg 計，此處用實際體重。
 依院內 preemptive 閾值開始 ganciclovir 或 valganciclovir；ECIL-7（2019）本版未取得全文，閾值與療程請確認。
@@ -13694,6 +13729,7 @@ valganciclovir
 或
 抗藥：CMV：難治或抗藥 ›
 更改
+更新
 檢驗
 用法：
 療程
@@ -13712,7 +13748,7 @@ valganciclovir
 造血幹細胞移植
 錠劑不建議；英國口服液 200 mg 每週 3 次，HD 後給
 骨髓抑制時
-：本版未核對全文・請確認。
+：更新 ECIL-7（2019）：涵蓋血清狀態、免疫監測、letermovir 預防、難治／抗藥 CMV；preemptive 閾值與各條強度本版未核對全文・請確認。
 ## tx cmvdis {"sev":"mild"} none
 01
 02
@@ -13729,7 +13765,7 @@ CMV SOT 國際共識 2025
 CMV SOT 國際共識 2025
 CMV SOT 國際共識 2025
 CMV・CMV 疾病（肺炎、腸胃道）
-ECIL-7（CMV，2019）
+ECIL-10（CMV，2025）
 IV
 PO
 ganciclovir
@@ -13765,7 +13801,7 @@ valganciclovir 900 mg BID（共識 2025・strong, moderate）。
 輕中度、可口服
 重度或危及生命
 首選
-：如上；不涵蓋 HSCT（HSCT 依 ECIL-7）。
+：如上；不涵蓋 HSCT（HSCT 依 ECIL-10）。
 ## tx cmvdis {"sev":"mild"} c35
 01
 02
@@ -13782,7 +13818,7 @@ CMV SOT 國際共識 2025
 CMV SOT 國際共識 2025
 CMV SOT 國際共識 2025
 CMV・CMV 疾病（肺炎、腸胃道）
-ECIL-7（CMV，2019）
+ECIL-10（CMV，2025）
 IV
 PO
 ganciclovir
@@ -13821,7 +13857,7 @@ valganciclovir 900 mg BID（共識 2025・strong, moderate）。
 輕中度、可口服
 重度或危及生命
 首選
-：如上；不涵蓋 HSCT（HSCT 依 ECIL-7）。
+：如上；不涵蓋 HSCT（HSCT 依 ECIL-10）。
 ## tx cmvdis {"sev":"mild"} hd
 01
 02
@@ -13837,7 +13873,7 @@ CMV SOT 國際共識 2025
 CMV SOT 國際共識 2025
 CMV SOT 國際共識 2025
 CMV・CMV 疾病（肺炎、腸胃道）
-ECIL-7（CMV，2019）
+ECIL-10（CMV，2025）
 IV
 PO
 ganciclovir
@@ -13877,7 +13913,7 @@ valganciclovir 900 mg BID（共識 2025・strong, moderate）。
 重度或危及生命
 錠劑不建議；英國口服液 200 mg 每週 3 次，HD 後給
 首選
-：如上；不涵蓋 HSCT（HSCT 依 ECIL-7）。
+：如上；不涵蓋 HSCT（HSCT 依 ECIL-10）。
 ## tx cmvdis {"sev":"sev"} none
 01
 02
@@ -13894,7 +13930,7 @@ CMV SOT 國際共識 2025
 CMV SOT 國際共識 2025
 CMV SOT 國際共識 2025
 CMV・CMV 疾病（肺炎、腸胃道）
-ECIL-7（CMV，2019）
+ECIL-10（CMV，2025）
 Ganciclovir 注射劑仿單
 IV
 IV ganciclovir 5 mg/kg q12h，改善且可口服後改 valganciclovir（共識 2025・strong, low）。
@@ -13932,7 +13968,7 @@ valganciclovir
 輕中度、可口服
 重度或危及生命
 首選
-：如上；不涵蓋 HSCT（HSCT 依 ECIL-7）。
+：如上；不涵蓋 HSCT（HSCT 依 ECIL-10）。
 ## tx cmvdis {"sev":"sev"} c35
 01
 02
@@ -13949,7 +13985,7 @@ CMV SOT 國際共識 2025
 CMV SOT 國際共識 2025
 CMV SOT 國際共識 2025
 CMV・CMV 疾病（肺炎、腸胃道）
-ECIL-7（CMV，2019）
+ECIL-10（CMV，2025）
 Ganciclovir 注射劑仿單
 IV
 IV ganciclovir 5 mg/kg q12h，改善且可口服後改 valganciclovir（共識 2025・strong, low）。
@@ -13990,7 +14026,7 @@ valganciclovir
 輕中度、可口服
 重度或危及生命
 首選
-：如上；不涵蓋 HSCT（HSCT 依 ECIL-7）。
+：如上；不涵蓋 HSCT（HSCT 依 ECIL-10）。
 ## tx cmvdis {"sev":"sev"} hd
 01
 02
@@ -14006,7 +14042,7 @@ CMV SOT 國際共識 2025
 CMV SOT 國際共識 2025
 CMV SOT 國際共識 2025
 CMV・CMV 疾病（肺炎、腸胃道）
-ECIL-7（CMV，2019）
+ECIL-10（CMV，2025）
 Ganciclovir 注射劑仿單
 IV
 IV ganciclovir 5 mg/kg q12h，改善且可口服後改 valganciclovir（共識 2025・strong, low）。
@@ -14048,7 +14084,7 @@ valganciclovir
 重度或危及生命
 錠劑不建議；英國口服液 200 mg 每週 3 次，HD 後給
 首選
-：如上；不涵蓋 HSCT（HSCT 依 ECIL-7）。
+：如上；不涵蓋 HSCT（HSCT 依 ECIL-10）。
 ## tx cmvret {} none
 01
 02
@@ -14217,7 +14253,7 @@ EASL HBV 2025
 EASL HBV 2025
 EASL HBV 2025
 EASL HBV 2025
-HBV DNA >2,000 IU/mL 且 ALT >ULN（排除其他肝病因）：開始 entecavir 或 tenofovir（EASL 2025、AASLD/IDSA 2025）。
+HBV DNA >2,000 IU/mL 且 ALT >ULN（排除其他肝病因）：EASL 2025 建議開始 entecavir 或 tenofovir；AASLD/IDSA 2025 以 ALT ≥2×ULN 為治療對象，ALT 介於 1–2×ULN 屬灰色地帶（見下方各指引說法）。
 HBV DNA 與 ALT
 HBV・慢性 B 型肝炎：要不要治療
 HCC 風險族群（肝硬化、家族史、年齡等）定期超音波監測，與是否抗病毒獨立；細節請依指引確認。
@@ -14247,6 +14283,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 正常腎功能劑量・填腎功能 ›
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
@@ -14267,7 +14304,7 @@ tenofovir disoproxil
 開始前排除 ALT 異常的其他原因；ALT 超過 5 倍 ULN 或有急性惡化徵象請轉肝臟專科。
 首選
 ：DNA >2,000 IU/mL 且 ALT >ULN 治療；治療分層表 14 文字擷取不完整・請確認。
-：同方向；ALT 門檻（ULN 定義男 35、女 25 U/L 等）請以原文確認。
+：免疫活躍（治療對象）：HBeAg 陽性者 ALT ≥2×ULN 且 DNA ≥20,000 IU/mL；HBeAg 陰性者 ALT ≥2×ULN 且 DNA ≥2,000 IU/mL。ULN：男 35、女 25 U/L。ALT <2×ULN 的 DNA >2,000 屬 indeterminate（灰色地帶），見該情境。
 ：擴大治療條件（含 APRI >0.5）；細節請確認。
 ## tx hbvtx {"c":"no","p":"hi"} c35
 0.25 mg QD，或 0.5 mg q48h
@@ -14291,7 +14328,7 @@ EASL HBV 2025
 EASL HBV 2025
 EASL HBV 2025
 EASL HBV 2025
-HBV DNA >2,000 IU/mL 且 ALT >ULN（排除其他肝病因）：開始 entecavir 或 tenofovir（EASL 2025、AASLD/IDSA 2025）。
+HBV DNA >2,000 IU/mL 且 ALT >ULN（排除其他肝病因）：EASL 2025 建議開始 entecavir 或 tenofovir；AASLD/IDSA 2025 以 ALT ≥2×ULN 為治療對象，ALT 介於 1–2×ULN 屬灰色地帶（見下方各指引說法）。
 HBV DNA 與 ALT
 HBV・慢性 B 型肝炎：要不要治療
 HCC 風險族群（肝硬化、家族史、年齡等）定期超音波監測，與是否抗病毒獨立；細節請依指引確認。
@@ -14324,6 +14361,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 正常劑量（CrCl ≥15）
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
@@ -14344,7 +14382,7 @@ tenofovir disoproxil
 開始前排除 ALT 異常的其他原因；ALT 超過 5 倍 ULN 或有急性惡化徵象請轉肝臟專科。
 首選
 ：DNA >2,000 IU/mL 且 ALT >ULN 治療；治療分層表 14 文字擷取不完整・請確認。
-：同方向；ALT 門檻（ULN 定義男 35、女 25 U/L 等）請以原文確認。
+：免疫活躍（治療對象）：HBeAg 陽性者 ALT ≥2×ULN 且 DNA ≥20,000 IU/mL；HBeAg 陰性者 ALT ≥2×ULN 且 DNA ≥2,000 IU/mL。ULN：男 35、女 25 U/L。ALT <2×ULN 的 DNA >2,000 屬 indeterminate（灰色地帶），見該情境。
 ：擴大治療條件（含 APRI >0.5）；細節請確認。
 ## tx hbvtx {"c":"no","p":"hi"} hd
 0.5 mg q7d，HD 後給
@@ -14368,7 +14406,7 @@ EASL HBV 2025
 EASL HBV 2025
 EASL HBV 2025
 EASL HBV 2025
-HBV DNA >2,000 IU/mL 且 ALT >ULN（排除其他肝病因）：開始 entecavir 或 tenofovir（EASL 2025、AASLD/IDSA 2025）。
+HBV DNA >2,000 IU/mL 且 ALT >ULN（排除其他肝病因）：EASL 2025 建議開始 entecavir 或 tenofovir；AASLD/IDSA 2025 以 ALT ≥2×ULN 為治療對象，ALT 介於 1–2×ULN 屬灰色地帶（見下方各指引說法）。
 HBV DNA 與 ALT
 HBV・慢性 B 型肝炎：要不要治療
 HCC 風險族群（肝硬化、家族史、年齡等）定期超音波監測，與是否抗病毒獨立；細節請依指引確認。
@@ -14399,6 +14437,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
 用法：
@@ -14421,7 +14460,7 @@ tenofovir disoproxil
 開始前排除 ALT 異常的其他原因；ALT 超過 5 倍 ULN 或有急性惡化徵象請轉肝臟專科。
 首選
 ：DNA >2,000 IU/mL 且 ALT >ULN 治療；治療分層表 14 文字擷取不完整・請確認。
-：同方向；ALT 門檻（ULN 定義男 35、女 25 U/L 等）請以原文確認。
+：免疫活躍（治療對象）：HBeAg 陽性者 ALT ≥2×ULN 且 DNA ≥20,000 IU/mL；HBeAg 陰性者 ALT ≥2×ULN 且 DNA ≥2,000 IU/mL。ULN：男 35、女 25 U/L。ALT <2×ULN 的 DNA >2,000 屬 indeterminate（灰色地帶），見該情境。
 ：擴大治療條件（含 APRI >0.5）；細節請確認。
 ## tx hbvtx {"c":"no","p":"gz"} none
 0.5 mg QD，空腹
@@ -14431,8 +14470,9 @@ tenofovir disoproxil
 04
 25 mg QD，隨餐
 300 mg QD
-AASLD/IDSA 2025（EBGI 摘要）
-AASLD/IDSA 2025（WGO 摘要）
+AASLD/IDSA 2025（全文）
+AASLD/IDSA 2025（纖維化切點）
+AASLD/IDSA HBV 2025
 AASLD/IDSA HBV 2025
 AASLD/IDSA HBV 2025
 AASLD/IDSA HBV 2025
@@ -14465,7 +14505,7 @@ tenofovir disoproxil
 代償性肝硬化
 以下 3 種擇一，單用即可
 出處 2
-各指引對灰色地帶的治療門檻不同，下方逐條列出；本版沒有取得全部指引的完整條文。
+各指引對灰色地帶的治療門檻不同，下方逐條列出；EASL 2025、APASL 2026 本版沒有逐條核對全文。
 各指引說法（4）
 商品名：Baraclude（貝樂克）
 商品名：Vemlidy（韋立得）
@@ -14480,10 +14520,10 @@ tenofovir disoproxil
 更新
 更新
 更新
+未治療時 HBV DNA 與 ALT 至少每 6 個月追蹤（AASLD/IDSA 2025，EBGI 摘要）；EASL 的間隔請確認；定期以 VCTE 或其他非侵入性指標評估纖維化。
 條件：依下方各指引的纖維化、年齡條件判斷
 檢驗
 正常腎功能劑量・填腎功能 ›
-每 3–6 個月追蹤 ALT、HBV DNA；定期測 VCTE 或其他非侵入性纖維化指標；必要時肝穿（請確認間隔）。
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
 用法：
@@ -14501,10 +14541,10 @@ tenofovir disoproxil
 診斷
 說明
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
-：F2 切點 8 kPa（摘要）；與 EBGI 摘要不同，請以原文確認。
+：HBeAg 陰性灰色地帶：建議以共享決策考慮抗病毒（conditional, very low）；年齡 >40、男性、血小板 <180 k/mm³ 傾向治療；F3／F4 建議治療。HBeAg 陽性且 ALT 1 至 <2×ULN，或 DNA 20,000–10,000,000：共享決策（無獨立分級建議）。免疫耐受者 >40 歲建議治療（conditional, very low）。
+：PICO 4 實作考量：VCTE ≥8 kPa、FIB-4 >1.45 為高敏感度切點（非 GRADE 建議）；肝硬化診斷 LSM ≥11 kPa。先前的 EBGI 摘要寫 7 kPa，全文為 8 kPa。
 ：灰色地帶條件本版未取得・請確認。
 ：灰色地帶（DNA >2,000、ALT 正常）的年齡、纖維化條件請以原文表 14 確認。
-：纖維化以 VCTE 判斷，F2 切點 7 kPa（摘要）。
 ## tx hbvtx {"c":"no","p":"gz"} c35
 0.25 mg QD，或 0.5 mg q48h
 01
@@ -14513,8 +14553,9 @@ tenofovir disoproxil
 04
 25 mg QD，隨餐
 300 mg q48h
-AASLD/IDSA 2025（EBGI 摘要）
-AASLD/IDSA 2025（WGO 摘要）
+AASLD/IDSA 2025（全文）
+AASLD/IDSA 2025（纖維化切點）
+AASLD/IDSA HBV 2025
 AASLD/IDSA HBV 2025
 AASLD/IDSA HBV 2025
 AASLD/IDSA HBV 2025
@@ -14548,7 +14589,7 @@ tenofovir disoproxil
 以下 3 種擇一，單用即可
 出處 2
 劑量依 CrCl 35 mL/min
-各指引對灰色地帶的治療門檻不同，下方逐條列出；本版沒有取得全部指引的完整條文。
+各指引對灰色地帶的治療門檻不同，下方逐條列出；EASL 2025、APASL 2026 本版沒有逐條核對全文。
 各指引說法（4）
 商品名：Baraclude（貝樂克）
 商品名：Vemlidy（韋立得）
@@ -14565,10 +14606,10 @@ tenofovir disoproxil
 更新
 更新
 更新
+未治療時 HBV DNA 與 ALT 至少每 6 個月追蹤（AASLD/IDSA 2025，EBGI 摘要）；EASL 的間隔請確認；定期以 VCTE 或其他非侵入性指標評估纖維化。
 條件：依下方各指引的纖維化、年齡條件判斷
 檢驗
 正常劑量（CrCl ≥15）
-每 3–6 個月追蹤 ALT、HBV DNA；定期測 VCTE 或其他非侵入性纖維化指標；必要時肝穿（請確認間隔）。
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
 用法：
@@ -14586,10 +14627,10 @@ tenofovir disoproxil
 診斷
 說明
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
-：F2 切點 8 kPa（摘要）；與 EBGI 摘要不同，請以原文確認。
+：HBeAg 陰性灰色地帶：建議以共享決策考慮抗病毒（conditional, very low）；年齡 >40、男性、血小板 <180 k/mm³ 傾向治療；F3／F4 建議治療。HBeAg 陽性且 ALT 1 至 <2×ULN，或 DNA 20,000–10,000,000：共享決策（無獨立分級建議）。免疫耐受者 >40 歲建議治療（conditional, very low）。
+：PICO 4 實作考量：VCTE ≥8 kPa、FIB-4 >1.45 為高敏感度切點（非 GRADE 建議）；肝硬化診斷 LSM ≥11 kPa。先前的 EBGI 摘要寫 7 kPa，全文為 8 kPa。
 ：灰色地帶條件本版未取得・請確認。
 ：灰色地帶（DNA >2,000、ALT 正常）的年齡、纖維化條件請以原文表 14 確認。
-：纖維化以 VCTE 判斷，F2 切點 7 kPa（摘要）。
 ## tx hbvtx {"c":"no","p":"gz"} hd
 0.5 mg q7d，HD 後給
 01
@@ -14598,8 +14639,9 @@ tenofovir disoproxil
 04
 25 mg QD，透析日於 HD 後給
 300 mg 每週 1 次，HD 後給
-AASLD/IDSA 2025（EBGI 摘要）
-AASLD/IDSA 2025（WGO 摘要）
+AASLD/IDSA 2025（全文）
+AASLD/IDSA 2025（纖維化切點）
+AASLD/IDSA HBV 2025
 AASLD/IDSA HBV 2025
 AASLD/IDSA HBV 2025
 AASLD/IDSA HBV 2025
@@ -14633,7 +14675,7 @@ tenofovir disoproxil
 以下 3 種擇一，單用即可
 出處 2
 劑量依 血液透析（HD）
-各指引對灰色地帶的治療門檻不同，下方逐條列出；本版沒有取得全部指引的完整條文。
+各指引對灰色地帶的治療門檻不同，下方逐條列出；EASL 2025、APASL 2026 本版沒有逐條核對全文。
 各指引說法（4）
 商品名：Baraclude（貝樂克）
 商品名：Vemlidy（韋立得）
@@ -14648,9 +14690,9 @@ tenofovir disoproxil
 更新
 更新
 更新
+未治療時 HBV DNA 與 ALT 至少每 6 個月追蹤（AASLD/IDSA 2025，EBGI 摘要）；EASL 的間隔請確認；定期以 VCTE 或其他非侵入性指標評估纖維化。
 條件：依下方各指引的纖維化、年齡條件判斷
 檢驗
-每 3–6 個月追蹤 ALT、HBV DNA；定期測 VCTE 或其他非侵入性纖維化指標；必要時肝穿（請確認間隔）。
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
 用法：
@@ -14671,10 +14713,10 @@ tenofovir disoproxil
 診斷
 說明
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
-：F2 切點 8 kPa（摘要）；與 EBGI 摘要不同，請以原文確認。
+：HBeAg 陰性灰色地帶：建議以共享決策考慮抗病毒（conditional, very low）；年齡 >40、男性、血小板 <180 k/mm³ 傾向治療；F3／F4 建議治療。HBeAg 陽性且 ALT 1 至 <2×ULN，或 DNA 20,000–10,000,000：共享決策（無獨立分級建議）。免疫耐受者 >40 歲建議治療（conditional, very low）。
+：PICO 4 實作考量：VCTE ≥8 kPa、FIB-4 >1.45 為高敏感度切點（非 GRADE 建議）；肝硬化診斷 LSM ≥11 kPa。先前的 EBGI 摘要寫 7 kPa，全文為 8 kPa。
 ：灰色地帶條件本版未取得・請確認。
 ：灰色地帶（DNA >2,000、ALT 正常）的年齡、纖維化條件請以原文表 14 確認。
-：纖維化以 VCTE 判斷，F2 切點 7 kPa（摘要）。
 ## tx hbvtx {"c":"no","p":"lo"} none
 01
 02
@@ -14826,6 +14868,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 正常腎功能劑量・填腎功能 ›
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
@@ -14845,7 +14888,7 @@ tenofovir disoproxil
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
 首選
 ：代償性肝硬化，DNA 可偵測即治療。
-：摘要同方向；DNA 門檻條文未取得・請確認。
+：有肝硬化即開始治療，不論 HBV DNA 與 ALT；ETV、TDF 或 TAF 持續到 HBsAg 消失，每 6 個月 HCC 監測（Figure 5）。
 ：肝硬化治療的 DNA 門檻條文未取得・請確認。
 ## tx hbvtx {"c":"comp","p":"hi"} c35
 0.25 mg QD，或 0.5 mg q48h
@@ -14896,6 +14939,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 正常劑量（CrCl ≥15）
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
@@ -14915,7 +14959,7 @@ tenofovir disoproxil
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
 首選
 ：代償性肝硬化，DNA 可偵測即治療。
-：摘要同方向；DNA 門檻條文未取得・請確認。
+：有肝硬化即開始治療，不論 HBV DNA 與 ALT；ETV、TDF 或 TAF 持續到 HBsAg 消失，每 6 個月 HCC 監測（Figure 5）。
 ：肝硬化治療的 DNA 門檻條文未取得・請確認。
 ## tx hbvtx {"c":"comp","p":"hi"} hd
 0.5 mg q7d，HD 後給
@@ -14964,6 +15008,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
 用法：
@@ -14985,7 +15030,7 @@ tenofovir disoproxil
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
 首選
 ：代償性肝硬化，DNA 可偵測即治療。
-：摘要同方向；DNA 門檻條文未取得・請確認。
+：有肝硬化即開始治療，不論 HBV DNA 與 ALT；ETV、TDF 或 TAF 持續到 HBsAg 消失，每 6 個月 HCC 監測（Figure 5）。
 ：肝硬化治療的 DNA 門檻條文未取得・請確認。
 ## tx hbvtx {"c":"comp","p":"gz"} none
 0.5 mg QD，空腹
@@ -15033,6 +15078,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 正常腎功能劑量・填腎功能 ›
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
@@ -15052,7 +15098,7 @@ tenofovir disoproxil
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
 首選
 ：代償性肝硬化，DNA 可偵測即治療。
-：摘要同方向；DNA 門檻條文未取得・請確認。
+：有肝硬化即開始治療，不論 HBV DNA 與 ALT；ETV、TDF 或 TAF 持續到 HBsAg 消失，每 6 個月 HCC 監測（Figure 5）。
 ：肝硬化治療的 DNA 門檻條文未取得・請確認。
 ## tx hbvtx {"c":"comp","p":"gz"} c35
 0.25 mg QD，或 0.5 mg q48h
@@ -15103,6 +15149,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 正常劑量（CrCl ≥15）
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
@@ -15122,7 +15169,7 @@ tenofovir disoproxil
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
 首選
 ：代償性肝硬化，DNA 可偵測即治療。
-：摘要同方向；DNA 門檻條文未取得・請確認。
+：有肝硬化即開始治療，不論 HBV DNA 與 ALT；ETV、TDF 或 TAF 持續到 HBsAg 消失，每 6 個月 HCC 監測（Figure 5）。
 ：肝硬化治療的 DNA 門檻條文未取得・請確認。
 ## tx hbvtx {"c":"comp","p":"gz"} hd
 0.5 mg q7d，HD 後給
@@ -15171,6 +15218,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
 用法：
@@ -15192,7 +15240,7 @@ tenofovir disoproxil
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
 首選
 ：代償性肝硬化，DNA 可偵測即治療。
-：摘要同方向；DNA 門檻條文未取得・請確認。
+：有肝硬化即開始治療，不論 HBV DNA 與 ALT；ETV、TDF 或 TAF 持續到 HBsAg 消失，每 6 個月 HCC 監測（Figure 5）。
 ：肝硬化治療的 DNA 門檻條文未取得・請確認。
 ## tx hbvtx {"c":"comp","p":"lo"} none
 0.5 mg QD，空腹
@@ -15240,6 +15288,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 正常腎功能劑量・填腎功能 ›
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
@@ -15259,7 +15308,7 @@ tenofovir disoproxil
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
 首選
 ：代償性肝硬化，DNA 可偵測即治療。
-：摘要同方向；DNA 門檻條文未取得・請確認。
+：有肝硬化即開始治療，不論 HBV DNA 與 ALT；ETV、TDF 或 TAF 持續到 HBsAg 消失，每 6 個月 HCC 監測（Figure 5）。
 ：肝硬化治療的 DNA 門檻條文未取得・請確認。
 ## tx hbvtx {"c":"comp","p":"lo"} c35
 0.25 mg QD，或 0.5 mg q48h
@@ -15310,6 +15359,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 正常劑量（CrCl ≥15）
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
@@ -15329,7 +15379,7 @@ tenofovir disoproxil
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
 首選
 ：代償性肝硬化，DNA 可偵測即治療。
-：摘要同方向；DNA 門檻條文未取得・請確認。
+：有肝硬化即開始治療，不論 HBV DNA 與 ALT；ETV、TDF 或 TAF 持續到 HBsAg 消失，每 6 個月 HCC 監測（Figure 5）。
 ：肝硬化治療的 DNA 門檻條文未取得・請確認。
 ## tx hbvtx {"c":"comp","p":"lo"} hd
 0.5 mg q7d，HD 後給
@@ -15378,6 +15428,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
 用法：
@@ -15399,7 +15450,7 @@ tenofovir disoproxil
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
 首選
 ：代償性肝硬化，DNA 可偵測即治療。
-：摘要同方向；DNA 門檻條文未取得・請確認。
+：有肝硬化即開始治療，不論 HBV DNA 與 ALT；ETV、TDF 或 TAF 持續到 HBsAg 消失，每 6 個月 HCC 監測（Figure 5）。
 ：肝硬化治療的 DNA 門檻條文未取得・請確認。
 ## tx hbvtx {"c":"dec","p":"hi"} none
 01
@@ -15447,6 +15498,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 正常腎功能劑量・填腎功能 ›
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
@@ -15465,7 +15517,7 @@ tenofovir disoproxil
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
 首選
 ：失代償肝硬化不論 HBV DNA 與 ALT 都治療。
-：摘要同樣建議治療；全文未取得・請確認。
+：有肝硬化即開始治療，不論 HBV DNA 與 ALT；失代償者 ETV、TDF 或 TAF 長期使用，監測乳酸中毒並轉介移植評估（Figure 5）。失代償時 entecavir 劑量在本版未讀的全文段落・請確認。
 ## tx hbvtx {"c":"dec","p":"hi"} c35
 0.5 mg QD，或 1 mg q48h
 01
@@ -15515,6 +15567,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 正常劑量（CrCl ≥15）
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
@@ -15533,7 +15586,7 @@ tenofovir disoproxil
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
 首選
 ：失代償肝硬化不論 HBV DNA 與 ALT 都治療。
-：摘要同樣建議治療；全文未取得・請確認。
+：有肝硬化即開始治療，不論 HBV DNA 與 ALT；失代償者 ETV、TDF 或 TAF 長期使用，監測乳酸中毒並轉介移植評估（Figure 5）。失代償時 entecavir 劑量在本版未讀的全文段落・請確認。
 ## tx hbvtx {"c":"dec","p":"hi"} hd
 01
 02
@@ -15581,6 +15634,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
 用法：
@@ -15601,7 +15655,7 @@ tenofovir disoproxil
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
 首選
 ：失代償肝硬化不論 HBV DNA 與 ALT 都治療。
-：摘要同樣建議治療；全文未取得・請確認。
+：有肝硬化即開始治療，不論 HBV DNA 與 ALT；失代償者 ETV、TDF 或 TAF 長期使用，監測乳酸中毒並轉介移植評估（Figure 5）。失代償時 entecavir 劑量在本版未讀的全文段落・請確認。
 ## tx hbvtx {"c":"dec","p":"gz"} none
 01
 02
@@ -15648,6 +15702,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 正常腎功能劑量・填腎功能 ›
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
@@ -15666,7 +15721,7 @@ tenofovir disoproxil
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
 首選
 ：失代償肝硬化不論 HBV DNA 與 ALT 都治療。
-：摘要同樣建議治療；全文未取得・請確認。
+：有肝硬化即開始治療，不論 HBV DNA 與 ALT；失代償者 ETV、TDF 或 TAF 長期使用，監測乳酸中毒並轉介移植評估（Figure 5）。失代償時 entecavir 劑量在本版未讀的全文段落・請確認。
 ## tx hbvtx {"c":"dec","p":"gz"} c35
 0.5 mg QD，或 1 mg q48h
 01
@@ -15716,6 +15771,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 正常劑量（CrCl ≥15）
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
@@ -15734,7 +15790,7 @@ tenofovir disoproxil
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
 首選
 ：失代償肝硬化不論 HBV DNA 與 ALT 都治療。
-：摘要同樣建議治療；全文未取得・請確認。
+：有肝硬化即開始治療，不論 HBV DNA 與 ALT；失代償者 ETV、TDF 或 TAF 長期使用，監測乳酸中毒並轉介移植評估（Figure 5）。失代償時 entecavir 劑量在本版未讀的全文段落・請確認。
 ## tx hbvtx {"c":"dec","p":"gz"} hd
 01
 02
@@ -15782,6 +15838,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
 用法：
@@ -15802,7 +15859,7 @@ tenofovir disoproxil
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
 首選
 ：失代償肝硬化不論 HBV DNA 與 ALT 都治療。
-：摘要同樣建議治療；全文未取得・請確認。
+：有肝硬化即開始治療，不論 HBV DNA 與 ALT；失代償者 ETV、TDF 或 TAF 長期使用，監測乳酸中毒並轉介移植評估（Figure 5）。失代償時 entecavir 劑量在本版未讀的全文段落・請確認。
 ## tx hbvtx {"c":"dec","p":"lo"} none
 01
 02
@@ -15849,6 +15906,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 正常腎功能劑量・填腎功能 ›
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
@@ -15867,7 +15925,7 @@ tenofovir disoproxil
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
 首選
 ：失代償肝硬化不論 HBV DNA 與 ALT 都治療。
-：摘要同樣建議治療；全文未取得・請確認。
+：有肝硬化即開始治療，不論 HBV DNA 與 ALT；失代償者 ETV、TDF 或 TAF 長期使用，監測乳酸中毒並轉介移植評估（Figure 5）。失代償時 entecavir 劑量在本版未讀的全文段落・請確認。
 ## tx hbvtx {"c":"dec","p":"lo"} c35
 0.5 mg QD，或 1 mg q48h
 01
@@ -15917,6 +15975,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 正常劑量（CrCl ≥15）
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
@@ -15935,7 +15994,7 @@ tenofovir disoproxil
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
 首選
 ：失代償肝硬化不論 HBV DNA 與 ALT 都治療。
-：摘要同樣建議治療；全文未取得・請確認。
+：有肝硬化即開始治療，不論 HBV DNA 與 ALT；失代償者 ETV、TDF 或 TAF 長期使用，監測乳酸中毒並轉介移植評估（Figure 5）。失代償時 entecavir 劑量在本版未讀的全文段落・請確認。
 ## tx hbvtx {"c":"dec","p":"lo"} hd
 01
 02
@@ -15983,6 +16042,7 @@ tenofovir disoproxil
 更改
 更新
 更新
+更新
 治療前先確認 HBeAg／anti-HBe、HBV DNA、ALT、肝纖維化；篩檢 HIV、HCV、HDV、HAV 免疫。
 無肝硬化
 用法：
@@ -16003,7 +16063,7 @@ tenofovir disoproxil
 長期；通常持續到符合停藥條件，肝硬化者通常不停藥（見「NA 停藥」）
 首選
 ：失代償肝硬化不論 HBV DNA 與 ALT 都治療。
-：摘要同樣建議治療；全文未取得・請確認。
+：有肝硬化即開始治療，不論 HBV DNA 與 ALT；失代償者 ETV、TDF 或 TAF 長期使用，監測乳酸中毒並轉介移植評估（Figure 5）。失代償時 entecavir 劑量在本版未讀的全文段落・請確認。
 ## tx hbvstop {"c":"no","e":"pos"} none
 01
 02
@@ -16011,8 +16071,11 @@ tenofovir disoproxil
 04
 AASLD/IDSA 2025
 AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
 APASL 2026
 APASL HBV 2026
+Bepirovirsen（Hibsago）FDA 核准 2026
 EASL 2025
 EASL HBV 2025
 EASL HBV 2025
@@ -16022,12 +16085,16 @@ HBeAg 狀態
 HBeAg 陰性起始
 HBeAg 陽性起始
 HBeAg 陽性起始：HBeAg 血清轉換（HBeAg 陰性、anti-HBe 陽性）且 HBV DNA 測不到後，再鞏固至少 12 個月可考慮停藥（EASL、APASL；細節請確認）。
-停藥前確認 HBsAg、HBeAg、HBV DNA、纖維化程度。
-停藥後可能發生肝炎急性惡化：停藥後前 3 個月至少每月、之後每 3 個月追蹤 ALT 與 HBV DNA（細節請確認）。
+停藥前確認 HBsAg（AASLD 條件 <100 IU/mL）、HBeAg、HBV DNA、纖維化程度、HIV 與 HDV。
+停藥後可能發生肝炎急性惡化。AASLD/IDSA 2025：HBV DNA 與 ALT 前 6 個月每 1–3 個月、之後 6–12 個月每 3 個月、再之後每 3–6 個月。立即恢復治療：HBV DNA ≥10,000 IU/mL（不論 ALT）、ALT >5×ULN、總膽紅素 >2.5 mg/dL 或有失代償症狀。EASL 的追蹤間隔請確認。
+功能性治癒的另一策略：bepirovirsen 與 NA 併用最多 24 週（FDA 2026-10 核准；B-Well 納入 HBsAg ≤3,000 IU/mL、DNA 已抑制者；功能性治癒 19% vs 0%）。與停 NA 是不同策略，現行各指引尚未納入；用法見藥物頁，台灣許可證與健保請確認。
 各指引說法（3）
 建議
 抗藥：HBV：核苷酸類似物抗藥或病毒反彈 ›
 更改
+更新
+更新
+更新
 檢驗
 正常腎功能劑量・填腎功能 ›
 無肝硬化
@@ -16036,7 +16103,7 @@ HBeAg 陽性起始：HBeAg 血清轉換（HBeAg 陰性、anti-HBe 陽性）且 H
 肝臟狀態
 診斷
 ：HBeAg 血清轉換、DNA 測不到後鞏固治療再停；鞏固時間以原文為準。
-：停藥條件全文未取得・請確認。
+：Table 3 考慮停藥條件（HBeAg 陽性起始）：HBeAg 血清轉換且 anti-HBe 陽性 ≥1 年、HBV DNA 測不到 ≥2 年；無肝硬化、失代償、HCC 或肝外併發症；無 HIV 或 HDV 共感染；HBsAg <100 IU/mL；願意密切追蹤。DNA 測不到的年數：內文 ≥2 年，Figure 4 寫 ≥3 年，兩處不一致。
 ：同方向；鞏固時間請確認。
 ## tx hbvstop {"c":"no","e":"pos"} c35
 01
@@ -16045,8 +16112,11 @@ HBeAg 陽性起始：HBeAg 血清轉換（HBeAg 陰性、anti-HBe 陽性）且 H
 04
 AASLD/IDSA 2025
 AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
 APASL 2026
 APASL HBV 2026
+Bepirovirsen（Hibsago）FDA 核准 2026
 EASL 2025
 EASL HBV 2025
 EASL HBV 2025
@@ -16056,13 +16126,17 @@ HBeAg 狀態
 HBeAg 陰性起始
 HBeAg 陽性起始
 HBeAg 陽性起始：HBeAg 血清轉換（HBeAg 陰性、anti-HBe 陽性）且 HBV DNA 測不到後，再鞏固至少 12 個月可考慮停藥（EASL、APASL；細節請確認）。
-停藥前確認 HBsAg、HBeAg、HBV DNA、纖維化程度。
-停藥後可能發生肝炎急性惡化：停藥後前 3 個月至少每月、之後每 3 個月追蹤 ALT 與 HBV DNA（細節請確認）。
+停藥前確認 HBsAg（AASLD 條件 <100 IU/mL）、HBeAg、HBV DNA、纖維化程度、HIV 與 HDV。
+停藥後可能發生肝炎急性惡化。AASLD/IDSA 2025：HBV DNA 與 ALT 前 6 個月每 1–3 個月、之後 6–12 個月每 3 個月、再之後每 3–6 個月。立即恢復治療：HBV DNA ≥10,000 IU/mL（不論 ALT）、ALT >5×ULN、總膽紅素 >2.5 mg/dL 或有失代償症狀。EASL 的追蹤間隔請確認。
 劑量依 CrCl 35 mL/min
+功能性治癒的另一策略：bepirovirsen 與 NA 併用最多 24 週（FDA 2026-10 核准；B-Well 納入 HBsAg ≤3,000 IU/mL、DNA 已抑制者；功能性治癒 19% vs 0%）。與停 NA 是不同策略，現行各指引尚未納入；用法見藥物頁，台灣許可證與健保請確認。
 各指引說法（3）
 建議
 抗藥：HBV：核苷酸類似物抗藥或病毒反彈 ›
 更改
+更新
+更新
+更新
 檢驗
 無肝硬化
 結論：
@@ -16070,7 +16144,7 @@ HBeAg 陽性起始：HBeAg 血清轉換（HBeAg 陰性、anti-HBe 陽性）且 H
 肝臟狀態
 診斷
 ：HBeAg 血清轉換、DNA 測不到後鞏固治療再停；鞏固時間以原文為準。
-：停藥條件全文未取得・請確認。
+：Table 3 考慮停藥條件（HBeAg 陽性起始）：HBeAg 血清轉換且 anti-HBe 陽性 ≥1 年、HBV DNA 測不到 ≥2 年；無肝硬化、失代償、HCC 或肝外併發症；無 HIV 或 HDV 共感染；HBsAg <100 IU/mL；願意密切追蹤。DNA 測不到的年數：內文 ≥2 年，Figure 4 寫 ≥3 年，兩處不一致。
 ：同方向；鞏固時間請確認。
 ## tx hbvstop {"c":"no","e":"pos"} hd
 01
@@ -16079,8 +16153,11 @@ HBeAg 陽性起始：HBeAg 血清轉換（HBeAg 陰性、anti-HBe 陽性）且 H
 04
 AASLD/IDSA 2025
 AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
 APASL 2026
 APASL HBV 2026
+Bepirovirsen（Hibsago）FDA 核准 2026
 EASL 2025
 EASL HBV 2025
 EASL HBV 2025
@@ -16090,13 +16167,17 @@ HBeAg 狀態
 HBeAg 陰性起始
 HBeAg 陽性起始
 HBeAg 陽性起始：HBeAg 血清轉換（HBeAg 陰性、anti-HBe 陽性）且 HBV DNA 測不到後，再鞏固至少 12 個月可考慮停藥（EASL、APASL；細節請確認）。
-停藥前確認 HBsAg、HBeAg、HBV DNA、纖維化程度。
-停藥後可能發生肝炎急性惡化：停藥後前 3 個月至少每月、之後每 3 個月追蹤 ALT 與 HBV DNA（細節請確認）。
+停藥前確認 HBsAg（AASLD 條件 <100 IU/mL）、HBeAg、HBV DNA、纖維化程度、HIV 與 HDV。
+停藥後可能發生肝炎急性惡化。AASLD/IDSA 2025：HBV DNA 與 ALT 前 6 個月每 1–3 個月、之後 6–12 個月每 3 個月、再之後每 3–6 個月。立即恢復治療：HBV DNA ≥10,000 IU/mL（不論 ALT）、ALT >5×ULN、總膽紅素 >2.5 mg/dL 或有失代償症狀。EASL 的追蹤間隔請確認。
 劑量依 血液透析（HD）
+功能性治癒的另一策略：bepirovirsen 與 NA 併用最多 24 週（FDA 2026-10 核准；B-Well 納入 HBsAg ≤3,000 IU/mL、DNA 已抑制者；功能性治癒 19% vs 0%）。與停 NA 是不同策略，現行各指引尚未納入；用法見藥物頁，台灣許可證與健保請確認。
 各指引說法（3）
 建議
 抗藥：HBV：核苷酸類似物抗藥或病毒反彈 ›
 更改
+更新
+更新
+更新
 檢驗
 無肝硬化
 結論：
@@ -16104,7 +16185,7 @@ HBeAg 陽性起始：HBeAg 血清轉換（HBeAg 陰性、anti-HBe 陽性）且 H
 肝臟狀態
 診斷
 ：HBeAg 血清轉換、DNA 測不到後鞏固治療再停；鞏固時間以原文為準。
-：停藥條件全文未取得・請確認。
+：Table 3 考慮停藥條件（HBeAg 陽性起始）：HBeAg 血清轉換且 anti-HBe 陽性 ≥1 年、HBV DNA 測不到 ≥2 年；無肝硬化、失代償、HCC 或肝外併發症；無 HIV 或 HDV 共感染；HBsAg <100 IU/mL；願意密切追蹤。DNA 測不到的年數：內文 ≥2 年，Figure 4 寫 ≥3 年，兩處不一致。
 ：同方向；鞏固時間請確認。
 ## tx hbvstop {"c":"no","e":"neg"} none
 01
@@ -16113,8 +16194,11 @@ HBeAg 陽性起始：HBeAg 血清轉換（HBeAg 陰性、anti-HBe 陽性）且 H
 04
 AASLD/IDSA 2025
 AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
 APASL 2026
 APASL HBV 2026
+Bepirovirsen（Hibsago）FDA 核准 2026
 EASL 2025
 EASL HBV 2025
 EASL HBV 2025
@@ -16124,12 +16208,16 @@ HBeAg 狀態
 HBeAg 陰性起始
 HBeAg 陰性起始：多數指引建議長期治療；HBsAg 陰性化後可考慮停藥，或在嚴選、可密切追蹤者考慮停藥（各指引不同，見下）。
 HBeAg 陽性起始
-停藥前確認 HBsAg、HBeAg、HBV DNA、纖維化程度。
-停藥後可能發生肝炎急性惡化：停藥後前 3 個月至少每月、之後每 3 個月追蹤 ALT 與 HBV DNA（細節請確認）。
+停藥前確認 HBsAg（AASLD 條件 <100 IU/mL）、HBeAg、HBV DNA、纖維化程度、HIV 與 HDV。
+停藥後可能發生肝炎急性惡化。AASLD/IDSA 2025：HBV DNA 與 ALT 前 6 個月每 1–3 個月、之後 6–12 個月每 3 個月、再之後每 3–6 個月。立即恢復治療：HBV DNA ≥10,000 IU/mL（不論 ALT）、ALT >5×ULN、總膽紅素 >2.5 mg/dL 或有失代償症狀。EASL 的追蹤間隔請確認。
+功能性治癒的另一策略：bepirovirsen 與 NA 併用最多 24 週（FDA 2026-10 核准；B-Well 納入 HBsAg ≤3,000 IU/mL、DNA 已抑制者；功能性治癒 19% vs 0%）。與停 NA 是不同策略，現行各指引尚未納入；用法見藥物頁，台灣許可證與健保請確認。
 各指引說法（3）
 建議
 抗藥：HBV：核苷酸類似物抗藥或病毒反彈 ›
 更改
+更新
+更新
+更新
 檢驗
 正常腎功能劑量・填腎功能 ›
 無肝硬化
@@ -16139,7 +16227,7 @@ HBeAg 陽性起始
 診斷
 ：HBeAg 陰性者停藥條件請以原文確認。
 ：HBsAg 陰性化後可考慮停藥；HBsAg 未消失者的選擇性停藥條件請以原文確認。
-：全文未取得・請確認。
+：Recommendation 5（conditional, very low）：不建議在 HBsAg 消失前停 NA（適用無肝硬化的 HBeAg 陰性成人）。若仍考慮停藥（Table 3）：DNA 測不到 ≥2 年（Figure 4 寫 ≥3 年）、HBsAg <100 IU/mL、無 HIV 或 HDV 共感染、願意密切追蹤。
 ## tx hbvstop {"c":"no","e":"neg"} c35
 01
 02
@@ -16147,8 +16235,11 @@ HBeAg 陽性起始
 04
 AASLD/IDSA 2025
 AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
 APASL 2026
 APASL HBV 2026
+Bepirovirsen（Hibsago）FDA 核准 2026
 EASL 2025
 EASL HBV 2025
 EASL HBV 2025
@@ -16158,13 +16249,17 @@ HBeAg 狀態
 HBeAg 陰性起始
 HBeAg 陰性起始：多數指引建議長期治療；HBsAg 陰性化後可考慮停藥，或在嚴選、可密切追蹤者考慮停藥（各指引不同，見下）。
 HBeAg 陽性起始
-停藥前確認 HBsAg、HBeAg、HBV DNA、纖維化程度。
-停藥後可能發生肝炎急性惡化：停藥後前 3 個月至少每月、之後每 3 個月追蹤 ALT 與 HBV DNA（細節請確認）。
+停藥前確認 HBsAg（AASLD 條件 <100 IU/mL）、HBeAg、HBV DNA、纖維化程度、HIV 與 HDV。
+停藥後可能發生肝炎急性惡化。AASLD/IDSA 2025：HBV DNA 與 ALT 前 6 個月每 1–3 個月、之後 6–12 個月每 3 個月、再之後每 3–6 個月。立即恢復治療：HBV DNA ≥10,000 IU/mL（不論 ALT）、ALT >5×ULN、總膽紅素 >2.5 mg/dL 或有失代償症狀。EASL 的追蹤間隔請確認。
 劑量依 CrCl 35 mL/min
+功能性治癒的另一策略：bepirovirsen 與 NA 併用最多 24 週（FDA 2026-10 核准；B-Well 納入 HBsAg ≤3,000 IU/mL、DNA 已抑制者；功能性治癒 19% vs 0%）。與停 NA 是不同策略，現行各指引尚未納入；用法見藥物頁，台灣許可證與健保請確認。
 各指引說法（3）
 建議
 抗藥：HBV：核苷酸類似物抗藥或病毒反彈 ›
 更改
+更新
+更新
+更新
 檢驗
 無肝硬化
 結論：
@@ -16173,7 +16268,7 @@ HBeAg 陽性起始
 診斷
 ：HBeAg 陰性者停藥條件請以原文確認。
 ：HBsAg 陰性化後可考慮停藥；HBsAg 未消失者的選擇性停藥條件請以原文確認。
-：全文未取得・請確認。
+：Recommendation 5（conditional, very low）：不建議在 HBsAg 消失前停 NA（適用無肝硬化的 HBeAg 陰性成人）。若仍考慮停藥（Table 3）：DNA 測不到 ≥2 年（Figure 4 寫 ≥3 年）、HBsAg <100 IU/mL、無 HIV 或 HDV 共感染、願意密切追蹤。
 ## tx hbvstop {"c":"no","e":"neg"} hd
 01
 02
@@ -16181,8 +16276,11 @@ HBeAg 陽性起始
 04
 AASLD/IDSA 2025
 AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
 APASL 2026
 APASL HBV 2026
+Bepirovirsen（Hibsago）FDA 核准 2026
 EASL 2025
 EASL HBV 2025
 EASL HBV 2025
@@ -16192,13 +16290,17 @@ HBeAg 狀態
 HBeAg 陰性起始
 HBeAg 陰性起始：多數指引建議長期治療；HBsAg 陰性化後可考慮停藥，或在嚴選、可密切追蹤者考慮停藥（各指引不同，見下）。
 HBeAg 陽性起始
-停藥前確認 HBsAg、HBeAg、HBV DNA、纖維化程度。
-停藥後可能發生肝炎急性惡化：停藥後前 3 個月至少每月、之後每 3 個月追蹤 ALT 與 HBV DNA（細節請確認）。
+停藥前確認 HBsAg（AASLD 條件 <100 IU/mL）、HBeAg、HBV DNA、纖維化程度、HIV 與 HDV。
+停藥後可能發生肝炎急性惡化。AASLD/IDSA 2025：HBV DNA 與 ALT 前 6 個月每 1–3 個月、之後 6–12 個月每 3 個月、再之後每 3–6 個月。立即恢復治療：HBV DNA ≥10,000 IU/mL（不論 ALT）、ALT >5×ULN、總膽紅素 >2.5 mg/dL 或有失代償症狀。EASL 的追蹤間隔請確認。
 劑量依 血液透析（HD）
+功能性治癒的另一策略：bepirovirsen 與 NA 併用最多 24 週（FDA 2026-10 核准；B-Well 納入 HBsAg ≤3,000 IU/mL、DNA 已抑制者；功能性治癒 19% vs 0%）。與停 NA 是不同策略，現行各指引尚未納入；用法見藥物頁，台灣許可證與健保請確認。
 各指引說法（3）
 建議
 抗藥：HBV：核苷酸類似物抗藥或病毒反彈 ›
 更改
+更新
+更新
+更新
 檢驗
 無肝硬化
 結論：
@@ -16207,24 +16309,28 @@ HBeAg 陽性起始
 診斷
 ：HBeAg 陰性者停藥條件請以原文確認。
 ：HBsAg 陰性化後可考慮停藥；HBsAg 未消失者的選擇性停藥條件請以原文確認。
-：全文未取得・請確認。
+：Recommendation 5（conditional, very low）：不建議在 HBsAg 消失前停 NA（適用無肝硬化的 HBeAg 陰性成人）。若仍考慮停藥（Table 3）：DNA 測不到 ≥2 年（Figure 4 寫 ≥3 年）、HBsAg <100 IU/mL、無 HIV 或 HDV 共感染、願意密切追蹤。
 ## tx hbvstop {"c":"cir","e":"pos"} none
 01
 02
 03
 AASLD/IDSA 2025
 AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
 EASL 2025
 EASL HBV 2025
 EASL HBV 2025
 EASL HBV 2025
 HBV・NA（核苷酸類似物）停藥
-停藥前確認 HBsAg、HBeAg、HBV DNA、纖維化程度。
-停藥後可能發生肝炎急性惡化：停藥後前 3 個月至少每月、之後每 3 個月追蹤 ALT 與 HBV DNA（細節請確認）。
+停藥前確認 HBsAg（AASLD 條件 <100 IU/mL）、HBeAg、HBV DNA、纖維化程度、HIV 與 HDV。
+停藥後可能發生肝炎急性惡化。AASLD/IDSA 2025：HBV DNA 與 ALT 前 6 個月每 1–3 個月、之後 6–12 個月每 3 個月、再之後每 3–6 個月。立即恢復治療：HBV DNA ≥10,000 IU/mL（不論 ALT）、ALT >5×ULN、總膽紅素 >2.5 mg/dL 或有失代償症狀。EASL 的追蹤間隔請確認。
 各指引說法（2）
 建議
 抗藥：HBV：核苷酸類似物抗藥或病毒反彈 ›
 更改
+更新
+更新
 檢驗
 正常腎功能劑量・填腎功能 ›
 無肝硬化
@@ -16234,25 +16340,29 @@ HBV・NA（核苷酸類似物）停藥
 肝臟狀態
 診斷
 ：肝硬化者不建議停 NA；細節請確認。
-：肝硬化者持續治療；全文未取得・請確認。
+：肝硬化者持續治療到 HBsAg 消失（Figure 5）；停藥建議只適用無肝硬化的 HBeAg 陰性成人。
 ## tx hbvstop {"c":"cir","e":"pos"} c35
 01
 02
 03
 AASLD/IDSA 2025
 AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
 EASL 2025
 EASL HBV 2025
 EASL HBV 2025
 EASL HBV 2025
 HBV・NA（核苷酸類似物）停藥
-停藥前確認 HBsAg、HBeAg、HBV DNA、纖維化程度。
-停藥後可能發生肝炎急性惡化：停藥後前 3 個月至少每月、之後每 3 個月追蹤 ALT 與 HBV DNA（細節請確認）。
+停藥前確認 HBsAg（AASLD 條件 <100 IU/mL）、HBeAg、HBV DNA、纖維化程度、HIV 與 HDV。
+停藥後可能發生肝炎急性惡化。AASLD/IDSA 2025：HBV DNA 與 ALT 前 6 個月每 1–3 個月、之後 6–12 個月每 3 個月、再之後每 3–6 個月。立即恢復治療：HBV DNA ≥10,000 IU/mL（不論 ALT）、ALT >5×ULN、總膽紅素 >2.5 mg/dL 或有失代償症狀。EASL 的追蹤間隔請確認。
 劑量依 CrCl 35 mL/min
 各指引說法（2）
 建議
 抗藥：HBV：核苷酸類似物抗藥或病毒反彈 ›
 更改
+更新
+更新
 檢驗
 無肝硬化
 結論：
@@ -16261,25 +16371,29 @@ HBV・NA（核苷酸類似物）停藥
 肝臟狀態
 診斷
 ：肝硬化者不建議停 NA；細節請確認。
-：肝硬化者持續治療；全文未取得・請確認。
+：肝硬化者持續治療到 HBsAg 消失（Figure 5）；停藥建議只適用無肝硬化的 HBeAg 陰性成人。
 ## tx hbvstop {"c":"cir","e":"pos"} hd
 01
 02
 03
 AASLD/IDSA 2025
 AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
 EASL 2025
 EASL HBV 2025
 EASL HBV 2025
 EASL HBV 2025
 HBV・NA（核苷酸類似物）停藥
-停藥前確認 HBsAg、HBeAg、HBV DNA、纖維化程度。
-停藥後可能發生肝炎急性惡化：停藥後前 3 個月至少每月、之後每 3 個月追蹤 ALT 與 HBV DNA（細節請確認）。
+停藥前確認 HBsAg（AASLD 條件 <100 IU/mL）、HBeAg、HBV DNA、纖維化程度、HIV 與 HDV。
+停藥後可能發生肝炎急性惡化。AASLD/IDSA 2025：HBV DNA 與 ALT 前 6 個月每 1–3 個月、之後 6–12 個月每 3 個月、再之後每 3–6 個月。立即恢復治療：HBV DNA ≥10,000 IU/mL（不論 ALT）、ALT >5×ULN、總膽紅素 >2.5 mg/dL 或有失代償症狀。EASL 的追蹤間隔請確認。
 劑量依 血液透析（HD）
 各指引說法（2）
 建議
 抗藥：HBV：核苷酸類似物抗藥或病毒反彈 ›
 更改
+更新
+更新
 檢驗
 無肝硬化
 結論：
@@ -16288,24 +16402,28 @@ HBV・NA（核苷酸類似物）停藥
 肝臟狀態
 診斷
 ：肝硬化者不建議停 NA；細節請確認。
-：肝硬化者持續治療；全文未取得・請確認。
+：肝硬化者持續治療到 HBsAg 消失（Figure 5）；停藥建議只適用無肝硬化的 HBeAg 陰性成人。
 ## tx hbvstop {"c":"cir","e":"neg"} none
 01
 02
 03
 AASLD/IDSA 2025
 AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
 EASL 2025
 EASL HBV 2025
 EASL HBV 2025
 EASL HBV 2025
 HBV・NA（核苷酸類似物）停藥
-停藥前確認 HBsAg、HBeAg、HBV DNA、纖維化程度。
-停藥後可能發生肝炎急性惡化：停藥後前 3 個月至少每月、之後每 3 個月追蹤 ALT 與 HBV DNA（細節請確認）。
+停藥前確認 HBsAg（AASLD 條件 <100 IU/mL）、HBeAg、HBV DNA、纖維化程度、HIV 與 HDV。
+停藥後可能發生肝炎急性惡化。AASLD/IDSA 2025：HBV DNA 與 ALT 前 6 個月每 1–3 個月、之後 6–12 個月每 3 個月、再之後每 3–6 個月。立即恢復治療：HBV DNA ≥10,000 IU/mL（不論 ALT）、ALT >5×ULN、總膽紅素 >2.5 mg/dL 或有失代償症狀。EASL 的追蹤間隔請確認。
 各指引說法（2）
 建議
 抗藥：HBV：核苷酸類似物抗藥或病毒反彈 ›
 更改
+更新
+更新
 檢驗
 正常腎功能劑量・填腎功能 ›
 無肝硬化
@@ -16315,52 +16433,29 @@ HBV・NA（核苷酸類似物）停藥
 肝臟狀態
 診斷
 ：肝硬化者不建議停 NA；細節請確認。
-：肝硬化者持續治療；全文未取得・請確認。
+：肝硬化者持續治療到 HBsAg 消失（Figure 5）；停藥建議只適用無肝硬化的 HBeAg 陰性成人。
 ## tx hbvstop {"c":"cir","e":"neg"} c35
 01
 02
 03
 AASLD/IDSA 2025
 AASLD/IDSA HBV 2025
-EASL 2025
-EASL HBV 2025
-EASL HBV 2025
-EASL HBV 2025
-HBV・NA（核苷酸類似物）停藥
-停藥前確認 HBsAg、HBeAg、HBV DNA、纖維化程度。
-停藥後可能發生肝炎急性惡化：停藥後前 3 個月至少每月、之後每 3 個月追蹤 ALT 與 HBV DNA（細節請確認）。
-劑量依 CrCl 35 mL/min
-各指引說法（2）
-建議
-抗藥：HBV：核苷酸類似物抗藥或病毒反彈 ›
-更改
-檢驗
-無肝硬化
-結論：
-肝硬化（代償或失代償）
-肝硬化：一般不停藥（停藥後肝炎惡化可能導致肝功能失代償）。
-肝臟狀態
-診斷
-：肝硬化者不建議停 NA；細節請確認。
-：肝硬化者持續治療；全文未取得・請確認。
-## tx hbvstop {"c":"cir","e":"neg"} hd
-01
-02
-03
-AASLD/IDSA 2025
+AASLD/IDSA HBV 2025
 AASLD/IDSA HBV 2025
 EASL 2025
 EASL HBV 2025
 EASL HBV 2025
 EASL HBV 2025
 HBV・NA（核苷酸類似物）停藥
-停藥前確認 HBsAg、HBeAg、HBV DNA、纖維化程度。
-停藥後可能發生肝炎急性惡化：停藥後前 3 個月至少每月、之後每 3 個月追蹤 ALT 與 HBV DNA（細節請確認）。
-劑量依 血液透析（HD）
+停藥前確認 HBsAg（AASLD 條件 <100 IU/mL）、HBeAg、HBV DNA、纖維化程度、HIV 與 HDV。
+停藥後可能發生肝炎急性惡化。AASLD/IDSA 2025：HBV DNA 與 ALT 前 6 個月每 1–3 個月、之後 6–12 個月每 3 個月、再之後每 3–6 個月。立即恢復治療：HBV DNA ≥10,000 IU/mL（不論 ALT）、ALT >5×ULN、總膽紅素 >2.5 mg/dL 或有失代償症狀。EASL 的追蹤間隔請確認。
+劑量依 CrCl 35 mL/min
 各指引說法（2）
 建議
 抗藥：HBV：核苷酸類似物抗藥或病毒反彈 ›
 更改
+更新
+更新
 檢驗
 無肝硬化
 結論：
@@ -16369,7 +16464,172 @@ HBV・NA（核苷酸類似物）停藥
 肝臟狀態
 診斷
 ：肝硬化者不建議停 NA；細節請確認。
-：肝硬化者持續治療；全文未取得・請確認。
+：肝硬化者持續治療到 HBsAg 消失（Figure 5）；停藥建議只適用無肝硬化的 HBeAg 陰性成人。
+## tx hbvstop {"c":"cir","e":"neg"} hd
+01
+02
+03
+AASLD/IDSA 2025
+AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
+AASLD/IDSA HBV 2025
+EASL 2025
+EASL HBV 2025
+EASL HBV 2025
+EASL HBV 2025
+HBV・NA（核苷酸類似物）停藥
+停藥前確認 HBsAg（AASLD 條件 <100 IU/mL）、HBeAg、HBV DNA、纖維化程度、HIV 與 HDV。
+停藥後可能發生肝炎急性惡化。AASLD/IDSA 2025：HBV DNA 與 ALT 前 6 個月每 1–3 個月、之後 6–12 個月每 3 個月、再之後每 3–6 個月。立即恢復治療：HBV DNA ≥10,000 IU/mL（不論 ALT）、ALT >5×ULN、總膽紅素 >2.5 mg/dL 或有失代償症狀。EASL 的追蹤間隔請確認。
+劑量依 血液透析（HD）
+各指引說法（2）
+建議
+抗藥：HBV：核苷酸類似物抗藥或病毒反彈 ›
+更改
+更新
+更新
+檢驗
+無肝硬化
+結論：
+肝硬化（代償或失代償）
+肝硬化：一般不停藥（停藥後肝炎惡化可能導致肝功能失代償）。
+肝臟狀態
+診斷
+：肝硬化者不建議停 NA；細節請確認。
+：肝硬化者持續治療到 HBsAg 消失（Figure 5）；停藥建議只適用無肝硬化的 HBeAg 陰性成人。
+## tx hdv {} none
+01
+02
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+EASL HBV 2025
+FDA 2026（美國）
+HBV・B 型肝炎合併 D 型肝炎（HDV）
+HBsAg 陽性者都應篩檢 HDV；慢性 HDV（無肝硬化或代償性肝硬化）可用 bulevirtide（FDA 2026、歐盟），HBV 須同時控制。
+HBsAg 陽性者：anti-HDV 總抗體，陽性者測 HDV RNA；治療反應以 HDV RNA 下降與 ALT 正常化評估（核准依據）。
+HDV 專門指引（EASL 等）本版未取得・請確認治療條件、療效評估與停藥原則。
+SC
+bulevirtide
+bulevirtide 不降低 HBV 病毒量；有 NA 適應症者另給 entecavir 或 tenofovir（見「慢性 B 型肝炎：要不要治療」）。
+peginterferon alfa 是先前唯一的 off-label 選項，療效有限、耐受性差（FDA 核准新聞）。
+停用 bulevirtide 可能使 HDV 復發、肝炎惡化，停藥後需追蹤。
+可用
+台灣許可證未查證・請確認
+各指引說法（2）
+商品名：Hepcludex
+建議
+持續到不再有反應；最佳療程未知
+持續到不再有反應；最佳療程未知；肝腎功能調整本版未取得・請確認。
+更改
+更新
+更新
+條件：成人，無肝硬化或代償性肝硬化；美國 8.5 mg、歐盟 2 mg（見下方各來源說法）。台灣許可證與健保請確認。
+檢驗
+歐盟、英國等
+正常腎功能劑量・填腎功能 ›
+療程
+結論：
+美國 8.5 mg QD；歐盟 2 mg QD（核准劑量不同，請依當地仿單；腎功能調整未取得・請確認）
+藥物頁 ›
+複製
+診斷
+：2 mg 皮下注射 QD（較低劑量，已先於 FDA 核准）。
+：8.5 mg 皮下注射 QD；accelerated approval，需 confirmatory 長期結果試驗。
+## tx hdv {} c35
+01
+02
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+EASL HBV 2025
+FDA 2026（美國）
+HBV・B 型肝炎合併 D 型肝炎（HDV）
+HBsAg 陽性者都應篩檢 HDV；慢性 HDV（無肝硬化或代償性肝硬化）可用 bulevirtide（FDA 2026、歐盟），HBV 須同時控制。
+HBsAg 陽性者：anti-HDV 總抗體，陽性者測 HDV RNA；治療反應以 HDV RNA 下降與 ALT 正常化評估（核准依據）。
+HDV 專門指引（EASL 等）本版未取得・請確認治療條件、療效評估與停藥原則。
+SC
+bulevirtide
+bulevirtide 不降低 HBV 病毒量；有 NA 適應症者另給 entecavir 或 tenofovir（見「慢性 B 型肝炎：要不要治療」）。
+peginterferon alfa 是先前唯一的 off-label 選項，療效有限、耐受性差（FDA 核准新聞）。
+停用 bulevirtide 可能使 HDV 復發、肝炎惡化，停藥後需追蹤。
+劑量依 CrCl 35 mL/min
+可用
+台灣許可證未查證・請確認
+各指引說法（2）
+商品名：Hepcludex
+建議
+持續到不再有反應；最佳療程未知
+持續到不再有反應；最佳療程未知；肝腎功能調整本版未取得・請確認。
+更改
+更新
+更新
+條件：成人，無肝硬化或代償性肝硬化；美國 8.5 mg、歐盟 2 mg（見下方各來源說法）。台灣許可證與健保請確認。
+檢驗
+歐盟、英國等
+無需腎調整
+療程
+結論：
+美國 8.5 mg QD；歐盟 2 mg QD（核准劑量不同，請依當地仿單；腎功能調整未取得・請確認）
+藥物頁 ›
+複製
+診斷
+：2 mg 皮下注射 QD（較低劑量，已先於 FDA 核准）。
+：8.5 mg 皮下注射 QD；accelerated approval，需 confirmatory 長期結果試驗。
+## tx hdv {} hd
+01
+02
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+EASL HBV 2025
+FDA 2026（美國）
+HBV・B 型肝炎合併 D 型肝炎（HDV）
+HBsAg 陽性者都應篩檢 HDV；慢性 HDV（無肝硬化或代償性肝硬化）可用 bulevirtide（FDA 2026、歐盟），HBV 須同時控制。
+HBsAg 陽性者：anti-HDV 總抗體，陽性者測 HDV RNA；治療反應以 HDV RNA 下降與 ALT 正常化評估（核准依據）。
+HDV 專門指引（EASL 等）本版未取得・請確認治療條件、療效評估與停藥原則。
+SC
+bulevirtide
+bulevirtide 不降低 HBV 病毒量；有 NA 適應症者另給 entecavir 或 tenofovir（見「慢性 B 型肝炎：要不要治療」）。
+peginterferon alfa 是先前唯一的 off-label 選項，療效有限、耐受性差（FDA 核准新聞）。
+停用 bulevirtide 可能使 HDV 復發、肝炎惡化，停藥後需追蹤。
+劑量依 血液透析（HD）
+可用
+台灣許可證未查證・請確認
+各指引說法（2）
+商品名：Hepcludex
+建議
+持續到不再有反應；最佳療程未知
+持續到不再有反應；最佳療程未知；肝腎功能調整本版未取得・請確認。
+更改
+更新
+更新
+條件：成人，無肝硬化或代償性肝硬化；美國 8.5 mg、歐盟 2 mg（見下方各來源說法）。台灣許可證與健保請確認。
+檢驗
+歐盟、英國等
+無需腎調整
+療程
+結論：
+美國 8.5 mg QD；歐盟 2 mg QD（核准劑量不同，請依當地仿單；腎功能調整未取得・請確認）
+藥物頁 ›
+複製
+診斷
+：2 mg 皮下注射 QD（較低劑量，已先於 FDA 核准）。
+：8.5 mg 皮下注射 QD；accelerated approval，需 confirmatory 長期結果試驗。
 ## tx hcvtx {"st":"nc"} none
 01
 02
@@ -19351,6 +19611,364 @@ cidofovir 腺病毒劑量
 ：無症狀者不應監測；支持治療與減免疫抑制為首要；cidofovir 併水化與 probenecid；最佳劑量與頻率未知。
 ：血中 10^2–10^3 copies/mL 即 preemptive cidofovir；cidofovir 為唯一建議的抗病毒藥。
 ：高風險者以定量 PCR 監測；cidofovir 最常用但無對照試驗；本版只取得摘要。
+## tx hev {"h":"acute"} none
+01
+02
+03
+EASL HEV 2018
+HEV・E 型肝炎（HEV）
+免疫正常的急性 HEV：多數自限，支持療法；嚴重急性或 ACLF 才考慮 ribavirin（EASL 2018）。
+嚴重急性或 ACLF
+建議
+急性肝炎症狀者都應檢測 HEV（EASL 2018, A1）；診斷合併血清學與 HEV RNA。
+急性（免疫正常）
+情境
+慢性（免疫低下，如移植）
+更改
+正常腎功能劑量・填腎功能 ›
+結論：
+診斷
+## tx hev {"h":"acute"} c35
+01
+02
+03
+EASL HEV 2018
+HEV・E 型肝炎（HEV）
+免疫正常的急性 HEV：多數自限，支持療法；嚴重急性或 ACLF 才考慮 ribavirin（EASL 2018）。
+劑量依 CrCl 35 mL/min
+嚴重急性或 ACLF
+建議
+急性肝炎症狀者都應檢測 HEV（EASL 2018, A1）；診斷合併血清學與 HEV RNA。
+急性（免疫正常）
+情境
+慢性（免疫低下，如移植）
+更改
+結論：
+診斷
+## tx hev {"h":"acute"} hd
+01
+02
+03
+EASL HEV 2018
+HEV・E 型肝炎（HEV）
+免疫正常的急性 HEV：多數自限，支持療法；嚴重急性或 ACLF 才考慮 ribavirin（EASL 2018）。
+劑量依 血液透析（HD）
+嚴重急性或 ACLF
+建議
+急性肝炎症狀者都應檢測 HEV（EASL 2018, A1）；診斷合併血清學與 HEV RNA。
+急性（免疫正常）
+情境
+慢性（免疫低下，如移植）
+更改
+結論：
+診斷
+## tx hev {"h":"acls"} none
+01
+02
+03
+EASL 2018：單用 12 週；劑量與腎功能調整本版未取得原文・請確認
+EASL HEV 2018
+HEV・E 型肝炎（HEV）
+PO
+ribavirin
+可考慮
+台灣許可證未查證・請確認
+商品名：Virazole（吸入）／Rebetol、Copegus（口服）
+嚴重急性 HEV 或 ACLF：可考慮 ribavirin（EASL 2018, C2）；證據等級低。
+嚴重急性或 ACLF
+建議
+急性（免疫正常）
+情境
+慢性（免疫低下，如移植）
+更改
+本版未取得原文・請確認
+條件：嚴重急性肝炎或 ACLF
+正常腎功能劑量・填腎功能 ›
+療程
+第 4、8、12 週查 CBC（貧血）；懷孕禁用；腎功能不全需減量，請會診藥師。
+結論：
+藥物頁 ›
+複製
+診斷
+## tx hev {"h":"acls"} c35
+01
+02
+03
+EASL 2018：單用 12 週；劑量與腎功能調整本版未取得原文・請確認
+EASL HEV 2018
+HEV・E 型肝炎（HEV）
+PO
+ribavirin
+劑量依 CrCl 35 mL/min
+可考慮
+台灣許可證未查證・請確認
+商品名：Virazole（吸入）／Rebetol、Copegus（口服）
+嚴重急性 HEV 或 ACLF：可考慮 ribavirin（EASL 2018, C2）；證據等級低。
+嚴重急性或 ACLF
+建議
+急性（免疫正常）
+情境
+慢性（免疫低下，如移植）
+更改
+本版未取得原文・請確認
+條件：嚴重急性肝炎或 ACLF
+無需腎調整
+療程
+第 4、8、12 週查 CBC（貧血）；懷孕禁用；腎功能不全需減量，請會診藥師。
+結論：
+藥物頁 ›
+複製
+診斷
+## tx hev {"h":"acls"} hd
+01
+02
+03
+EASL 2018：單用 12 週；劑量與腎功能調整本版未取得原文・請確認
+EASL HEV 2018
+HEV・E 型肝炎（HEV）
+PO
+ribavirin
+劑量依 血液透析（HD）
+可考慮
+台灣許可證未查證・請確認
+商品名：Virazole（吸入）／Rebetol、Copegus（口服）
+嚴重急性 HEV 或 ACLF：可考慮 ribavirin（EASL 2018, C2）；證據等級低。
+嚴重急性或 ACLF
+建議
+急性（免疫正常）
+情境
+慢性（免疫低下，如移植）
+更改
+本版未取得原文・請確認
+條件：嚴重急性肝炎或 ACLF
+無需腎調整
+療程
+第 4、8、12 週查 CBC（貧血）；懷孕禁用；腎功能不全需減量，請會診藥師。
+結論：
+藥物頁 ›
+複製
+診斷
+## tx hev {"h":"chr"} none
+01
+02
+03
+12 週；第 12 週血清與糞便 HEV RNA 仍陽性可再 12 週（共 6 個月，C2）
+AASLD HEV 教學文件
+AASLD HEV 教學文件
+AASLD HEV 教學文件
+AASLD HEV 教學文件
+AASLD 教學文件
+EASL 2018
+EASL 2018：單用 12 週；劑量與腎功能調整本版未取得原文・請確認
+EASL HEV 2018
+EASL HEV 2018
+EASL HEV 2018
+ECIL-9（2025）
+ECIL-9（HBV、HCV、HEV，2025）
+HEV・E 型肝炎（HEV）
+PO
+ribavirin
+ribavirin 期間第 4、8、12 週查 CBC，貧血時依嚴重度調整劑量。
+出處 2
+台灣許可證未查證・請確認
+各指引說法（3）
+商品名：Virazole（吸入）／Rebetol、Copegus（口服）
+嚴重急性或 ACLF
+建議
+急性（免疫正常）
+情境
+慢性 HEV 以 HEV RNA（NAT）診斷（EASL A1）；免疫低下者抗體可能陰性。
+慢性 HEV：先盡可能減少免疫抑制（EASL B1）；減量後仍有 HEV RNA → ribavirin 單用 12 週（B1），12 週後仍可測得者可續到共 6 個月（C2）。
+慢性（免疫低下，如移植）
+更改
+檢驗
+正常腎功能劑量・填腎功能 ›
+減量後 HEV RNA 仍陽性
+療程
+第 12 週查血清與糞便 HEV RNA：兩者皆陰性可停藥，停藥後 12 週複查確認；仍陽性則續用。
+第 4、8、12 週查 CBC（貧血）；懷孕禁用；腎功能不全需減量，請會診藥師。
+結論：
+藥物頁 ›
+複製
+診斷
+：HEV RNA 陽性 >6 個月定義為慢性；未清除者考慮 ribavirin 12 週。屬教學文件、非正式指引。
+：減量後 3 個月仍有 HEV RNA 即建議 ribavirin；慢性以 HEV RNA 持續 ≥3 個月為準。
+：血液腫瘤與 HCT 族群有更新建議；本版未核對全文・請確認。
+## tx hev {"h":"chr"} c35
+01
+02
+03
+12 週；第 12 週血清與糞便 HEV RNA 仍陽性可再 12 週（共 6 個月，C2）
+AASLD HEV 教學文件
+AASLD HEV 教學文件
+AASLD HEV 教學文件
+AASLD HEV 教學文件
+AASLD 教學文件
+EASL 2018
+EASL 2018：單用 12 週；劑量與腎功能調整本版未取得原文・請確認
+EASL HEV 2018
+EASL HEV 2018
+EASL HEV 2018
+ECIL-9（2025）
+ECIL-9（HBV、HCV、HEV，2025）
+HEV・E 型肝炎（HEV）
+PO
+ribavirin
+ribavirin 期間第 4、8、12 週查 CBC，貧血時依嚴重度調整劑量。
+出處 2
+劑量依 CrCl 35 mL/min
+台灣許可證未查證・請確認
+各指引說法（3）
+商品名：Virazole（吸入）／Rebetol、Copegus（口服）
+嚴重急性或 ACLF
+建議
+急性（免疫正常）
+情境
+慢性 HEV 以 HEV RNA（NAT）診斷（EASL A1）；免疫低下者抗體可能陰性。
+慢性 HEV：先盡可能減少免疫抑制（EASL B1）；減量後仍有 HEV RNA → ribavirin 單用 12 週（B1），12 週後仍可測得者可續到共 6 個月（C2）。
+慢性（免疫低下，如移植）
+更改
+檢驗
+減量後 HEV RNA 仍陽性
+無需腎調整
+療程
+第 12 週查血清與糞便 HEV RNA：兩者皆陰性可停藥，停藥後 12 週複查確認；仍陽性則續用。
+第 4、8、12 週查 CBC（貧血）；懷孕禁用；腎功能不全需減量，請會診藥師。
+結論：
+藥物頁 ›
+複製
+診斷
+：HEV RNA 陽性 >6 個月定義為慢性；未清除者考慮 ribavirin 12 週。屬教學文件、非正式指引。
+：減量後 3 個月仍有 HEV RNA 即建議 ribavirin；慢性以 HEV RNA 持續 ≥3 個月為準。
+：血液腫瘤與 HCT 族群有更新建議；本版未核對全文・請確認。
+## tx hev {"h":"chr"} hd
+01
+02
+03
+12 週；第 12 週血清與糞便 HEV RNA 仍陽性可再 12 週（共 6 個月，C2）
+AASLD HEV 教學文件
+AASLD HEV 教學文件
+AASLD HEV 教學文件
+AASLD HEV 教學文件
+AASLD 教學文件
+EASL 2018
+EASL 2018：單用 12 週；劑量與腎功能調整本版未取得原文・請確認
+EASL HEV 2018
+EASL HEV 2018
+EASL HEV 2018
+ECIL-9（2025）
+ECIL-9（HBV、HCV、HEV，2025）
+HEV・E 型肝炎（HEV）
+PO
+ribavirin
+ribavirin 期間第 4、8、12 週查 CBC，貧血時依嚴重度調整劑量。
+出處 2
+劑量依 血液透析（HD）
+台灣許可證未查證・請確認
+各指引說法（3）
+商品名：Virazole（吸入）／Rebetol、Copegus（口服）
+嚴重急性或 ACLF
+建議
+急性（免疫正常）
+情境
+慢性 HEV 以 HEV RNA（NAT）診斷（EASL A1）；免疫低下者抗體可能陰性。
+慢性 HEV：先盡可能減少免疫抑制（EASL B1）；減量後仍有 HEV RNA → ribavirin 單用 12 週（B1），12 週後仍可測得者可續到共 6 個月（C2）。
+慢性（免疫低下，如移植）
+更改
+檢驗
+減量後 HEV RNA 仍陽性
+無需腎調整
+療程
+第 12 週查血清與糞便 HEV RNA：兩者皆陰性可停藥，停藥後 12 週複查確認；仍陽性則續用。
+第 4、8、12 週查 CBC（貧血）；懷孕禁用；腎功能不全需減量，請會診藥師。
+結論：
+藥物頁 ›
+複製
+診斷
+：HEV RNA 陽性 >6 個月定義為慢性；未清除者考慮 ribavirin 12 週。屬教學文件、非正式指引。
+：減量後 3 個月仍有 HEV RNA 即建議 ribavirin；慢性以 HEV RNA 持續 ≥3 個月為準。
+：血液腫瘤與 HCT 族群有更新建議；本版未核對全文・請確認。
+## tx mpox {} none
+01
+02
+CDPH 2025
+CDPH mpox tecovirimat 2025
+CDPH mpox tecovirimat 2025
+CDPH mpox tecovirimat 2025
+CDPH mpox tecovirimat 2025
+Mpox・Mpox
+NIH／NIAID 2025（STOMP、PALM007）
+STOMP／PALM007（tecovirimat）
+STOMP／PALM007（tecovirimat）
+tecovirimat 標準療程 14 天；必要時短期延長（例如再 3–7 天，並密切監測安全與反應）。
+台灣疾管署對 mpox 的通報與治療規定本版未查證・請確認。
+各指引說法（2）
+嚴重或高風險者（嚴重免疫低下、兒童、孕婦、特定皮膚病）：STOMP 將其分在 open-label 組，沒有隨機療效資料；個別評估，請會診感染科並依衛生單位指引。
+多數 mpox 為輕症自限，給支持療法與疼痛處理；tecovirimat 單用在兩項 RCT（PALM007 clade I、STOMP clade II）皆未見療效。
+建議
+更改
+更新
+更新
+正常腎功能劑量・填腎功能 ›
+沒有專為 mpox 核准的藥物；tecovirimat 的成人與兒童劑量見 CDC EA-IND 計畫書（本版未取得・請確認）。
+結論：
+診斷
+：STOMP 第 29 天消退約 83% vs 84%，疼痛無差異；PALM007 無臨床效益；兩試驗提前停止。
+：支持療法為主；tecovirimat 單用在臨床試驗未對輕中度 mpox 有效；無核准用藥。
+## tx mpox {} c35
+01
+02
+CDPH 2025
+CDPH mpox tecovirimat 2025
+CDPH mpox tecovirimat 2025
+CDPH mpox tecovirimat 2025
+CDPH mpox tecovirimat 2025
+Mpox・Mpox
+NIH／NIAID 2025（STOMP、PALM007）
+STOMP／PALM007（tecovirimat）
+STOMP／PALM007（tecovirimat）
+tecovirimat 標準療程 14 天；必要時短期延長（例如再 3–7 天，並密切監測安全與反應）。
+劑量依 CrCl 35 mL/min
+台灣疾管署對 mpox 的通報與治療規定本版未查證・請確認。
+各指引說法（2）
+嚴重或高風險者（嚴重免疫低下、兒童、孕婦、特定皮膚病）：STOMP 將其分在 open-label 組，沒有隨機療效資料；個別評估，請會診感染科並依衛生單位指引。
+多數 mpox 為輕症自限，給支持療法與疼痛處理；tecovirimat 單用在兩項 RCT（PALM007 clade I、STOMP clade II）皆未見療效。
+建議
+更改
+更新
+更新
+沒有專為 mpox 核准的藥物；tecovirimat 的成人與兒童劑量見 CDC EA-IND 計畫書（本版未取得・請確認）。
+結論：
+診斷
+：STOMP 第 29 天消退約 83% vs 84%，疼痛無差異；PALM007 無臨床效益；兩試驗提前停止。
+：支持療法為主；tecovirimat 單用在臨床試驗未對輕中度 mpox 有效；無核准用藥。
+## tx mpox {} hd
+01
+02
+CDPH 2025
+CDPH mpox tecovirimat 2025
+CDPH mpox tecovirimat 2025
+CDPH mpox tecovirimat 2025
+CDPH mpox tecovirimat 2025
+Mpox・Mpox
+NIH／NIAID 2025（STOMP、PALM007）
+STOMP／PALM007（tecovirimat）
+STOMP／PALM007（tecovirimat）
+tecovirimat 標準療程 14 天；必要時短期延長（例如再 3–7 天，並密切監測安全與反應）。
+劑量依 血液透析（HD）
+台灣疾管署對 mpox 的通報與治療規定本版未查證・請確認。
+各指引說法（2）
+嚴重或高風險者（嚴重免疫低下、兒童、孕婦、特定皮膚病）：STOMP 將其分在 open-label 組，沒有隨機療效資料；個別評估，請會診感染科並依衛生單位指引。
+多數 mpox 為輕症自限，給支持療法與疼痛處理；tecovirimat 單用在兩項 RCT（PALM007 clade I、STOMP clade II）皆未見療效。
+建議
+更改
+更新
+更新
+沒有專為 mpox 核准的藥物；tecovirimat 的成人與兒童劑量見 CDC EA-IND 計畫書（本版未取得・請確認）。
+結論：
+診斷
+：STOMP 第 29 天消退約 83% vs 84%，疼痛無差異；PALM007 無臨床效益；兩試驗提前停止。
+：支持療法為主；tecovirimat 單用在臨床試驗未對輕中度 mpox 有效；無核准用藥。
 ## px flupep {"k":"hh"} none
 01
 02
@@ -22036,11 +22654,13 @@ valacyclovir
 01
 02
 480 mg QD（併用 cyclosporine：240 mg QD）
+ASTCT 2025
+ASTCT CMV 2025
 CMV：造血幹細胞移植
-ECIL-7（2019）
-ECIL-7（CMV，2019）
-ECIL-7（CMV，2019）
-ECIL-7（CMV，2019）
+ECIL-10（2025）
+ECIL-10（CMV，2025）
+ECIL-10（CMV，2025）
+ECIL-10（CMV，2025）
 Letermovir 仿單
 Letermovir 仿單
 Letermovir 仿單
@@ -22055,10 +22675,12 @@ letermovir 沒有 HSV／VZV 活性 → 另加 acyclovir 或 valacyclovir 預防�
 仿單
 出處 3
 到移植後第 100 天；晚發高風險到第 200 天
-各指引說法（2）
+各指引說法（3）
 商品名：Prevymis（滅巨斯）
 建議
 更改
+更新
+更新
 更新
 更新
 正常腎功能劑量・填腎功能 ›
@@ -22068,18 +22690,21 @@ letermovir 沒有 HSV／VZV 活性 → 另加 acyclovir 或 valacyclovir 預防�
 藥物頁 ›
 複製
 預防
-預防期間仍需依院內規範監測 CMV DNAemia；HSCT 的 preemptive 閾值依 ECIL-7（本版未核對全文）。
+預防期間仍需依院內規範監測 CMV DNAemia；HSCT 的 preemptive 閾值依 ECIL-10（本版未核對全文）。
 ：100 天，高風險可到 200 天。
-：本版未核對全文・請確認。
+：更新 2021 版（移植前血清、letermovir 預防期間、maribavir 地位等）；本版只看到摘要片段・請確認。
+：更新 ECIL-7（2019）：涵蓋血清狀態、免疫監測、letermovir 預防、難治／抗藥 CMV；preemptive 閾值與各條強度本版未核對全文・請確認。
 ## px cmvhsct {} c35
 01
 02
 480 mg QD（併用 cyclosporine：240 mg QD）
+ASTCT 2025
+ASTCT CMV 2025
 CMV：造血幹細胞移植
-ECIL-7（2019）
-ECIL-7（CMV，2019）
-ECIL-7（CMV，2019）
-ECIL-7（CMV，2019）
+ECIL-10（2025）
+ECIL-10（CMV，2025）
+ECIL-10（CMV，2025）
+ECIL-10（CMV，2025）
 Letermovir 仿單
 Letermovir 仿單
 Letermovir 仿單
@@ -22095,10 +22720,12 @@ letermovir 沒有 HSV／VZV 活性 → 另加 acyclovir 或 valacyclovir 預防�
 出處 3
 到移植後第 100 天；晚發高風險到第 200 天
 劑量依 CrCl 35 mL/min
-各指引說法（2）
+各指引說法（3）
 商品名：Prevymis（滅巨斯）
 建議
 更改
+更新
+更新
 更新
 更新
 正常劑量（CrCl ≥10）
@@ -22108,17 +22735,20 @@ letermovir 沒有 HSV／VZV 活性 → 另加 acyclovir 或 valacyclovir 預防�
 藥物頁 ›
 複製
 預防
-預防期間仍需依院內規範監測 CMV DNAemia；HSCT 的 preemptive 閾值依 ECIL-7（本版未核對全文）。
+預防期間仍需依院內規範監測 CMV DNAemia；HSCT 的 preemptive 閾值依 ECIL-10（本版未核對全文）。
 ：100 天，高風險可到 200 天。
-：本版未核對全文・請確認。
+：更新 2021 版（移植前血清、letermovir 預防期間、maribavir 地位等）；本版只看到摘要片段・請確認。
+：更新 ECIL-7（2019）：涵蓋血清狀態、免疫監測、letermovir 預防、難治／抗藥 CMV；preemptive 閾值與各條強度本版未核對全文・請確認。
 ## px cmvhsct {} hd
 01
 02
+ASTCT 2025
+ASTCT CMV 2025
 CMV：造血幹細胞移植
-ECIL-7（2019）
-ECIL-7（CMV，2019）
-ECIL-7（CMV，2019）
-ECIL-7（CMV，2019）
+ECIL-10（2025）
+ECIL-10（CMV，2025）
+ECIL-10（CMV，2025）
+ECIL-10（CMV，2025）
 ESRD（含透析）無建議
 Letermovir 仿單
 Letermovir 仿單
@@ -22135,10 +22765,12 @@ letermovir 沒有 HSV／VZV 活性 → 另加 acyclovir 或 valacyclovir 預防�
 出處 3
 到移植後第 100 天；晚發高風險到第 200 天
 劑量依 血液透析（HD）
-各指引說法（2）
+各指引說法（3）
 商品名：Prevymis（滅巨斯）
 建議
 更改
+更新
+更新
 更新
 更新
 療程
@@ -22148,9 +22780,10 @@ letermovir 沒有 HSV／VZV 活性 → 另加 acyclovir 或 valacyclovir 預防�
 血液透析（HD） 劑量
 複製
 預防
-預防期間仍需依院內規範監測 CMV DNAemia；HSCT 的 preemptive 閾值依 ECIL-7（本版未核對全文）。
+預防期間仍需依院內規範監測 CMV DNAemia；HSCT 的 preemptive 閾值依 ECIL-10（本版未核對全文）。
 ：100 天，高風險可到 200 天。
-：本版未核對全文・請確認。
+：更新 2021 版（移植前血清、letermovir 預防期間、maribavir 地位等）；本版只看到摘要片段・請確認。
+：更新 ECIL-7（2019）：涵蓋血清狀態、免疫監測、letermovir 預防、難治／抗藥 CMV；preemptive 閾值與各條強度本版未核對全文・請確認。
 ## px hsvpx {"k":"hsct"} none
 01
 02
@@ -31565,12 +32198,17 @@ ensitrelvir
 200 mg QD
 200 mg QD，與 DAA 併用請會診藥師
 200 mg 與 400 mg 隔日交替
+AASLD HEV 教學文件
 CRRT
 Child-Pugh C 或貧血者可由 600 mg／日起；與 DAA 併用的腎功能劑量請確認；孕婦禁用。
 CrCl 30–49
 CrCl <30
 CrCl ≥50
+E 型肝炎（HEV）
+EASL 2018：單用 12 週；劑量與腎功能調整本版未取得原文・請確認
+EASL 2018：單用 12 週；劑量與腎功能調整本版未取得原文・請確認
 EASL HCV 2020
+EASL HEV 2018
 ECIL-4（RSV）
 ECIL-4（RSV）
 HCV（與 DAA 併用）・PO
@@ -31581,13 +32219,15 @@ Oral vs aerosolized ribavirin（CID）
 PD
 PO
 PO
+PO
 RSV
 RSV
 RSV・吸入
 RSV（off-label）・PO
 Ribavirin（HCV 併用）
 Ribavirin（HCV 併用）
-app 內出現的情境（2）
+app 內出現的情境（3）
+ribavirin
 ribavirin
 ribavirin
 ribavirin
@@ -31600,12 +32240,15 @@ ribavirin
 劑量
 劑量
 劑量
+劑量
 口服劑量各中心不同；腎功能不全時減量，請依院內規範與藥師。
 只用於 HSCT／血液腫瘤、肺移植等特定族群，不經驗性使用（ECIL-4、院內指引）。
 台灣許可證未查證・請確認
 台灣許可證未查證・請確認
 台灣許可證未查證・請確認
 台灣許可證未查證・請確認
+台灣許可證未查證・請確認
+各腎功能劑量
 各腎功能劑量
 各腎功能劑量
 各腎功能劑量
@@ -31614,18 +32257,24 @@ ribavirin
 商品名：Virazole（吸入）／Rebetol、Copegus（口服）
 商品名：Virazole（吸入）／Rebetol、Copegus（口服）
 商品名：Virazole（吸入）／Rebetol、Copegus（口服）
+商品名：Virazole（吸入）／Rebetol、Copegus（口服）
 慢性 C 型肝炎（DAA）
+慢性 HEV（off-label）・PO
 懷孕：
+所有腎功能
 所有腎功能
 所有腎功能
 更改
 正常腎功能劑量・填腎功能 ›
 禁用（致畸，仿單黑框警語）
+第 4、8、12 週查 CBC（貧血）；懷孕禁用；腎功能不全需減量，請會診藥師。
+腎功能
 腎功能
 腎功能
 腎功能
 腎功能不全需減量，請會診藥師。
 藥物
+複製
 複製
 複製
 複製
@@ -31646,12 +32295,17 @@ ribavirin
 200 mg QD，與 DAA 併用請會診藥師
 200 mg 與 400 mg 隔日交替
 200 mg 與 400 mg 隔日交替
+AASLD HEV 教學文件
 CRRT
 Child-Pugh C 或貧血者可由 600 mg／日起；與 DAA 併用的腎功能劑量請確認；孕婦禁用。
 CrCl 30–49
 CrCl <30
 CrCl ≥50
+E 型肝炎（HEV）
+EASL 2018：單用 12 週；劑量與腎功能調整本版未取得原文・請確認
+EASL 2018：單用 12 週；劑量與腎功能調整本版未取得原文・請確認
 EASL HCV 2020
+EASL HEV 2018
 ECIL-4（RSV）
 ECIL-4（RSV）
 HCV（與 DAA 併用）・PO
@@ -31662,13 +32316,15 @@ Oral vs aerosolized ribavirin（CID）
 PD
 PO
 PO
+PO
 RSV
 RSV
 RSV・吸入
 RSV（off-label）・PO
 Ribavirin（HCV 併用）
 Ribavirin（HCV 併用）
-app 內出現的情境（2）
+app 內出現的情境（3）
+ribavirin
 ribavirin
 ribavirin
 ribavirin
@@ -31681,6 +32337,7 @@ ribavirin
 劑量
 劑量
 劑量
+劑量
 劑量依 CrCl 35 mL/min
 口服劑量各中心不同；腎功能不全時減量，請依院內規範與藥師。
 只用於 HSCT／血液腫瘤、肺移植等特定族群，不經驗性使用（ECIL-4、院內指引）。
@@ -31688,6 +32345,8 @@ ribavirin
 台灣許可證未查證・請確認
 台灣許可證未查證・請確認
 台灣許可證未查證・請確認
+台灣許可證未查證・請確認
+各腎功能劑量
 各腎功能劑量
 各腎功能劑量
 各腎功能劑量
@@ -31696,20 +32355,27 @@ ribavirin
 商品名：Virazole（吸入）／Rebetol、Copegus（口服）
 商品名：Virazole（吸入）／Rebetol、Copegus（口服）
 商品名：Virazole（吸入）／Rebetol、Copegus（口服）
+商品名：Virazole（吸入）／Rebetol、Copegus（口服）
 已依腎功能調整（CrCl 30–49）
 慢性 C 型肝炎（DAA）
+慢性 HEV（off-label）・PO
 懷孕：
+所有腎功能
 所有腎功能
 所有腎功能
 更改
 無需腎調整
 無需腎調整
+無需腎調整
 禁用（致畸，仿單黑框警語）
+第 4、8、12 週查 CBC（貧血）；懷孕禁用；腎功能不全需減量，請會診藥師。
+腎功能
 腎功能
 腎功能
 腎功能
 腎功能不全需減量，請會診藥師。
 藥物
+複製
 複製
 複製
 複製
@@ -31729,12 +32395,17 @@ ribavirin
 200 mg QD，與 DAA 併用請會診藥師
 200 mg QD，與 DAA 併用請會診藥師
 200 mg 與 400 mg 隔日交替
+AASLD HEV 教學文件
 CRRT
 Child-Pugh C 或貧血者可由 600 mg／日起；與 DAA 併用的腎功能劑量請確認；孕婦禁用。
 CrCl 30–49
 CrCl <30
 CrCl ≥50
+E 型肝炎（HEV）
+EASL 2018：單用 12 週；劑量與腎功能調整本版未取得原文・請確認
+EASL 2018：單用 12 週；劑量與腎功能調整本版未取得原文・請確認
 EASL HCV 2020
+EASL HEV 2018
 ECIL-4（RSV）
 ECIL-4（RSV）
 HCV（與 DAA 併用）・PO
@@ -31745,13 +32416,15 @@ Oral vs aerosolized ribavirin（CID）
 PD
 PO
 PO
+PO
 RSV
 RSV
 RSV・吸入
 RSV（off-label）・PO
 Ribavirin（HCV 併用）
 Ribavirin（HCV 併用）
-app 內出現的情境（2）
+app 內出現的情境（3）
+ribavirin
 ribavirin
 ribavirin
 ribavirin
@@ -31764,6 +32437,7 @@ ribavirin
 劑量
 劑量
 劑量
+劑量
 劑量依 血液透析（HD）
 口服劑量各中心不同；腎功能不全時減量，請依院內規範與藥師。
 只用於 HSCT／血液腫瘤、肺移植等特定族群，不經驗性使用（ECIL-4、院內指引）。
@@ -31771,6 +32445,8 @@ ribavirin
 台灣許可證未查證・請確認
 台灣許可證未查證・請確認
 台灣許可證未查證・請確認
+台灣許可證未查證・請確認
+各腎功能劑量
 各腎功能劑量
 各腎功能劑量
 各腎功能劑量
@@ -31779,20 +32455,27 @@ ribavirin
 商品名：Virazole（吸入）／Rebetol、Copegus（口服）
 商品名：Virazole（吸入）／Rebetol、Copegus（口服）
 商品名：Virazole（吸入）／Rebetol、Copegus（口服）
+商品名：Virazole（吸入）／Rebetol、Copegus（口服）
 慢性 C 型肝炎（DAA）
+慢性 HEV（off-label）・PO
 懷孕：
+所有腎功能
 所有腎功能
 所有腎功能
 更改
 無需腎調整
 無需腎調整
+無需腎調整
 禁用（致畸，仿單黑框警語）
+第 4、8、12 週查 CBC（貧血）；懷孕禁用；腎功能不全需減量，請會診藥師。
+腎功能
 腎功能
 腎功能
 腎功能
 腎功能不全需減量，請會診藥師。
 藥物
 血液透析（HD） 劑量
+複製
 複製
 複製
 複製
@@ -36973,6 +37656,333 @@ lenacapavir
 血液透析（HD） 劑量
 複製
 預防・HIV 暴露前預防（PrEP）
+## drug prit none
+01
+02
+03
+FDA 核准範圍限免疫低下成人、對 acyclovir 類難治的黏膜皮膚 HSV；VZV 活性本版未查證。
+HSV／VZV
+PO
+Pritelivir（Hovilpri）FDA 核准 2026
+Pritelivir（Hovilpri）FDA 核准 2026
+helicase-primase inhibitor：作用機轉不同於 acyclovir 與 foscarnet，對核苷類似物抗藥 HSV 株仍有活性（二手資料）。
+pritelivir
+pritelivir
+pritelivir
+交互作用與注意
+使用注意
+劑量
+台灣許可證未查證・請確認
+台灣許可證未查證・請確認
+各腎功能劑量
+商品名：Hovilpri
+商品名：Hovilpri
+懷孕：
+所有腎功能
+更改
+正常腎功能劑量・填腎功能 ›
+第 1 天 400 mg，之後 100 mg QD，用到病灶癒合（腎功能調整未取得・請確認）
+第 1 天 400 mg，之後 100 mg QD，用到病灶癒合（腎功能調整未取得・請確認）
+腎功能
+腎功能調整本版未取得仿單・請確認；避免特定 PPI（見藥物頁）。
+腎功能調整與其他交互作用本版未取得仿單・請確認。
+藥物
+複製
+資料有限，請會診（本版未取得仿單）
+質子幫浦抑制劑：避免 esomeprazole、rabeprazole；omeprazole、lansoprazole 每日 >20 mg、pantoprazole 每日 >40 mg 亦避免（二手整理・請以仿單確認）。
+難治黏膜皮膚 HSV（免疫低下）・PO
+## drug prit c35
+01
+02
+03
+FDA 核准範圍限免疫低下成人、對 acyclovir 類難治的黏膜皮膚 HSV；VZV 活性本版未查證。
+HSV／VZV
+PO
+Pritelivir（Hovilpri）FDA 核准 2026
+Pritelivir（Hovilpri）FDA 核准 2026
+helicase-primase inhibitor：作用機轉不同於 acyclovir 與 foscarnet，對核苷類似物抗藥 HSV 株仍有活性（二手資料）。
+pritelivir
+pritelivir
+pritelivir
+交互作用與注意
+使用注意
+劑量
+劑量依 CrCl 35 mL/min
+台灣許可證未查證・請確認
+台灣許可證未查證・請確認
+各腎功能劑量
+商品名：Hovilpri
+商品名：Hovilpri
+懷孕：
+所有腎功能
+更改
+無需腎調整
+第 1 天 400 mg，之後 100 mg QD，用到病灶癒合（腎功能調整未取得・請確認）
+第 1 天 400 mg，之後 100 mg QD，用到病灶癒合（腎功能調整未取得・請確認）
+腎功能
+腎功能調整本版未取得仿單・請確認；避免特定 PPI（見藥物頁）。
+腎功能調整與其他交互作用本版未取得仿單・請確認。
+藥物
+複製
+資料有限，請會診（本版未取得仿單）
+質子幫浦抑制劑：避免 esomeprazole、rabeprazole；omeprazole、lansoprazole 每日 >20 mg、pantoprazole 每日 >40 mg 亦避免（二手整理・請以仿單確認）。
+難治黏膜皮膚 HSV（免疫低下）・PO
+## drug prit hd
+01
+02
+03
+FDA 核准範圍限免疫低下成人、對 acyclovir 類難治的黏膜皮膚 HSV；VZV 活性本版未查證。
+HSV／VZV
+PO
+Pritelivir（Hovilpri）FDA 核准 2026
+Pritelivir（Hovilpri）FDA 核准 2026
+helicase-primase inhibitor：作用機轉不同於 acyclovir 與 foscarnet，對核苷類似物抗藥 HSV 株仍有活性（二手資料）。
+pritelivir
+pritelivir
+pritelivir
+交互作用與注意
+使用注意
+劑量
+劑量依 血液透析（HD）
+台灣許可證未查證・請確認
+台灣許可證未查證・請確認
+各腎功能劑量
+商品名：Hovilpri
+商品名：Hovilpri
+懷孕：
+所有腎功能
+更改
+無需腎調整
+第 1 天 400 mg，之後 100 mg QD，用到病灶癒合（腎功能調整未取得・請確認）
+第 1 天 400 mg，之後 100 mg QD，用到病灶癒合（腎功能調整未取得・請確認）
+腎功能
+腎功能調整本版未取得仿單・請確認；避免特定 PPI（見藥物頁）。
+腎功能調整與其他交互作用本版未取得仿單・請確認。
+藥物
+複製
+資料有限，請會診（本版未取得仿單）
+質子幫浦抑制劑：避免 esomeprazole、rabeprazole；omeprazole、lansoprazole 每日 >20 mg、pantoprazole 每日 >40 mg 亦避免（二手整理・請以仿單確認）。
+難治黏膜皮膚 HSV（免疫低下）・PO
+## drug bepi none
+01
+02
+03
+300 mg 每週 × 24 週（B-Well 試驗用法；試驗另有第 4、11 天 loading）・仿單用法與腎功能調整請確認
+300 mg 每週 × 24 週（B-Well 試驗用法；試驗另有第 4、11 天 loading）・仿單用法與腎功能調整請確認
+Bepirovirsen（Hibsago）FDA 核准 2026
+Bepirovirsen（Hibsago）FDA 核准 2026
+CHB 與 NA 併用（無肝硬化）・SC
+HBV
+NA 持續到最後一次注射後至少 24 週。
+SC
+bepirovirsen
+bepirovirsen
+bepirovirsen
+交互作用與注意
+使用注意
+劑量
+台灣許可證未查證・請確認
+台灣許可證未查證・請確認
+各腎功能劑量
+商品名：Hibsago
+商品名：Hibsago
+懷孕：
+所有腎功能
+更改
+有 boxed warning，內容本版未取得仿單・請確認。
+正常腎功能劑量・填腎功能 ›
+每劑為兩次皮下注射，部位間隔至少 5 cm 並每週輪替；首劑後可自行注射（媒體整理）。
+腎功能
+與 NA 併用：NA 須持續到最後一次注射後至少 24 週（FDA 新聞、媒體整理）。
+藥物
+複製
+資料未取得，請確認
+適用無肝硬化成人；B-Well 納入 HBsAg ≤3,000 IU/mL 者，HBsAg 更高者沒有試驗資料。
+## drug bepi c35
+01
+02
+03
+300 mg 每週 × 24 週（B-Well 試驗用法；試驗另有第 4、11 天 loading）・仿單用法與腎功能調整請確認
+300 mg 每週 × 24 週（B-Well 試驗用法；試驗另有第 4、11 天 loading）・仿單用法與腎功能調整請確認
+Bepirovirsen（Hibsago）FDA 核准 2026
+Bepirovirsen（Hibsago）FDA 核准 2026
+CHB 與 NA 併用（無肝硬化）・SC
+HBV
+NA 持續到最後一次注射後至少 24 週。
+SC
+bepirovirsen
+bepirovirsen
+bepirovirsen
+交互作用與注意
+使用注意
+劑量
+劑量依 CrCl 35 mL/min
+台灣許可證未查證・請確認
+台灣許可證未查證・請確認
+各腎功能劑量
+商品名：Hibsago
+商品名：Hibsago
+懷孕：
+所有腎功能
+更改
+有 boxed warning，內容本版未取得仿單・請確認。
+每劑為兩次皮下注射，部位間隔至少 5 cm 並每週輪替；首劑後可自行注射（媒體整理）。
+無需腎調整
+腎功能
+與 NA 併用：NA 須持續到最後一次注射後至少 24 週（FDA 新聞、媒體整理）。
+藥物
+複製
+資料未取得，請確認
+適用無肝硬化成人；B-Well 納入 HBsAg ≤3,000 IU/mL 者，HBsAg 更高者沒有試驗資料。
+## drug bepi hd
+01
+02
+03
+300 mg 每週 × 24 週（B-Well 試驗用法；試驗另有第 4、11 天 loading）・仿單用法與腎功能調整請確認
+300 mg 每週 × 24 週（B-Well 試驗用法；試驗另有第 4、11 天 loading）・仿單用法與腎功能調整請確認
+Bepirovirsen（Hibsago）FDA 核准 2026
+Bepirovirsen（Hibsago）FDA 核准 2026
+CHB 與 NA 併用（無肝硬化）・SC
+HBV
+NA 持續到最後一次注射後至少 24 週。
+SC
+bepirovirsen
+bepirovirsen
+bepirovirsen
+交互作用與注意
+使用注意
+劑量
+劑量依 血液透析（HD）
+台灣許可證未查證・請確認
+台灣許可證未查證・請確認
+各腎功能劑量
+商品名：Hibsago
+商品名：Hibsago
+懷孕：
+所有腎功能
+更改
+有 boxed warning，內容本版未取得仿單・請確認。
+每劑為兩次皮下注射，部位間隔至少 5 cm 並每週輪替；首劑後可自行注射（媒體整理）。
+無需腎調整
+腎功能
+與 NA 併用：NA 須持續到最後一次注射後至少 24 週（FDA 新聞、媒體整理）。
+藥物
+複製
+資料未取得，請確認
+適用無肝硬化成人；B-Well 納入 HBsAg ≤3,000 IU/mL 者，HBsAg 更高者沒有試驗資料。
+## drug blv none
+01
+02
+03
+B 型肝炎合併 D 型肝炎（HDV）
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+FDA（8.5 mg）與歐盟（2 mg）核准劑量不同，見劑量欄。
+HDV
+SC
+app 內出現的情境（1）
+bulevirtide
+bulevirtide
+bulevirtide
+不降低 HBV 病毒量：HBV 仍須 NA 等另行治療。
+交互作用與注意
+使用注意
+停藥可能使 HDV 復發、肝炎惡化。
+劑量
+台灣許可證未查證・請確認
+台灣許可證未查證・請確認
+各腎功能劑量
+商品名：Hepcludex
+商品名：Hepcludex
+慢性 HDV・SC
+懷孕：
+所有腎功能
+持續到不再有反應；最佳療程未知；肝腎功能調整本版未取得・請確認。
+更改
+正常腎功能劑量・填腎功能 ›
+美國 8.5 mg QD；歐盟 2 mg QD（核准劑量不同，請依當地仿單；腎功能調整未取得・請確認）
+美國 8.5 mg QD；歐盟 2 mg QD（核准劑量不同，請依當地仿單；腎功能調整未取得・請確認）
+肝腎功能調整、交互作用與其他警語本版未取得仿單・請確認。
+腎功能
+藥物
+複製
+資料未取得，請確認
+## drug blv c35
+01
+02
+03
+B 型肝炎合併 D 型肝炎（HDV）
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+FDA（8.5 mg）與歐盟（2 mg）核准劑量不同，見劑量欄。
+HDV
+SC
+app 內出現的情境（1）
+bulevirtide
+bulevirtide
+bulevirtide
+不降低 HBV 病毒量：HBV 仍須 NA 等另行治療。
+交互作用與注意
+使用注意
+停藥可能使 HDV 復發、肝炎惡化。
+劑量
+劑量依 CrCl 35 mL/min
+台灣許可證未查證・請確認
+台灣許可證未查證・請確認
+各腎功能劑量
+商品名：Hepcludex
+商品名：Hepcludex
+慢性 HDV・SC
+懷孕：
+所有腎功能
+持續到不再有反應；最佳療程未知；肝腎功能調整本版未取得・請確認。
+更改
+無需腎調整
+美國 8.5 mg QD；歐盟 2 mg QD（核准劑量不同，請依當地仿單；腎功能調整未取得・請確認）
+美國 8.5 mg QD；歐盟 2 mg QD（核准劑量不同，請依當地仿單；腎功能調整未取得・請確認）
+肝腎功能調整、交互作用與其他警語本版未取得仿單・請確認。
+腎功能
+藥物
+複製
+資料未取得，請確認
+## drug blv hd
+01
+02
+03
+B 型肝炎合併 D 型肝炎（HDV）
+Bulevirtide（Hepcludex）FDA 2026
+Bulevirtide（Hepcludex）FDA 2026
+FDA（8.5 mg）與歐盟（2 mg）核准劑量不同，見劑量欄。
+HDV
+SC
+app 內出現的情境（1）
+bulevirtide
+bulevirtide
+bulevirtide
+不降低 HBV 病毒量：HBV 仍須 NA 等另行治療。
+交互作用與注意
+使用注意
+停藥可能使 HDV 復發、肝炎惡化。
+劑量
+劑量依 血液透析（HD）
+台灣許可證未查證・請確認
+台灣許可證未查證・請確認
+各腎功能劑量
+商品名：Hepcludex
+商品名：Hepcludex
+慢性 HDV・SC
+懷孕：
+所有腎功能
+持續到不再有反應；最佳療程未知；肝腎功能調整本版未取得・請確認。
+更改
+無需腎調整
+美國 8.5 mg QD；歐盟 2 mg QD（核准劑量不同，請依當地仿單；腎功能調整未取得・請確認）
+美國 8.5 mg QD；歐盟 2 mg QD（核准劑量不同，請依當地仿單；腎功能調整未取得・請確認）
+肝腎功能調整、交互作用與其他警語本版未取得仿單・請確認。
+腎功能
+藥物
+複製
+資料未取得，請確認
 ## res 
 CMV：難治或抗藥
 DAA 治療後 12 週 HCV RNA 仍可測得 → 依先前方案、基因型、肝硬化與抗藥突變（NS5A、NS5B）選再治療方案；先轉專科。
@@ -37094,6 +38104,9 @@ HSV／VZV：acyclovir 抗藥
 HZ：acyclovir 治療 10–21 天失敗，尤其疣狀病灶（EDF）。
 IV
 IV
+PO
+Pritelivir（Hovilpri）FDA 核准 2026
+Pritelivir（Hovilpri）FDA 核准 2026
 SCr >1.5 mg/dL 或尿蛋白 ≥2+ 也禁止開始。
 acyclovir、valacyclovir
 cidofovir
@@ -37103,6 +38116,7 @@ ganciclovir
 ganciclovir、valganciclovir、cidofovir、letermovir（治療）
 lamivudine、entecavir、adefovir
 oseltamivir、peramivir、amantadine、rimantadine
+pritelivir
 ≈ 1500 mg（實際體重 60 kg）
 ≥2 週適當治療後下降 ≤1 log10 → 難治；累積 ≥4 週且 ≥2 週反應不佳時送基因型（UL97、UL54；letermovir 看 UL56）（共識 2025・strong, high）。
 仿單 HSV：40 mg/kg q8–12h × 2–3 週或至癒合（表列 q12h 欄）。VZV 抗藥用法 off-label。
@@ -37112,9 +38126,12 @@ oseltamivir、peramivir、amantadine、rimantadine
 免疫低下或治療中仍持續陽性、惡化 → 懷疑抗藥；H275Y（N1）對 oseltamivir、peramivir 抗藥；zanamivir 通常仍有效（請以病毒抗藥檢測確認）。
 出處 2
 劑量依 CrCl 35 mL/min
+口服（FDA 2026 核准）
+台灣許可證未查證・請確認
 台灣許可證未查證・請確認
 台灣許可證未查證・請確認
 商品名：Foscavir
+商品名：Hovilpri
 商品名：Vistide
 展開 ▾
 展開 ▾
@@ -37123,8 +38140,10 @@ oseltamivir、peramivir、amantadine、rimantadine
 已依腎功能調整（CrCl/kg >0.5–0.6；目前 0.59 mL/min/kg）
 收合 ▴
 改用
+更新
 曾用 NS5A 抑制劑失敗者再用同類單方
 替代
+條件：免疫低下成人、acyclovir 類難治的黏膜皮膚 HSV；台灣許可證請確認。PRIOH-1 為 open-label，對照為研究者選擇的 foscarnet、cidofovir 或 imiquimod：第 28 天完全癒合 63% vs 34%。
 每週 1 次 × 2 週後每 2 週，依臨床反應
 流感：neuraminidase 抑制劑或 baloxavir 抗藥
 無效或不可靠
@@ -37132,15 +38151,22 @@ oseltamivir、peramivir、amantadine、rimantadine
 無效或不可靠
 無效或不可靠
 無效或不可靠的藥
+無需腎調整
+用到病灶癒合（PRIOH-1）
+療程
 療程
 療程
 療程 × 2 週（同一般方案）
 盡量取病灶做病毒分離與藥敏（HIV OI 指引）。EDF：foscarnet、cidofovir 未核准用於 HZ，限極嚴重個案且經專家討論。
 禁止開始（CrCl ≤55）
+第 1 天 400 mg，之後 100 mg QD，用到病灶癒合（腎功能調整未取得・請確認）
 腎功能不符使用條件（CrCl ≤55）
+腎功能調整本版未取得仿單・請確認；避免特定 PPI（見藥物頁）。
 腎毒性高；需 probenecid 與水化。
 藥物頁 ›
 藥物頁 ›
+藥物頁 ›
+複製
 複製
 複製
 說明
@@ -37651,6 +38677,9 @@ HBV／HIV 共感染綜述（IAS-USA 2023）
 HBV／HIV 共感染綜述（IAS-USA 2023）
 HCV
 HCV
+HDV
+HDV
+HEV
 HIV
 HIV
 HIV PrEP
@@ -37667,6 +38696,7 @@ Maribavir 綜述（PMC9487637）
 Maribavir 綜述（PMC9487637）
 Paxlovid 仿單
 Paxlovid 的 ritonavir：未控制或未診斷 HIV 者，HIV 可能對 protease inhibitor 產生抗藥。
+Pritelivir（Hovilpri）FDA 核准 2026
 RSV
 RSV
 TTS BK 2024
@@ -37676,7 +38706,9 @@ Vemlidy：單用不建議用於 HIV，開始前先篩 HIV。
 acyclovir
 adenovirus：cidofovir 最常用但無對照試驗；CrCl ≤55 仿單禁止開始。
 baloxavir
+bepirovirsen
 bictegravir/emtricitabine/tenofovir alafenamide
+bulevirtide
 cabotegravir（長效注射）
 cidofovir
 cidofovir 是 adenovirus 最常用的 off-label 做法，BK 不建議用；兩者都以減免疫抑制為主。
@@ -37703,6 +38735,8 @@ molnupiravir
 nirmatrelvir/ritonavir
 oseltamivir
 peramivir
+pritelivir
+pritelivir（helicase-primase inhibitor）：作用點不是 DNA polymerase，對核苷類似物抗藥 HSV 仍有活性（二手資料）；VZV 活性本版未查證。
 remdesivir
 ribavirin
 sofosbuvir/velpatasvir
@@ -37982,6 +39016,99 @@ zanamivir
 ·
 ·
 ·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
+·
 ○
 ○
 ○
@@ -37991,6 +39118,11 @@ zanamivir
 ○
 ○
 ○
+○
+○
+●
+●
+●
 ●
 ●
 ●
@@ -38076,9 +39208,11 @@ zanamivir
 ？
 ？
 ？
+？
 ## ref
 01
 02
+AASLD HEV 教學文件
 AASLD/IDSA HBV 2025
 AASLD/IDSA HCV Guidance（2026）
 AGA HBV 再活化 2025
@@ -38087,18 +39221,22 @@ ASCO 癌症病人 HBV 篩檢 2020
 ASCO/IDSA 抗微生物預防 2018
 AST-IDCOP BK 2019
 AST-IDCOP 腺病毒 2019
+ASTCT CMV 2025
 Acyclovir 口服仿單
 Acyclovir 注射劑仿單
 Aurelius RCT（CID 2012）
 BTS／UK BK 指引
 Baloxavir 台灣仿單 2024
+Bepirovirsen（Hibsago）FDA 核准 2026
 Biktarvy 仿單（2025）
+Bulevirtide（Hepcludex）FDA 2026
 CDC PrEP 2021
 CDC STI 2021（生殖器疱疹）
 CDC lenacapavir PrEP 2025
 CDC nPEP 2025
 CDC 水痘臨床指引
 CDC 流感抗病毒藥 2026
+CDPH mpox tecovirimat 2025
 CENTERSTONE（NEJM 2025）
 CMV SOT 國際共識 2025
 Cidofovir 仿單
@@ -38106,10 +39244,14 @@ DHHS 成人 ARV 指引 HBV 章節 2024（二手報導）
 EACS 2025（v13.0）
 EASL HBV 2025
 EASL HCV 2020
+EASL HEV 2018
 ECIL BK 膀胱炎 2018
+ECIL-10（CMV，2025）
+ECIL-10（呼吸道病毒，2025／26）
 ECIL-4 腺病毒 2012
 ECIL-4（RSV）
-ECIL-7（CMV，2019）
+ECIL-7（CMV，2019；已被 ECIL-10 更新）
+ECIL-9（HBV、HCV、HEV，2025）
 EDF/EADV 帶狀疱疹 2017
 Ensitrelvir（台灣專案輸入）
 Entecavir 仿單
@@ -38148,8 +39290,10 @@ Oseltamivir 仿單
 Paxlovid 仿單
 Paxlovid 歐英 SmPC
 Peramivir 仿單（美國）
+Pritelivir（Hovilpri）FDA 核准 2026
 Remdesivir 仿單
 Ribavirin（HCV 併用）
+STOMP／PALM007（tecovirimat）
 Sofosbuvir/velpatasvir 仿單
 Sofosbuvir/velpatasvir/voxilaprevir 仿單
 TTS BK 2024
@@ -38164,7 +39308,7 @@ WHO HBV 2024
 WHO 流感 2024
 Zanamivir 仿單
 cidofovir 腺病毒劑量
-v1.0（2026-11-15）
+v1.1（2026-11-15）
 「更新」綠色標籤：2024 年後的改版、新核准或已發表 phase 3。各指引說法不同時分別列出，不合併。
 不列台灣公費與健保條件。台灣許可證未查證的藥標示「請確認」。
 丹麥 HSV-1 腦炎世代（CID 2026）
@@ -38181,15 +39325,14 @@ v1.0（2026-11-15）
 英國 ABN/BIA 腦炎 2012
 英國腦膜炎指引 2016
 衛福部 PrEP 澄清稿
-資料來源（99）
+資料來源（110）
 院內 RSV 指引（UCSF、UNMC）
 院內血液腫瘤預防（UC Davis）
 ：2025 Clinical Practice Guideline Update by the IDSA on the Treatment and Management of COVID-19: Antiviral Treatment for Mild to Moderate COVID-19 in Adults（Clin Infect Dis；9 條建議）。高風險（例：≥75 歲、嚴重免疫低下、多重危險因子）：建議 nirmatrelvir/ritonavir 5 天（發病 5 天內）或 remdesivir 3 天（7 天內）；風險增加但非高風險：建議（conditional）同上；無危險因子：不建議抗病毒藥；molnupiravir 只在無其他選擇時（conditional）。本版依 NEJM Clinician Guideline Watch（2026-05-20）、SHM／Gilead pocket card（2026-03）與 CME Outfitters 2026-01 摘要核對，全文未讀到，強度與證據等級請確認。
 ：A living WHO guideline on drugs for covid-19（BMJ 2023-11-10 更新）。非重症：高與中風險者 nirmatrelvir/ritonavir；remdesivir、molnupiravir 不用於中低風險（高風險者 conditional）；低風險者 remdesivir、molnupiravir strong against。
+：AASLD Liver Fellow Network「The neglected viral hepatitis」臨床提示（教學文件，非正式指引）：慢性 HEV 先減免疫抑制，約三分之一可清除；未清除者考慮 ribavirin 12 週；ribavirin 期間第 4、8、12 週查 CBC；第 12 週查血清與糞便 HEV RNA，兩者皆陰性可停藥並於 12 週後複查，陽性則再續 12 週。該文件將 HEV RNA 陽性 >6 個月定義為慢性。
 ：AASLD-IDSA HCV Guidance（hcvguidelines.org；2026-05 簡化治療文件）。未曾治療、無肝硬化或代償性肝硬化：glecaprevir/pibrentasvir 8 週，或 sofosbuvir/velpatasvir 12 週。基因型 3 代償性肝硬化的 NS5A Y93H 與 ribavirin 條件、腎功能不全與失代償章節的網頁無法開啟，內容來自搜尋摘要・請確認。
-：AASLD/IDSA. Guidelines on treatment of chronic hepatitis B（2025）。本版未取得全文，內容來自 WGO、EBGI 摘要與投影片，條號與建議強度請以原文確認。摘要間對 F2 的 VCTE 切點不同：EBGI 摘要 7 kPa、WGO 摘要 8 kPa。
 ：AGA Clinical Practice Guideline on the prevention and treatment of hepatitis B virus reactivation in at-risk individuals（Gastroenterology 2025）。依免疫抑制治療的再活化風險分層，高風險者給預防。本版未取得全文與完整分層表・請確認。
-：APASL clinical practice guidelines on hepatitis B（2026 版）。再活化預防另有專門指引，本版未取得・請確認。
 ：Aboelezz A, Mahmoud SH. Acyclovir dosing in herpes encephalitis: a scoping review. J Am Pharm Assoc 2024;64:102040：肥胖者用哪個體重缺乏一致證據。UCSF 院內劑量建議：肥胖者先用 adjusted BW，密切監測腎功能與神智；NHS Fife 院內指引（2026-04 審閱）：BMI ≥30 用 adjusted BW＝IBW＋0.4 ×（實際－IBW）。與仿單（IBW）不同。
 ：Acyclovir sodium injection US PI／加拿大 monograph：免疫低下黏膜皮膚 HSV 5 mg/kg q8h × 7 天；HSV 腦炎 10 mg/kg q8h × 10 天；免疫低下 VZV 10 mg/kg q8h × 7 天；最大相當 20 mg/kg q8h。肥胖者以理想體重（IBW）計。腎調整：CrCl >50 q8h；>25–50 q12h；>10–25 q24h；≤10：50% 劑量 q24h；HD 6 小時約清除 60%，透析後給。英國 SmPC：CAPD 劑量減半 q24h；並註明依實際體重給藥的肥胖者血中濃度較高。
 ：Acyclovir tablets／capsules US PI：帶狀疱疹 800 mg q4h 5 次／日 × 7–10 天；初次生殖器疱疹 200 mg 5 次／日 × 10 天；抑制 400 mg BID；成人水痘 800 mg QID × 5 天。腎調整：800 mg q4h → CrCl 10–25：800 mg q8h；0–10：800 mg q12h；200 mg q4h 或 400 mg q12h → CrCl 0–10：200 mg q12h。
@@ -38202,6 +39345,7 @@ v1.0（2026-11-15）
 ：CDC. Clinical Guidance for People at Risk for Severe Varicella。VariZIG 暴露後盡快、10 天內；口服 acyclovir 或 valacyclovir 可用於中重度風險者（含 >12 歲未接種者），出疹 24 小時內給；IV acyclovir 用於重症（肺炎、腦炎、血小板低下、嚴重肝炎）、免疫低下（含高劑量類固醇 >14 天）、懷孕併發症；acyclovir 抗藥者用 foscarnet。
 ：CDC. Influenza Antiviral Medications: Summary for Clinicians（頁面更新 2026-03-10）。住院、重症／病情進展、高風險者盡快治療，不等檢驗；住院者 oseltamivir 口服或經腸道，>48 小時仍可能有效；住院者不常規用 zanamivir、baloxavir、peramivir；嚴重免疫低下不建議 baloxavir 單用；懷孕首選 oseltamivir、不建議 baloxavir；暴露後預防 7 天、機構群聚至少 2 週並持續到最後一例後 1 週；腎調整表（oseltamivir、peramivir）。
 ：CDC. Preexposure Prophylaxis for the Prevention of HIV Infection in the United States — 2021 Update: A Clinical Practice Guideline。本版未取得全文，依 CDC 臨床指引網頁與二手整理（CDC 快速指南、AETC、CCO 摘要）：口服 F/TDF（emtricitabine 200 mg／tenofovir DF 300 mg）每日，成人與青少年；F/TAF（200/25 mg）每日，男性與 transgender women；CAB 600 mg IM，第 0、1 個月，之後每 2 個月。F/TDF eCrCl <60 不建議；F/TAF eCrCl ≥30 可用；口服 PrEP 每 3 個月 HIV 檢驗，每次最多開 90 天；CAB 每次注射前 HIV 檢驗（含 HIV-1 RNA），不需定期腎功能與血脂檢驗；<50 歲且 eCrCl ≥90 者每年、其他每 6 個月評估腎功能；F/TAF 每年測 triglyceride、cholesterol 與體重；停 CAB 後 8 週內接口服 PrEP。2-1-1 事件型的新增指引內容本版未取得。
+：California Department of Public Health, 2025-04-24 提供者通知「Mpox Treatment with Tecovirimat (TPOXX) and Other Therapeutics」：多數 mpox 為輕症自限，所有病人給支持療法與疼痛處理；tecovirimat 單用在臨床試驗未對輕中度 mpox 有效；沒有專為 mpox 核准的藥物；標準療程 14 天，必要時短期延長（例如再 3–7 天並密切監測安全與反應）；成人與兒童劑量見 CDC EA-IND 計畫書（本版未取得・請確認）。
 ：Cesaro S, et al. ECIL guidelines for the prevention, diagnosis and treatment of BK polyomavirus-associated haemorrhagic cystitis in haematopoietic stem cell transplant recipients. J Antimicrob Chemother 2018;73(1):12–21。本版只取得摘要：BKPyV-HC 於異體 HSCT 兒童 8–25%、成人 7–54%；診斷需膀胱炎症狀、肉眼血尿、尿 BKPyV 負荷 >7 log10 copies/mL，並排除其他病因，血中病毒量可作較專一的追蹤指標；無隨機對照試驗支持抗病毒預防或治療；充分水化與膀胱沖洗預防價值有限；fluoroquinolone 預防與治療無效且增加抗藥；高壓氧或纖維蛋白膠僅小型病例系列顯示邊際效果；cidofovir 雖有降低病毒量的報告，現有資料不支持常規使用。全文建議強度本版未取得。
 ：Chrisp & Clissold, Drugs 1991;41:104。Foscarnet 抑制人類疱疹病毒 DNA polymerase 與 HIV 反轉錄酶；體外抑制 HIV 複製；acyclovir 抗藥 VZV 有部分病例報告成功使用。年代較早，僅作活性範圍參考。
 ：Clin Infect Dis 2026;82(6):e1384。丹麥全國 HSV-1 腦炎世代：LP 後延遲 acyclovir >6 小時，6 個月死亡相對風險 1.85（95% CI 1.01–3.45）；英、法、丹麥指引建議入院 6 小時內開始。觀察性研究。
@@ -38209,22 +39353,27 @@ v1.0（2026-11-15）
 ：Copegus（ribavirin）US PI 與 EASL 2020：與 DAA 併用時，成人常用 1,000 mg／日（<75 kg）或 1,200 mg／日（≥75 kg）分次隨餐；Child-Pugh C 或貧血者可由 600 mg／日起，依耐受度調整。腎功能：CrCl 30–50 mL/min 隔日交替 200 mg 與 400 mg；CrCl <30 或 HD 200 mg QD（Copegus 仿單，與 DAA 併用的腎功能劑量請確認）。孕婦禁用、男女伴侶避孕至停藥後 6 個月。
 ：Corcorran & Kim, Top Antivir Med 2023;31:14。共感染者的 ART 以 TDF 或 TAF 加 emtricitabine 或 lamivudine 為骨幹（同時作用於 HBV 與 HIV）；考慮不含 tenofovir 的雙藥方案時需另評估 HBV。
 ：Cymevene（ganciclovir）SmPC（EMA referral annex）：治療誘導 5 mg/kg q12h × 14–21 天；preemptive 誘導 5 mg/kg q12h × 7–14 天；維持 5 mg/kg QD。腎調整（誘導／維持）CrCl ≥70：5 q12h／5 q24h；50–69：2.5 q12h／2.5 q24h；25–49：2.5 q24h／1.25 q24h；10–24：1.25 q24h／0.625 q24h；<10（HD）：1.25／0.625 mg/kg 每週 3 次於透析後。ANC <500 或血小板 <25,000 避免使用。
+：EASL Clinical Practice Guidelines on hepatitis E virus infection. J Hepatol 2018;68:1256–71. doi:10.1016/j.jhep.2018.03.005。重點（來源：摘要與投影片整理，非全文）：嚴重急性 HEV 或 ACLF 可考慮 ribavirin（C2）；實體器官移植的慢性 HEV 診斷時盡可能減少免疫抑制（B1）；HEV RNA 偵測後 3 個月仍持續者建議 ribavirin 單用 12 週（B1）；12 週後血清或糞便仍可測得 HEV RNA 者可續用到共 6 個月（C2）。ribavirin 劑量本版未取得原文・請確認。
 ：EASL Clinical Practice Guidelines on the management of hepatitis B virus infection（J Hepatol 2025）。首選 entecavir、tenofovir disoproxil、tenofovir alafenamide；不建議 lamivudine、adefovir、telbivudine。PDF 表 14（治療分層）文字擷取不完整，分層細節請以原文確認。
 ：EASL recommendations on treatment of hepatitis C: Final update of the series（J Hepatol 2020;73:1170）。pangenotypic 方案：glecaprevir/pibrentasvir 8 週（無肝硬化）、sofosbuvir/velpatasvir 12 週；失代償肝硬化 sofosbuvir/velpatasvir ＋ ribavirin 12 週。2023 更新本版未取得・請確認。
 ：Epclusa（sofosbuvir/velpatasvir）US PI：400/100 mg QD；無肝硬化或代償性肝硬化 12 週；Child-Pugh B、C 併用 ribavirin 12 週。美國仿單 sofosbuvir 已不限 eGFR（2019 起 eGFR <30 與透析可用）。避免併用 amiodarone（嚴重心搏過緩）、rifampin、St. John's Wort；質子幫浦抑制劑、H2 阻斷劑、制酸劑有交互作用（依仿單時程）。HBV 再活化警語。
 ：European AIDS Clinical Society Guidelines v13.0（2025-10）；Ambrosioni J, et al. HIV Med 2025。本版依新聞整理（aidsmap、EATG、HIV i-Base；標題與摘要），未取得全文：PEP 首選 BIC/FTC/TAF；PrEP 納入長效 CAB 與 lenacapavir；近 6 週有高風險暴露或使用長效藥時，PrEP 前建議 HIV RNA；對所有人支持事件型 PrEP（2:1:1 或 2:7）；已在口服 PrEP 者暴露後盡快服 2 錠，之後每日 1 錠直到醫師評估；在 PrEP 或長效 CAB 期間感染者，起始治療避免雙藥，CAB 感染者用含 boosted darunavir 的三藥。請以原文確認。
 ：Extended-duration letermovir prophylaxis after allogeneic HSCT（MK-8228-040）. Lancet Haematol 2024;11:e127–e135（phase 3，第一作者請確認）：高風險 R+ 延長至 200 天，降低晚發臨床顯著 CMV 感染，安全性相近。
+：FDA 2026-05-22 accelerated approval：Hepcludex（bulevirtide-gmod）8.5 mg 皮下注射 QD，用於無肝硬化或代償性肝硬化的慢性 HDV 成人；持續到不再有反應，最佳療程未知；confirmatory 長期結果試驗進行中。依據 MYR301（phase 3，Wedemeyer H, et al. N Engl J Med 2023;389:22–32）。歐盟、英國等已核准 2 mg。不降低 HBV 病毒量；停藥可能復發。本條來源為 Gilead 新聞稿與 Hepatitis B Foundation，不是 FDA 仿單全文・請確認。
+：FDA 2026-10-09 核准 Hovilpri（pritelivir）100 mg 錠：免疫低下成人、對 acyclovir／valacyclovir／famciclovir 難治（含或不含抗藥證據）的黏膜皮膚 HSV 病灶。依據 PRIOH-1 Part C（NCT03073967，101 人，open-label，對照為研究者選擇的 foscarnet、cidofovir 或 imiquimod）：第 28 天完全癒合 63% vs 34%（校正差 28.4 個百分點，95% CI 9.6–47.3）。用法：第 1 天 400 mg，之後 100 mg QD，用到病灶癒合。PPI：避免 esomeprazole、rabeprazole；omeprazole、lansoprazole 每日 >20 mg、pantoprazole 每日 >40 mg 亦避免。本條來源為 Drugs.com、FDA 新聞轉載與學會報導，不是仿單全文・請確認。
+：FDA 2026-10-20 核准 Hibsago（bepirovirsen，GSK）：與 NA 併用，用於無肝硬化成人慢性 B 型肝炎；皮下注射最多 24 週，NA 在最後一次注射後至少續用 24 週。B-Well 1／2（Hou J, et al. N Engl J Med 2026;394(24):2395–2406）：已用 NA 抑制 DNA、HBsAg ≤3,000 IU/mL 的無肝硬化成人，300 mg 每週（第 4、11 天另有 loading）× 24 週；功能性治癒（停藥後 DNA 低於定量下限且 HBsAg 陰性 ≥24 週）19% vs 0%（合併 233/1,220 vs 0/614）。有 boxed warning，內容本版未取得・請確認。本條來源為 FDA／GSK 新聞與媒體報導，不是仿單全文。
 ：FDA Drug Safety Communication（2016-10，2017 全類別仿單加 boxed warning）：HCV 直接作用抗病毒藥（DAA）治療的 HBV 共感染者，包含 HBsAg 陽性與 HBsAg 陰性但 anti-HBc 陽性者，可能發生 HBV 再活化，部分致猛爆性肝炎、肝衰竭或死亡；須治療前篩檢，治療中與治療後監測。
 ：Famvir（famciclovir）US PI：帶狀疱疹 500 mg q8h × 7 天（CrCl 40–59：q12h；20–39：q24h；<20：250 mg q24h；HD：每次透析後 250 mg）；復發生殖器 1 g BID × 1 天（40–59：500 mg q12h × 1 天；20–39：500 mg 單次；<20：250 mg 單次；HD 後 250 mg）；口唇 1500 mg 單次（40–59：750 mg；20–39：500 mg；<20：250 mg）；抑制 250 mg BID（20–39：125 mg q12h；<20：125 mg q24h；HD 後 125 mg）；HIV 復發 500 mg BID × 7 天（20–39：500 mg q24h；<20：250 mg q24h）。
 ：Florescu DF, Schaenman JM; AST IDCOP. Adenovirus in solid organ transplant recipients — Guidelines from the American Society of Transplantation Infectious Diseases Community of Practice. Clin Transplant 2019;33(9):e13527。本版依 PubMed 摘要與 GuidelineCentral 核對：無症狀受者不應做腺病毒監測；症狀者定量 PCR 可輔助決定是否治療與評估反應；支持治療與減免疫抑制是首要；抗病毒藥缺乏前瞻隨機試驗，但嚴重、進展或播散性疾病在多數移植中心以 IV cidofovir 為標準做法；cidofovir 應併充分水化與 probenecid，最佳劑量與頻率未知；IVIG 可能對低 γ-球蛋白血症者有益；腺病毒特異 T 細胞治療為未來方向。
 ：Foolad F, et al. Oral versus aerosolized ribavirin for the treatment of RSV infections in HCT recipients. Clin Infect Dis 2019（124 例）：上→下呼吸道進展與 30 天死亡率兩組相近，口服可作替代。
 ：Foscavir（foscarnet）US PI：CMV 誘導 90 mg/kg q12h 或 60 mg/kg q8h × 2–3 週，維持 90–120 mg/kg QD；acyclovir 抗藥 HSV 40 mg/kg q8–12h × 2–3 週或至癒合。腎調整以 CrCl（mL/min/kg）計：CMV 90 mg/kg q12h 欄 >1.4：90 q12h；>1.0–1.4：70 q12h；>0.8–1.0：50 q12h；>0.6–0.8：80 q24h；>0.5–0.6：60 q24h；0.4–0.5：50 q24h；<0.4 不建議。HSV 40 mg/kg q12h 欄：40 q12h／30 q12h／20 q12h／35 q24h／25 q24h／20 q24h。黑框：腎毒性為主要毒性，需水化並頻繁監測 Cr；電解質（Ca、Mg、K、P）異常可致癲癇。
 ：Ganciclovir 注射劑美國 PI 微生物學段：在人體臨床研究中對 CMV 與 HSV 有活性；核准適應症為 CMV（視網膜炎、移植預防）。VZV 活性未在取得的段落中出現，請確認。
+：Ghany MG, Pan CQ, Lok AS, Feld JJ, Lim JK, Wang SH, Kim AY, Tang AS. AASLD/IDSA Practice Guideline on treatment of chronic hepatitis B. Hepatology 2026;83(4):974–997（2025-11-04 線上發表）。doi:10.1097/HEP.0000000000001549。本版已讀全文約前 100,000／125,031 字元（含 Table 1、Table 3、Recommendation 1–5、Figure 4–5）；HBV 再活化預防與失代償肝硬化的 entecavir 劑量在未讀段落・請確認。
 ：Hirsch HH, Randhawa PS; AST IDCOP. BK polyomavirus in solid organ transplantation — Guidelines from the American Society of Transplantation Infectious Diseases Community of Practice. Clin Transplant 2019;33(9):e13528。本版依 PubMed 摘要與 GuidelineCentral 條列核對，全文未取得：腎移植受者以 QNAT 篩檢血漿 BKPyV-DNAemia（Moderate, Strong）；無排斥風險升高且基線腎功能者，減免疫抑制前不需切片（Moderate, Strong）；喪失移植腎後可再移植，需定期篩檢病毒複製。
-：Hirsch HH, et al. Fourth European Conference on Infections in Leukaemia (ECIL-4): guidelines for diagnosis and treatment of human respiratory syncytial virus, parainfluenza virus, metapneumovirus, rhinovirus, and coronavirus. Clin Infect Dis 2013;56:258–66。HSCT／血液惡性腫瘤 RSV：可延後 conditioning、aerosolized ribavirin，或 off-label 全身性 ribavirin 及／或 IVIG。各條強度本版未逐條核對。
 ：Hwang JP, et al. Hepatitis B Virus Screening and Management for Patients With Cancer Prior to Therapy: ASCO Provisional Clinical Opinion Update. J Clin Oncol 2020;38:3698–3715。所有開始抗癌治療者篩檢 HBsAg、anti-HBc（total Ig 或 IgG）、anti-HBs；HBsAg 陽性者預防；HBsAg 陰性、anti-HBc 陽性者，接受 anti-CD20 或 HSCT 給預防，其他監測；預防持續到治療結束後至少 12 個月（anti-CD20 更久）。細節請確認。
 ：IDSA Guidelines on the Treatment and Management of Patients with COVID-19（living guideline，2025-05-30 版）。住院未用氧且 SpO2 >94%：建議不常規使用 remdesivir；用氧但未插管／ECMO：建議 remdesivir 5 天（優於 10 天）；插管或 ECMO：建議不常規開始 remdesivir（皆 conditional）。依 InpharmD 與 SHM pocket card 轉述，請以原文確認。
 ：International Valacyclovir Cytomegalovirus Prophylaxis Transplantation Study Group. Valacyclovir for the prevention of cytomegalovirus disease after renal transplantation. N Engl J Med 1999;340:1462-70。全文未取得，僅引用題目與出處；各國仿單適應症請確認。
+：Khawaja F, Zamora D, Yong MK, Hakki M, et al. Series #11: Updated Cytomegalovirus Guidelines in Hematopoietic Cell Transplant and Cellular Therapy Recipients. Transplant Cell Ther 2025（2025-06-20 接受）。更新 2021 版：移植前血清、letermovir 預防期間、maribavir 的地位等。本版只看到摘要片段・內容請確認。
 ：Kofman AD, et al. 2025 US Public Health Service Guidelines for the Management of Occupational Exposures to HIV and Recommendations for Postexposure Prophylaxis in Healthcare Settings. Infect Control Hosp Epidemiol 2025;46:863–73。本版全文未取得，只依摘要與二手整理（UIC 藥學 FAQ、EATG 與 SHEA 新聞）：首選 BIC/FTC/TAF，或 DTG ＋（TAF 或 TDF）＋（FTC 或 3TC）；替代為 darunavir（併 cobicistat 或 ritonavir）＋（TAF 或 TDF）＋（FTC 或 3TC）；移除 2013 版首選 raltegravir＋TDF/FTC（因需多次給藥）；基線檢驗正常時不再常規追蹤藥物毒性檢驗；最終 HIV 檢驗（實驗室 Ag/Ab＋NAT）不晚於暴露後 12 週；12 個月內用過 CAB 長效 PrEP 的暴露者需加做 HIV 檢驗；有來源病毒量測不到與暴露者正在用 PrEP 的專門建議；腎功能不全（CrCl 30–49、<30）與肝功能不全另有用藥指引。療程、起始時效、劑量與懷孕建議本版未取得。
 ：Kotton CN, et al. The Fourth International Consensus Guidelines on the Management of Cytomegalovirus in Solid Organ Transplantation. Transplantation 2025;109:1066–1110（GRADE）。預防：腎 D+/R− prophylaxis（valganciclovir、ganciclovir 或 letermovir；strong, high）6 個月；腎 R+ 3 個月；肝 D+/R− 3–6 個月、R+ 3 個月；心 D+/R− 3–6 個月、R+ 3 個月；肺 D+/R− 12 個月、R+ 6–12 個月；胰、腸、VCA 建議 prophylaxis。D−/R−（用去白血球或 CMV 陰性血品）不需 CMV 預防，應考慮其他疱疹病毒預防（strong, high）。Preemptive：至少每週 12–16 週。不建議低劑量 valganciclovir。治療：valganciclovir 900 mg q12h 或 IV ganciclovir 5 mg/kg q12h（strong, moderate），輕中度可口服者口服優先；危及生命或重症用 IV（strong, low）；不用 acyclovir、valacyclovir、口服 ganciclovir；至少 2 週並至臨床緩解且 DNAemia 低於院內閾值（高敏感度單次 <LLOQ，或兩次每週檢體）；前 2 週病毒量持平或上升但臨床改善不換藥；不因白血球低而減量；用未標準化 GFR（如 CG mL/min）調劑量。難治：≥2 週適當治療後下降 ≤1 log10；累積 ≥4 週且 ≥2 週反應不佳時做基因型（檢體 >3 log10 IU/mL；UL97、UL54，letermovir 看 UL56）；maribavir 為抗藥主要替代（strong, high），避免用於 CNS 或視網膜炎、不可與 ganciclovir 併用；foscarnet 用於病況差、病毒量高（常用 ≥4.7 log10）者（weak, low）；cidofovir 試驗表現差；letermovir 單用治療證據不足；IVIG 可考慮於重症（weak, low）；次級預防不常規，高風險 8–12 週。
 ：Kotton CN, et al. The Second International Consensus Guidelines on the Management of BK Polyomavirus in Kidney Transplantation. Transplantation 2024;108(9):1834–66（GRADE）。本版依全文 PDF 前半（表 4–7）核對，治療失敗與再移植段落被截斷。所有腎移植受者血漿 BKPyV-DNAemia 篩檢：每月至第 9 個月，之後每 3 個月至 2 年（兒童 3 年）（strong, B）；1,000–10,000 copies/mL 於 2–3 週內複驗（weak, B）；>10,000 單次或 1,000–10,000 兩次相隔 2–3 週 → 減免疫抑制（strong B／weak B）；策略 1 先減抗代謝藥 ≥50%，4 週未下降 ≥10 倍則停抗代謝藥並將 prednisone 降至 5–10 mg/日，再降 CNI 至 tacrolimus 約 5 ng/mL 或 cyclosporine 約 100 ng/mL（weak, C）；策略 2 先減 CNI 25–50% 至 tacrolimus 3–5 ng/mL 或 cyclosporine 75–125 ng/mL，4 週未下降再減抗代謝藥（weak, C）；兩種策略無隨機試驗比較；切片證實 PyVAN 即使血漿確認尚未回也減免疫抑制（strong, B）；成人無移植腎功能異常且無高免疫風險不需切片；IHC（SV40 LTag）確診（strong, A）；IVIG 輔助（weak, D）；cidofovir、leflunomide（strong, B）、fluoroquinolone、statin（strong, A）不使用；mTOR 抑制劑轉換證據不足；喪失移植腎後再移植可行，需血漿 DNAemia 測不到，不常規摘除移植腎。
@@ -38232,15 +39381,17 @@ v1.0（2026-11-15）
 ：Letermovir 只對 CMV 有活性；因對 HSV、VZV 無活性，HSCT 預防期間需另給 acyclovir、valacyclovir 或 famciclovir。
 ：Livtencity（maribavir）EMA 產品資訊：與 ganciclovir 或 valganciclovir 併用列為禁忌（maribavir 抑制 pUL97，可能拮抗其活性）。
 ：Livtencity（maribavir）US PI：400 mg BID（美國未定療程；EU 8 週），治療移植後對 ganciclovir、valganciclovir、cidofovir 或 foscarnet 難治（含或不含抗藥）之 CMV。美國：併用 carbamazepine 或 rifabutin 增為 800 mg BID，phenytoin 或 phenobarbital 增為 1,200 mg BID；EU：無法避免強或中度 CYP3A 誘導劑（carbamazepine、efavirenz、phenobarbital、phenytoin）時 1,200 mg BID，rifampin、rifabutin、St. John's Wort 不建議。禁止與 ganciclovir、valganciclovir 併用。會升高 CYP3A、P-gp、BCRP 敏感受質濃度（如 tacrolimus）。台灣：克巨染膜衣錠（台灣武田）。美國仿單：不建議與 ganciclovir、valganciclovir 併用（maribavir 抑制 pUL97，可能拮抗其活性）；EU SmPC 則列為禁忌（見 MAR_EU）。
-：Ljungman P, et al. Guidelines for the management of cytomegalovirus infection in patients with haematological malignancies and after stem cell transplantation from the 2017 ECIL-7. Lancet Infect Dis 2019;19:e260–e272。本版未取得全文，HSCT 的 preemptive 閾值與療程請確認；成大藥劑部摘要：高劑量 acyclovir／valacyclovir 可減少感染但不減少疾病，foscarnet 毒性大不適合長期預防，letermovir 減少感染且無明顯毒性。
+：Ljungman P, et al. Lancet Infect Dis 2025;25(8):e451–e462. doi:10.1016/S1473-3099(25)00069-6。更新 ECIL-7（2019）：涵蓋 CMV 血清狀態評估、免疫監測、letermovir 預防、難治與抗藥 CMV、兒童；CAR-T 與 T 細胞接合型抗體列為新增風險族群。本版取得前言與關鍵訊息，建議強度（PDF 文字 OCR 錯亂）未核對・請確認。
 ：MSD Manual Professional：herpes zoster（2026-05 更新）。famciclovir、valacyclovir 口服生體可用率較 acyclovir 好，為優先；一般 7–10 天；免疫低下者有專家建議延長到全部結痂；輕度免疫低下可口服，嚴重免疫低下用 IV acyclovir；懷孕以 acyclovir 優先、valacyclovir 可用，famciclovir 懷孕資料少一般不建議。
 ：Maribavir 體外對 CMV 與 EBV 有抑制作用，對 HSV-1、HSV-2、VZV、HHV-6、HHV-8 無活性；體外拮抗 ganciclovir（約 13 倍），對 cidofovir、foscarnet 無影響。
 ：Marin M, et al. MMWR 2013（VariZIG）與 AAP Red Book 2018（Lachiewicz, Prev Med Rep 2019 表 3 整理）：無免疫力且高風險（免疫低下、懷孕等）：VariZIG 125 IU/10 kg（最多 625 IU）IM，10 天內（理想 96 小時內）；無 VariZIG → IVIG 400 mg/kg；兩者皆無 → 暴露後第 7–10 天開始 acyclovir 或 valacyclovir 共 7 天（AAP：acyclovir 20 mg/kg QID、上限 800 mg／次；valacyclovir 20 mg/kg TID、上限 1 g／次）。可接種者 3–5 天內接種疫苗。
 ：Matthes-Martin S, et al. European guidelines for diagnosis and treatment of adenovirus infection in leukemia and stem cell transplantation: summary of ECIL-4 (2011). Transpl Infect Dis 2012;14(6):555–63。本版只取得摘要：兒童風險較高；T 細胞清除、非血緣或臍帶血移植、GVHD III–IV 級與淋巴球低下是風險因子；高風險者以定量 PCR 監測；cidofovir 是最常用的抗病毒藥，但未做對照試驗；腺病毒特異 T 細胞治療發展中。全文建議強度與閾值本版未取得。
 ：Mavyret（glecaprevir/pibrentasvir）US PI：300/120 mg（3 錠）QD 隨餐。未治療無肝硬化 8 週；代償性肝硬化 8 週（美國仿單）。任何腎功能（含透析）不需調整。Child-Pugh B 不建議、C 禁用。禁止併用 atazanavir、rifampin 等；HBsAg 陽性或 anti-HBc 陽性者有 HBV 再活化風險。
 ：McGill F, et al. The UK joint specialist societies guideline on the diagnosis and management of acute meningitis and meningococcal sepsis in immunocompetent adults. J Infect 2016;72:405–38（BMJ Best Practice 轉引）。病毒性腦膜炎沒有證實有效的特定治療，抗病毒藥不常規使用，由專科決定；acyclovir／valacyclovir 不常規作為反覆 HSV 腦膜炎的預防；若專科開始長期治療，1 年後停。
+：Mikulska M, et al. Updated recommendations for the management of hepatitis B, C, and E virus infections in patients with haematological malignancies and those undergoing HCT: ECIL-9. Lancet Haematol 2025（PMID 40306834）。本版只確認其存在，內容未核對・請確認。
 ：Monto AS, et al. Efficacy of Baloxavir Treatment in Preventing Transmission of Influenza. N Engl J Med 2025;392:1582–1593。Phase 3b：發病 48 小時內單次 baloxavir 治療指標病人，家戶接觸者第 5 天前檢驗確認感染的勝算下降 32%（9.5% vs 13.4%）；7.2% 治療者出現抗藥變異，但未在家戶接觸者檢出。
 ：NIH COVID-19 Treatment Guidelines（最後更新 2024-02-29，之後停止更新）。因 COVID 住院、未用氧：免疫低下（BIIb）或其他高風險（BIII）者給 remdesivir；一般氧氣：remdesivir＋dexamethasone（BIIa）；HFNC／NIV：dexamethasone（AI）或 dexamethasone＋remdesivir（BIIb）。
+：NIH／NIAID 2025-03-12 新聞稿（Wilkin T, et al. CROI 2025）：STOMP（clade II，7 國）tecovirimat 14 天單用未縮短病灶消退時間、也未改善疼痛（第 29 天消退約 83% vs 84%），安全性可接受；PALM007（clade I，剛果民主共和國，Tshiani O, et al. IDWeek 2024）同樣無臨床效益；兩試驗皆提前停止。兒童、孕婦、嚴重免疫低下或特定皮膚病者在 STOMP 分在 open-label 組，無隨機療效資料。
 ：New York State Department of Health AIDS Institute. PEP to Prevent HIV Infection, Tables 2–5（2025-12-05）。≥40 kg 首選：bictegravir 50 mg／TAF 25 mg／emtricitabine 200 mg 單錠每日 1 次，或 dolutegravir 50 mg 每日 1 次加 NRTI 骨幹；皆口服 28 天；dolutegravir 併用 metformin 限每日 1 g；基線 CrCl <50 mL/min 時 3TC／FTC ＋ TDF 需調整劑量。本版為搜尋摘錄，非全文。
 ：Ontario Health. Summary of Recommendations for Drug Therapy for Adults with COVID-19（2025-07）。嚴重度定義（SpO2 >92%）；remdesivir 若 nirmatrelvir/ritonavir 不能用，7 天內開始；嚴重者開始 remdesivir 後進展為危急仍完成療程。
 ：Open Forum Infect Dis 2022（ofac644）醫師問卷（223 人）：39% 一律治療、34% 重症才治療、10% 很少治療；最常用 IV acyclovir 後改 valacyclovir（61%）；IV 劑量多為 10 mg/kg TID（91%）；總療程中位數 7 天（IQR 7–10）；58% 對免疫低下者處置不同（延長療程或 IV）。屬實務調查，非指引。
@@ -38273,7 +39424,11 @@ v1.0（2026-11-15）
 ：Werner RN, et al. European consensus-based (S2k) Guideline on the Management of Herpes Zoster – guided by the EDF in cooperation with EADV, Part 2: Treatment. J Eur Acad Dermatol Venereol 2017;31:20–29。↑↑：≥50 歲任何部位、頭頸部、中重度疼痛、出血壞死、>1 節段、衛星病灶、黏膜侵犯、免疫低下（#18）；↑：<50 歲軀幹四肢無併發症（#19）；72 小時內開始，複雜或高風險、眼耳部、免疫低下者 72 小時後仍可（#23）；<50 歲無併發症 >72 小時 ↓（#24）。IV acyclovir 用於複雜 HZ 或高風險（#20），內臟／CNS 可升到 15 mg/kg TID、最長 21 天。ARN：IV acyclovir 10 mg/kg TID 7–10 天後口服 800 mg 5 次／日 3–4 個月（↑↑ #26）＋類固醇（↑ #27）。Ramsay Hunt：IV acyclovir＋口服類固醇（↑ #28）。眼部：acyclovir 3% 眼藥膏 5 次／日（↑↑ #42）。懷孕無併發症風險者不建議（↓ #29），有風險者 acyclovir 優先（↑ #30）。Brivudin 禁用於免疫低下及 4 週內用過 5-fluoropyrimidine 者。
 ：Workowski KA, et al. Sexually Transmitted Infections Treatment Guidelines, 2021. MMWR Recomm Rep 2021;70(4)。初次：acyclovir 400 mg TID、famciclovir 250 mg TID 或 valacyclovir 1 g BID，7–10 天（未癒合可延長）。復發間歇：acyclovir 800 mg BID × 5 天或 TID × 2 天、famciclovir 1 g BID × 1 天／500 mg 一次後 250 mg BID × 2 天／125 mg BID × 5 天、valacyclovir 500 mg BID × 3 天或 1 g QD × 5 天。抑制：acyclovir 400 mg BID、valacyclovir 500 mg QD（≥10 次／年可能較差）或 1 g QD、famciclovir 250 mg BID。HIV：間歇 acyclovir 400 mg TID、famciclovir 500 mg BID、valacyclovir 1 g BID 各 5–10 天；抑制 acyclovir 400–800 mg BID–TID、famciclovir 500 mg BID、valacyclovir 500 mg BID。懷孕 36 週起抑制：acyclovir 400 mg TID 或 valacyclovir 500 mg BID。重症：IV acyclovir 5–10 mg/kg q8h 2–7 天或至改善，再口服完成總療程 ≥10 天。
 ：Xocova（ensitrelvir）依疾管署領用方案：第 1 天 375 mg，第 2–5 天 125 mg QD；發病 3 天內；不需腎調整；孕婦或可能懷孕者禁用；腎功能不全併用 colchicine 者不可用。強效 CYP3A 抑制劑。美國 FDA 未核准、IDSA 2025 未納入。
+：You et al.（APASL Viral Elimination Taskforce）. APASL clinical practice guidelines on the management of chronic hepatitis B infection: a 2026 update. Hepatol Int 2026. doi:10.1007/s12072-026-11108-1（2026-02-17 接受）。本版只確認其存在與出處，條文未逐條核對・請確認；再活化預防另有專門指引，本版未取得。
 ：cidofovir 用於腺病毒為 off-label，無仿單劑量，各中心不同，以下為文獻中常見做法而非指引：5 mg/kg 每週 1 次併 probenecid（EBMT 中心調查中最常用，Cesaro S, et al.，年份與期刊本版未核對）；1 mg/kg 每週 3 次，腎毒性較低（兒童 HSCT 與 SOT 回溯研究，PMC3031399、Pediatr Transplant 2018;22）；CrCl <50 mL/min 者曾用 0.5 mg/kg 每週 3 次（Bruminhent J, et al. Open Forum Infect Dis 2019，腎移植回溯研究）。probenecid 常用 1.25 g/m²：給藥前 3 小時及給藥後 2、8 小時（PMC4863673 回溯研究）。仿單（美國）對 CMV 視網膜炎的限制仍適用於此類腎毒性風險：SCr >1.5、CrCl ≤55 或尿蛋白 ≥2+ 禁止開始。
+：von Lilienfeld-Toal M, et al. Community-acquired respiratory virus infections in patients with haematological malignancies or haematopoietic cell transplantation: updated recommendations from ECIL-10. Lancet Infect Dis 2026;26(3):e193–e206（2025-08-27 線上發表）。doi:10.1016/S1473-3099(25)00365-2。更新 ECIL-4（2013）。摘要：RSV 已核准疫苗可依當地核准考慮（證據少）；免疫缺陷評分高的 HCT 受者建議口服 ribavirin 或 IVIG，或兩者併用。各條強度本版未取得全文・請確認。
+：【ECIL-10（2025）已更新此指引，本條保留供對照】Ljungman P, et al. Guidelines for the management of cytomegalovirus infection in patients with haematological malignancies and after stem cell transplantation from the 2017 ECIL-7. Lancet Infect Dis 2019;19:e260–e272。本版未取得全文，HSCT 的 preemptive 閾值與療程請確認；成大藥劑部摘要：高劑量 acyclovir／valacyclovir 可減少感染但不減少疾病，foscarnet 毒性大不適合長期預防，letermovir 減少感染且無明顯毒性。
+：【ECIL-10（2025／26）已更新呼吸道病毒建議，見 ECIL10_CARV；本條保留供對照】Hirsch HH, et al. Fourth European Conference on Infections in Leukaemia (ECIL-4): guidelines for diagnosis and treatment of human respiratory syncytial virus, parainfluenza virus, metapneumovirus, rhinovirus, and coronavirus. Clin Infect Dis 2013;56:258–66。HSCT／血液惡性腫瘤 RSV：可延後 conditioning、aerosolized ribavirin，或 off-label 全身性 ribavirin 及／或 IVIG。各條強度本版未逐條核對。
 ：健保署藥品給付規定 10.7.14 Maribavir（如 Livtencity）（113/11/1 生效）：對一種或多種先前療法具抗藥性、難治或耐受度不佳之成人 HSCT 或 SOT 後 CMV 感染或疾病；首次療程限 8 週、需事前審查。本 app 不判定健保給付，此處只用來確認台灣已上市。
 ：台灣感染症醫學會「抗流感病毒藥物使用建議（2024 年修訂版）」（2024-11 公告，見 MyGoPen 2025-02-12 轉述）。本版未取得全文，個別建議請確認。
 ：完整測試（四種寬度、深淺色、全部選項）通過。含「抗病毒譜」分頁（藥物×病毒矩陣與交叉活性註記）。HBV、HCV、流感、COVID-19、RSV、HSV、VZV、CMV 同前。HIV（nPEP、oPEP、PrEP）、BK、adenovirus 同 v0.3。
