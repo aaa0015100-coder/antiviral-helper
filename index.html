@@ -1,0 +1,1396 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="抗病毒助手">
+<style>
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;font-size:14px}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<title>抗病毒藥物助手</title>
+<style>
+/* Layout: 處方箋式雙欄 — 左欄病人卡（腎功能、過敏、懷孕）固定，右欄分頁決策流程；劑量以等寬字突出，可直接抄寫醫囑 */
+:root{
+  --bg:#edf1f0; --surface:#ffffff; --surface2:#f5f8f7; --ink:#13201d; --muted:#596a66; --line:#d3ddda;
+  --accent:#0a6a5f; --accent-ink:#ffffff; --accent-weak:#dbeee9;
+  --warn:#8f5400; --warn-bg:#fcefd8; --danger:#ae2a20; --danger-bg:#fae4e1;
+  --ok:#1d7344; --ok-bg:#def2e6; --info:#2a5a86; --info-bg:#e3edf7;
+  --f-body:"IBM Plex Sans","Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono","Noto Sans TC",ui-monospace,Menlo,Consolas,monospace;
+  --s3:#1d6b45; --s3-ink:#ffffff; --s2:#9ccf72; --s2-ink:#14301c; --s1:#f0c64a; --s1-ink:#3a2c00; --s0:#d9534f; --s0-ink:#ffffff;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e1514; --surface:#151f1d; --surface2:#1a2624; --ink:#e1ebe8; --muted:#94a6a1; --line:#2a3a37;
+  --accent:#4dc0ae; --accent-ink:#04201b; --accent-weak:#163933;
+  --warn:#f2b45c; --warn-bg:#382810; --danger:#ff8b80; --danger-bg:#3b1a17;
+  --ok:#6fd39a; --ok-bg:#142e1e; --info:#93bde6; --info-bg:#16283a; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#0e1514; --surface:#151f1d; --surface2:#1a2624; --ink:#e1ebe8; --muted:#94a6a1; --line:#2a3a37;
+  --accent:#4dc0ae; --accent-ink:#04201b; --accent-weak:#163933;
+  --warn:#f2b45c; --warn-bg:#382810; --danger:#ff8b80; --danger-bg:#3b1a17;
+  --ok:#6fd39a; --ok-bg:#142e1e; --info:#93bde6; --info-bg:#16283a; color-scheme:dark;}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;-webkit-text-size-adjust:100%}
+.wrap{max-width:1260px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:18px 48px}
+h1,h2,h3{text-wrap:balance;margin:0}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px 16px;margin-bottom:12px}
+.brand h1{font-size:1.45rem;font-weight:700;letter-spacing:.01em}
+.brand .sub{color:var(--muted);font-size:.85rem}
+.ver{font-family:var(--f-mono);font-size:.78rem;color:var(--muted)}
+.disc{background:var(--warn-bg);color:var(--warn);border-radius:var(--r);padding:9px 14px;font-size:.86rem;margin-bottom:16px}
+.disc b{font-weight:600}
+
+.cols{display:grid;grid-template-columns:330px minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:920px){.cols{grid-template-columns:minmax(0,1fr)}}
+.side{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);display:flex;flex-direction:column;gap:14px}
+@media (max-width:920px){.side{position:static}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.card h2{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:10px}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.field{display:flex;flex-direction:column;gap:3px;min-width:0}
+.field label,.lbl{font-size:.8rem;color:var(--muted)}
+.field input:not([type=radio]):not([type=checkbox]),.field select{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface2);color:var(--ink);font:inherit;font-family:var(--f-mono);font-size:.95rem}
+.field select{font-family:var(--f-body)}
+.unit{font-size:.75rem;color:var(--muted)}
+
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg input{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;margin:0}
+.seg label{position:relative}
+.seg label,.chip{border:1px solid var(--line);background:var(--surface2);border-radius:999px;padding:5px 12px;font-size:.86rem;cursor:pointer;user-select:none;line-height:1.35}
+.seg input:checked+span{color:var(--accent-ink)}
+.seg label:has(input:checked){background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.seg input:focus-visible+span{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.chip:disabled{opacity:.5;cursor:not-allowed}
+.chip .n{font-family:var(--f-mono);font-size:.75rem;opacity:.75;margin-right:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+
+.rsum{margin-top:12px;padding:10px 12px;border-radius:8px;background:var(--accent-weak)}
+.rsum .big{font-family:var(--f-mono);font-size:1.25rem;font-weight:600}
+.rsum .small{font-size:.8rem;color:var(--muted)}
+.rsum.empty{background:var(--warn-bg);color:var(--warn)}
+.rsum.arc{background:var(--info-bg)}
+.chk{display:flex;gap:8px;align-items:flex-start;font-size:.88rem;cursor:pointer}
+.chk input{margin-top:3px;accent-color:var(--accent)}
+.linkbtn{background:none;border:0;color:var(--accent);padding:0;cursor:pointer;font-size:.82rem;text-decoration:underline}
+
+.tabs{display:flex;gap:4px;overflow-x:auto;border-bottom:1px solid var(--line);margin-bottom:16px;scrollbar-width:none}
+.tab{background:none;border:0;padding:9px 12px;font-size:.93rem;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+
+.step{margin-bottom:18px}
+.step>h3{font-size:.95rem;font-weight:600;margin-bottom:8px;display:flex;gap:8px;align-items:baseline}
+.step>h3 .k{font-family:var(--f-mono);font-size:.78rem;color:var(--accent)}
+.hint{font-size:.82rem;color:var(--muted);margin-top:6px}
+
+details.mdr{margin-top:8px}
+details summary{cursor:pointer;font-size:.86rem;color:var(--accent)}
+.mdrlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:6px 14px;margin-top:8px}
+
+.ctx{background:var(--info-bg);color:var(--ink);border-radius:var(--r);padding:10px 14px;font-size:.88rem;margin-bottom:14px}
+.ctx b{color:var(--info)}
+
+.paths{display:flex;flex-wrap:wrap;gap:6px}
+.res{display:grid;gap:12px}
+.opt{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.opt.primary{border-left:4px solid var(--accent)}
+.opt-head{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-bottom:8px}
+.tier{font-size:.8rem;font-weight:600;padding:2px 9px;border-radius:6px;background:var(--surface2);border:1px solid var(--line)}
+.tier.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.tier.po{background:var(--ok-bg);color:var(--ok);border-color:transparent}
+.tier.add,.tier.esc{background:var(--warn-bg);color:var(--warn);border-color:transparent}
+.tier.allergy{background:var(--danger-bg);color:var(--danger);border-color:transparent}
+.pick,.plus{font-size:.76rem;color:var(--muted);letter-spacing:.04em;margin:4px 0}
+.plus{color:var(--warn);font-weight:600}
+.formula{background:var(--accent-weak);border-radius:8px;padding:8px 10px;font-size:.92rem;margin-bottom:6px}
+.fhint{color:var(--muted);font-size:.8rem;margin-left:4px}
+.sep{font-size:.76rem;color:var(--muted);font-weight:600;margin:0}
+.plan{border:1px solid var(--line);border-radius:8px;padding:6px 10px;background:var(--surface2)}
+.plan-h{font-size:.84rem;font-weight:600;color:var(--accent);padding:2px 0 4px}
+.pick{text-align:left}
+.rx{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:8px 0;border-top:1px dashed var(--line)}
+.rx:first-of-type{border-top:0}
+.rx-head{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;min-width:0}
+.rx-name{font-weight:600}
+.brandbtn{background:none;border:0;padding:0;font:inherit;font-weight:600;color:var(--ink);cursor:pointer;text-decoration:underline dotted var(--muted);text-underline-offset:3px}
+.brand{font-size:.78rem;background:var(--info-bg);color:var(--info);border-radius:6px;padding:1px 8px}
+.route{font-family:var(--f-mono);font-size:.72rem;padding:1px 6px;border-radius:4px;border:1px solid var(--line);color:var(--muted)}
+.rx-dose{grid-column:1/2;font-family:var(--f-mono);font-size:.98rem;font-weight:600;color:var(--ink);overflow-wrap:anywhere}
+.rx-dose .w{font-weight:400;color:var(--muted);font-size:.85rem}
+.rx-meta{grid-column:1/2;font-size:.8rem;color:var(--muted)}
+.rx .copy{grid-column:2/3;grid-row:1/3;align-self:start;border:1px solid var(--line);background:var(--surface2);border-radius:6px;padding:3px 9px;font-size:.78rem;cursor:pointer}
+.rx.blocked .rx-name,.rx.blocked .rx-dose{text-decoration:line-through;text-decoration-color:var(--danger);opacity:.65}
+.adj{color:var(--warn);font-weight:600}
+.flag{font-size:.72rem;padding:1px 7px;border-radius:999px;line-height:1.5}
+.flag.danger{background:var(--danger-bg);color:var(--danger)}
+.flag.warn{background:var(--warn-bg);color:var(--warn)}
+.flag.ok{background:var(--ok-bg);color:var(--ok)}
+.flag.info{background:var(--info-bg);color:var(--info)}
+details.ix{grid-column:1/-1;font-size:.82rem}
+details.ix ul{margin:4px 0 0;padding-left:18px}
+.cond,.onote{font-size:.84rem;margin-top:6px}
+.cond{color:var(--warn)}
+.srcs{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.src{font-size:.7rem;font-family:var(--f-mono);color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:0 5px;cursor:help}
+.upd{font-size:.7rem;font-weight:700;color:var(--ok);background:var(--ok-bg);border-radius:4px;padding:1px 6px;letter-spacing:.03em}
+
+.notes{display:grid;gap:8px}
+.note{font-size:.88rem;padding:9px 12px;border-radius:8px;background:var(--surface);border:1px solid var(--line)}
+.note.warn{background:var(--warn-bg);border-color:transparent}
+.note.danger{background:var(--danger-bg);border-color:transparent}
+.dur{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:10px 14px}
+.dur .k{font-size:.78rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.dur .v{font-weight:600}
+.sec-title{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:6px 0 2px}
+
+.tgt{background:var(--surface2);border:1px solid var(--line);border-radius:var(--r);padding:14px}
+.tgt h3{font-size:1.02rem;font-style:italic}
+.tgt .pnote{font-size:.86rem;color:var(--muted);margin:4px 0 10px}
+
+.favs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:14px}
+.fav{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:.82rem}
+.fav button{background:none;border:0;cursor:pointer;padding:4px 10px}
+.fav button+button{padding:4px 9px 4px 0;color:var(--muted)}
+.btn{border:1px solid var(--accent);color:var(--accent);background:var(--surface);border-radius:8px;padding:6px 12px;font-size:.86rem;cursor:pointer}
+.btn.solid{background:var(--accent);color:var(--accent-ink)}
+
+.tbl-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.86rem}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.76rem;color:var(--muted);font-weight:600;letter-spacing:.04em}
+.sev{font-size:.72rem;font-weight:700;padding:1px 7px;border-radius:999px;white-space:nowrap}
+.sev.x{background:var(--danger-bg);color:var(--danger)}
+.sev.h{background:var(--warn-bg);color:var(--warn)}
+.sev.m{background:var(--info-bg);color:var(--info)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:.92rem}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0;font-family:var(--f-mono);font-weight:600}
+.reflist{font-size:.86rem;padding-left:18px}
+.reflist li{margin-bottom:6px}
+.reflist b{font-family:var(--f-mono);font-size:.78rem}
+.sus{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;align-items:center}
+.sus .seg label{padding:2px 10px}
+
+.dot{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;font-size:.7rem;font-weight:700;font-family:var(--f-mono);line-height:1}
+.dot.s3{background:var(--s3);color:var(--s3-ink)} .dot.s2{background:var(--s2);color:var(--s2-ink)}
+.dot.s1{background:var(--s1);color:var(--s1-ink)} .dot.s0{background:var(--s0);color:var(--s0-ink)}
+.tbl-wrap.spec{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+table.grid{width:auto;min-width:100%}
+table.grid th,table.grid td{text-align:center;padding:3px 4px;border-bottom:0}
+table.grid .stick{position:sticky;left:0;background:var(--surface);z-index:1;text-align:left;border-right:1px solid var(--line)}
+table.grid thead th{position:sticky;top:0;background:var(--surface);z-index:2;border-bottom:1px solid var(--line)}
+table.grid thead th.stick{z-index:3}
+table.grid tr.gap td{height:8px;padding:0}
+table.grid tr.sel th,table.grid tr.sel td{background:var(--accent-weak)}
+table.grid td.hl{background:var(--accent-weak)}
+table.grid.cmp th.cmph{font-size:.72rem;font-weight:600;white-space:normal;min-width:58px;max-width:90px;line-height:1.25;vertical-align:bottom}
+table.grid.cmp tbody th{vertical-align:middle}
+table.grid.cmp tr.xrow th,table.grid.cmp tr.xrow td{border-top:1px dashed var(--line)}
+.cellbtn{background:none;border:0;padding:2px;cursor:pointer;border-radius:50%;line-height:0}
+.cellbtn[aria-pressed="true"] .dot{outline:2px solid var(--accent);outline-offset:2px}
+.cmpsum div+div{margin-top:4px}
+.colbtn,.rowbtn{background:none;border:0;cursor:pointer;font:inherit;color:var(--ink)}
+.colbtn{font-size:.72rem;padding:4px 3px;border-radius:6px;white-space:nowrap}
+.colbtn[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.rowbtn{font-size:.84rem;padding:2px 4px;text-align:left;white-space:nowrap}
+.rowbtn:hover,.colbtn:hover{text-decoration:underline}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;font-size:.82rem;margin:10px 0 4px}
+.legend .dot{width:22px;height:22px;margin-right:2px}
+.fixbar{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:15;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;max-width:calc(100vw - 32px)}
+.fixbar .btn{box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.fixbar .jump{position:static}
+.fixpad{height:64px}
+.abgv{font-family:var(--f-mono);font-weight:600}
+.abgv.hi{color:var(--ok)}
+.abgv.mid{color:var(--warn)}
+.abgv.lo{color:var(--danger)}
+.cond.abgw{font-size:.82rem}
+.jump{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:15;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 16px;border-radius:999px;font-size:.88rem;z-index:20}
+.muted{color:var(--muted)}
+.mt{margin-top:10px}
+@media (prefers-reduced-motion:no-preference){.chip,.tab,.seg label{transition:background .12s,color .12s,border-color .12s}}
+
+/* v0.7 精簡介面 */
+.disc{display:flex;gap:8px 12px;align-items:flex-start;justify-content:space-between}
+.disc .linkbtn{color:var(--warn);white-space:nowrap;flex:none}
+.card-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.card-h h2{margin-bottom:10px}
+.ptbar{display:flex;align-items:center;gap:8px;width:100%;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:10px 14px;cursor:pointer;font-size:.9rem}
+.ptbar .lab{font-size:.78rem;color:var(--muted);flex:none}
+.ptbar .val{flex:1;min-width:0;font-family:var(--f-mono);font-weight:600;overflow-wrap:anywhere}
+.ptbar .act{flex:none;font-size:.82rem;color:var(--accent)}
+.ptbar.empty{background:var(--warn-bg);border-color:transparent}
+.ptbar.empty .val{color:var(--warn);font-family:var(--f-body);font-weight:500}
+.mmore{margin-top:6px}
+.ptbody{display:flex;flex-direction:column;gap:14px}
+.picked{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin-bottom:12px;font-size:.95rem}
+.picked .k{font-family:var(--f-mono);font-size:.78rem;color:var(--accent)}
+.picked .q{color:var(--muted);font-size:.86rem}
+.picked b{font-weight:600}
+.rtag{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:8px}
+button.flag{border:0;cursor:pointer;font:inherit;font-size:.76rem;padding:2px 9px}
+.step>h3 .flag{font-weight:500}
+.step>h3 .act{margin-left:auto;font-weight:400}
+.rx-more{grid-column:1/2;font-size:.8rem;color:var(--muted);display:grid;gap:2px}
+.rx-more .brand{justify-self:start}
+details.more{border-top:1px solid var(--line);padding-top:8px}
+details.more>summary{font-size:.86rem}
+details.more>.notes,details.more>.paths,details.more>.ctx{margin-top:8px}
+.dgrp+.dgrp{border-top:1px solid var(--line);margin-top:8px;padding-top:8px}
+.dg-h{font-size:.74rem;color:var(--muted);letter-spacing:.04em;margin-bottom:5px}
+details.pathsel{border-top:0;padding-top:0;margin:-6px 0 18px}
+details.pathsel>summary{font-size:.92rem}
+.srcs .linkbtn{font-size:.74rem;margin-left:2px}
+button.src,button.upd{font:inherit;cursor:pointer}
+button.src{font-family:var(--f-mono);font-size:.7rem;background:none;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:0 5px}
+button.upd{font-size:.7rem;font-weight:700;color:var(--ok);background:var(--ok-bg);border:0;border-radius:4px;padding:1px 6px;letter-spacing:.03em}
+.top .brand{background:none;color:inherit;padding:0;border-radius:0;font-size:inherit}
+@media (max-width:920px){.tab{padding:9px 8px}}
+/* v1.4 分頁分組（4 組＋第二層）、返回列、方案卡底列 */
+@media (max-width:920px){.tabs .tab{flex:1 1 0;text-align:center}}
+.tabs{margin-bottom:10px}
+.subtabs{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 14px}
+.stab{background:none;border:0;border-radius:8px;padding:5px 10px;font-size:.88rem;color:var(--muted);cursor:pointer;white-space:nowrap}
+.stab[aria-selected="true"]{background:var(--accent-weak);color:var(--ink);font-weight:600}
+main>.subtabs[hidden]+#main{margin-top:6px}
+.backbar{position:sticky;top:calc(env(safe-area-inset-top,0px) + 6px);z-index:12;display:flex;align-items:baseline;gap:8px;width:100%;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px 12px;margin-bottom:12px;cursor:pointer;font-size:.88rem;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.backbar .bk{flex:none;color:var(--accent);font-weight:600}
+.backbar .to{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted)}
+.opt-foot{display:flex;flex-wrap:wrap;gap:2px 16px;align-items:center;margin-top:8px;padding-top:6px;border-top:1px solid var(--line)}
+.opt-foot .linkbtn{font-size:.78rem;text-decoration:none;padding:3px 0}
+.opt-foot .linkbtn[aria-expanded]::after{content:" ▾"}
+.opt-foot .linkbtn[aria-expanded="true"]::after{content:" ▴"}
+.opt-foot .cmpl{margin-left:auto}
+.opt-foot button.src{margin:0}
+.rx-meta.abg{grid-column:1/-1;font-size:.7rem}
+.rx-meta.abg .linkbtn{font-size:.7rem}
+.foot .linkbtn{font-size:.8rem}
+.reshd{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;width:100%;background:none;border:0;padding:0;text-align:left;cursor:pointer;font:inherit;color:inherit}
+.reshd .muted{font-size:.82rem}
+.reshd .chev{margin-left:auto;font-size:.8rem;color:var(--accent)}
+.resitem{scroll-margin-top:64px;min-width:0}
+.resitem.open{border-color:var(--accent)}
+#resCard details.more{margin-top:6px}
+#resCard details.more>summary{font-size:.9rem;font-weight:600}
+.foot{margin-top:28px;padding-top:12px;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted);display:grid;gap:4px}
+.foot .ver{font-size:.74rem}
+.ov{position:fixed;inset:0;z-index:30;background:rgba(0,0,0,.4);display:flex;align-items:flex-end;justify-content:center}
+.ov .sheet{background:var(--surface);color:var(--ink);width:100%;max-width:720px;max-height:70vh;overflow:auto;border-radius:14px 14px 0 0;padding:16px max(16px,env(safe-area-inset-right,0px)) calc(18px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));font-size:.9rem}
+.ov .sheet h3{font-size:.95rem;font-family:var(--f-mono);margin-bottom:8px}
+.ov .sheet p{margin:0 0 10px;overflow-wrap:anywhere}
+.ov .sheet .btn{margin-top:4px}
+/* v0.9–v0.12 */
+.srch{position:relative;margin-bottom:8px}
+.srch input{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);font:inherit;font-size:.92rem}
+.qres{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:25;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 8px 24px rgba(0,0,0,.16);max-height:60vh;overflow:auto;padding:6px}
+.qcat{font-size:.72rem;color:var(--muted);letter-spacing:.06em;padding:6px 8px 2px}
+.qitem{display:flex;flex-wrap:wrap;gap:2px 10px;align-items:baseline;width:100%;text-align:left;background:none;border:0;border-radius:6px;padding:7px 8px;cursor:pointer;font-size:.92rem}
+.qitem:hover,.qitem:focus-visible{background:var(--accent-weak)}
+.qsub{font-size:.76rem;color:var(--muted)}
+.qnone{font-size:.86rem;color:var(--muted);padding:8px}
+button.gl{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-decoration:underline dotted var(--muted);text-underline-offset:3px}
+.chip.static{cursor:default}
+tr.cur td{background:var(--accent-weak);font-weight:600}
+td.mono{font-family:var(--f-mono)}
+ul.ixl{margin:6px 0 0;padding-left:18px;font-size:.86rem}
+.tdmsel{margin-bottom:16px}
+.note.ok-n{background:var(--ok-bg);border-color:transparent}
+details.pf>summary{font-size:.86rem}
+.pfq{display:grid;gap:6px;margin-top:8px}
+.pfres{margin-top:8px}
+.pfres .note{font-size:.84rem}
+.kv dd{overflow-wrap:anywhere}
+.difl,.ixl{margin:6px 0 0;padding-left:18px}.difl li,.ixl li{margin:4px 0}.difl .srcs{display:inline-flex;margin-left:4px}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1>抗病毒藥物助手</h1>
+      <div class="sub">成人流感、COVID-19、RSV、HSV、VZV、CMV：治療、預防、抗藥，劑量依腎功能調整</div>
+    </div>
+    <div class="ver" id="ver"></div>
+  </header>
+  <div class="disc" id="disc"><span><b>僅供臨床參考。</b>最終處方以院內規範、藥師與感染科意見為準。本頁不儲存任何病人資料。</span><button class="linkbtn" type="button" data-act="disc-ok">知道了</button></div>
+
+  <div class="cols">
+    <aside class="side" id="side">
+      <button class="ptbar" type="button" id="ptBar" data-act="pt-open" aria-expanded="false" aria-controls="ptBody" hidden></button>
+      <div id="ptBody" class="ptbody">
+      <section class="card" id="ptPanel">
+        <div class="card-h"><h2>病人與腎功能</h2><span><button class="linkbtn" type="button" data-act="clear-all">清除全部</button>　<button class="linkbtn" type="button" data-act="pt-close">收合</button></span></div>
+        <div class="grid2">
+          <div class="field"><label for="age">年齡</label><input id="age" type="number" inputmode="numeric" min="18" max="110" placeholder="歲"></div>
+          <div class="field"><span class="lbl">性別</span>
+            <div class="seg" role="radiogroup" aria-label="性別">
+              <label><input type="radio" name="sex" id="sexM" value="M" checked><span>男</span></label>
+              <label><input type="radio" name="sex" id="sexF" value="F"><span>女</span></label>
+            </div>
+          </div>
+          <div class="field"><label for="wt">體重 <span class="unit">kg</span></label><input id="wt" type="number" inputmode="decimal" min="20" max="300" placeholder="kg"></div>
+          <div class="field"><label for="ht">身高 <span class="unit">cm</span></label><input id="ht" type="number" inputmode="decimal" min="120" max="230" placeholder="cm"></div>
+          <div class="field"><label for="scr">SCr <span class="unit">mg/dL</span></label><input id="scr" type="number" inputmode="decimal" step="0.01" min="0.1" max="20" placeholder="mg/dL"></div>
+        </div>
+        <div class="field mt"><span class="lbl">腎功能評估方式</span>
+          <div class="seg" role="radiogroup" aria-label="腎功能評估方式">
+            <label><input type="radio" name="method" value="cg" checked><span>CG 自動計算</span></label>
+            <button class="chip" type="button" id="mMoreBtn" data-act="m-more" aria-expanded="false" aria-controls="mMore">其他方式 ▾</button>
+          </div>
+          <div class="seg mmore" id="mMore" role="radiogroup" aria-label="其他腎功能評估方式" hidden>
+            <label><input type="radio" name="method" value="crcl"><span>輸入 CrCl</span></label>
+            <label><input type="radio" name="method" value="egfr"><span>輸入 eGFR</span></label>
+            <label><input type="radio" name="method" value="hd"><span>HD</span></label>
+            <label><input type="radio" name="method" value="pd"><span>PD</span></label>
+            <label><input type="radio" name="method" value="crrt"><span>CRRT</span></label>
+          </div>
+        </div>
+        <div class="field mt" id="crclRow" hidden><label for="crclIn">CrCl <span class="unit">mL/min</span></label><input id="crclIn" type="number" inputmode="decimal" min="0" max="250"></div>
+        <div class="field mt" id="egfrRow" hidden><label for="egfrIn">eGFR <span class="unit">mL/min/1.73m²</span></label><input id="egfrIn" type="number" inputmode="decimal" min="0" max="250"></div>
+        <label class="chk mt"><input type="checkbox" id="aki"><span>腎功能不穩定（AKI、Cr 快速變化）</span></label>
+        <div id="rsum" class="rsum empty"></div>
+      </section>
+
+      <section class="card">
+        <h2>懷孕</h2>
+        <label class="chk"><input type="checkbox" id="preg"><span>懷孕（標示不建議的藥並列替代）</span></label>
+      </section>
+      </div>
+    </aside>
+
+    <main>
+      <div class="srch"><input id="q" type="search" placeholder="搜尋：藥名、商品名、診斷、預防、抗藥" autocomplete="off" aria-label="搜尋" aria-controls="qres"><div id="qres" class="qres" hidden></div></div>
+      <nav class="tabs" role="tablist" id="tabs"></nav>
+      <div id="main"></div>
+    </main>
+  </div>
+  <footer class="foot" id="foot"><div id="footDisc" hidden><b>僅供臨床參考。</b>最終處方以院內規範、藥師與感染科意見為準。本頁不儲存任何病人資料。</div><div><button class="linkbtn" type="button" data-act="tab" data-v="ref">全部出處 ›</button></div><div class="ver" id="footVer"></div></footer>
+</div>
+<div id="ov" class="ov" hidden><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="ovT"><h3 id="ovT"></h3><div id="ovB"></div><button class="btn" type="button" data-act="ov-close">關閉</button></div></div>
+<div id="toast" class="toast" hidden></div>
+<script>
+const APP_VERSION = "0.1";
+const CHECKED = "2026-11-15";
+const VERSION = "v" + APP_VERSION, VERIFIED = CHECKED;
+const SCOPE = "成人・流感、COVID-19、RSV、HSV、VZV、CMV（治療、預防、抗藥）";
+
+/* ---------------- 出處 ---------------- */
+const REF = {
+  // 流感
+  CDC_FLU26:{s:"CDC 流感抗病毒藥 2026",f:"CDC. Influenza Antiviral Medications: Summary for Clinicians（頁面更新 2026-03-10）。住院、重症／病情進展、高風險者盡快治療，不等檢驗；住院者 oseltamivir 口服或經腸道，>48 小時仍可能有效；住院者不常規用 zanamivir、baloxavir、peramivir；嚴重免疫低下不建議 baloxavir 單用；懷孕首選 oseltamivir、不建議 baloxavir；暴露後預防 7 天、機構群聚至少 2 週並持續到最後一例後 1 週；腎調整表（oseltamivir、peramivir）。",u:"https://www.cdc.gov/flu/hcp/antivirals/summary-clinicians.html"},
+  IDSA_FLU18:{s:"IDSA 流感 2018",f:"Uyeki TM, et al. Clinical Practice Guidelines by the IDSA: 2018 Update on Diagnosis, Treatment, Chemoprophylaxis, and Institutional Outbreak Management of Seasonal Influenza. Clin Infect Dis 2019;68:895–902。仍為現行 IDSA 流感治療指引（2025 年 IDSA 另發表免疫低下者疫苗指引，不涉治療）。"},
+  WHO_FLU24:{s:"WHO 流感 2024",f:"WHO. Clinical practice guidelines for influenza（2024-09-12；BMJ 2026;392:e087397 摘要）。非重症：高風險者 baloxavir（conditional）；oseltamivir、zanamivir 用於非重症為 strong against；peramivir、laninamivir conditional against；低風險者 baloxavir conditional against。重症：oseltamivir（conditional）、peramivir conditional against。暴露後預防：季節性流感只建議極高風險者（conditional）。",u:"https://cdn.who.int/media/docs/default-source/health-care-readiness/clinical-guidelines-for-influenza---executive-summary.pdf"},
+  OSE_LABEL:{s:"Oseltamivir 仿單",f:"Tamiflu（oseltamivir）US Prescribing Information。治療 75 mg BID × 5 天；預防 75 mg QD 至少 10 天（社區流行最多 6 週）。腎調整：治療 CrCl >30–60：30 mg BID；>10–30：30 mg QD；HD：30 mg 後每次 HD 後 30 mg（療程 ≤5 天）；CAPD：單次 30 mg；ESRD 未透析不建議。預防 CrCl >30–60：30 mg QD；>10–30：30 mg QOD；HD：隔次 HD 後 30 mg；CAPD：每週 30 mg。"},
+  ZAN_LABEL:{s:"Zanamivir 仿單",f:"Relenza（zanamivir）吸入劑仿單與 CDC 表 1：治療 10 mg（2 吸）BID × 5 天、預防 10 mg QD；5 天療程不需腎調整；不建議用於有氣喘、COPD 等呼吸道疾病者。"},
+  PER_LABEL:{s:"Peramivir 仿單（美國）",f:"Rapivab（peramivir）US PI 與 CDC 表：單次 600 mg IV（CrCl ≥50）；CrCl 30–49：200 mg；10–29：100 mg；HD：透析後依 CrCl 給藥。台灣上市品為瑞貝塔（Rapiacta），用法與美國仿單不同，請以院內仿單確認。"},
+  BX_TW:{s:"Baloxavir 台灣仿單 2024",f:"紓伏效膜衣錠 20 mg（Xofluza）衛部藥輸字第 027693 號，版本日期 2024-04-12。適用 ≥5 歲且 ≥20 kg 之 A、B 型流感治療，及密切接觸後預防。CrCl ≥30 不需調整，<30 無資料；避免與乳製品、制酸劑、鈣鐵鎂鋅硒等多價陽離子併服。成人 20–<80 kg 單次 40 mg、≥80 kg 單次 80 mg（CDC 表）。",u:"https://ksph.kcg.gov.tw/7/dfiles_pdf/Xofluza.pdf"},
+  CENTERSTONE:{s:"CENTERSTONE（NEJM 2025）",f:"Monto AS, et al. Efficacy of Baloxavir Treatment in Preventing Transmission of Influenza. N Engl J Med 2025;392:1582–1593。Phase 3b：發病 48 小時內單次 baloxavir 治療指標病人，家戶接觸者第 5 天前檢驗確認感染的勝算下降 32%（9.5% vs 13.4%）；7.2% 治療者出現抗藥變異，但未在家戶接觸者檢出。"},
+  TW_FLU_RES:{s:"台灣流感抗藥監測（新聞）",f:"TVBS 2025-10-03 報導引述疾管署署長：本流感季 A(H1N1) 約 6.5% 對 oseltamivir 及 peramivir 出現抗藥突變（前一季 3.2%）；A(H3N2) 與 B 型未檢出；baloxavir 對所有病毒株仍有效。新聞來源，請以疾管署原始資料確認。",u:"https://health.tvbs.com.tw/nutrition/358002"},
+  TW_ID_FLU24:{s:"台灣感染症醫學會流感 2024",f:"台灣感染症醫學會「抗流感病毒藥物使用建議（2024 年修訂版）」（2024-11 公告，見 MyGoPen 2025-02-12 轉述）。本版未取得全文，個別建議請確認。"},
+  // COVID-19
+  IDSA_COV25:{s:"IDSA COVID 2025",f:"2025 Clinical Practice Guideline Update by the IDSA on the Treatment and Management of COVID-19: Antiviral Treatment for Mild to Moderate COVID-19 in Adults（Clin Infect Dis；9 條建議）。高風險（例：≥75 歲、嚴重免疫低下、多重危險因子）：建議 nirmatrelvir/ritonavir 5 天（發病 5 天內）或 remdesivir 3 天（7 天內）；風險增加但非高風險：建議（conditional）同上；無危險因子：不建議抗病毒藥；molnupiravir 只在無其他選擇時（conditional）。本版依 NEJM Clinician Guideline Watch（2026-05-20）、SHM／Gilead pocket card（2026-03）與 CME Outfitters 2026-01 摘要核對，全文未讀到，強度與證據等級請確認。"},
+  IDSA_COV_RDV:{s:"IDSA COVID（住院 remdesivir）",f:"IDSA Guidelines on the Treatment and Management of Patients with COVID-19（living guideline，2025-05-30 版）。住院未用氧且 SpO2 >94%：建議不常規使用 remdesivir；用氧但未插管／ECMO：建議 remdesivir 5 天（優於 10 天）；插管或 ECMO：建議不常規開始 remdesivir（皆 conditional）。依 InpharmD 與 SHM pocket card 轉述，請以原文確認。"},
+  NIH_COV24:{s:"NIH COVID 2024（已封存）",f:"NIH COVID-19 Treatment Guidelines（最後更新 2024-02-29，之後停止更新）。因 COVID 住院、未用氧：免疫低下（BIIb）或其他高風險（BIII）者給 remdesivir；一般氧氣：remdesivir＋dexamethasone（BIIa）；HFNC／NIV：dexamethasone（AI）或 dexamethasone＋remdesivir（BIIb）。"},
+  WHO_COV23:{s:"WHO COVID 2023",f:"A living WHO guideline on drugs for covid-19（BMJ 2023-11-10 更新）。非重症：高與中風險者 nirmatrelvir/ritonavir；remdesivir、molnupiravir 不用於中低風險（高風險者 conditional）；低風險者 remdesivir、molnupiravir strong against。"},
+  TW_COV_OAV:{s:"疾管署 COVID 口服藥 2026",f:"衛生福利部疾病管制署「公費 COVID-19 治療用口服抗病毒藥物領用方案」第 14 次修訂（115-03-10），引用「新型冠狀病毒（SARS-CoV-2）感染臨床處置指引」之臨床條件：Paxlovid 具任一重症風險因子、未用氧且發病 5 天內之成人；molnupiravir 為無法用 Paxlovid 或 remdesivir 之 ≥18 歲（不用於懷孕）；ensitrelvir 為無法用 Paxlovid 或 remdesivir 之 ≥12 歲、發病 3 天內（孕婦禁用）。本 app 只列臨床條件，不列公費資格。",u:"https://health.tainan.gov.tw/warehouse/B972CCC7-8E95-43A2-B339-39C5366979DD/F_1773215365517e.pdf"},
+  TW_COV_MOL:{s:"疾管署 molnupiravir 說明",f:"衛福部新聞稿（疾管署）：WHO 與我國臨床處置指引優先使用 Paxlovid 與 remdesivir；molnupiravir 效果有限且機轉有安全疑慮，列為「有條件下使用」，對象包括重度肝腎功能不全、與 Paxlovid 有嚴重交互作用且無法停藥或換藥者。Paxlovid 已取得藥證（112 年 5 月）。",u:"https://mohw.gov.tw/cp-16-79185-1.html"},
+  PAX_LABEL:{s:"Paxlovid 仿單",f:"PAXLOVID（nirmatrelvir tablets; ritonavir tablets）US PI。eGFR ≥60：300/100 mg BID × 5 天；30–<60：150/100 mg BID；<30（含 HD）：第 1 天 300/100 mg 一次，第 2–5 天 150/100 mg QD，透析日於 HD 後給。Child-Pugh C 不建議。禁止併用：alfuzosin、amiodarone、apalutamide、carbamazepine、colchicine（腎或肝功能不全）、dihydroergotamine、dronedarone、eletriptan、enzalutamide、eplerenone、ergotamine、finerenone、flecainide、flibanserin、ivabradine、lomitapide、lovastatin、lumacaftor/ivacaftor、lurasidone、methylergonovine、口服 midazolam、naloxegol、phenobarbital、phenytoin、pimozide、primidone、propafenone、quinidine、ranolazine、rifampin、rifapentine、St. John's Wort、sildenafil（PAH 用）、silodosin、simvastatin、suzetrigine、tolvaptan、triazolam、ubrogepant、voclosporin。lovastatin、simvastatin 可暫停後使用。嚴重不良反應最常見的併用藥為 calcineurin inhibitor（tacrolimus、cyclosporine）。",u:"https://www.pfizermedical.com/paxlovid/highlights"},
+  PAX_EU:{s:"Paxlovid 歐英 SmPC",f:"Paxlovid EU／UK SmPC（emc）：重度腎功能不全（eGFR <30）或腎衰竭禁用（劑量未確定）；中度 150/100 mg BID。與美國仿單（eGFR <30 有劑量）不同；歐洲最新版是否已更新請確認。",u:"https://www.medicines.org.uk/emc/search?q=paxlovid"},
+  RDV_LABEL:{s:"Remdesivir 仿單",f:"Veklury（remdesivir）US PI：住院者 200 mg IV 第 1 天，之後 100 mg QD（未插管 5 天，插管／ECMO 10 天）；門診高風險 200 mg 第 1 天、100 mg 第 2–3 天（PINETREE）。2023-07 FDA 核准用於任何腎功能（含透析）不需調整、不需 eGFR 檢查（REDPINE）。ALT ≥10 倍上限不建議開始。",u:"https://www.gilead.com/news/news-details/2023/fda-approves-veklury-remdesivir-for-covid-19-treatment-in-patients-with-severe-renal-impairment-including-those-on-dialysis"},
+  MOL_LABEL:{s:"Molnupiravir 說明書",f:"Lagevrio（molnupiravir）FDA EUA／台灣專案輸入：800 mg（4 × 200 mg）BID × 5 天，發病 5 天內，≥18 歲；不需腎調整；不建議用於懷孕。"},
+  ENS_TW:{s:"Ensitrelvir（台灣專案輸入）",f:"Xocova（ensitrelvir）依疾管署領用方案：第 1 天 375 mg，第 2–5 天 125 mg QD；發病 3 天內；不需腎調整；孕婦或可能懷孕者禁用；腎功能不全併用 colchicine 者不可用。強效 CYP3A 抑制劑。美國 FDA 未核准、IDSA 2025 未納入。"},
+  ONT_COV25:{s:"Ontario Health 2025",f:"Ontario Health. Summary of Recommendations for Drug Therapy for Adults with COVID-19（2025-07）。嚴重度定義（SpO2 >92%）；remdesivir 若 nirmatrelvir/ritonavir 不能用，7 天內開始；嚴重者開始 remdesivir 後進展為危急仍完成療程。"},
+  // RSV
+  ECIL4_RSV:{s:"ECIL-4（RSV）",f:"Hirsch HH, et al. Fourth European Conference on Infections in Leukaemia (ECIL-4): guidelines for diagnosis and treatment of human respiratory syncytial virus, parainfluenza virus, metapneumovirus, rhinovirus, and coronavirus. Clin Infect Dis 2013;56:258–66。HSCT／血液惡性腫瘤 RSV：可延後 conditioning、aerosolized ribavirin，或 off-label 全身性 ribavirin 及／或 IVIG。各條強度本版未逐條核對。"},
+  RBV_ORAL:{s:"Oral vs aerosolized ribavirin（CID）",f:"Foolad F, et al. Oral versus aerosolized ribavirin for the treatment of RSV infections in HCT recipients. Clin Infect Dis 2019（124 例）：上→下呼吸道進展與 30 天死亡率兩組相近，口服可作替代。"},
+  INST_RSV:{s:"院內 RSV 指引（UCSF、UNMC）",f:"UCSF Medical Center Guideline for Management of Adult RSV（2022–2023）與 UNMC oral ribavirin guideline（2024 修訂）：ribavirin 只用於 HSCT／血液腫瘤與肺移植等特定族群，不經驗性使用；肺移植上呼吸道一般不治療（咳嗽痰多或 3 個月內移植／加強免疫抑制可考慮）、下呼吸道治療；口服劑量各中心不同（例：10–20 mg/kg/日分 3 次 × 7–10 天）。屬機構指引，非學會指引。",u:"https://idmp.ucsf.edu/node/11916"},
+  // HSV/VZV
+  CDC_STI21:{s:"CDC STI 2021（生殖器疱疹）",f:"Workowski KA, et al. Sexually Transmitted Infections Treatment Guidelines, 2021. MMWR Recomm Rep 2021;70(4)。初次：acyclovir 400 mg TID、famciclovir 250 mg TID 或 valacyclovir 1 g BID，7–10 天（未癒合可延長）。復發間歇：acyclovir 800 mg BID × 5 天或 TID × 2 天、famciclovir 1 g BID × 1 天／500 mg 一次後 250 mg BID × 2 天／125 mg BID × 5 天、valacyclovir 500 mg BID × 3 天或 1 g QD × 5 天。抑制：acyclovir 400 mg BID、valacyclovir 500 mg QD（≥10 次／年可能較差）或 1 g QD、famciclovir 250 mg BID。HIV：間歇 acyclovir 400 mg TID、famciclovir 500 mg BID、valacyclovir 1 g BID 各 5–10 天；抑制 acyclovir 400–800 mg BID–TID、famciclovir 500 mg BID、valacyclovir 500 mg BID。懷孕 36 週起抑制：acyclovir 400 mg TID 或 valacyclovir 500 mg BID。重症：IV acyclovir 5–10 mg/kg q8h 2–7 天或至改善，再口服完成總療程 ≥10 天。",u:"https://www.cdc.gov/stiapp/herpes-genital_ado_adult.html"},
+  EDF_HZ17:{s:"EDF/EADV 帶狀疱疹 2017",f:"Werner RN, et al. European consensus-based (S2k) Guideline on the Management of Herpes Zoster – guided by the EDF in cooperation with EADV, Part 2: Treatment. J Eur Acad Dermatol Venereol 2017;31:20–29。↑↑：≥50 歲任何部位、頭頸部、中重度疼痛、出血壞死、>1 節段、衛星病灶、黏膜侵犯、免疫低下（#18）；↑：<50 歲軀幹四肢無併發症（#19）；72 小時內開始，複雜或高風險、眼耳部、免疫低下者 72 小時後仍可（#23）；<50 歲無併發症 >72 小時 ↓（#24）。IV acyclovir 用於複雜 HZ 或高風險（#20），內臟／CNS 可升到 15 mg/kg TID、最長 21 天。ARN：IV acyclovir 10 mg/kg TID 7–10 天後口服 800 mg 5 次／日 3–4 個月（↑↑ #26）＋類固醇（↑ #27）。Ramsay Hunt：IV acyclovir＋口服類固醇（↑ #28）。眼部：acyclovir 3% 眼藥膏 5 次／日（↑↑ #42）。懷孕無併發症風險者不建議（↓ #29），有風險者 acyclovir 優先（↑ #30）。Brivudin 禁用於免疫低下及 4 週內用過 5-fluoropyrimidine 者。",u:"https://discovery-pp.ucl.ac.uk/id/eprint/1545541/1/Breuer_European_Zoster_guideline_2_Treatment.pdf"},
+  MSD_HZ:{s:"MSD Manual 帶狀疱疹 2026",f:"MSD Manual Professional：herpes zoster（2026-05 更新）。famciclovir、valacyclovir 口服生體可用率較 acyclovir 好，為優先；一般 7–10 天；免疫低下者有專家建議延長到全部結痂；輕度免疫低下可口服，嚴重免疫低下用 IV acyclovir；懷孕以 acyclovir 優先、valacyclovir 可用，famciclovir 懷孕資料少一般不建議。",u:"https://www.merckmanuals.com/professional/infectious-diseases/herpesviruses/herpes-zoster"},
+  CDC_VAR:{s:"CDC 水痘臨床指引",f:"CDC. Clinical Guidance for People at Risk for Severe Varicella。VariZIG 暴露後盡快、10 天內；口服 acyclovir 或 valacyclovir 可用於中重度風險者（含 >12 歲未接種者），出疹 24 小時內給；IV acyclovir 用於重症（肺炎、腦炎、血小板低下、嚴重肝炎）、免疫低下（含高劑量類固醇 >14 天）、懷孕併發症；acyclovir 抗藥者用 foscarnet。",u:"https://www.cdc.gov/chickenpox/hcp/clinical-guidance/"},
+  VAR_PEP:{s:"水痘暴露後預防（CDC／AAP）",f:"Marin M, et al. MMWR 2013（VariZIG）與 AAP Red Book 2018（Lachiewicz, Prev Med Rep 2019 表 3 整理）：無免疫力且高風險（免疫低下、懷孕等）：VariZIG 125 IU/10 kg（最多 625 IU）IM，10 天內（理想 96 小時內）；無 VariZIG → IVIG 400 mg/kg；兩者皆無 → 暴露後第 7–10 天開始 acyclovir 或 valacyclovir 共 7 天（AAP：acyclovir 20 mg/kg QID、上限 800 mg／次；valacyclovir 20 mg/kg TID、上限 1 g／次）。可接種者 3–5 天內接種疫苗。"},
+  IDSA_ENC08:{s:"IDSA 腦炎 2008",f:"Tunkel AR, et al. The Management of Encephalitis: Clinical Practice Guidelines by the IDSA. Clin Infect Dis 2008;47:303–27。HSV 腦炎：IV acyclovir 10 mg/kg q8h 14–21 天（A-III）；疑似時盡快經驗性開始。VZV 腦炎：acyclovir（B-III）。本版依二手摘要（MedLink、AMBOSS）核對 HSV 部分，VZV 劑量與療程請確認。"},
+  UK_ENC12:{s:"英國 ABN/BIA 腦炎 2012",f:"Solomon T, et al. Management of suspected viral encephalitis in adults – ABN and BIA National Guidelines. J Infect 2012（Hosp Med 2014 流程圖）。入院 6 小時內開始 IV acyclovir；確診 HSV/VZV 腦炎 14 天後重做 LP；免疫低下（及 3 個月–12 歲兒童）21 天；PCR 仍陽性則繼續。"},
+  HSE_DK26:{s:"丹麥 HSV-1 腦炎世代（CID 2026）",f:"Clin Infect Dis 2026;82(6):e1384。丹麥全國 HSV-1 腦炎世代：LP 後延遲 acyclovir >6 小時，6 個月死亡相對風險 1.85（95% CI 1.01–3.45）；英、法、丹麥指引建議入院 6 小時內開始。觀察性研究。",u:"https://academic.oup.com/cid/article/82/6/e1384/8495099"},
+  ACV_IV_LABEL:{s:"Acyclovir 注射劑仿單",f:"Acyclovir sodium injection US PI／加拿大 monograph：免疫低下黏膜皮膚 HSV 5 mg/kg q8h × 7 天；HSV 腦炎 10 mg/kg q8h × 10 天；免疫低下 VZV 10 mg/kg q8h × 7 天；最大相當 20 mg/kg q8h。肥胖者以理想體重（IBW）計。腎調整：CrCl >50 q8h；>25–50 q12h；>10–25 q24h；≤10：50% 劑量 q24h；HD 6 小時約清除 60%，透析後給。英國 SmPC：CAPD 劑量減半 q24h；並註明依實際體重給藥的肥胖者血中濃度較高。",u:"https://pdf.hres.ca/dpd_pm/00074361.PDF"},
+  ACV_OBESE:{s:"肥胖者 acyclovir 劑量（文獻與院內）",f:"Aboelezz A, Mahmoud SH. Acyclovir dosing in herpes encephalitis: a scoping review. J Am Pharm Assoc 2024;64:102040：肥胖者用哪個體重缺乏一致證據。UCSF 院內劑量建議：肥胖者先用 adjusted BW，密切監測腎功能與神智；NHS Fife 院內指引（2026-04 審閱）：BMI ≥30 用 adjusted BW＝IBW＋0.4 ×（實際－IBW）。與仿單（IBW）不同。",u:"https://idmp.ucsf.edu/node/8236"},
+  ACV_PO_LABEL:{s:"Acyclovir 口服仿單",f:"Acyclovir tablets／capsules US PI：帶狀疱疹 800 mg q4h 5 次／日 × 7–10 天；初次生殖器疱疹 200 mg 5 次／日 × 10 天；抑制 400 mg BID；成人水痘 800 mg QID × 5 天。腎調整：800 mg q4h → CrCl 10–25：800 mg q8h；0–10：800 mg q12h；200 mg q4h 或 400 mg q12h → CrCl 0–10：200 mg q12h。"},
+  VAL_LABEL:{s:"Valacyclovir 仿單",f:"Valtrex（valacyclovir）US PI：帶狀疱疹 1 g TID × 7 天；初次生殖器疱疹 1 g BID × 10 天；復發 500 mg BID × 3 天；抑制 1 g QD（≤9 次／年可 500 mg QD；HIV 500 mg BID）；口唇疱疹 2 g BID × 1 天。腎調整表（CrCl 30–49／10–29／<10）：帶狀疱疹 1 g q12h／1 g q24h／500 mg q24h；初次 不變／1 g q24h／500 mg q24h；復發 不變／500 mg q24h／500 mg q24h；抑制 1 g 不變／500 mg q24h／500 mg q24h，500 mg 不變／500 mg q48h／500 mg q48h；口唇 1 g ×2／500 mg ×2／500 mg 單次。HD 後給。",u:"https://ndclist.com/ndc/67296-0200/label"},
+  FAM_LABEL:{s:"Famciclovir 仿單",f:"Famvir（famciclovir）US PI：帶狀疱疹 500 mg q8h × 7 天（CrCl 40–59：q12h；20–39：q24h；<20：250 mg q24h；HD：每次透析後 250 mg）；復發生殖器 1 g BID × 1 天（40–59：500 mg q12h × 1 天；20–39：500 mg 單次；<20：250 mg 單次；HD 後 250 mg）；口唇 1500 mg 單次（40–59：750 mg；20–39：500 mg；<20：250 mg）；抑制 250 mg BID（20–39：125 mg q12h；<20：125 mg q24h；HD 後 125 mg）；HIV 復發 500 mg BID × 7 天（20–39：500 mg q24h；<20：250 mg q24h）。",u:"https://www.novartis.us/sites/www.novartis.us/files/famvir.pdf"},
+  HIV_OI_VZV:{s:"HIV 兒童 OI 指引（VZV）",f:"Panel on Opportunistic Infections in Children with HIV. Varicella-Zoster Virus（clinicalinfo.hiv.gov）：acyclovir 抗藥的 VZV 對 valacyclovir、famciclovir、ganciclovir 也全部抗藥；懷疑抗藥時盡量做病毒分離與藥敏。",u:"https://clinicalinfo.hiv.gov/en/guidelines/hiv-clinical-guidelines-pediatric-opportunistic-infections/varicella-zoster-virus"},
+  // CMV
+  CMV_SOT25:{s:"CMV SOT 國際共識 2025",f:"Kotton CN, et al. The Fourth International Consensus Guidelines on the Management of Cytomegalovirus in Solid Organ Transplantation. Transplantation 2025;109:1066–1110（GRADE）。預防：腎 D+/R− prophylaxis（valganciclovir、ganciclovir 或 letermovir；strong, high）6 個月；腎 R+ 3 個月；肝 D+/R− 3–6 個月、R+ 3 個月；心 D+/R− 3–6 個月、R+ 3 個月；肺 D+/R− 12 個月、R+ 6–12 個月；胰、腸、VCA 建議 prophylaxis。D−/R−（用去白血球或 CMV 陰性血品）不需 CMV 預防，應考慮其他疱疹病毒預防（strong, high）。Preemptive：至少每週 12–16 週。不建議低劑量 valganciclovir。治療：valganciclovir 900 mg q12h 或 IV ganciclovir 5 mg/kg q12h（strong, moderate），輕中度可口服者口服優先；危及生命或重症用 IV（strong, low）；不用 acyclovir、valacyclovir、口服 ganciclovir；至少 2 週並至臨床緩解且 DNAemia 低於院內閾值（高敏感度單次 <LLOQ，或兩次每週檢體）；前 2 週病毒量持平或上升但臨床改善不換藥；不因白血球低而減量；用未標準化 GFR（如 CG mL/min）調劑量。難治：≥2 週適當治療後下降 ≤1 log10；累積 ≥4 週且 ≥2 週反應不佳時做基因型（檢體 >3 log10 IU/mL；UL97、UL54，letermovir 看 UL56）；maribavir 為抗藥主要替代（strong, high），避免用於 CNS 或視網膜炎、不可與 ganciclovir 併用；foscarnet 用於病況差、病毒量高（常用 ≥4.7 log10）者（weak, low）；cidofovir 試驗表現差；letermovir 單用治療證據不足；IVIG 可考慮於重症（weak, low）；次級預防不常規，高風險 8–12 週。",u:"https://pmc.ncbi.nlm.nih.gov/articles/PMC12180710/"},
+  VGC_LABEL:{s:"Valganciclovir 仿單",f:"Valcyte（valganciclovir）仿單：誘導 900 mg BID（CMV 視網膜炎 21 天），維持／預防 900 mg QD；美國：腎移植預防至移植後 200 天，心、腎胰至 100 天；英國：SOT 至 100 天，腎移植可延到 200 天。腎調整（錠劑）CrCl 40–59：450 mg BID／450 mg QD；25–39：450 mg QD／450 mg QOD；10–24：450 mg QOD／450 mg 每週 2 次；<10（HD）錠劑不建議；口服液（英國）HD：誘導 200 mg、維持 100 mg 每週 3 次於透析後。",u:"https://www.medicines.org.uk/emc/product/14225/smpc/print"},
+  GCV_LABEL:{s:"Ganciclovir 注射劑仿單",f:"Cymevene（ganciclovir）SmPC（EMA referral annex）：治療誘導 5 mg/kg q12h × 14–21 天；preemptive 誘導 5 mg/kg q12h × 7–14 天；維持 5 mg/kg QD。腎調整（誘導／維持）CrCl ≥70：5 q12h／5 q24h；50–69：2.5 q12h／2.5 q24h；25–49：2.5 q24h／1.25 q24h；10–24：1.25 q24h／0.625 q24h；<10（HD）：1.25／0.625 mg/kg 每週 3 次於透析後。ANC <500 或血小板 <25,000 避免使用。",u:"https://www.ema.europa.eu/documents/referral/cymevene-article-30-referral-annex-iii_it.pdf"},
+  FOS_LABEL:{s:"Foscarnet 仿單",f:"Foscavir（foscarnet）US PI：CMV 誘導 90 mg/kg q12h 或 60 mg/kg q8h × 2–3 週，維持 90–120 mg/kg QD；acyclovir 抗藥 HSV 40 mg/kg q8–12h × 2–3 週或至癒合。腎調整以 CrCl（mL/min/kg）計：CMV 90 mg/kg q12h 欄 >1.4：90 q12h；>1.0–1.4：70 q12h；>0.8–1.0：50 q12h；>0.6–0.8：80 q24h；>0.5–0.6：60 q24h；0.4–0.5：50 q24h；<0.4 不建議。HSV 40 mg/kg q12h 欄：40 q12h／30 q12h／20 q12h／35 q24h／25 q24h／20 q24h。黑框：腎毒性為主要毒性，需水化並頻繁監測 Cr；電解質（Ca、Mg、K、P）異常可致癲癇。",u:"https://globalrph.com/dilution/foscarnet-foscavir/"},
+  CDV_LABEL:{s:"Cidofovir 仿單",f:"Vistide（cidofovir）US PI：誘導 5 mg/kg IV 每週 1 次 × 2 週，維持 5 mg/kg 每 2 週；每次須併用 probenecid（輸注前 3 小時 2 g、輸注後 2 與 8 小時各 1 g）與 1 L 生理食鹽水預先水化。SCr >1.5 mg/dL、CrCl ≤55 mL/min 或尿蛋白 ≥100 mg/dL（≥2+）禁止開始；用藥中 Cr 上升 0.3–0.4 → 維持劑量降為 3 mg/kg，上升 ≥0.5 或 ≥3+ 蛋白尿停藥；每次給藥前 48 小時內檢查 Cr 與尿蛋白。",u:"https://www.gilead.com/-/media/files/pdfs/medicines/other/vistide/vistide.pdf"},
+  LET_LABEL:{s:"Letermovir 仿單",f:"Prevymis（letermovir）SmPC／US PI：allo-HSCT CMV R+（≥30 kg）480 mg QD，移植日至移植後 28 天內開始，用到第 100 天，晚發風險高者可用到第 200 天；腎移植 D+/R−（≥40 kg）480 mg QD，移植日至 7 天內開始，用到第 200 天。併用 cyclosporine 時 240 mg QD。輕、中、重度腎功能不全不需調整；ESRD（含透析）無建議；靜脈劑型含 cyclodextrin，CrCl <50 可能蓄積。禁止併用 pimozide。無 HSV／VZV 活性。",u:"https://www.medicines.org.uk/emc/product/11943/smpc"},
+  LET_200:{s:"Letermovir 延長到 200 天（Lancet Haematol 2024）",f:"Extended-duration letermovir prophylaxis after allogeneic HSCT（MK-8228-040）. Lancet Haematol 2024;11:e127–e135（phase 3，第一作者請確認）：高風險 R+ 延長至 200 天，降低晚發臨床顯著 CMV 感染，安全性相近。"},
+  MAR_LABEL:{s:"Maribavir 仿單",f:"Livtencity（maribavir）US PI：400 mg BID（美國未定療程；EU 8 週），治療移植後對 ganciclovir、valganciclovir、cidofovir 或 foscarnet 難治（含或不含抗藥）之 CMV。美國：併用 carbamazepine 或 rifabutin 增為 800 mg BID，phenytoin 或 phenobarbital 增為 1,200 mg BID；EU：無法避免強或中度 CYP3A 誘導劑（carbamazepine、efavirenz、phenobarbital、phenytoin）時 1,200 mg BID，rifampin、rifabutin、St. John's Wort 不建議。禁止與 ganciclovir、valganciclovir 併用。會升高 CYP3A、P-gp、BCRP 敏感受質濃度（如 tacrolimus）。台灣：克巨染膜衣錠（台灣武田）。",u:"https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/215596s004lbl.pdf"},
+  ECIL7_CMV:{s:"ECIL-7（CMV，2019）",f:"Ljungman P, et al. Guidelines for the management of cytomegalovirus infection in patients with haematological malignancies and after stem cell transplantation from the 2017 ECIL-7. Lancet Infect Dis 2019;19:e260–e272。本版未取得全文，HSCT 的 preemptive 閾值與療程請確認；成大藥劑部摘要：高劑量 acyclovir／valacyclovir 可減少感染但不減少疾病，foscarnet 毒性大不適合長期預防，letermovir 減少感染且無明顯毒性。",u:"https://nckuhpharmacy.hosp.ncku.edu.tw/var/file/72/1072/img/723/653973735.pdf"},
+  TW_LET:{s:"Letermovir 台灣（CDE 報告）",f:"財團法人醫藥品查驗中心 HTA 報告：滅巨斯（PREVYMIS）膜衣錠 240 mg、輸注液 240 mg/12 mL，美商默沙東台灣分公司；許可適應症為異體 HSCT 成人 CMV R+ 之預防。腎移植適應症在台灣是否核准請確認。",u:"https://www.nhi.gov.tw/ch/dl-11648-4166709930df4521b24ba9de9c8667ad-1.pdf"},
+  TW_MAR:{s:"Maribavir 台灣",f:"健保署藥品給付規定 10.7.14 Maribavir（如 Livtencity）（113/11/1 生效）：對一種或多種先前療法具抗藥性、難治或耐受度不佳之成人 HSCT 或 SOT 後 CMV 感染或疾病；首次療程限 8 週、需事前審查。本 app 不判定健保給付，此處只用來確認台灣已上市。",u:"https://www.nhi.gov.tw/ch/dl-75354-22ad8c06512243009d07e3f45eda5b3f-1.pdf"},
+  // 預防
+  ASCO_PX18:{s:"ASCO/IDSA 抗微生物預防 2018",f:"Taplitz RA, et al. Antimicrobial Prophylaxis for Adult Patients With Cancer-Related Immunosuppression: ASCO and IDSA Clinical Practice Guideline Update. J Clin Oncol 2018;36:3043–54（2023-03 確認現行）。建議 3.1：HSV 血清陽性、接受 allo-HSCT 或白血病誘導化療者以 nucleoside analog（如 acyclovir）預防（evidence high, strong）；至白血球恢復或黏膜炎緩解（較晚者），反覆發作或 GVHD 可延長，可延續作 VZV 預防最多 1 年。",u:"https://ace.asco.org/guidelines/32801"},
+  INST_HEMEPX:{s:"院內血液腫瘤預防（UC Davis）",f:"UC Davis Health. Antimicrobial prophylaxis for adult hematology-oncology patients（引用 NCCN Prevention and Treatment of Cancer-Related Infections 1.2017、ASCO 2013、IDSA 2011）：proteasome inhibitor（bortezomib、carfilzomib）常規 VZV 預防；SCT 由 conditioning 前 1 天到移植後 365 天；acyclovir 400 mg PO BID（非移植），SCT 劑量依院內表。屬機構指引；NCCN 原文需登入。",u:"https://health.ucdavis.edu/media-resources/antibiotic-stewardship/documents/pdfs/guidelines/guidelines-heme-onc-antimicrobial-prophylaxis-for-adults.pdf"},
+  NOGL:{s:"無指引直接建議",f:"查到的指引沒有直接針對此情境的建議；此處為一般做法或依相近情境類推，請依臨床判斷並會診感染科。"}
+};
+
+/* 縮寫 */
+const GLOSS = {
+  "HSCT":"hematopoietic stem cell transplantation，造血幹細胞移植","SOT":"solid organ transplantation，器官移植","HSV":"herpes simplex virus","VZV":"varicella-zoster virus","CMV":"cytomegalovirus",
+  "RSV":"respiratory syncytial virus","HZO":"herpes zoster ophthalmicus，眼部帶狀疱疹","ARN":"acute retinal necrosis，急性視網膜壞死","HSE":"HSV encephalitis","CSF":"cerebrospinal fluid，腦脊髓液",
+  "PCR":"polymerase chain reaction","NAAT":"nucleic acid amplification test，核酸增幅檢驗","LP":"lumbar puncture，腰椎穿刺","IVIG":"intravenous immunoglobulin","VariZIG":"varicella zoster immune globulin（美國產品名）",
+  "VZIG":"varicella zoster immune globulin","HFNC":"high-flow nasal cannula","NIV":"noninvasive ventilation","ECMO":"extracorporeal membrane oxygenation","CrCl":"creatinine clearance（Cockcroft-Gault）",
+  "eGFR":"estimated glomerular filtration rate","IBW":"ideal body weight","AdjBW":"adjusted body weight＝IBW＋0.4 ×（實際體重－IBW）","BMI":"body mass index","CAPD":"continuous ambulatory peritoneal dialysis",
+  "CRRT":"continuous renal replacement therapy","ESRD":"end-stage renal disease","LLOQ":"lower limit of quantification，定量下限","GVHD":"graft-versus-host disease","CNI":"calcineurin inhibitor（tacrolimus、cyclosporine）",
+  "ULN":"upper limit of normal","LTCF":"long-term care facility，長照機構","URTI":"upper respiratory tract infection","LRTI":"lower respiratory tract infection","ISI":"immunodeficiency scoring index（RSV 進展風險）",
+  "TK":"thymidine kinase","DNAemia":"血中可測得 CMV DNA（定量 NAT）","PAH":"pulmonary arterial hypertension","CMI":"cell-mediated immunity","ICU":"intensive care unit","HIV":"human immunodeficiency virus"
+};
+/* ---------------- 藥物 ----------------
+   preg：l = x（禁用／不建議）｜w（注意）｜ok
+   tw：pa = 台灣專案輸入；q = 台灣許可證未查證
+   ix：交互作用與使用注意（藥物頁顯示） */
+const D = {
+  ose:{n:"oseltamivir",brand:"Tamiflu（克流感）",g:"flu",preg:{l:"ok",t:"孕婦首選，劑量同一般成人（CDC）"},ix:["高劑量（150 mg BID）未證實比標準劑量好（CDC）。","重症病人經鼻胃管給藥吸收良好；CRRT、ECMO 病人仍吸收良好（CDC）。"],src:["OSE_LABEL","CDC_FLU26"]},
+  zan:{n:"zanamivir",brand:"Relenza（瑞樂沙）",g:"flu",preg:{l:"w",t:"孕婦首選為口服 oseltamivir（CDC）"},ix:["吸入劑：有氣喘、COPD 等呼吸道疾病者不建議（可能支氣管痙攣）。","住院病人不常規使用（CDC）。"],src:["ZAN_LABEL","CDC_FLU26"]},
+  per:{n:"peramivir",brand:"Rapivab（美國）／Rapiacta（瑞貝塔，台灣）",g:"flu",preg:{l:"w",t:"孕婦首選為口服 oseltamivir（CDC）"},ix:["住院病人不常規使用；口服或經腸道無法吸收時可考慮（CDC）。","台灣仿單（瑞貝塔）用法與美國仿單不同，以院內仿單為準。","不用於暴露後預防（無資料）。"],src:["PER_LABEL","CDC_FLU26"]},
+  bx:{n:"baloxavir",brand:"Xofluza（紓伏效）",g:"flu",preg:{l:"x",t:"懷孕與哺乳不建議（CDC）"},ix:["避免與乳製品、高鈣飲品、制酸劑、含鈣鐵鎂鋅硒的補充劑併服（台灣仿單）。","住院病人不常規使用；嚴重免疫低下不建議單用（CDC）。","與 neuraminidase 抑制劑合併治療住院病人沒有更好（CDC）。"],src:["BX_TW","CDC_FLU26"]},
+  pax:{n:"nirmatrelvir/ritonavir",brand:"Paxlovid（倍拉維）",g:"cov",preg:{l:"w",t:"臨床資料有限；評估效益大於風險並知情同意後可用（疾管署）"},
+    ix:["交互作用多：開藥前逐一核對所有併用藥。","禁止併用（仿單）：alfuzosin、silodosin、amiodarone、dronedarone、flecainide、propafenone、quinidine、ranolazine、colchicine（腎或肝功能不全）、lovastatin、simvastatin、lomitapide、eplerenone、finerenone、ivabradine、tolvaptan、sildenafil（PAH 用）、lurasidone、pimozide、口服 midazolam、triazolam、dihydroergotamine、ergotamine、methylergonovine、eletriptan、ubrogepant、flibanserin、naloxegol、suzetrigine、voclosporin、lumacaftor/ivacaftor、St. John's Wort。","會讓 nirmatrelvir 失效（禁止併用）：carbamazepine、phenobarbital、phenytoin、primidone、rifampin、rifapentine、apalutamide、enzalutamide。","lovastatin、simvastatin 可先暫停再用 Paxlovid（仿單）。","嚴重不良反應最常見的併用藥是 calcineurin inhibitor（tacrolimus、cyclosporine），其次是 calcium channel blocker（仿單）。","Child-Pugh C 不建議。"],src:["PAX_LABEL","PAX_EU","TW_COV_OAV"]},
+  mol:{n:"molnupiravir",brand:"Lagevrio",g:"cov",tw:"pa",preg:{l:"x",t:"不建議用於懷孕（疾管署、EUA）"},ix:["效果有限、機轉有安全疑慮，只在無法用 Paxlovid 或 remdesivir 時使用（疾管署、IDSA 2025）。","台灣為專案輸入。"],src:["MOL_LABEL","TW_COV_MOL","IDSA_COV25"]},
+  rdv:{n:"remdesivir",brand:"Veklury",g:"cov",tw:"q",preg:{l:"w",t:"可經共享決策使用（動物試驗未見胚胎毒性）"},ix:["任何腎功能（含透析）不需調整（FDA 2023）。","ALT ≥10 倍上限不建議開始；治療期間監測肝功能。"],src:["RDV_LABEL","IDSA_COV25"]},
+  ens:{n:"ensitrelvir",brand:"Xocova",g:"cov",tw:"pa",preg:{l:"x",t:"孕婦或可能懷孕者禁用（疾管署）"},ix:["強效 CYP3A 抑制劑，交互作用多。","腎功能不全併用 colchicine 者不可用（疾管署）。","美國 FDA 未核准，IDSA 2025 未納入；台灣為專案輸入。"],src:["ENS_TW","TW_COV_OAV"]},
+  rib:{n:"ribavirin",brand:"Virazole（吸入）／Rebetol、Copegus（口服）",g:"rsv",tw:"q",preg:{l:"x",t:"禁用（致畸，仿單黑框警語）"},ix:["只用於 HSCT／血液腫瘤、肺移植等特定族群，不經驗性使用（ECIL-4、院內指引）。","口服劑量各中心不同；腎功能不全時減量，請依院內規範與藥師。","霧化給藥需專用設備與防護；台灣吸入劑型供應請確認。"],src:["ECIL4_RSV","INST_RSV","RBV_ORAL"]},
+  acv:{n:"acyclovir",brand:"Zovirax",g:"herp",preg:{l:"ok",t:"懷孕使用經驗最多，為疱疹病毒首選（MSD）"},ix:["IV：輸注至少 1 小時並充分水化，避免結晶性腎病變；腎功能差或高劑量注意神經毒性。","IV 劑量依體重：仿單肥胖者用 IBW；部分院內指引用 AdjBW。","口服生體可用率 10–20%，帶狀疱疹優先 valacyclovir 或 famciclovir（MSD）。"],src:["ACV_IV_LABEL","ACV_PO_LABEL","ACV_OBESE"]},
+  val:{n:"valacyclovir",brand:"Valtrex",g:"herp",preg:{l:"ok",t:"懷孕資料令人安心（MSD）"},ix:["HD 病人於透析後給藥（仿單）。","acyclovir 抗藥的 HSV／VZV 對 valacyclovir 也抗藥。"],src:["VAL_LABEL"]},
+  fam:{n:"famciclovir",brand:"Famvir",g:"herp",preg:{l:"w",t:"懷孕資料少，一般不建議（MSD）"},ix:["HD 病人每次透析後給藥（仿單）。","acyclovir 抗藥（TK 突變）者通常也對 famciclovir 抗藥。"],src:["FAM_LABEL"]},
+  gcv:{n:"ganciclovir",brand:"Cymevene／Cytovene",g:"cmv",preg:{l:"x",t:"動物致畸、致癌，懷孕避免並需避孕（仿單）"},ix:["骨髓抑制：ANC <500 或血小板 <25,000 避免使用（仿單）；CMV 國際共識：不因白血球低而減量，改用 G-CSF 或調整其他骨髓抑制藥。","IV 輸注 ≥1 小時，濃度 ≤10 mg/mL。","與 maribavir 拮抗，不可併用。"],src:["GCV_LABEL","CMV_SOT25"]},
+  vgc:{n:"valganciclovir",brand:"Valcyte",g:"cmv",preg:{l:"x",t:"動物致畸、致癌，懷孕避免並需避孕（仿單）"},ix:["900 mg BID 與 IV ganciclovir 5 mg/kg BID 等效（仿單）；與食物併服。","骨髓抑制；不建議低劑量預防（CMV 國際共識 2025）。","與 maribavir 拮抗，不可併用。"],src:["VGC_LABEL","CMV_SOT25"]},
+  fos:{n:"foscarnet",brand:"Foscavir",g:"cmv",tw:"q",preg:{l:"w",t:"資料有限，請會診"},ix:["黑框：腎毒性為主要毒性，每次給藥前後充分水化、頻繁監測 Cr（仿單）。","監測 Ca、Mg、K、P；離子鈣低可致癲癇。","腎調整以 CrCl（mL/min）除以體重（kg）計。"],src:["FOS_LABEL"]},
+  cdv:{n:"cidofovir",brand:"Vistide",g:"cmv",tw:"q",preg:{l:"x",t:"動物致畸、致癌（仿單）"},ix:["每次需 probenecid（前 3 小時 2 g、後 2 與 8 小時各 1 g）及 1 L 生理食鹽水預先水化。","SCr >1.5、CrCl ≤55 或尿蛋白 ≥2+ 禁止開始；給藥前 48 小時內檢查 Cr 與尿蛋白。","避免與其他腎毒性藥併用；監測中性球與眼壓。"],src:["CDV_LABEL"]},
+  let:{n:"letermovir",brand:"Prevymis（滅巨斯）",g:"cmv",preg:{l:"w",t:"資料有限，請確認"},ix:["併用 cyclosporine 時劑量降為 240 mg QD（仿單）。","禁止併用 pimozide（仿單）。","沒有 HSV／VZV 活性：HSCT 預防需另加 acyclovir 或 valacyclovir。","單用治療 CMV 感染證據不足，抗藥門檻低（UL56 C325 突變完全抗藥）。","靜脈劑型含 cyclodextrin，CrCl <50 可能蓄積；ESRD 無建議。"],src:["LET_LABEL","CMV_SOT25","TW_LET"]},
+  mar:{n:"maribavir",brand:"Livtencity（克巨染）",g:"cmv",preg:{l:"w",t:"資料有限（大鼠胚胎存活下降）"},ix:["禁止與 ganciclovir、valganciclovir 併用（拮抗）。","CYP3A 誘導劑：美國仿單 carbamazepine、rifabutin → 800 mg BID，phenytoin、phenobarbital → 1,200 mg BID；EU 仿單：無法避免強或中度誘導劑 → 1,200 mg BID，rifampin、rifabutin 不建議。","升高 tacrolimus 等 CYP3A／P-gp／BCRP 受質濃度，需監測。","不用於 CNS 感染或視網膜炎（CMV 國際共識 2025）。"],src:["MAR_LABEL","CMV_SOT25","TW_MAR"]}
+};
+const DGRP = [["流感","flu"],["COVID-19","cov"],["RSV","rsv"],["HSV／VZV","herp"],["CMV","cmv"]];
+
+/* 劑量：b = [[CrCl 下限, 劑量]]，CrCl ≥下限；x.01 表示「>x」。
+   {KG:n}＝n mg/kg × 實際體重；{AC:n}＝acyclovir n mg/kg（肥胖時並列 IBW 與 AdjBW）；{BX}＝baloxavir 依體重
+   unit:"kg" → 門檻為 CrCl/體重（mL/min/kg），用於 foscarnet */
+const REG = {
+  ose_tx:{d:"ose",r:"PO",ind:"治療",b:[[60.01,"75 mg BID × 5 天"],[30.01,"30 mg BID × 5 天"],[10.01,"30 mg QD × 5 天"],[0,"ESRD 未透析：不建議"]],hd:"30 mg 立即，之後每次 HD 後 30 mg（療程不超過 5 天）",pd:"CAPD：單次 30 mg",crrt:"仿單無建議；CDC：CRRT 病人口服吸收良好，劑量請會診藥師",src:["OSE_LABEL","CDC_FLU26"]},
+  ose_px:{d:"ose",r:"PO",ind:"預防",b:[[60.01,"75 mg QD"],[30.01,"30 mg QD"],[10.01,"30 mg QOD"],[0,"ESRD 未透析：不建議"]],hd:"30 mg 立即，之後隔次 HD 後 30 mg",pd:"30 mg 立即，之後每週 30 mg",crrt:"仿單無建議，請會診藥師",note:"療程：CDC 最後一次接觸後 7 天；仿單至少 10 天；機構群聚至少 2 週並持續到最後一例後 1 週。",src:["OSE_LABEL","CDC_FLU26"]},
+  zan_tx:{d:"zan",r:"吸入",ind:"治療",b:[[0,"10 mg（2 吸）BID × 5 天"]],note:"5 天療程不需腎調整。",src:["ZAN_LABEL"]},
+  zan_px:{d:"zan",r:"吸入",ind:"預防",b:[[0,"10 mg（2 吸）QD"]],src:["ZAN_LABEL","CDC_FLU26"]},
+  per_tx:{d:"per",r:"IV",ind:"治療",b:[[50,"600 mg 單次"],[30,"200 mg 單次"],[10,"100 mg 單次"],[0,"CrCl <10：仿單無建議，請會診藥師"]],hd:"透析後給藥，劑量依 CrCl（仿單）",pd:"仿單無建議，請會診藥師",crrt:"仿單無建議，請會診藥師",note:"美國仿單劑量；台灣瑞貝塔仿單用法不同。住院重症 CDC：可考慮每日給藥延長療程。",src:["PER_LABEL","CDC_FLU26"]},
+  bx_tx:{d:"bx",r:"PO",ind:"治療",b:[[30,"單次{BX}"],[0,"CrCl <30：無資料"]],hd:"無資料",pd:"無資料",crrt:"無資料",src:["BX_TW","CDC_FLU26"]},
+  bx_px:{d:"bx",r:"PO",ind:"暴露後預防",b:[[30,"接觸後 48 小時內單次{BX}"],[0,"CrCl <30：無資料"]],hd:"無資料",pd:"無資料",crrt:"無資料",src:["BX_TW","CDC_FLU26"]},
+  pax:{d:"pax",r:"PO",ind:"治療（發病 5 天內）",b:[[60,"nirmatrelvir 300 mg ＋ ritonavir 100 mg BID × 5 天"],[30,"nirmatrelvir 150 mg ＋ ritonavir 100 mg BID × 5 天"],[0,"第 1 天 300/100 mg 一次，第 2–5 天 150/100 mg QD（美國仿單；歐英 SmPC 禁用）"]],hd:"第 1 天 300/100 mg 一次，第 2–5 天 150/100 mg QD，透析日於 HD 後給（美國仿單）",pd:"仿單以 eGFR <30 處理（第 1 天 300/100，之後 150/100 QD），請會診藥師",crrt:"仿單無建議，請會診藥師",note:"仿單以 eGFR 分級，此處以 CrCl 近似。",src:["PAX_LABEL","PAX_EU","TW_COV_OAV"]},
+  mol:{d:"mol",r:"PO",ind:"治療（發病 5 天內）",b:[[0,"800 mg BID × 5 天"]],note:"不需腎調整。",src:["MOL_LABEL","TW_COV_OAV"]},
+  ens:{d:"ens",r:"PO",ind:"治療（發病 3 天內）",b:[[0,"第 1 天 375 mg，第 2–5 天 125 mg QD"]],note:"不需腎調整。",src:["ENS_TW"]},
+  rdv3:{d:"rdv",r:"IV",ind:"門診（發病 7 天內）",b:[[0,"200 mg 第 1 天，100 mg 第 2–3 天（共 3 天）"]],note:"任何腎功能（含透析）不需調整。",src:["RDV_LABEL","IDSA_COV25"]},
+  rdv5:{d:"rdv",r:"IV",ind:"住院（未插管）",b:[[0,"200 mg 第 1 天，之後 100 mg QD，共 5 天"]],note:"任何腎功能（含透析）不需調整。IDSA：5 天優於 10 天。",src:["RDV_LABEL","IDSA_COV_RDV"]},
+  rib_po:{d:"rib",r:"PO",ind:"RSV（off-label）",b:[[0,"依院內規範（文獻例：10–20 mg/kg/日分 3 次 × 7–10 天）・請確認"]],note:"腎功能不全需減量，請會診藥師。",src:["INST_RSV","RBV_ORAL"]},
+  rib_inh:{d:"rib",r:"吸入",ind:"RSV",b:[[0,"霧化給藥，劑量與時程依院內規範・請確認"]],src:["ECIL4_RSV"]},
+  acv_iv5:{d:"acv",r:"IV",ind:"HSV 黏膜皮膚（免疫低下）",b:[[50.01,"5 mg/kg q8h{AC:5}"],[25.01,"5 mg/kg q12h{AC:5}"],[10.01,"5 mg/kg q24h{AC:5}"],[0,"2.5 mg/kg q24h{AC:2.5}"]],hd:"2.5 mg/kg q24h，透析日於 HD 後給{AC:2.5}",pd:"CAPD：2.5 mg/kg q24h（英國 SmPC）{AC:2.5}",crrt:"仿單無建議；UCSF 院內：CVVHD 5 mg/kg q24h，請會診藥師",src:["ACV_IV_LABEL","ACV_OBESE"]},
+  acv_iv10:{d:"acv",r:"IV",ind:"HSV 腦炎、VZV（免疫低下、播散）",b:[[50.01,"10 mg/kg q8h{AC:10}"],[25.01,"10 mg/kg q12h{AC:10}"],[10.01,"10 mg/kg q24h{AC:10}"],[0,"5 mg/kg q24h{AC:5}"]],hd:"5 mg/kg q24h，透析日於 HD 後給{AC:5}",pd:"CAPD：5 mg/kg q24h（英國 SmPC）{AC:5}",crrt:"仿單無建議；UCSF 院內：CVVHD 10 mg/kg q12h，請會診藥師",src:["ACV_IV_LABEL","ACV_OBESE"]},
+  acv_hz:{d:"acv",r:"PO",ind:"帶狀疱疹",b:[[25.01,"800 mg 5 次／日 × 7–10 天"],[10,"800 mg q8h × 7–10 天"],[0,"800 mg q12h × 7–10 天"]],hd:"800 mg q12h，透析日於 HD 後給",src:["ACV_PO_LABEL"]},
+  acv_var:{d:"acv",r:"PO",ind:"成人水痘",b:[[25.01,"800 mg QID × 5 天"],[10,"800 mg q8h × 5 天"],[0,"800 mg q12h × 5 天"]],hd:"800 mg q12h，透析日於 HD 後給",note:"腎調整依仿單 800 mg 方案類推。",src:["ACV_PO_LABEL","CDC_VAR"]},
+  acv_pep:{d:"acv",r:"PO",ind:"水痘暴露後",b:[[25.01,"800 mg QID × 7 天（暴露後第 7–10 天開始）"],[10,"800 mg q8h × 7 天"],[0,"800 mg q12h × 7 天"]],hd:"800 mg q12h × 7 天，透析日於 HD 後給",note:"AAP 劑量 20 mg/kg QID、上限 800 mg／次；成人資料有限。腎調整依仿單類推。",src:["VAR_PEP","ACV_PO_LABEL"]},
+  acv_400t:{d:"acv",r:"PO",ind:"生殖器疱疹",b:[[10.01,"400 mg TID"],[0,"200 mg q12h（依仿單 200 mg 方案類推）"]],hd:"200 mg q12h，透析日於 HD 後給（依仿單類推）",note:"療程依情境：初次 7–10 天；HIV 間歇 5–10 天；懷孕 36 週起抑制至分娩。",src:["CDC_STI21","ACV_PO_LABEL"]},
+  acv_800b:{d:"acv",r:"PO",ind:"復發（間歇）",b:[[25.01,"800 mg BID × 5 天（或 800 mg TID × 2 天）"],[10,"800 mg BID × 5 天"],[0,"800 mg q12h × 5 天"]],hd:"800 mg q12h × 5 天，透析日於 HD 後給",note:"腎調整依仿單類推。",src:["CDC_STI21","ACV_PO_LABEL"]},
+  acv_400b:{d:"acv",r:"PO",ind:"抑制／預防",b:[[10.01,"400 mg BID"],[0,"200 mg q12h"]],hd:"200 mg q12h，透析日於 HD 後給",src:["CDC_STI21","ACV_PO_LABEL"]},
+  acv_hivsup:{d:"acv",r:"PO",ind:"HIV 抑制",b:[[10.01,"400–800 mg BID–TID"],[0,"200 mg q12h（依仿單類推）"]],hd:"200 mg q12h，透析日於 HD 後給（依仿單類推）",src:["CDC_STI21"]},
+  val_hz:{d:"val",r:"PO",ind:"帶狀疱疹",b:[[50,"1 g TID × 7 天"],[30,"1 g q12h × 7 天"],[10,"1 g q24h × 7 天"],[0,"500 mg q24h × 7 天"]],hd:"500 mg q24h，HD 後給",src:["VAL_LABEL"]},
+  val_var:{d:"val",r:"PO",ind:"成人水痘",b:[[50,"1 g TID × 5 天"],[30,"1 g q12h × 5 天"],[10,"1 g q24h × 5 天"],[0,"500 mg q24h × 5 天"]],hd:"500 mg q24h，HD 後給",note:"仿單只核准 2–<18 歲（20 mg/kg TID、上限 1 g TID）；成人用法與腎調整依帶狀疱疹表類推・請確認。",src:["VAL_LABEL","CDC_VAR"]},
+  val_pep:{d:"val",r:"PO",ind:"水痘暴露後",b:[[50,"1 g TID × 7 天（暴露後第 7–10 天開始）"],[30,"1 g q12h × 7 天"],[10,"1 g q24h × 7 天"],[0,"500 mg q24h × 7 天"]],hd:"500 mg q24h × 7 天，HD 後給",note:"AAP 劑量 20 mg/kg TID、上限 1 g／次；成人資料有限，腎調整依帶狀疱疹表類推。",src:["VAR_PEP","VAL_LABEL"]},
+  val_first:{d:"val",r:"PO",ind:"初次生殖器疱疹",b:[[30,"1 g BID × 7–10 天"],[10,"1 g q24h × 7–10 天"],[0,"500 mg q24h × 7–10 天"]],hd:"500 mg q24h，HD 後給",src:["CDC_STI21","VAL_LABEL"]},
+  val_hiv:{d:"val",r:"PO",ind:"HIV 間歇／免疫低下改口服",b:[[30,"1 g BID"],[10,"1 g q24h"],[0,"500 mg q24h"]],hd:"500 mg q24h，HD 後給",note:"HIV 間歇 5–10 天；IV 改口服時完成總療程。",src:["CDC_STI21","VAL_LABEL"]},
+  val_rec:{d:"val",r:"PO",ind:"復發（間歇）",b:[[30,"500 mg BID × 3 天（或 1 g QD × 5 天）"],[0,"500 mg q24h × 3 天"]],hd:"500 mg q24h，HD 後給",src:["CDC_STI21","VAL_LABEL"]},
+  val_sup:{d:"val",r:"PO",ind:"抑制",b:[[30,"500 mg QD 或 1 g QD（≥10 次／年用 1 g）"],[10,"500 mg q24h（原 1 g）或 500 mg q48h（原 500 mg）"],[0,"500 mg q24h（原 1 g）或 500 mg q48h（原 500 mg）"]],hd:"HD 後給",src:["CDC_STI21","VAL_LABEL"]},
+  val_hivsup:{d:"val",r:"PO",ind:"HIV 抑制／懷孕抑制",b:[[30,"500 mg BID"],[0,"500 mg q24h"]],hd:"500 mg q24h，HD 後給",src:["CDC_STI21","VAL_LABEL"]},
+  val_hsl:{d:"val",r:"PO",ind:"口唇疱疹",b:[[50,"2 g BID × 1 天"],[30,"1 g BID × 1 天"],[10,"500 mg BID × 1 天"],[0,"500 mg 單次"]],hd:"500 mg 單次，HD 後給",note:"療程不超過 1 天；症狀出現（刺痛、癢）時盡早服用。",src:["VAL_LABEL"]},
+  fam_hz:{d:"fam",r:"PO",ind:"帶狀疱疹",b:[[60,"500 mg TID × 7 天"],[40,"500 mg q12h × 7 天"],[20,"500 mg q24h × 7 天"],[0,"250 mg q24h × 7 天"]],hd:"每次透析後 250 mg",src:["FAM_LABEL"]},
+  fam_first:{d:"fam",r:"PO",ind:"初次生殖器疱疹",b:[[40,"250 mg TID × 7–10 天"],[0,"腎功能不全：仿單未列此用法・請確認"]],hd:"仿單未列此用法・請確認",note:"CDC 方案；仿單未列此用法，CrCl <40 的劑量請確認。",src:["CDC_STI21"]},
+  fam_rec:{d:"fam",r:"PO",ind:"復發（間歇）",b:[[60,"1 g BID × 1 天"],[40,"500 mg q12h × 1 天"],[20,"500 mg 單次"],[0,"250 mg 單次"]],hd:"透析後 250 mg 單次",note:"CDC 其他方案：500 mg 一次後 250 mg BID × 2 天；125 mg BID × 5 天。",src:["CDC_STI21","FAM_LABEL"]},
+  fam_sup:{d:"fam",r:"PO",ind:"抑制",b:[[40,"250 mg BID"],[20,"125 mg q12h"],[0,"125 mg q24h"]],hd:"每次透析後 125 mg",src:["CDC_STI21","FAM_LABEL"]},
+  fam_hiv:{d:"fam",r:"PO",ind:"HIV 間歇／抑制",b:[[40,"500 mg BID（間歇 5–10 天）"],[20,"500 mg q24h"],[0,"250 mg q24h"]],hd:"每次透析後 250 mg",src:["CDC_STI21","FAM_LABEL"]},
+  fam_hsl:{d:"fam",r:"PO",ind:"口唇疱疹",b:[[60,"1500 mg 單次"],[40,"750 mg 單次"],[20,"500 mg 單次"],[0,"250 mg 單次"]],hd:"透析後 250 mg 單次",src:["FAM_LABEL"]},
+  gcv_ind:{d:"gcv",r:"IV",ind:"誘導／治療",b:[[70,"5 mg/kg q12h{KG:5}"],[50,"2.5 mg/kg q12h{KG:2.5}"],[25,"2.5 mg/kg q24h{KG:2.5}"],[10,"1.25 mg/kg q24h{KG:1.25}"],[0,"1.25 mg/kg 每週 3 次{KG:1.25}"]],hd:"1.25 mg/kg 每週 3 次，HD 後給{KG:1.25}",pd:"仿單無建議，請會診藥師",crrt:"仿單無建議，請會診藥師（可考慮 TDM）",note:"仿單以 mg/kg 計，此處用實際體重。",src:["GCV_LABEL","CMV_SOT25"]},
+  gcv_mt:{d:"gcv",r:"IV",ind:"維持／預防",b:[[70,"5 mg/kg q24h{KG:5}"],[50,"2.5 mg/kg q24h{KG:2.5}"],[25,"1.25 mg/kg q24h{KG:1.25}"],[10,"0.625 mg/kg q24h{KG:0.625}"],[0,"0.625 mg/kg 每週 3 次{KG:0.625}"]],hd:"0.625 mg/kg 每週 3 次，HD 後給{KG:0.625}",pd:"仿單無建議，請會診藥師",crrt:"仿單無建議，請會診藥師",src:["GCV_LABEL"]},
+  vgc_ind:{d:"vgc",r:"PO",ind:"誘導／治療",b:[[60,"900 mg BID"],[40,"450 mg BID"],[25,"450 mg QD"],[10,"450 mg QOD"],[0,"錠劑不建議（CrCl <10）"]],hd:"錠劑不建議；英國口服液 200 mg 每週 3 次，HD 後給",pd:"仿單無建議",crrt:"仿單無建議，建議改 IV ganciclovir 並會診藥師",src:["VGC_LABEL","CMV_SOT25"]},
+  vgc_px:{d:"vgc",r:"PO",ind:"預防／維持",b:[[60,"900 mg QD"],[40,"450 mg QD"],[25,"450 mg QOD"],[10,"450 mg 每週 2 次"],[0,"錠劑不建議（CrCl <10）"]],hd:"錠劑不建議；英國口服液 100 mg 每週 3 次，HD 後給",pd:"仿單無建議",crrt:"仿單無建議",note:"不建議低劑量預防（CMV 國際共識 2025）。",src:["VGC_LABEL","CMV_SOT25"]},
+  fos_cmv:{d:"fos",r:"IV",ind:"CMV 誘導",unit:"kg",b:[[1.4001,"90 mg/kg q12h{KG:90}"],[1.0001,"70 mg/kg q12h{KG:70}"],[0.8001,"50 mg/kg q12h{KG:50}"],[0.6001,"80 mg/kg q24h{KG:80}"],[0.5001,"60 mg/kg q24h{KG:60}"],[0.4,"50 mg/kg q24h{KG:50}"],[0,"不建議（<0.4 mL/min/kg）"]],hd:"仿單不建議",pd:"仿單不建議",crrt:"仿單無建議，請會診藥師",note:"60 mg/kg q8h 為另一誘導方案；維持 90–120 mg/kg QD。",src:["FOS_LABEL"]},
+  fos_hsv:{d:"fos",r:"IV",ind:"acyclovir 抗藥 HSV／VZV",unit:"kg",b:[[1.4001,"40 mg/kg q12h{KG:40}"],[1.0001,"30 mg/kg q12h{KG:30}"],[0.8001,"20 mg/kg q12h{KG:20}"],[0.6001,"35 mg/kg q24h{KG:35}"],[0.5001,"25 mg/kg q24h{KG:25}"],[0.4,"20 mg/kg q24h{KG:20}"],[0,"不建議（<0.4 mL/min/kg）"]],hd:"仿單不建議",pd:"仿單不建議",crrt:"仿單無建議，請會診藥師",note:"仿單 HSV：40 mg/kg q8–12h × 2–3 週或至癒合（表列 q12h 欄）。VZV 抗藥用法 off-label。",src:["FOS_LABEL"]},
+  cdv:{d:"cdv",r:"IV",ind:"抗藥 CMV／HSV",b:[[55.01,"5 mg/kg 每週 1 次 × 2 週，之後每 2 週 5 mg/kg{KG:5}（併 probenecid 與水化）"],[0,"禁止開始（CrCl ≤55）"]],hd:"禁止開始（仿單）",pd:"禁止開始（仿單）",crrt:"禁止開始（仿單）",note:"SCr >1.5 mg/dL 或尿蛋白 ≥2+ 也禁止開始。",src:["CDV_LABEL"]},
+  let_hsct:{d:"let",r:"PO／IV",ind:"allo-HSCT R+ 預防",b:[[10,"480 mg QD（併用 cyclosporine：240 mg QD）"],[0,"CrCl <10：無建議"]],hd:"ESRD（含透析）無建議",pd:"無建議",crrt:"無建議",note:"移植日到移植後 28 天內開始，用到第 100 天；晚發風險高者可到第 200 天。",src:["LET_LABEL","LET_200"]},
+  let_ktx:{d:"let",r:"PO／IV",ind:"腎移植 D+/R− 預防",b:[[10,"480 mg QD（併用 cyclosporine：240 mg QD）"],[0,"CrCl <10：無建議"]],hd:"ESRD（含透析）無建議",pd:"無建議",crrt:"無建議",note:"移植日到 7 天內開始，用到移植後第 200 天（仿單）。台灣是否核准此適應症請確認。",src:["LET_LABEL","CMV_SOT25"]},
+  mar:{d:"mar",r:"PO",ind:"難治／抗藥 CMV",b:[[0,"400 mg BID（EU 8 週）"]],note:"腎功能不全不需調整（ESRD、透析資料有限・請確認）；併用 CYP3A 誘導劑時增量（見藥物頁）。",src:["MAR_LABEL"]}
+};
+/* ---------------- 治療（依診斷） ----------------
+   gen(o) 回傳 {key 結論一行, pre/post 提醒, o 方案卡, diff 各指引說法, tests 檢驗, res 相關抗藥項目} */
+const O = (tier,regs,x)=>Object.assign({tier,regs,alt:true},x||{});
+const N = (t,src,lvl,upd)=>({t,src,lvl,upd});
+const UPDN = {
+  WHO24:"WHO 2024 流感指引（新版）：非重症只建議高風險者用 baloxavir；oseltamivir 用於非重症改為 strong against，與 CDC、IDSA 不同。",
+  CTS25:"CENTERSTONE（NEJM 2025，phase 3b）：指標病人用 baloxavir 後家戶傳播勝算下降 32%。",
+  COV25:"IDSA 2025：輕中度 COVID-19 抗病毒建議依風險分級更新；高風險 nirmatrelvir/ritonavir 或 remdesivir 3 天，molnupiravir 只在無其他選擇時。",
+  RDV23:"FDA 2023-07：remdesivir 核准用於任何腎功能（含透析），不需劑量調整（REDPINE）。",
+  CMV25:"CMV SOT 國際共識第 4 版（2025）：letermovir 列入腎移植 D+/R− 預防；不再建議低劑量 valganciclovir；maribavir 列為抗藥 CMV 主要替代；病毒量改以 log10 IU/mL 與院內閾值判讀。",
+  LET24:"Letermovir 延長到 200 天（Lancet Haematol 2024，phase 3）：晚發 CMV 高風險的 allo-HSCT 受者延長預防可降低臨床顯著感染。",
+  HSE26:"丹麥世代研究（CID 2026）：LP 後 acyclovir 延遲 >6 小時與 6 個月死亡率上升相關（觀察性）。"
+};
+const FLU_HR = "高風險：依 CDC 定義（≥65 歲、懷孕或產後 2 週內、慢性心肺腎肝血液代謝或神經疾病、免疫低下、極度肥胖、長照機構住民等；本版未逐項核對 CDC 清單）";
+
+const DX = [
+/* ===== 呼吸道 ===== */
+{id:"flu",g:"呼吸道",n:"流感",opts:[
+  {k:"set",q:"情境",ch:[["hr","門診・高風險"],["lr","門診・非高風險"],["inp","住院"],["icu","重症／ICU"],["ic","嚴重免疫低下"]]},
+  {k:"t",q:"發病時間",ch:[["le48","≤48 小時"],["gt48",">48 小時"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[],tests:[],res:"flu"};
+  const tw=N("台灣 2025–26 季：A(H1N1) 約 6.5% 對 oseltamivir 與 peramivir 有抗藥突變；A(H3N2)、B 型未檢出；baloxavir 仍有效（新聞引述疾管署，請以原文確認）。",["TW_FLU_RES"]);
+  const whoD=["WHO 2024","非重症：高風險者 baloxavir（conditional）；低風險者 baloxavir conditional against；oseltamivir、zanamivir 用於非重症 strong against；peramivir conditional against。",["WHO_FLU24"]];
+  const twD=["台灣感染症醫學會 2024","2024 年修訂「抗流感病毒藥物使用建議」，本版未取得全文・請確認。",["TW_ID_FLU24"]];
+  if(o.set==="hr"){
+    r.key="盡快給藥，不等檢驗結果；oseltamivir 5 天為首選（CDC、IDSA 2018）。";
+    if(o.t==="gt48") r.pre.push(N("超過 48 小時：CDC 對高風險者的建議沒有時間上限，但越早開始效益越大。",["CDC_FLU26"],"warn"));
+    r.o.push(O("首選",["ose_tx"],{src:["CDC_FLU26","IDSA_FLU18"]}));
+    r.o.push(O("替代（單次口服）",["bx_tx"],{cond:"不用於懷孕、哺乳、嚴重免疫低下單用、住院病人。",src:["CDC_FLU26","BX_TW"]}));
+    r.o.push(O("替代",["zan_tx","per_tx"],{cond:"zanamivir 不用於氣喘、COPD；peramivir 為單次 IV。",src:["CDC_FLU26"]}));
+    r.diff.push(["CDC 2026","高風險者盡快治療，oseltamivir、zanamivir、peramivir、baloxavir 四種皆可；懷孕用 oseltamivir。",["CDC_FLU26"]],["IDSA 2018","高風險門診病人盡快治療（同 CDC）。",["IDSA_FLU18"]],whoD,twD);
+    r.diff[2].push("WHO24");
+  } else if(o.set==="lr"){
+    if(o.t==="le48"){
+      r.key="非高風險門診：可依臨床判斷在發病 2 天內給藥（CDC）；WHO 2024 不建議。";
+      r.o.push(O("可考慮（2 天內）",["ose_tx","bx_tx"],{src:["CDC_FLU26"]}));
+    } else r.key="非高風險且超過 2 天：CDC 的「可考慮治療」條件是發病 2 天內，超過時一般不給抗病毒藥；病情進展或出現併發症改依住院或高風險處理。";
+    r.diff.push(["CDC 2026","非高風險門診病人，2 天內可依臨床判斷經驗性治療。",["CDC_FLU26"]],whoD,twD);
+    r.diff[1].push("WHO24");
+  } else if(o.set==="inp"||o.set==="icu"){
+    r.key="住院：盡快給 oseltamivir（口服或鼻胃管），不等檢驗、不受 48 小時限制（CDC、IDSA 2018）。";
+    r.o.push(O("首選",["ose_tx"],{src:["CDC_FLU26","IDSA_FLU18"],note:"療程 5 天；5 天後仍嚴重可延長，下呼吸道檢體 RT-PCR 可協助判斷（CDC）。"}));
+    r.o.push(O("口服或經腸道無法吸收時",["per_tx"],{cond:"胃滯留、吸收不良、腸胃道出血等（CDC）。",src:["CDC_FLU26"]}));
+    r.post.push(N("住院不常規使用 baloxavir、zanamivir、peramivir；baloxavir 合併 neuraminidase 抑制劑沒有更好（CDC）。",["CDC_FLU26"]));
+    if(o.set==="icu") r.post.push(N("重症：高劑量 oseltamivir（150 mg BID）未證實更有效；繼發細菌感染（S. aureus、S. pneumoniae）需另外評估抗生素。",["CDC_FLU26","IDSA_FLU18"]));
+    r.diff.push(["CDC 2026","住院者 oseltamivir；peramivir 只在無法經腸道吸收時考慮。",["CDC_FLU26"]],["WHO 2024","重症：oseltamivir（conditional）；peramivir conditional against。",["WHO_FLU24"],"WHO24"],twD);
+  } else {
+    r.key="嚴重免疫低下：oseltamivir 盡快開始，常需較長療程；不建議 baloxavir 單用（CDC）。";
+    r.o.push(O("首選",["ose_tx"],{src:["CDC_FLU26"],note:"病毒複製時間長、治療中易產生抗藥，療程依臨床與病毒檢測延長（CDC）。"}));
+    r.post.push(N("治療中仍持續陽性或惡化 → 考慮 oseltamivir 抗藥（見抗藥分頁）。",["CDC_FLU26"],"warn"));
+    r.diff.push(["CDC 2026","延長療程；不建議 baloxavir 單用。",["CDC_FLU26"]],twD);
+  }
+  r.post.push(tw);
+  r.tests=[["門診：檢驗結果會改變處置時才檢測（快篩或分子檢測）。",["IDSA_FLU18"]],["住院：用分子檢測（RT-PCR 或多重檢測），不要等結果才給藥；插管病人可送下呼吸道檢體（CDC、IDSA 2018）。",["CDC_FLU26","IDSA_FLU18"]],["流感陽性不排除 SARS-CoV-2，反之亦然；oseltamivir 對 SARS-CoV-2 無效（CDC）。",["CDC_FLU26"]]];
+  r.extra=FLU_HR;
+  return r; }},
+{id:"covid",g:"呼吸道",n:"COVID-19",opts:[
+  {k:"sev",q:"嚴重度",ch:[["amb","未缺氧（門診或非因 COVID 住院）"],["hosp","因 COVID 住院・未用氧"],["o2","需一般氧氣"],["hf","HFNC／NIV"],["mv","插管／ECMO"]]},
+  {k:"risk",q:"進展風險",show:o=>o.sev==="amb",ch:[["high","高風險"],["inc","風險增加"],["low","無危險因子"]]},
+  {k:"day",q:"發病天數",show:o=>o.sev==="amb",ch:[["d5","≤5 天"],["d7","6–7 天"],["gt7",">7 天"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[],tests:[]};
+  const pax=O("首選",["pax"],{src:["IDSA_COV25","PAX_LABEL"],upd:"COV25",note:"開藥前逐一核對併用藥交互作用（藥物頁）。"});
+  if(o.sev==="amb"){
+    if(o.risk==="low"){
+      r.key="無危險因子：不建議抗病毒藥（IDSA 2025）。";
+      r.diff.push(["IDSA 2025","無危險因子者不建議抗病毒藥。",["IDSA_COV25"],"COV25"],["WHO 2023","低風險者 remdesivir、molnupiravir strong against。",["WHO_COV23"]]);
+    } else if(o.day==="gt7"){
+      r.key="發病超過 7 天：已超過各藥試驗的開始時限（nirmatrelvir/ritonavir、molnupiravir ≤5 天；remdesivir ≤7 天），沒有建議。";
+    } else {
+      const hi=o.risk==="high";
+      r.key=hi?"高風險：nirmatrelvir/ritonavir 5 天或 remdesivir 3 天（IDSA 2025）。":"風險增加（非高風險）：可考慮 nirmatrelvir/ritonavir 或 remdesivir（IDSA 2025・conditional）。";
+      if(o.day==="d5"){
+        pax.tier=hi?"首選":"可考慮";
+        r.o.push(pax);
+        r.o.push(O(hi?"首選（無法口服或交互作用無法處理時）":"可考慮",["rdv3"],{src:["IDSA_COV25","RDV_LABEL"],upd:"COV25"}));
+        r.o.push(O("替代（無其他選擇）",["mol"],{cond:"≥18 歲、非懷孕；無法用 nirmatrelvir/ritonavir 或 remdesivir 時。",src:["IDSA_COV25","TW_COV_MOL"]}));
+        r.o.push(O("台灣另有（專案輸入）",["ens"],{cond:"發病 3 天內、≥12 歲，無法用 Paxlovid 或 remdesivir；孕婦禁用（疾管署）。IDSA、WHO 未納入。",src:["TW_COV_OAV","ENS_TW"]}));
+      } else {
+        r.pre.push(N("發病 6–7 天：只剩 remdesivir 在試驗開始時限內（≤7 天）；nirmatrelvir/ritonavir、molnupiravir 需在 5 天內。",["IDSA_COV25","ONT_COV25"],"warn"));
+        r.o.push(O(hi?"首選":"可考慮",["rdv3"],{src:["IDSA_COV25","RDV_LABEL"]}));
+      }
+      r.diff.push(["IDSA 2025",hi?"高風險：建議 nirmatrelvir/ritonavir 或 remdesivir；molnupiravir 只在無其他選擇時（conditional）。":"風險增加：建議（conditional）nirmatrelvir/ritonavir 或 remdesivir。",["IDSA_COV25"],"COV25"],
+        ["WHO 2023","高與中風險者 nirmatrelvir/ritonavir；remdesivir、molnupiravir 只用於高風險（conditional）。",["WHO_COV23"]],
+        ["疾管署","Paxlovid、remdesivir 優先；molnupiravir、ensitrelvir 在無法用前兩者時使用。",["TW_COV_OAV","TW_COV_MOL"]]);
+    }
+  } else if(o.sev==="hosp"){
+    r.key="因 COVID 住院但未用氧：IDSA 建議不常規給 remdesivir；免疫低下或高風險者 NIH（2024 已封存）建議給。";
+    r.o.push(O("可考慮（免疫低下或高風險）",["rdv5"],{src:["NIH_COV24","IDSA_COV_RDV"]}));
+    r.diff.push(["IDSA","SpO2 >94%、未用氧：建議不常規使用 remdesivir（conditional）。",["IDSA_COV_RDV"]],["NIH 2024（封存）","免疫低下（BIIb）或其他高風險（BIII）：remdesivir。",["NIH_COV24"]]);
+  } else if(o.sev==="o2"||o.sev==="hf"){
+    r.key="用氧但未插管：remdesivir 5 天（IDSA・conditional，5 天優於 10 天）。";
+    r.o.push(O("首選",["rdv5"],{src:["IDSA_COV_RDV","RDV_LABEL"],upd:"RDV23"}));
+    r.diff.push(["IDSA","用氧但未插管或 ECMO：remdesivir 5 天（conditional）。",["IDSA_COV_RDV"]]);
+    if(o.sev==="hf") r.diff.push(["NIH 2024（封存）","HFNC／NIV：dexamethasone（AI）或 dexamethasone＋remdesivir（BIIb）。",["NIH_COV24"]]);
+    else r.diff.push(["NIH 2024（封存）","一般氧氣：remdesivir＋dexamethasone（BIIa）。",["NIH_COV24"]]);
+  } else {
+    r.key="插管或 ECMO：不常規開始 remdesivir（IDSA・conditional）。";
+    r.post.push(N("開始 remdesivir 後才進展為危急者：完成原療程（Ontario Health 2025）。",["ONT_COV25"]));
+    r.diff.push(["IDSA","插管或 ECMO：建議不常規開始 remdesivir。",["IDSA_COV_RDV"]],["仿單","插管／ECMO 的核准療程為 10 天。",["RDV_LABEL"]]);
+  }
+  if(o.sev!=="amb") r.post.push(N("免疫調節劑（dexamethasone、tocilizumab、baricitinib）與抗凝血不在本 app 範圍，依 IDSA COVID 指引。",["IDSA_COV_RDV"]));
+  r.post.push(N("嚴重免疫低下（例：B 細胞清除治療、移植）：IDSA 2025 列為高風險；持續病毒複製時延長或合併療程證據有限，請會診感染科。",["IDSA_COV25"]));
+  r.tests=[["抗原或 NAAT 確診；IDSA 以 SpO2 ≥94% 且未用氧定義為輕中度。",["IDSA_COV25"]],["開立 nirmatrelvir/ritonavir 前確認腎功能（eGFR）、肝功能（Child-Pugh C 不用）與所有併用藥。",["PAX_LABEL"]]];
+  return r; }},
+{id:"rsv",g:"呼吸道",n:"RSV",opts:[
+  {k:"host",q:"宿主",ch:[["gen","一般成人"],["hsct","HSCT／血液惡性腫瘤"],["lung","肺移植"],["sot","其他器官移植"]]},
+  {k:"site",q:"部位",show:o=>o.host!=="gen",ch:[["u","上呼吸道"],["l","下呼吸道"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[],tests:[]};
+  if(o.host==="gen"){
+    r.key="一般成人：支持療法；ribavirin 只用於特定免疫低下族群，不經驗性使用。";
+    r.diff.push(["院內指引（UCSF、UNMC）","ribavirin 只用於 HSCT／血液腫瘤與肺移植等族群。",["INST_RSV"]]);
+  } else if(o.host==="hsct"){
+    r.key=o.site==="u"?"上呼吸道：進展高風險者（例：ISI 高、淋巴球低）可考慮 ribavirin，以預防進展到下呼吸道（ECIL-4）。":"下呼吸道：ribavirin（吸入或口服）± IVIG，證據有限（ECIL-4）。";
+    r.o.push(O(o.site==="u"?"可考慮（高風險）":"可考慮",["rib_po","rib_inh"],{note:"口服與吸入在 HCT 受者的進展與 30 天死亡率相近（回溯性，CID 2019）。",src:["ECIL4_RSV","RBV_ORAL"]}));
+    if(o.site==="u") r.post.push(N("可延後 conditioning（ECIL-4）。",["ECIL4_RSV"]));
+    r.diff.push(["ECIL-4（2013）","延後 conditioning、aerosolized ribavirin，或 off-label 全身性 ribavirin 及／或 IVIG。各條強度本版未逐條核對。",["ECIL4_RSV"]]);
+  } else if(o.host==="lung"){
+    r.key=o.site==="u"?"肺移植上呼吸道：一般不治療、密切追蹤肺功能；咳嗽痰多或 3 個月內移植／加強免疫抑制可考慮治療（院內指引）。":"肺移植下呼吸道（含 FEV1 下降）：口服 ribavirin（院內指引）。";
+    r.o.push(O(o.site==="u"?"可考慮（符合條件時）":"建議",["rib_po"],{src:["INST_RSV"]}));
+    r.diff.push(["UCSF 院內指引","如上；屬機構指引。",["INST_RSV"]]);
+  } else {
+    r.key="其他器官移植：資料更少；下呼吸道或重症個別考慮 ribavirin，請會診感染科。";
+    r.o.push(O("個別考慮",["rib_po"],{src:["NOGL"]}));
+  }
+  r.tests=[["多重呼吸道病毒 PCR；免疫低下者上呼吸道陽性時評估下呼吸道侵犯（胸部影像、SpO2）。",["ECIL4_RSV"]]];
+  return r; }},
+/* ===== VZV ===== */
+{id:"hz",g:"VZV",n:"帶狀疱疹（局部）",opts:[
+  {k:"t",q:"出疹時間",ch:[["le72","≤72 小時"],["gt72",">72 小時"]]},
+  {k:"ic",q:"免疫狀態",ch:[["no","免疫正常"],["mild","輕度免疫低下"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[],tests:[],res:"hsv"};
+  r.key="≥50 歲、頭頸部、中重度疼痛、出血壞死、多節段或黏膜侵犯、免疫低下 → 盡早口服抗病毒藥 7 天（EDF ↑↑）。";
+  if(o.t==="gt72") r.pre.push(N("超過 72 小時：仍有新水泡、併發症高風險、眼耳部位或免疫低下者仍給（EDF ↑）；<50 歲、軀幹四肢、無併發症者不建議（EDF ↓）。",["EDF_HZ17"],"warn"));
+  r.o.push(O("首選",["val_hz","fam_hz"],{src:["MSD_HZ","VAL_LABEL","FAM_LABEL","EDF_HZ17"],note:"口服生體可用率較 acyclovir 好（MSD）。"}));
+  r.o.push(O("替代（服藥次數多）",["acv_hz"],{src:["ACV_PO_LABEL","EDF_HZ17"]}));
+  if(o.ic==="mild") r.post.push(N("輕度免疫低下：口服 famciclovir 或 valacyclovir 可用，可延長到全部結痂；嚴重免疫低下或播散 → 改 IV acyclovir（見「播散性／免疫低下 VZV」）。",["MSD_HZ"],"warn"));
+  r.post.push(N("Brivudin（歐洲）：EDF 列為選項之一；免疫低下與 4 週內用過 5-fluoropyrimidine（5-FU、capecitabine）者禁用；台灣供應請確認。",["EDF_HZ17"]));
+  r.diff.push(["EDF/EADV 2017","給藥對象與 72 小時規則如上；acyclovir、valacyclovir、famciclovir、brivudin 共享決策（↑）。",["EDF_HZ17"]],["美國仿單","valacyclovir 1 g TID、famciclovir 500 mg TID 各 7 天；acyclovir 800 mg 5 次／日 7–10 天。美國無學會指引。",["VAL_LABEL","FAM_LABEL","ACV_PO_LABEL"]]);
+  r.tests=[["典型皮疹臨床診斷；不典型、免疫低下或需與 HSV 區分時，水泡液 VZV PCR。",["MSD_HZ"]]];
+  return r; }},
+{id:"hzo",g:"VZV",n:"眼部帶狀疱疹（HZO）",opts:[
+  {k:"k",q:"範圍",ch:[["skin","皮膚、角結膜、葡萄膜"],["arn","急性視網膜壞死（ARN）"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[],tests:[]};
+  if(o.k==="arn"){
+    r.key="ARN：IV acyclovir 10 mg/kg TID 7–10 天，之後口服 acyclovir 800 mg 5 次／日 3–4 個月＋類固醇（EDF ↑↑／↑）；眼科急會診。";
+    r.o.push(O("首選",["acv_iv10"],{note:"IV 7–10 天後接口服 acyclovir 800 mg 5 次／日 3–4 個月（EDF）。",src:["EDF_HZ17"]}));
+  } else {
+    r.key="同帶狀疱疹口服抗病毒藥 7 天，不論年齡、盡早開始（EDF ↑↑）；眼科會診。";
+    r.o.push(O("首選",["val_hz","fam_hz"],{src:["EDF_HZ17","MSD_HZ"]}));
+    r.o.push(O("替代",["acv_hz"],{src:["EDF_HZ17"]}));
+    r.post.push(N("眼部：acyclovir 3% 眼藥膏 5 次／日（EDF ↑↑，台灣供應請確認）；角膜炎、內皮炎、前葡萄膜炎在眼科監督下用局部類固醇（EDF ↑↑）。",["EDF_HZ17"]));
+    r.post.push(N("類固醇不可在沒有抗病毒藥時單獨使用（EDF）。",["EDF_HZ17"],"warn"));
+  }
+  r.diff.push(["EDF/EADV 2017","如上。美國無學會指引。",["EDF_HZ17"]]);
+  return r; }},
+{id:"rh",g:"VZV",n:"Ramsay Hunt 症候群",opts:[],
+ gen(){
+  const r={o:[],pre:[],post:[],diff:[],tests:[]};
+  r.key="IV acyclovir ＋ 口服類固醇（EDF ↑）；耳鼻喉科會診。";
+  r.o.push(O("建議",["acv_iv10"],{note:"EDF 未指定劑量；此處用仿單免疫低下 VZV 劑量 10 mg/kg q8h。",src:["EDF_HZ17","ACV_IV_LABEL"]}));
+  r.o.push(O("輕症改口服（無指引直接建議）",["val_hz"],{src:["NOGL"]}));
+  r.diff.push(["EDF/EADV 2017","IV acyclovir 合併口服類固醇（↑ #28）。美國無學會指引。",["EDF_HZ17"]]);
+  return r; }},
+{id:"vzdis",g:"VZV",n:"播散性／免疫低下 VZV",opts:[
+  {k:"k",q:"範圍",ch:[["dis","播散性皮膚"],["visc","內臟侵犯（肺炎、肝炎）"],["ic","嚴重免疫低下的局部 HZ"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[],tests:[],res:"hsv"};
+  r.key="IV acyclovir 10 mg/kg q8h，改善後改口服，直到全部結痂（仿單 7 天；免疫低下常需更久）。";
+  r.o.push(O("首選",["acv_iv10"],{src:["ACV_IV_LABEL","EDF_HZ17","CDC_VAR"]}));
+  r.o.push(O("改善後改口服",["val_hz"],{src:["MSD_HZ"],note:"完成總療程，至全部結痂。"}));
+  if(o.k==="visc") r.pre.push(N("內臟或 CNS 侵犯：EDF 可升到 15 mg/kg q8h、療程最長 21 天。",["EDF_HZ17"],"warn"));
+  r.post.push(N("治療 7–10 天仍有新病灶或不癒合 → 考慮 acyclovir 抗藥（見抗藥分頁）。",["HIV_OI_VZV","EDF_HZ17"],"warn"));
+  r.diff.push(["仿單","免疫低下 VZV：10 mg/kg q8h × 7 天。",["ACV_IV_LABEL"]],["EDF/EADV 2017","複雜 HZ 或高風險用 IV（↑）；內臟／CNS 最高 15 mg/kg、21 天。",["EDF_HZ17"]],["CDC（水痘）","重症與免疫低下（含高劑量類固醇 >14 天）用 IV acyclovir。",["CDC_VAR"]]);
+  return r; }},
+{id:"vari",g:"VZV",n:"成人水痘",opts:[
+  {k:"k",q:"狀況",ch:[["unc","無併發症"],["comp","肺炎等併發症或免疫低下"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[],tests:[]};
+  if(o.k==="unc"){
+    r.key=">12 歲屬中重度風險：出疹 24 小時內口服抗病毒藥（CDC／AAP）。";
+    r.o.push(O("建議",["acv_var","val_var"],{src:["CDC_VAR","ACV_PO_LABEL"]}));
+  } else {
+    r.key="肺炎、腦炎、血小板低下、嚴重肝炎或免疫低下：IV acyclovir（CDC）。";
+    r.o.push(O("首選",["acv_iv10"],{src:["CDC_VAR","ACV_IV_LABEL"]}));
+  }
+  if(S.preg) r.post.push(N("懷孕：併發症（如肺炎）用 IV acyclovir（CDC）；無併發症時部分專家建議口服 acyclovir 或 valacyclovir。",["CDC_VAR"],"warn"));
+  r.diff.push(["CDC／AAP","如上；VariZIG 用於暴露後（見預防）。",["CDC_VAR"]]);
+  return r; }},
+/* ===== HSV ===== */
+{id:"hsl",g:"HSV",n:"口唇疱疹",opts:[],
+ gen(){
+  const r={o:[],pre:[],post:[],diff:[],tests:[]};
+  r.key="症狀出現（刺痛、癢）時盡早，單日療程。";
+  r.o.push(O("建議",["val_hsl","fam_hsl"],{src:["VAL_LABEL","FAM_LABEL"]}));
+  r.diff.push(["仿單","valacyclovir 2 g BID × 1 天；famciclovir 1500 mg 單次。",["VAL_LABEL","FAM_LABEL"]]);
+  return r; }},
+{id:"gh",g:"HSV",n:"生殖器疱疹",opts:[
+  {k:"k",q:"情境",ch:[["first","初次發作"],["rec","復發（間歇治療）"],["sup","抑制治療"],["hiv","HIV 感染者"],["preg","懷孕（36 週起抑制）"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[],tests:[],res:"hsv"};
+  const S21=["CDC_STI21"];
+  if(o.k==="first"){ r.key="所有初次發作都治療，7–10 天，未癒合可延長（CDC 2021）。"; r.o.push(O("建議",["val_first","acv_400t","fam_first"],{src:S21})); }
+  else if(o.k==="rec"){ r.key="前驅症狀或發作 1 天內開始效果最好（CDC 2021）。"; r.o.push(O("建議",["val_rec","acv_800b","fam_rec"],{src:S21})); }
+  else if(o.k==="sup"){ r.key="每日抑制可減少復發 70–80%；每年重新評估（CDC 2021、仿單）。"; r.o.push(O("建議",["val_sup","acv_400b","fam_sup"],{src:S21})); r.post.push(N("valacyclovir 500 mg QD 對每年 ≥10 次復發者可能較差（CDC）。",S21)); }
+  else if(o.k==="hiv"){ r.key="HIV：間歇治療 5–10 天；抑制劑量較高（CDC 2021）。"; r.o.push(O("間歇（5–10 天）",["val_hiv","acv_400t","fam_hiv"],{src:S21})); r.o.push(O("抑制",["val_hivsup","acv_hivsup","fam_hiv"],{src:S21})); }
+  else { r.key="懷孕：36 週起每日抑制至分娩（CDC 2021，引用 ACOG）。"; r.o.push(O("建議",["acv_400t","val_hivsup"],{src:S21})); }
+  r.post.push(N("局部抗病毒藥效益極小，不建議（CDC）。",S21));
+  r.diff.push(["CDC 2021","如上。",S21],["歐洲","IUSTI 生殖器疱疹指引本版未核對。",["NOGL"]]);
+  r.tests=[["病灶 NAAT（或培養）分型確認 HSV-1／HSV-2（CDC）。",S21]];
+  return r; }},
+{id:"hsmuc",g:"HSV",n:"免疫低下嚴重黏膜皮膚 HSV",opts:[],
+ gen(){
+  const r={o:[],pre:[],post:[],diff:[],tests:[],res:"hsv"};
+  r.key="IV acyclovir，改善後改口服，總療程 ≥10 天（CDC 2021）。";
+  r.o.push(O("首選",["acv_iv5"],{src:["ACV_IV_LABEL","CDC_STI21"]}));
+  r.o.push(O("改善後改口服",["val_hiv"],{src:["CDC_STI21"]}));
+  r.post.push(N("治療 7–10 天無改善 → 考慮 acyclovir 抗藥（見抗藥分頁）。",["HIV_OI_VZV"],"warn"));
+  r.diff.push(["仿單","免疫低下黏膜皮膚 HSV：5 mg/kg q8h × 7 天。",["ACV_IV_LABEL"]],["CDC 2021","重症：5–10 mg/kg q8h 2–7 天或至改善，再口服完成總療程 ≥10 天。",["CDC_STI21"]]);
+  return r; }},
+/* ===== 中樞神經 ===== */
+{id:"hse",g:"中樞神經",n:"HSV 腦炎",opts:[
+  {k:"k",q:"階段",ch:[["sus","疑似（等待 CSF PCR）"],["conf","確診・免疫正常"],["ic","確診・免疫低下"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[],tests:[],res:"hsv"};
+  if(o.k==="sus"){ r.key="立即 IV acyclovir 10 mg/kg q8h，不等 LP 或 PCR；入院 6 小時內開始（英、法、丹麥指引）。"; r.pre.push(N("LP 後延遲 >6 小時與死亡率上升相關（觀察性）。",["HSE_DK26"],"warn","HSE26")); }
+  else if(o.k==="conf") r.key="IV acyclovir 10 mg/kg q8h，14–21 天（IDSA 2008・A-III）。";
+  else r.key="免疫低下：IV acyclovir 10 mg/kg q8h 21 天，結束前重做 LP（英國 ABN/BIA 2012）。";
+  r.o.push(O("首選",["acv_iv10"],{src:["IDSA_ENC08","ACV_IV_LABEL","ACV_OBESE"],note:"充分水化、每日追蹤 Cr；肥胖者的計算體重各來源不同（仿單 IBW、部分院內 AdjBW）。"}));
+  r.diff.push(["IDSA 2008","14–21 天（A-III）。",["IDSA_ENC08"]],["英國 ABN/BIA 2012","14 天後重做 LP，免疫低下 21 天；PCR 仍陽性則繼續。",["UK_ENC12"]],["美國仿單","10 mg/kg q8h × 10 天。",["ACV_IV_LABEL"]]);
+  r.tests=[["CSF HSV-1／2 PCR；發病 72 小時內 PCR 可能偽陰性，臨床高度懷疑時繼續 acyclovir 並在 3–7 天後重做（英國指引）。",["UK_ENC12","IDSA_ENC08"]],["MRI（顳葉）；疑似非痙攣性癲癇時 EEG。",["UK_ENC12"]],["HSV 腦炎後數週可發生 anti-NMDAR 自體免疫腦炎（丹麥世代約 6%）。",["HSE_DK26"]]];
+  return r; }},
+{id:"vzcns",g:"中樞神經",n:"VZV 腦炎／腦膜炎／血管病變",opts:[
+  {k:"k",q:"表現",ch:[["enc","腦炎或腦膜炎"],["vasc","血管病變（中風）"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[],tests:[]};
+  if(o.k==="enc"){
+    r.key="IV acyclovir（IDSA 2008・B-III）；EDF：CNS 侵犯可升到 15 mg/kg q8h、最長 21 天。";
+    r.o.push(O("首選",["acv_iv10"],{src:["IDSA_ENC08","EDF_HZ17"],note:"IDSA 2008 的 VZV 劑量與療程本版未核對原文・請確認。"}));
+    r.diff.push(["IDSA 2008","acyclovir（B-III）。",["IDSA_ENC08"]],["EDF/EADV 2017","最高 15 mg/kg TID、最長 21 天。",["EDF_HZ17"]]);
+  } else {
+    r.key="VZV 血管病變：IV acyclovir ± 類固醇；本版未找到指引直接建議，請會診神經科與感染科。";
+    r.o.push(O("個別考慮",["acv_iv10"],{src:["NOGL"]}));
+  }
+  r.tests=[["CSF VZV PCR；血管病變時 PCR 可能陰性，需加驗 CSF anti-VZV IgG（請確認）。",["NOGL"]]];
+  return r; }},
+{id:"hsvm",g:"中樞神經",n:"HSV 腦膜炎",opts:[],
+ gen(){
+  const r={o:[],pre:[],post:[],diff:[],tests:[]};
+  r.key="本版未找到指引直接建議；常見做法為 IV acyclovir，改善後改口服 valacyclovir，總療程約 10–14 天・請確認。";
+  r.o.push(O("常見做法",["acv_iv10"],{src:["NOGL"]}));
+  r.o.push(O("改善後改口服",["val_hz"],{src:["NOGL"],note:"口服劑量各來源不同・請確認。"}));
+  r.pre.push(N("腦膜炎合併意識改變、局部神經學徵象 → 依 HSV 腦炎處理。",["IDSA_ENC08"],"warn"));
+  return r; }},
+/* ===== CMV ===== */
+{id:"cmvpre",g:"CMV",n:"CMV DNAemia（preemptive）",opts:[
+  {k:"host",q:"宿主",ch:[["sot","器官移植"],["hsct","造血幹細胞移植"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[],tests:[],res:"cmv"};
+  if(o.host==="sot"){
+    r.key="超過院內閾值 → valganciclovir 900 mg BID；每週追蹤，至低於閾值且至少 2 週（CMV 國際共識 2025・strong）。";
+    r.o.push(O("首選",["vgc_ind"],{src:["CMV_SOT25"],upd:"CMV25"}));
+    r.o.push(O("吸收有疑慮時",["gcv_ind"],{src:["CMV_SOT25","GCV_LABEL"]}));
+    r.diff.push(["CMV SOT 共識 2025","閾值由各院自訂，D+/R− 用較低閾值；同一病人固定同一檢體與檢驗法。",["CMV_SOT25"],"CMV25"]);
+  } else {
+    r.key="依院內 preemptive 閾值開始 ganciclovir 或 valganciclovir；ECIL-7（2019）本版未取得全文，閾值與療程請確認。";
+    r.o.push(O("可選",["gcv_ind","vgc_ind"],{src:["GCV_LABEL","ECIL7_CMV"],note:"仿單 preemptive 誘導 5 mg/kg q12h × 7–14 天。"}));
+    r.o.push(O("骨髓抑制時",["fos_cmv"],{src:["ECIL7_CMV","FOS_LABEL"]}));
+    r.diff.push(["ECIL-7（2019）","本版未核對全文・請確認。",["ECIL7_CMV"]]);
+  }
+  r.post.push(N("不因白血球低而減量；改用 G-CSF 或調整其他骨髓抑制藥（共識 2025・strong）。",["CMV_SOT25"]));
+  r.post.push(N("前 2 週病毒量持平或上升但臨床改善，不要換藥；≥2 週適當治療後下降 ≤1 log10 → 疑難治（見抗藥分頁）。",["CMV_SOT25"],"warn"));
+  r.tests=[["WHO 校正的定量 NAT，每週 1 次；結果用 log10 IU/mL；同一病人固定檢體與檢驗法（共識 2025）。",["CMV_SOT25"]],["劑量依 CG（mL/min，未標準化）調整，腎功能變化時頻繁重算（共識 2025）。",["CMV_SOT25"]]];
+  return r; }},
+{id:"cmvdis",g:"CMV",n:"CMV 疾病（肺炎、腸胃道）",opts:[
+  {k:"sev",q:"嚴重度",ch:[["mild","輕中度、可口服"],["sev","重度或危及生命"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[],tests:[],res:"cmv"};
+  if(o.sev==="mild"){ r.key="valganciclovir 900 mg BID（共識 2025・strong, moderate）。"; r.o.push(O("首選",["vgc_ind"],{src:["CMV_SOT25"]})); r.o.push(O("替代",["gcv_ind"],{src:["CMV_SOT25"]})); }
+  else { r.key="IV ganciclovir 5 mg/kg q12h，改善且可口服後改 valganciclovir（共識 2025・strong, low）。"; r.o.push(O("首選",["gcv_ind"],{src:["CMV_SOT25","GCV_LABEL"]})); r.o.push(O("改善後",["vgc_ind"],{src:["CMV_SOT25"]})); }
+  r.post.push(N("療程至少 2 週，至臨床緩解且 DNAemia 低於院內閾值（高敏感度檢驗單次 <LLOQ，或兩次每週檢體）；腸胃道組織侵犯、肺移植肺炎、CNS 或視網膜病變常需更久。",["CMV_SOT25"]));
+  r.post.push(N("沒有排斥時可減免疫抑制（weak, very low）；重症、抗藥或 IgG <400 mg/dL 可考慮 IVIG（weak, low）。",["CMV_SOT25"]));
+  r.post.push(N("不用 acyclovir、valacyclovir 或口服 ganciclovir 治療 CMV 疾病（strong）。",["CMV_SOT25"],"warn"));
+  r.post.push(N("次級預防不常規；高風險（免疫抑制強、淋巴球低、反覆復發）可給 8–12 週（weak, low）。",["CMV_SOT25"]));
+  r.diff.push(["CMV SOT 共識 2025","如上；不涵蓋 HSCT（HSCT 依 ECIL-7）。",["CMV_SOT25","ECIL7_CMV"],"CMV25"]);
+  r.tests=[["組織侵犯以病理（免疫染色）確診；血中病毒量可能不高（尤其腸胃道）。",["CMV_SOT25"]]];
+  return r; }},
+{id:"cmvret",g:"CMV",n:"CMV 視網膜炎",opts:[],
+ gen(){
+  const r={o:[],pre:[],post:[],diff:[],tests:[],res:"cmv"};
+  r.key="誘導 valganciclovir 900 mg BID 21 天或 IV ganciclovir 14–21 天，之後維持 900 mg QD（仿單）；眼科共同照護。";
+  r.o.push(O("誘導",["vgc_ind","gcv_ind"],{src:["VGC_LABEL","GCV_LABEL"]}));
+  r.o.push(O("維持",["vgc_px"],{src:["VGC_LABEL"]}));
+  r.post.push(N("maribavir 不用於視網膜炎（共識 2025）。眼內注射與 HIV 族群的處置（HIV OI 指引）本版未核對。",["CMV_SOT25"],"warn"));
+  return r; }}
+];
+const DX_OF = id=>DX.find(x=>x.id===id);
+const DX_G = ["呼吸道","VZV","HSV","中樞神經","CMV"];
+/* ---------------- 預防 ---------------- */
+const PX = [
+{id:"flupep",n:"流感暴露後",opts:[{k:"k",q:"情境",ch:[["hh","家戶／密切接觸"],["ltc","機構群聚（長照）"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[]};
+  if(o.k==="hh"){
+    r.key="不常規建議；極高風險者在接觸 48 小時內可考慮（CDC、WHO 2024）。";
+    r.o.push(O("可考慮",["ose_px","zan_px","bx_px"],{src:["CDC_FLU26","OSE_LABEL","BX_TW"]}));
+    r.post.push(N("指標病人用 baloxavir 治療，可降低家戶傳播（CENTERSTONE）。",["CENTERSTONE"],"","CTS25"));
+    r.post.push(N("peramivir 不用於預防（CDC）。",["CDC_FLU26"]));
+    r.diff.push(["CDC 2026","最後一次接觸後 7 天；baloxavir 接觸 48 小時內單次。",["CDC_FLU26"]],["WHO 2024","季節性流感只建議極高風險者（conditional）；人畜共通流感所有暴露者。",["WHO_FLU24"],"WHO24"],["仿單","oseltamivir 預防至少 10 天。",["OSE_LABEL"]]);
+  } else {
+    r.key="所有住民（含已接種）oseltamivir 至少 2 週，持續到最後一例後 1 週（CDC）。";
+    r.o.push(O("建議",["ose_px","zan_px"],{src:["CDC_FLU26"]}));
+    r.post.push(N("部分群聚改用治療劑量（oseltamivir BID × 5 天）作暴露後處置（CDC）。",["CDC_FLU26"]));
+    r.diff.push(["CDC 2026","如上。",["CDC_FLU26"]],["IDSA 2018","機構群聚的檢測與預防（與 CDC 一致）。",["IDSA_FLU18"]]);
+  }
+  return r; }},
+{id:"varpep",n:"水痘暴露後",opts:[{k:"k",q:"被暴露者",ch:[["ic","免疫低下或懷孕、無免疫力"],["nc","免疫正常、無免疫力"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[]};
+  if(o.k==="ic"){
+    r.key="VariZIG 10 天內（越早越好，理想 96 小時內）；無 VariZIG → IVIG 400 mg/kg；都沒有 → 暴露後第 7–10 天開始口服抗病毒藥 7 天（CDC／AAP）。";
+    r.o.push(O("無 VariZIG、IVIG 時",["acv_pep","val_pep"],{src:["VAR_PEP"]}));
+    r.post.push(N("台灣 VZIG 取得方式與適用對象請確認（疾管署）。",["NOGL"],"warn"));
+  } else r.key="可接種疫苗者：暴露後 3–5 天內接種（CDC）。";
+  r.diff.push(["CDC／AAP","如上。",["VAR_PEP","CDC_VAR"]]);
+  return r; }},
+{id:"cmvsot",n:"CMV：器官移植",opts:[
+  {k:"org",q:"器官",ch:[["kid","腎"],["liv","肝"],["hrt","心"],["lung","肺"],["oth","胰、小腸、VCA"]]},
+  {k:"sero",q:"血清",ch:[["dr","D+/R−"],["r","R+"],["nn","D−/R−"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[]};
+  const src=["CMV_SOT25"];
+  if(o.sero==="nn"){
+    r.key="D−/R−：使用去白血球或 CMV 陰性血品時不需 CMV 預防；應考慮其他疱疹病毒（HSV、VZV）預防（strong, high）。";
+    r.o.push(O("考慮（HSV／VZV）",["acv_400b","val_hivsup"],{src,note:"共識未指定劑量；此為常用劑量，請依院內規範。"}));
+    return r;
+  }
+  const T={kid:{dr:"6 個月",r:"3 個月"},liv:{dr:"3–6 個月",r:"3 個月"},hrt:{dr:"3–6 個月",r:"3 個月"},lung:{dr:"12 個月（部分專家更久）",r:"6–12 個月"},oth:{dr:"胰臟、胰島 3 個月；小腸、VCA 至少 6 個月",r:"同左"}}[o.org][o.sero];
+  const how={kid:o.sero==="dr"?"prophylaxis 或 preemptive（strong）":"prophylaxis（strong, high）或 preemptive（strong, moderate）",liv:"prophylaxis（strong, moderate）或 preemptive（strong, high）",hrt:o.sero==="dr"?"建議 prophylaxis 優於 preemptive（weak, low）":"prophylaxis（strong, moderate）",lung:o.sero==="dr"?"建議 prophylaxis（weak, low）":"prophylaxis（strong, moderate）",oth:"建議 prophylaxis（preemptive 資料少；weak, very low）"}[o.org];
+  r.key=`${how}；預防期間 ${T}（CMV 國際共識 2025）。`;
+  r.o.push(O("Prophylaxis",["vgc_px"],{src:["CMV_SOT25","VGC_LABEL"],upd:"CMV25"}));
+  if(o.org==="kid"&&o.sero==="dr") r.o.push(O("Prophylaxis（替代）",["let_ktx"],{src:["LET_LABEL","CMV_SOT25"],upd:"CMV25",note:"較少骨髓抑制；無 HSV／VZV 活性，需另加 HSV 預防。"}));
+  if(o.org==="kid"&&o.sero==="r") r.post.push(N("de novo mTOR inhibitor 為主的免疫抑制：preemptive 或密切臨床監測即可（strong, high）。",src));
+  r.post.push(N("Preemptive：至少每週 1 次、持續 12–16 週；D+/R− 用較低閾值（strong, moderate）。",src));
+  r.post.push(N("預防結束後高風險者可每週監測 8–12 週（weak, low）。",src));
+  r.diff.push(["CMV SOT 共識 2025","如上。",src,"CMV25"],["Valganciclovir 仿單","美國：腎移植至移植後 200 天，心、腎胰至 100 天；英國：SOT 至 100 天，腎移植可延到 200 天。",["VGC_LABEL"]]);
+  return r; }},
+{id:"cmvhsct",n:"CMV：造血幹細胞移植",opts:[],
+ gen(){
+  const r={o:[],pre:[],post:[],diff:[]};
+  r.key="allo-HSCT CMV R+：letermovir 480 mg QD（併 cyclosporine 240 mg），移植後 28 天內開始用到第 100 天；晚發高風險延到第 200 天（仿單）。";
+  r.o.push(O("Prophylaxis",["let_hsct"],{src:["LET_LABEL","LET_200","TW_LET"],upd:"LET24"}));
+  r.post.push(N("letermovir 沒有 HSV／VZV 活性 → 另加 acyclovir 或 valacyclovir 預防（見「HSV／VZV：免疫低下」）。",["LET_LABEL","ECIL7_CMV"],"warn"));
+  r.post.push(N("預防期間仍需依院內規範監測 CMV DNAemia；HSCT 的 preemptive 閾值依 ECIL-7（本版未核對全文）。",["ECIL7_CMV"]));
+  r.diff.push(["仿單","100 天，高風險可到 200 天。",["LET_LABEL","LET_200"],"LET24"],["ECIL-7（2019）","本版未核對全文・請確認。",["ECIL7_CMV"]]);
+  return r; }},
+{id:"hsvpx",n:"HSV／VZV：免疫低下",opts:[{k:"k",q:"族群",ch:[["hsct","allo-HSCT"],["leuk","急性白血病誘導化療"],["pi","Proteasome inhibitor（bortezomib 等）"],["sotn","器官移植 D−/R−"]]}],
+ gen(o){
+  const r={o:[],pre:[],post:[],diff:[]};
+  if(o.k==="hsct"||o.k==="leuk"){
+    r.key="HSV 血清陽性：nucleoside analog 預防，至白血球恢復或黏膜炎緩解（較晚者）；反覆發作或 GVHD 可延長，可延續作 VZV 預防最多 1 年（ASCO/IDSA 2018・strong, high）。";
+    r.o.push(O("建議",["acv_400b","val_hivsup"],{src:["ASCO_PX18","INST_HEMEPX"],note:"指引未指定劑量；acyclovir 400 mg BID 為院內常用劑量（UC Davis），SCT 劑量依院內表。"}));
+    r.diff.push(["ASCO/IDSA 2018","如上。",["ASCO_PX18"]],["NCCN","需登入，本版依院內轉引（UC Davis：SCT 由 conditioning 前 1 天到移植後 365 天）。",["INST_HEMEPX"]]);
+  } else if(o.k==="pi"){
+    r.key="Proteasome inhibitor（bortezomib、carfilzomib）治療期間常規 VZV 預防（NCCN，依院內轉引）。";
+    r.o.push(O("建議",["acv_400b","val_hivsup"],{src:["INST_HEMEPX"],note:"劑量依院內規範。"}));
+    r.diff.push(["NCCN","需登入，本版依 UC Davis 院內指引轉引・請確認。",["INST_HEMEPX"]]);
+  } else {
+    r.key="器官移植 D−/R−（未用 CMV 預防）：考慮 HSV／VZV 預防（CMV 國際共識 2025・strong, high）。";
+    r.o.push(O("考慮",["acv_400b","val_hivsup"],{src:["CMV_SOT25"],note:"共識未指定劑量。"}));
+  }
+  return r; }}
+];
+const PX_OF = id=>PX.find(x=>x.id===id);
+
+/* ---------------- 抗藥 ---------------- */
+const RES = [
+{id:"flu",n:"流感：neuraminidase 抑制劑或 baloxavir 抗藥",
+ key:"免疫低下或治療中仍持續陽性、惡化 → 懷疑抗藥；H275Y（N1）對 oseltamivir、peramivir 抗藥；zanamivir 通常仍有效（請以病毒抗藥檢測確認）。",
+ when:[["嚴重免疫低下、幼兒：oseltamivir 治療中容易產生抗藥（CDC）。",["CDC_FLU26"]],["baloxavir 治療後抗藥變異：12 歲以下較常見；CENTERSTONE 成人與青少年 7.2%（未傳給家戶接觸者）。",["CDC_FLU26","CENTERSTONE"]],["台灣 2025–26 季 A(H1N1) 約 6.5% 對 oseltamivir、peramivir 抗藥（新聞引述疾管署）。",["TW_FLU_RES"]]],
+ bad:[["oseltamivir","H275Y 突變","CDC_FLU26"],["peramivir","與 oseltamivir 交叉抗藥（H275Y）","TW_FLU_RES"],["amantadine、rimantadine","循環 A 型病毒普遍抗藥，不建議","CDC_FLU26"]],
+ tx:{o:[O("可考慮",["zan_tx","bx_tx"],{cond:"zanamivir 不用於呼吸道疾病；baloxavir 不建議單用於嚴重免疫低下或住院者（CDC）。",src:["CDC_FLU26","TW_FLU_RES"]})],note:"送病毒抗藥基因檢測（疾管署或院內檢驗）；請會診感染科。"},
+ src:["CDC_FLU26"]},
+{id:"hsv",n:"HSV／VZV：acyclovir 抗藥",
+ key:"免疫低下、治療 7–10 天病灶仍擴大或不癒合 → 懷疑 TK 突變；valacyclovir、famciclovir、ganciclovir 同時無效，改 foscarnet 或 cidofovir。",
+ when:[["HZ：acyclovir 治療 10–21 天失敗，尤其疣狀病灶（EDF）。",["EDF_HZ17"]],["HSV 黏膜皮膚：免疫低下者治療 7–10 天無改善。",["CDC_STI21"]]],
+ bad:[["acyclovir、valacyclovir","TK 突變（最常見機轉）","HIV_OI_VZV"],["famciclovir","同樣依賴 TK 活化","HIV_OI_VZV"],["ganciclovir","同樣依賴 TK","HIV_OI_VZV"]],
+ tx:{o:[O("首選",["fos_hsv"],{src:["FOS_LABEL","CDC_VAR"]}),O("替代",["cdv"],{src:["CDV_LABEL"],note:"腎毒性高；需 probenecid 與水化。"})],note:"盡量取病灶做病毒分離與藥敏（HIV OI 指引）。EDF：foscarnet、cidofovir 未核准用於 HZ，限極嚴重個案且經專家討論。"},
+ src:["HIV_OI_VZV","EDF_HZ17"]},
+{id:"cmv",n:"CMV：難治或抗藥",
+ key:"≥2 週適當治療後下降 ≤1 log10 → 難治；累積 ≥4 週且 ≥2 週反應不佳時送基因型（UL97、UL54；letermovir 看 UL56）（共識 2025・strong, high）。",
+ when:[["先確認劑量依腎功能給足、吸收與服藥正常；可行時減免疫抑制（strong, low）。",["CMV_SOT25"]],["基因型檢體需 >3 log10 IU/mL（strong, high）。",["CMV_SOT25"]]],
+ bad:[["ganciclovir、valganciclovir","UL97 突變（最常見）；UL54 也可能","CMV_SOT25"],["cidofovir","部分 UL54 突變交叉抗藥","FOS_LABEL"],["letermovir（治療）","單用治療證據不足，抗藥門檻低（UL56 C325）","CMV_SOT25"]],
+ tx:{o:[O("首選（ganciclovir 或 foscarnet 抗藥）",["mar"],{cond:"病毒量較低者效果較好；不用於 CNS、視網膜炎；不可與 ganciclovir 併用。",src:["CMV_SOT25","MAR_LABEL","TW_MAR"],upd:"CMV25"}),O("病況差、病毒量高（常用 ≥4.7 log10）",["fos_cmv"],{src:["CMV_SOT25","FOS_LABEL"]}),O("其他",["cdv"],{src:["CMV_SOT25"],note:"試驗表現差（共識 2025）。"})],note:"IVIG、CMV 特異性 T 細胞可考慮於抗藥或難治（weak, low）。"},
+ src:["CMV_SOT25"]}
+];
+const RES_OF = id=>RES.find(x=>x.id===id);
+/* ---------------- 狀態 ---------------- */
+const S = {
+  pt:{age:null,sex:"M",wt:null,ht:null,scr:null,method:"cg",crcl:null,egfr:null,aki:false},
+  preg:false, tab:"tx", dx:"flu", o:{}, px:"flupep", po:{}, drug:null, res:""
+};
+let R = null;
+const UI = {dxpick:false, pxpick:false, dpick:false, pt:null, mMore:false};
+
+/* ---------------- 計算 ---------------- */
+const num = v=>{const n=parseFloat(v);return Number.isFinite(n)?n:null};
+const r0 = v=>Math.round(v);
+function weights(){
+  const p=S.pt; if(!p.wt) return null;
+  const tbw=p.wt; let ibw=null, adj=null, bmi=null;
+  if(p.ht){ ibw=(p.sex==="M"?50:45.5)+0.9055*(p.ht-152.4); bmi=tbw/Math.pow(p.ht/100,2); adj=ibw+0.4*(tbw-ibw); }
+  // CG 用的體重：<IBW 用實際；≤120% IBW 用 IBW；>120% 用 AdjBW
+  let dw=tbw, dl="實際體重（未填身高）";
+  if(ibw){ if(tbw<ibw){dw=tbw;dl="實際體重（低於 IBW）";} else if(tbw<=1.2*ibw){dw=ibw;dl="IBW";} else {dw=adj;dl="AdjBW（體重 >120% IBW）";} }
+  return {tbw,ibw,adj,bmi,dw,dl};
+}
+function calcCG(){
+  const p=S.pt, w=weights();
+  if(!p.age||!p.scr||!w) return null;
+  return {crcl:(140-p.age)*w.dw/(72*p.scr)*(p.sex==="F"?0.85:1),w};
+}
+function getRenal(){
+  const p=S.pt;
+  if(["hd","pd","crrt"].includes(p.method)) return {mode:p.method,label:{hd:"血液透析（HD）",pd:"腹膜透析（PD）",crrt:"CRRT"}[p.method],short:p.method.toUpperCase()};
+  if(p.method==="crcl") return p.crcl!==null&&p.crcl>=0?{mode:"crcl",val:p.crcl,label:`CrCl ${r0(p.crcl)} mL/min（手動輸入）`,short:`CrCl ${r0(p.crcl)}`}:null;
+  if(p.method==="egfr") return p.egfr!==null&&p.egfr>=0?{mode:"crcl",val:p.egfr,label:`eGFR ${r0(p.egfr)}（以 CrCl 近似）`,short:`eGFR ${r0(p.egfr)}`}:null;
+  const cg=calcCG(); if(!cg) return null;
+  return {mode:"crcl",val:cg.crcl,label:`CrCl ${r0(cg.crcl)} mL/min`,short:`CrCl ${r0(cg.crcl)}`,cg};
+}
+const rnd = mg=>mg>=100?Math.round(mg/10)*10:Math.round(mg/5)*5;
+// acyclovir IV 計算體重：非肥胖用實際體重；BMI ≥30 時並列 IBW（仿單）與 AdjBW（部分院內指引）
+function acvDose(n){
+  const w=weights(); if(!w) return "";
+  if(!w.ibw) return ` ≈ ${rnd(n*w.tbw)} mg（實際體重 ${r0(w.tbw)} kg；肥胖者請填身高）`;
+  if(w.bmi>=30&&w.tbw>w.ibw) return ` ≈ ${rnd(n*w.ibw)} mg（IBW ${r0(w.ibw)} kg，仿單）或 ${rnd(n*w.adj)} mg（AdjBW ${r0(w.adj)} kg，部分院內指引）`;
+  return ` ≈ ${rnd(n*w.tbw)} mg（實際體重 ${r0(w.tbw)} kg）`;
+}
+function fillW(t){
+  const w=weights();
+  return t.replace(/\{KG:([\d.]+)\}/g,(m,n)=>w?` ≈ ${rnd(parseFloat(n)*w.tbw)} mg（實際體重 ${r0(w.tbw)} kg）`:"")
+    .replace(/\{AC:([\d.]+)\}/g,(m,n)=>acvDose(parseFloat(n)))
+    .replace(/\{BX\}/g,()=>!w?"（20–<80 kg：40 mg；≥80 kg：80 mg）":w.tbw>=80?` 80 mg（體重 ${r0(w.tbw)} kg）`:w.tbw>=20?` 40 mg（體重 ${r0(w.tbw)} kg）`:"（<20 kg 不適用）");
+}
+// foscarnet：CrCl（mL/min/kg）＝(140−年齡)/(72×SCr)（女 ×0.85）；手動輸入 CrCl 時除以實際體重
+function perKg(){ if(!R||R.mode!=="crcl") return null; const p=S.pt; if(R.cg) return (140-p.age)/(72*p.scr)*(p.sex==="F"?0.85:1); const w=weights(); return w?R.val/w.tbw:null; }
+const isOpen = x=>Math.abs(x*10-Math.round(x*10))>1e-6;   // 60.01、1.4001 → 「>」
+const fmtT = x=>String(Math.round(x*10)/10);
+function bandRange(g,i){
+  const b=g.b, kg=g.unit==="kg", u=kg?"CrCl/kg":"CrCl", lo=b[i][0], hi=i>0?b[i-1][0]:null;
+  if(b.length===1) return "所有腎功能";
+  if(i===0) return `${u} ${isOpen(lo)?">":"≥"}${fmtT(lo)}`;
+  const up=(isOpen(hi)?"≤":"<")+fmtT(hi);
+  if(lo===0) return `${u} ${up}`;
+  if(kg) return `${u} ${isOpen(lo)?">":"≥"}${fmtT(lo)}–${fmtT(hi)}`;
+  const loD=isOpen(lo)?Math.floor(lo)+1:lo, hiD=isOpen(hi)?Math.floor(hi):hi-1;
+  return `${u} ${loD}–${hiD}`;
+}
+function doseOf(id){
+  const g=REG[id]; let t, band, adj=false;
+  if(!R){ t=g.b[0][1]; band="未輸入腎功能，顯示正常腎功能劑量"; }
+  else if(R.mode==="crcl"){
+    const v=g.unit==="kg"?perKg():R.val;
+    if(v===null){ t=g.b[0][1]; band="需體重才能依 CrCl/kg 調整，目前顯示正常腎功能劑量"; adj=true; }
+    else { const i=g.b.findIndex(x=>v>=x[0]); const k=i<0?g.b.length-1:i; t=g.b[k][1]; adj=k>0;
+      const no=/^(禁|不建議|ESRD 未透析|錠劑不建議|CrCl <\d+：)/.test(t);
+      band=g.b.length===1?"無需腎調整":`${no?"腎功能不符使用條件":adj?"已依腎功能調整":"正常劑量"}（${bandRange(g,k)}${g.unit==="kg"?`；目前 ${v.toFixed(2)} mL/min/kg`:""}）`; }
+  } else { t=g[R.mode]||(g.b.length===1?g.b[0][1]:"仿單無建議，請會診藥師"); adj=g.b.length>1||!!g[R.mode]; band=g.b.length===1&&!g[R.mode]?"無需腎調整":`${R.label} 劑量`; }
+  const filled=fillW(t);
+  return {plain:filled, html:lt(filled).replace(/ ≈ (.*)$/,' <span class="w">≈ $1</span>'), band:lt(band), adj};
+}
+
+/* ---------------- 元件 ---------------- */
+const $ = id=>document.getElementById(id);
+const lt = t=>String(t).replace(/</g,"&lt;");
+const esc = t=>String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+const srcBtns = arr=>arr&&arr.length?[...new Set(arr)].map(k=>REF[k]?`<button type="button" class="src" data-ref="${k}">${REF[k].s}</button>`:"").join(""):"";
+const srcTags = arr=>arr&&arr.length?`<div class="srcs">${srcBtns(arr)}</div>`:"";
+const updB = t=>`<button type="button" class="upd" data-upd="${esc(t)}">更新</button>`;
+const updOf = u=>u?updB(UPDN[u]||u):"";
+function tierCls(t){ if(/^首選|^建議|^Prophylaxis$/.test(t)) return "primary"; if(/口服/.test(t)) return "po"; return ""; }
+function nameHTML(drug,more){
+  const d=D[drug];
+  return more?`<button type="button" class="rx-name brandbtn" data-act="brand" aria-expanded="false">${d.n}</button>`:`<span class="rx-name">${d.n}</span>`;
+}
+function drugFlags(k){
+  const d=D[k], fl=[];
+  if(S.preg&&d.preg&&d.preg.l==="x") fl.push(`<span class="flag danger">孕：不建議</span>`);
+  else if(S.preg&&d.preg&&d.preg.l==="w") fl.push(`<span class="flag warn">孕：注意</span>`);
+  if(d.tw==="pa") fl.push(`<span class="flag info">台灣專案輸入</span>`);
+  if(d.tw==="q") fl.push(`<span class="flag warn">台灣許可證未查證・請確認</span>`);
+  return fl;
+}
+function rxRow(id){
+  const g=REG[id]; if(!g) return "";
+  const d=D[g.d], ds=doseOf(id), fl=drugFlags(g.d);
+  const band=R&&ds.adj?`<span class="adj">${ds.band}</span>`:"";
+  const more=[d.brand?`<span class="brand">商品名：${d.brand}</span>`:"",S.preg&&d.preg?`<span>懷孕：${lt(d.preg.t)}</span>`:"",g.note?`<span>${lt(g.note)}</span>`:"",!band&&ds.band&&!/^未輸入腎功能/.test(ds.band)?`<span>${ds.band}</span>`:"",S.tab!=="drug"?`<span><button class="linkbtn" type="button" data-act="go-drug" data-v="${g.d}">藥物頁 ›</button></span>`:""].filter(Boolean);
+  const copyTxt=`${d.n} ${g.r} ${ds.plain}${R?`（${R.short}）`:""}`;
+  return `<div class="rx${S.preg&&d.preg&&d.preg.l==="x"?" blocked":""}">
+    <div class="rx-head">${nameHTML(g.d,more.length)}<span class="route">${g.r}</span>${fl.join("")}</div>
+    <div class="rx-dose">${ds.html}</div>
+    ${band?`<div class="rx-meta">${band}</div>`:""}
+    ${more.length?`<div class="rx-more" hidden>${more.join("")}</div>`:""}
+    <button class="copy" type="button" data-act="copy" data-txt="${encodeURIComponent(copyTxt)}">複製</button>
+  </div>`;
+}
+function optCard(o){
+  const cls=tierCls(o.tier), n=o.regs.length;
+  const formula=n>1?`<div class="formula"><b>用法：</b>以下 ${n} 種${o.alt?"擇一，單用即可":"同時使用"}</div>`:"";
+  const body=o.regs.map((r,i)=>(i>0?`<div class="sep">${o.alt?"或":"＋ 同時給"}</div>`:"")+rxRow(r)).join("");
+  const sb=srcBtns(o.src), srcN=(sb.match(/data-ref=/g)||[]).length, foot=[];
+  if(o.note) foot.push(`<button class="linkbtn" type="button" data-act="onote" aria-expanded="false">說明</button>`);
+  if(srcN>1) foot.push(`<button class="linkbtn" type="button" data-act="srcs-tog" aria-expanded="false">出處 ${srcN}</button>`); else if(srcN) foot.push(sb);
+  return `<div class="opt${cls==="primary"?" primary":""}">
+    <div class="opt-head"><span class="tier ${cls}">${o.tier}</span>${updOf(o.upd)}</div>
+    ${formula}${body}
+    ${o.cond?`<div class="cond">條件：${lt(o.cond)}</div>`:""}
+    ${foot.length?`<div class="opt-foot">${foot.join("")}</div>`:""}
+    ${o.note?`<div class="onote fold" hidden>${lt(o.note)}</div>`:""}
+    ${srcN>1?`<div class="srcs fold" hidden>${sb}</div>`:""}
+  </div>`;
+}
+const noteBlock = n=>`<div class="note ${n.lvl||""}">${n.upd?updOf(n.upd)+" ":""}${lt(n.t)}${srcTags(n.src)}</div>`;
+function renalBar(){
+  if(!R) return `<div class="rtag"><button type="button" class="flag warn" data-act="pt-open">正常腎功能劑量・填腎功能 ›</button></div>`;
+  const x=[];
+  if(S.pt.aki) x.push("腎功能不穩定：計算值不可靠，首劑給足量，24–48 小時後再評估");
+  return `<div class="rtag"><button type="button" class="flag info" data-act="pt-open">劑量依 ${R.label}</button></div>${x.length?`<div class="note warn" style="margin-bottom:8px">${x.join("；")}。</div>`:""}`;
+}
+const chipRow = (act,list,cur,extra)=>`<div class="chips">${list.map(([v,l])=>`<button class="chip" type="button" data-act="${act}" data-v="${v}"${extra||""} aria-pressed="${cur===v}">${l}</button>`).join("")}</div>`;
+// 選項：未選過的用第一個選項
+function optsOf(def,store){ const o={}; (def.opts||[]).forEach(q=>{ o[q.k]=store[def.id]&&store[def.id][q.k]!==undefined?store[def.id][q.k]:q.ch[0][0]; }); return o; }
+const regsIn = r=>[...new Set((r.o||[]).flatMap(c=>c.regs).map(x=>REG[x].d))];
+function pregBlock(r){
+  if(!S.preg) return "";
+  const ds=regsIn(r), x=ds.filter(k=>D[k].preg&&D[k].preg.l==="x"), ok=ds.filter(k=>!(D[k].preg&&D[k].preg.l==="x"));
+  if(!x.length) return ds.length?`<div class="note">懷孕：本情境列出的藥沒有懷孕禁忌標示；個別注意事項點藥名查看。</div>`:"";
+  return `<div class="note danger"><b>懷孕：</b>${x.map(k=>`${D[k].n}：${lt(D[k].preg.t)}`).join("；")}。${ok.length?`可用替代：${ok.map(k=>D[k].n).join("、")}。`:"本情境沒有列出懷孕可用的替代藥，請會診感染科與婦產科。"}</div>`;
+}
+function resultHTML(r,def){
+  let h=renalBar();
+  h+=`<div class="ctx"><b>結論：</b>${lt(r.key)}</div>`;
+  (r.pre||[]).forEach(n=>h+=noteBlock(n));
+  h+=pregBlock(r);
+  if(r.o&&r.o.length) h+=`<div class="res">${r.o.map(optCard).join("")}</div>`;
+  (r.post||[]).forEach(n=>h+=noteBlock(n));
+  if(r.extra) h+=`<div class="hint">${lt(r.extra)}</div>`;
+  if(r.diff&&r.diff.length) h+=`<details class="more" open><summary>各指引說法（${r.diff.length}）</summary><ul class="difl">${r.diff.map(([s,t,src,u])=>`<li><b>${s}</b>${u?" "+updOf(u):""}：${lt(t)}${srcTags(src)}</li>`).join("")}</ul></details>`;
+  if(r.tests&&r.tests.length) h+=`<details class="more"><summary>檢驗</summary><ul class="difl">${r.tests.map(([t,src])=>`<li>${lt(t)}${srcTags(src)}</li>`).join("")}</ul></details>`;
+  if(r.res) h+=`<div class="srcs"><button class="linkbtn" type="button" data-act="res-go" data-v="${r.res}">抗藥：${RES_OF(r.res).n} ›</button></div>`;
+  return h;
+}
+function optSteps(def,o,act,startK){
+  let h="", k=startK;
+  (def.opts||[]).forEach(q=>{ if(q.show&&!q.show(o)) return; k++; h+=`<div class="step"><h3><span class="k">${String(k).padStart(2,"0")}</span>${q.q}</h3>${chipRow(act,q.ch,o[q.k],` data-k="${q.k}"`)}</div>`; });
+  return [h,k];
+}
+
+/* ---------------- 治療 ---------------- */
+function renderTx(){
+  const def=DX_OF(S.dx); let h="";
+  if(!def||UI.dxpick){
+    h+=`<div class="step"><h3><span class="k">01</span>選擇診斷</h3>${DX_G.map(g=>`<div class="dg-h">${g}</div><div class="chips">${DX.filter(x=>x.g===g).map(x=>`<button class="chip" type="button" data-act="dx" data-v="${x.id}" aria-pressed="${S.dx===x.id}">${x.n}</button>`).join("")}</div>`).join("")}</div>`;
+    if(!def) return h;
+  } else h+=`<div class="picked"><span class="k">01</span><span class="q">診斷</span><b>${def.g}・${def.n}</b><button class="linkbtn" type="button" data-act="dxpick">更改</button></div>`;
+  const o=optsOf(def,S.o); const [oh,k]=optSteps(def,o,"dxo",1); h+=oh;
+  const r=def.gen(o);
+  h+=`<div class="step"><h3><span class="k">${String(k+1).padStart(2,"0")}</span>建議</h3>${resultHTML(r,def)}</div>`;
+  return h;
+}
+/* ---------------- 預防 ---------------- */
+function renderPx(){
+  const def=PX_OF(S.px); let h="";
+  if(!def||UI.pxpick){
+    h+=`<div class="step"><h3><span class="k">01</span>選擇預防情境</h3><div class="chips">${PX.map(x=>`<button class="chip" type="button" data-act="px" data-v="${x.id}" aria-pressed="${S.px===x.id}">${x.n}</button>`).join("")}</div></div>`;
+    if(!def) return h;
+  } else h+=`<div class="picked"><span class="k">01</span><span class="q">預防</span><b>${def.n}</b><button class="linkbtn" type="button" data-act="pxpick">更改</button></div>`;
+  const o=optsOf(def,S.po); const [oh,k]=optSteps(def,o,"pxo",1); h+=oh;
+  const r=def.gen(o);
+  h+=`<div class="step"><h3><span class="k">${String(k+1).padStart(2,"0")}</span>建議</h3>${resultHTML(r,def)}</div>`;
+  return h;
+}
+/* ---------------- 藥物 ---------------- */
+const regsOfDrug = k=>Object.keys(REG).filter(r=>REG[r].d===k);
+function renalTable(g){
+  const rows=g.b.map((x,i)=>[bandRange(g,i),fillW(x[1])]);
+  [["hd","HD"],["pd","PD"],["crrt","CRRT"]].forEach(([k,n])=>{ if(g[k]) rows.push([n,fillW(g[k])]); });
+  let cur=-1;
+  if(R&&R.mode==="crcl"){ const v=g.unit==="kg"?perKg():R.val; if(v!==null){ const i=g.b.findIndex(x=>v>=x[0]); cur=i<0?g.b.length-1:i; } }
+  else if(!R) cur=0;
+  const curD=R&&R.mode!=="crcl"?{hd:"HD",pd:"PD",crrt:"CRRT"}[R.mode]:null;
+  return `<div class="tbl-wrap"><table><thead><tr><th>腎功能</th><th>劑量</th></tr></thead><tbody>${rows.map((r,i)=>`<tr${(curD?r[0]===curD:i===cur)?' class="cur"':""}><td>${esc(r[0])}</td><td class="mono">${lt(r[1])}</td></tr>`).join("")}</tbody></table></div>`;
+}
+const useOf = k=>{
+  const a=[];
+  DX.forEach(x=>{ const keep=S.preg; try{ S.preg=false; const ds=new Set(); allOpts(x).forEach(o=>regsIn(x.gen(o)).forEach(d=>ds.add(d))); if(ds.has(k)) a.push(["dx",x.id,x.n]); } finally { S.preg=keep; } });
+  PX.forEach(x=>{ const ds=new Set(); allOpts(x).forEach(o=>regsIn(x.gen(o)).forEach(d=>ds.add(d))); if(ds.has(k)) a.push(["px",x.id,x.n]); });
+  return a;
+};
+function allOpts(def){
+  let acc=[{}];
+  (def.opts||[]).forEach(q=>{ const n=[]; acc.forEach(o=>q.ch.forEach(([v])=>n.push(Object.assign({},o,{[q.k]:v})))); acc=n; });
+  return acc;
+}
+function renderDrug(){
+  let h="";
+  if(!S.drug||UI.dpick){
+    h+=`<div class="step"><h3><span class="k">01</span>選擇藥物</h3>${DGRP.map(([gn,gk])=>`<div class="dg-h">${gn}</div><div class="chips">${Object.keys(D).filter(k=>D[k].g===gk).map(k=>`<button class="chip" type="button" data-act="drug" data-v="${k}" aria-pressed="${S.drug===k}">${D[k].n}</button>`).join("")}</div>`).join("")}<div class="hint">也可以用上方搜尋（藥名或商品名）。</div></div>`;
+    if(!S.drug) return h;
+  } else h+=`<div class="picked"><span class="k">01</span><span class="q">藥物</span><b>${D[S.drug].n}</b><button class="linkbtn" type="button" data-act="dpick">更改</button></div>`;
+  const k=S.drug, d=D[k], regs=regsOfDrug(k), gname=(DGRP.find(g=>g[1]===d.g)||[""])[0];
+  h+=`<div class="step"><h3><span class="k">02</span>${nameHTML(k,!!d.brand)}<span class="flag info">${gname}</span></h3>${d.brand?`<div class="rx-more" hidden><span class="brand">商品名：${d.brand}</span></div>`:""}${renalBar()}`;
+  const fl=drugFlags(k); if(fl.length) h+=`<div class="rtag">${fl.join("")}</div>`;
+  h+=`<div class="res">`;
+  regs.forEach((id,i)=>{ const g=REG[id];
+    h+=`<div class="opt${i===0?" primary":""}"><div class="opt-head"><span class="tier${i===0?" primary":""}">${g.ind}・${g.r}</span></div>${rxRow(id)}<details class="more"><summary>各腎功能劑量</summary>${renalTable(g)}</details>${srcTags(g.src)}</div>`; });
+  h+=`</div></div>`;
+  h+=`<div class="step"><h3><span class="k">03</span>使用注意</h3><div class="notes">`;
+  h+=`<div class="note${d.preg&&d.preg.l==="x"?" danger":d.preg&&d.preg.l==="w"?" warn":""}"><b>懷孕：</b>${d.preg?lt(d.preg.t):"app 未標示"}</div>`;
+  if(d.ix&&d.ix.length) h+=`<div class="note"><b>交互作用與注意</b><ul class="ixl">${d.ix.map(x=>`<li>${lt(x)}</li>`).join("")}</ul>${srcTags(d.src)}</div>`;
+  const use=useOf(k);
+  if(use.length) h+=`<div class="note"><b>app 內出現的情境（${use.length}）</b><div class="chips mt">${use.map(([t,id,n])=>`<button class="chip" type="button" data-act="${t==="dx"?"go-dx":"go-px"}" data-v="${id}">${t==="px"?"預防・":""}${n}</button>`).join("")}</div></div>`;
+  h+=`</div></div>`;
+  return h;
+}
+/* ---------------- 抗藥 ---------------- */
+function renderRes(){
+  let h=`<div class="hint">點標題展開完整內容。HBV 抗藥將於下一版加入。</div>`;
+  RES.forEach(r=>{
+    const open=S.res===r.id;
+    h+=`<div class="note resitem${open?" open":""}" id="res-${r.id}"><button class="reshd" type="button" data-act="res-k" data-v="${r.id}" aria-expanded="${open}"><b>${r.n}</b><span class="chev">${open?"收合 ▴":"展開 ▾"}</span></button>`;
+    h+=`<div class="mt">${lt(r.key)}</div>`;
+    if(!open) h+=`<div class="mt"><span class="flag danger">無效或不可靠</span> ${r.bad.map(b=>b[0]).join("、")}</div>`;
+    else {
+      h+=`<details class="more" open><summary>何時懷疑、怎麼確認</summary><ul class="difl">${r.when.map(([t,s])=>`<li>${lt(t)}${srcTags(s)}</li>`).join("")}</ul></details>`;
+      h+=`<div class="sec-title">無效或不可靠的藥</div><ul class="difl">${r.bad.map(([n,why,s])=>`<li><b>${n}</b>：${lt(why)}${srcTags([s])}</li>`).join("")}</ul>`;
+      h+=`<div class="sec-title">改用</div>${renalBar()}${pregBlock({o:r.tx.o})}<div class="res">${r.tx.o.map(optCard).join("")}</div>`;
+      if(r.tx.note) h+=`<div class="hint">${lt(r.tx.note)}</div>`;
+      h+=srcTags(r.src);
+    }
+    h+=`</div>`;
+  });
+  return h;
+}
+/* ---------------- 出處 ---------------- */
+function renderRef(){
+  let h=`<div class="step"><h3><span class="k">01</span>資料來源（${Object.keys(REF).length}）</h3><ul class="reflist">${Object.entries(REF).map(([k,r])=>`<li><b>${r.s}</b>：${lt(r.f)}</li>`).join("")}</ul></div>`;
+  h+=`<div class="step"><h3><span class="k">02</span>使用說明與版本</h3><div class="notes">
+  <div class="note">劑量依左側病人卡的腎功能自動調整（Cockcroft-Gault；體重 >120% IBW 用 AdjBW）。依體重給藥的藥（acyclovir IV、ganciclovir、foscarnet、cidofovir）填體重後換算 mg；acyclovir 在 BMI ≥30 時並列 IBW（仿單）與 AdjBW（部分院內指引）。</div>
+  <div class="note">「更新」綠色標籤：2024 年後的改版、新核准或已發表 phase 3。各指引說法不同時分別列出，不合併。</div>
+  <div class="note">不列台灣公費與健保條件。台灣許可證未查證的藥標示「請確認」。</div>
+  <div class="note"><b>${VERSION}（${VERIFIED}）</b>：第一版。流感、COVID-19、RSV、HSV、VZV、CMV 的治療、預防與抗藥；藥物頁含腎調整表、懷孕與交互作用。下一版：HBV、HCV、HIV PEP／PrEP、BK virus、adenovirus、抗病毒譜。</div>
+  </div></div>`;
+  return h;
+}
+const GLOSS_KEYS = Object.keys(GLOSS).sort((a,b)=>b.length-a.length);
+const reEsc = s=>s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+const GLOSS_SRC = "(^|[^A-Za-z0-9\\-])("+GLOSS_KEYS.map(reEsc).join("|")+")(?![A-Za-z0-9\\-])";
+const GL_CARD = ".opt,.note,.ctx,.hint,.formula,.cond,.onote,.rx-meta,.rx-more,li,td,.picked";
+function markGloss(root){
+  if(!root||typeof document==="undefined") return;
+  root.querySelectorAll(GL_CARD).forEach(card=>{
+    if(card.parentElement&&card.parentElement.closest(GL_CARD)) return;
+    const seen=new Set();
+    const tw=document.createTreeWalker(card,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement.closest("button,summary,.rx-dose,input,select,textarea,i")?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
+    const nodes=[]; while(tw.nextNode()) nodes.push(tw.currentNode);
+    for(const n of nodes){
+      const t=n.nodeValue, re=new RegExp(GLOSS_SRC,"g"); let m, last=0, changed=false; const frag=document.createDocumentFragment();
+      while((m=re.exec(t))){ const k=m[2], st=m.index+m[1].length; if(seen.has(k)) continue; seen.add(k); changed=true; frag.append(t.slice(last,st)); const b=document.createElement("button"); b.type="button"; b.className="gl"; b.dataset.gl=k; b.textContent=k; frag.append(b); last=st+k.length; }
+      if(changed){ frag.append(t.slice(last)); n.replaceWith(frag); }
+    }
+  });
+}
+/* ---------------- 搜尋 ---------------- */
+let SIDX=null;
+const SCAT=["藥物","治療","預防","抗藥"];
+function buildIdx(){
+  const a=[];
+  for(const k of Object.keys(D)) a.push({t:"藥物",n:D[k].n,s:(D[k].n+" "+(D[k].brand||"")).toLowerCase(),sub:D[k].brand?`商品名：${D[k].brand}`:"",go:{tab:"drug",drug:k}});
+  DX.forEach(x=>a.push({t:"治療",n:x.n,s:(x.n+" "+x.g+" "+x.id).toLowerCase(),sub:x.g,go:{tab:"tx",dx:x.id}}));
+  PX.forEach(x=>a.push({t:"預防",n:x.n,s:(x.n+" 預防 "+x.id).toLowerCase(),sub:"預防",go:{tab:"px",px:x.id}}));
+  RES.forEach(x=>a.push({t:"抗藥",n:x.n,s:(x.n+" 抗藥 resistance").toLowerCase(),sub:"抗藥",go:{tab:"res",res:x.id}}));
+  return a;
+}
+function searchHits(q){
+  q=q.trim().toLowerCase(); if(!q) return [];
+  SIDX=SIDX||buildIdx(); const out=[];
+  for(const c of SCAT) out.push(...SIDX.filter(x=>x.t===c&&x.s.includes(q)).map(x=>[x.s.indexOf(q),x]).sort((a,b)=>a[0]-b[0]).slice(0,5).map(x=>x[1]));
+  return out;
+}
+let QH=[];
+function renderQ(q){
+  const box=$("qres"); QH=searchHits(q);
+  if(!q.trim()){ box.hidden=true; box.innerHTML=""; return; }
+  box.hidden=false;
+  if(!QH.length){ box.innerHTML=`<div class="qnone">找不到「${esc(q)}」</div>`; return; }
+  let h="", lastT="";
+  QH.forEach((x,i)=>{ if(x.t!==lastT){ h+=`<div class="qcat">${x.t}</div>`; lastT=x.t; } h+=`<button type="button" class="qitem" data-act="go" data-i="${i}"><span>${x.n}</span>${x.sub?`<span class="qsub">${x.sub}</span>`:""}</button>`; });
+  box.innerHTML=h;
+}
+function goHit(x){
+  const g=x.go; S.tab=g.tab;
+  if(g.tab==="drug"){ S.drug=g.drug; UI.dpick=false; }
+  else if(g.tab==="tx"){ S.dx=g.dx; UI.dxpick=false; }
+  else if(g.tab==="px"){ S.px=g.px; UI.pxpick=false; }
+  else if(g.tab==="res") S.res=g.res;
+}
+/* ---------------- 主畫面、返回 ---------------- */
+const TABS=[["tx","治療"],["px","預防"],["drug","藥物"],["res","抗藥"],["ref","出處"]];
+const tabName=k=>(TABS.find(t=>t[0]===k)||[])[1]||"";
+const NAV=[]; let NAV_ID=0; const NAV_MAX=20;
+const navSnap=()=>({tab:S.tab,dx:S.dx,px:S.px,drug:S.drug,res:S.res,o:JSON.parse(JSON.stringify(S.o)),po:JSON.parse(JSON.stringify(S.po)),ui:{dxpick:UI.dxpick,pxpick:UI.pxpick,dpick:UI.dpick}});
+const navKey=sn=>JSON.stringify([sn.tab,sn.dx,sn.px,sn.drug,sn.res]);
+function navLabel(){
+  const t=S.tab; let x="";
+  if(t==="tx") x=DX_OF(S.dx)?DX_OF(S.dx).n:""; else if(t==="px") x=PX_OF(S.px)?PX_OF(S.px).n:""; else if(t==="drug") x=S.drug?D[S.drug].n:""; else if(t==="res") x=S.res&&RES_OF(S.res)?RES_OF(S.res).n.split("：")[0]:"";
+  return tabName(t)+(x?"・"+x:"");
+}
+function navPush(sn,label,y){ sn.label=label; sn.y=y||0; sn.id=++NAV_ID; NAV.push(sn); if(NAV.length>NAV_MAX) NAV.shift(); try{ history.pushState({nav:sn.id},""); }catch(e){} }
+function navRestore(sn){ ["tab","dx","px","drug","res"].forEach(k=>{ S[k]=sn[k]; }); S.o=sn.o; S.po=sn.po; Object.assign(UI,sn.ui); }
+const RENDER={tx:renderTx,px:renderPx,drug:renderDrug,res:renderRes,ref:renderRef};
+function renderMain(){
+  R=getRenal();
+  $("tabs").innerHTML=TABS.filter(t=>t[0]!=="ref").map(([k,n])=>`<button class="tab" role="tab" type="button" data-act="tab" data-v="${k}" aria-selected="${S.tab===k}">${n}</button>`).join("");
+  const back=NAV.length?`<button class="backbar" type="button" data-act="nav-back"><span class="bk">‹ 返回</span><span class="to">${NAV[NAV.length-1].label}</span></button>`:"";
+  $("main").innerHTML=back+(RENDER[S.tab]||renderTx)();
+  markGloss($("main"));
+}
+const narrow=()=>typeof matchMedia!=="undefined"&&matchMedia("(max-width:920px)").matches;
+function ptSummary(){
+  const p=S.pt, r=getRenal(), a=[];
+  if(p.age) a.push(`${p.age} 歲`);
+  if(p.age||p.wt||p.scr) a.push(p.sex==="M"?"男":"女");
+  if(p.wt) a.push(`${p.wt} kg`);
+  a.push(r?r.short:"腎功能未填");
+  const b=[a.join("・")]; if(S.preg) b.push("懷孕");
+  return {txt:b.join("｜"),empty:!r};
+}
+function renderPt(){
+  const open=narrow()?!!UI.pt:true, bar=$("ptBar");
+  $("ptBody").hidden=!open; bar.hidden=open; bar.setAttribute("aria-expanded",String(open));
+  document.querySelector('[data-act="pt-close"]').hidden=!narrow();
+  if(!open){ const s=ptSummary(); bar.className="ptbar"+(s.empty?" empty":"");
+    bar.innerHTML=`<span class="lab">病人</span><span class="val">${s.empty&&!S.pt.age&&!S.pt.wt&&!S.preg?"未填：劑量依正常腎功能":s.txt}</span><span class="act">編輯 ▾</span>`; }
+  const mm=UI.mMore||S.pt.method!=="cg"; $("mMore").hidden=!mm; $("mMoreBtn").setAttribute("aria-expanded",String(mm)); $("mMoreBtn").hidden=S.pt.method!=="cg"&&mm;
+}
+function renderRsum(){
+  const el=$("rsum"), r=getRenal();
+  $("crclRow").hidden=S.pt.method!=="crcl"; $("egfrRow").hidden=S.pt.method!=="egfr";
+  if(!r){ el.className="rsum empty"; el.innerHTML=`<div class="small">${S.pt.method==="cg"?"輸入年齡、體重、SCr 後自動計算 CrCl":"請輸入數值"}</div><div>目前顯示正常腎功能劑量</div>`; return; }
+  if(r.mode!=="crcl"){ el.className="rsum"; el.innerHTML=`<div class="big">${r.label}</div><div class="small">各藥依透析方式給藥</div>`; return; }
+  el.className="rsum";
+  let s=`<div class="big">${r0(r.val)} <span class="small">mL/min</span></div>`;
+  if(r.cg){ const w=r.cg.w; s+=`<div class="small">Cockcroft-Gault・${w.dl} ${r0(w.dw)} kg${w.ibw?`（IBW ${r0(w.ibw)}、BMI ${w.bmi.toFixed(1)}）`:""}</div>`; }
+  else s+=`<div class="small">${r.label}</div>`;
+  if(S.pt.aki) s+=`<div class="small">腎功能不穩定：計算值不可靠，首劑給足量</div>`;
+  el.innerHTML=s;
+}
+function toast(m){ const t=$("toast"); t.textContent=m; t.hidden=false; clearTimeout(toast._t); toast._t=setTimeout(()=>{t.hidden=true;},1600); }
+function copyText(txt){
+  const done=()=>toast("已複製");
+  const fallback=()=>{ const ta=document.createElement("textarea"); ta.value=txt; ta.style.position="fixed"; ta.style.opacity="0"; document.body.appendChild(ta); ta.select(); try{ document.execCommand("copy"); done(); }catch(e){ toast("無法自動複製，請手動選取"); } ta.remove(); };
+  try{ navigator.clipboard.writeText(txt).then(done,fallback); }catch(e){ fallback(); }
+}
+function readPt(){
+  const p=S.pt;
+  p.age=num($("age").value); p.wt=num($("wt").value); p.ht=num($("ht").value); p.scr=num($("scr").value);
+  p.sex=document.querySelector('input[name="sex"]:checked').value;
+  p.method=document.querySelector('input[name="method"]:checked').value;
+  p.crcl=num($("crclIn").value); p.egfr=num($("egfrIn").value); p.aki=$("aki").checked;
+  S.preg=$("preg").checked;
+  ["age","wt","ht","scr","crcl","egfr"].forEach(k=>{ if(p[k]!==null&&p[k]<0) p[k]=null; });
+}
+
+if(typeof document!=="undefined"){
+  $("ver").textContent=`${VERSION}・查證 ${VERIFIED}`;
+  $("footVer").textContent=`抗病毒藥物助手 ${VERSION}・查證 ${VERIFIED}・${SCOPE}`;
+  const ptKey=()=>JSON.stringify([S.pt,S.preg]);
+  const onPt=()=>{ const k=ptKey(); readPt(); if(ptKey()===k) return; renderRsum(); renderMain(); renderPt(); };
+  function clearAll(){
+    ["age","wt","ht","scr","crclIn","egfrIn"].forEach(id=>{ $(id).value=""; });
+    $("sexM").checked=true; document.querySelector('input[name="method"][value="cg"]').checked=true;
+    ["aki","preg"].forEach(id=>{ $(id).checked=false; });
+    UI.mMore=false; navDrop(NAV.length); readPt(); renderRsum(); renderMain(); renderPt(); toast("已清除病人資料");
+  }
+  $("side").addEventListener("input",onPt);
+  $("side").addEventListener("change",onPt);
+  const showOv=(t,b)=>{ $("ovT").textContent=t; $("ovB").innerHTML=b; $("ov").hidden=false; $("ov").querySelector(".btn").focus(); };
+  document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&!$("ov").hidden) $("ov").hidden=true; });
+  $("ov").addEventListener("click",e=>{ if(e.target===$("ov")) $("ov").hidden=true; });
+  document.addEventListener("click",e=>{
+    const sb=e.target.closest("button.src[data-ref]");
+    if(sb){ const r=REF[sb.dataset.ref]; if(r) showOv(r.s,`<p>${esc(r.f)}</p>${r.u?`<p><a href="${esc(r.u)}" target="_blank" rel="noopener noreferrer">開啟原文 ›</a></p>`:""}`); return; }
+    const ub=e.target.closest("button.upd[data-upd]");
+    if(ub){ showOv("更新",`<p>${esc(ub.dataset.upd)}</p>`); return; }
+    const gb=e.target.closest("button.gl[data-gl]");
+    if(gb){ const k=gb.dataset.gl; showOv(k,`<p>${esc(GLOSS[k]||"")}</p>`); return; }
+  });
+  const q=$("q");
+  q.addEventListener("input",()=>renderQ(q.value));
+  q.addEventListener("keydown",e=>{ if(e.key==="Enter"&&QH.length){ e.preventDefault(); $("qres").querySelector(".qitem").click(); } else if(e.key==="Escape"){ q.value=""; renderQ(""); } });
+  document.addEventListener("click",e=>{ if(!e.target.closest(".srch")) $("qres").hidden=true; });
+  q.addEventListener("focus",()=>{ if(q.value.trim()) renderQ(q.value); });
+  let wasNarrow=narrow();
+  addEventListener("resize",()=>{ const n=narrow(); if(n!==wasNarrow){ wasNarrow=n; renderPt(); } });
+  const NAV_JUMP=new Set(["go","go-drug","go-dx","go-px","res-go"]);
+  const histSync=()=>{ try{ const t=NAV[NAV.length-1]; return !!(t&&history.state&&history.state.nav===t.id); }catch(e){ return false; } };
+  function navBack(t){ let sn=null; while(NAV.length&&NAV[NAV.length-1].id>t) sn=NAV.pop(); if(!sn) return; navRestore(sn); renderMain(); renderPt(); scrollTo(0,sn.y); }
+  function navDrop(k){ if(k<=0) return; const sync=histSync(); NAV.splice(NAV.length-k,k); if(sync){ try{ history.go(-k); }catch(e){} } }
+  addEventListener("popstate",e=>{ navBack((e.state&&e.state.nav)||0); });
+  document.addEventListener("click",e=>{
+    const b=e.target.closest("button[data-act]"); if(!b) return;
+    const a=b.dataset.act, v=b.dataset.v;
+    const pre=NAV_JUMP.has(a)||(a==="tab"&&v==="ref"&&S.tab!=="ref")?[navSnap(),navLabel(),scrollY]:null;
+    if(a==="nav-back"){ if(!NAV.length) return; if(histSync()) history.back(); else navBack(0); return; }
+    if(a==="tab"){ if(v!=="ref"){ let i=-1; NAV.forEach((n,j)=>{ if(n.tab===v) i=j; }); if(i>=0) navDrop(NAV.length-i); } S.tab=v; if(narrow()&&UI.pt){ UI.pt=false; renderPt(); } scrollTo(0,0); }
+    else if(a==="pt-open"){ UI.pt=true; renderPt(); if(narrow()){ $("ptBody").scrollIntoView({block:"start"}); if(!S.pt.age) $("age").focus({preventScroll:true}); } return; }
+    else if(a==="clear-all"){ clearAll(); return; }
+    else if(a==="pt-close"){ UI.pt=false; renderPt(); $("ptBar").focus(); return; }
+    else if(a==="m-more"){ UI.mMore=!UI.mMore; renderPt(); return; }
+    else if(a==="disc-ok"){ $("disc").hidden=true; $("footDisc").hidden=false; return; }
+    else if(a==="ov-close"){ $("ov").hidden=true; return; }
+    else if(a==="go"){ const x=QH[+b.dataset.i]; if(!x) return; goHit(x); $("q").value=""; $("qres").hidden=true; if(narrow()&&UI.pt){ UI.pt=false; renderPt(); } scrollTo(0,0); }
+    else if(a==="dx"){ S.dx=v; UI.dxpick=false; }
+    else if(a==="dxpick") UI.dxpick=!UI.dxpick;
+    else if(a==="dxo"){ S.o[S.dx]=Object.assign({},S.o[S.dx],{[b.dataset.k]:v}); }
+    else if(a==="px"){ S.px=v; UI.pxpick=false; }
+    else if(a==="pxpick") UI.pxpick=!UI.pxpick;
+    else if(a==="pxo"){ S.po[S.px]=Object.assign({},S.po[S.px],{[b.dataset.k]:v}); }
+    else if(a==="drug"){ S.drug=v; UI.dpick=false; }
+    else if(a==="dpick") UI.dpick=!UI.dpick;
+    else if(a==="go-drug"){ S.tab="drug"; S.drug=v; UI.dpick=false; scrollTo(0,0); }
+    else if(a==="go-dx"){ S.tab="tx"; S.dx=v; UI.dxpick=false; scrollTo(0,0); }
+    else if(a==="go-px"){ S.tab="px"; S.px=v; UI.pxpick=false; scrollTo(0,0); }
+    else if(a==="res-k") S.res=S.res===v?"":v;
+    else if(a==="res-go"){ S.tab="res"; S.res=v; if(narrow()&&UI.pt){ UI.pt=false; renderPt(); } scrollTo(0,0); }
+    else if(a==="copy"){ copyText(decodeURIComponent(b.dataset.txt)); return; }
+    else if(a==="onote"||a==="srcs-tog"){ const n=b.closest(".opt").querySelector(a==="onote"?".onote.fold":".srcs.fold"); if(n){ n.hidden=!n.hidden; b.setAttribute("aria-expanded",String(!n.hidden)); } return; }
+    else if(a==="brand"){ const host=b.closest(".rx")||b.closest(".step")||b.parentElement; const sp=host.querySelector(".rx-more"); if(sp){ sp.hidden=!sp.hidden; b.setAttribute("aria-expanded",String(!sp.hidden)); } return; }
+    else return;
+    if(pre&&navKey(navSnap())!==navKey(pre[0])) navPush(pre[0],pre[1],pre[2]);
+    renderMain();
+    if((a==="res-k"||a==="res-go")&&S.res){ const el=$("res-"+S.res); if(el) el.scrollIntoView({block:"start"}); }
+  });
+  readPt(); renderRsum(); renderMain(); renderPt();
+}
+</script>
+</body>
+</html>
