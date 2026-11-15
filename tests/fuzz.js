@@ -43,13 +43,54 @@ const INV={
   hbvtx(o,t,h,ds){ const c=cards(h); if(o.c==="dec"&&!/ent_1|1 mg/.test(h+t)) return "失代償缺 entecavir 1 mg"; if(o.c==="dec"&&!/peginterferon/.test(t)) return "失代償缺 peginterferon 禁用"; if(o.c==="no"&&o.p==="lo"&&c.length) return "低病毒量正常 ALT 仍列藥"; if((o.c!=="no"||o.p!=="lo")&&!c.length) return "應治療卻無方案"; if(o.c==="no"&&o.p==="gz"&&!/7 kPa/.test(t)||o.c==="no"&&o.p==="gz"&&!/8 kPa/.test(t)) return "灰色地帶缺 VCTE 7／8 kPa 衝突"; },
   hbvstop(o,t,h,ds){ if(ds.length) return "停藥情境列藥"; if(o.c==="cir"&&!/不停藥/.test(t)) return "肝硬化缺不停藥"; },
   hcvtx(o,t,h,ds){ if(o.st==="dc"&&(ds.includes("mav")||ds.includes("vox"))) return "失代償列蛋白酶抑制劑方案"; if(o.st==="dc"&&!(ds.includes("svl")&&ds.includes("rib"))) return "失代償缺 sofosbuvir/velpatasvir＋ribavirin"; if(o.st!=="dc"&&ds.includes("rib")) return "非失代償列 ribavirin"; if(o.st==="exp"&&!ds.includes("vox")) return "再治療缺 voxilaprevir"; if(!/HBsAg/.test(t)) return "缺 HBV 篩檢提醒"; },
-  rsv(o,t,h,ds){ if(o.host==="gen"&&ds.length) return "一般成人 RSV 列藥"; }
+  rsv(o,t,h,ds){ if(o.host==="gen"&&ds.length) return "一般成人 RSV 列藥"; },
+  bkvan(o,t,h,ds){ const c=cards(h); const strat=c.filter(x=>/策略 1|策略 2/.test(txt(x))).length;
+    if(ds.length) return "BK 情境列出抗病毒藥卡";
+    if(o.s==="lo"&&c.length) return "未達門檻仍列處置卡";
+    if(["mid","hi","van"].includes(o.s)&&o.rej==="no"&&strat!==2) return "達門檻缺兩種減免疫抑制策略";
+    if(o.rej==="yes"&&o.s!=="lo"&&(strat||!/排斥/.test(t))) return "高免疫風險或疑似排斥仍直接減免疫抑制或未提排斥";
+    if(o.s==="fail"&&!/cidofovir/.test(t)) return "治療失敗缺 cidofovir 不建議";
+    if(o.s==="fail"&&strat) return "治療失敗重複列起始策略";
+    if(/cidofovir/.test(t)&&!/不(建議|常規|用)/.test(t)) return "BK 提到 cidofovir 卻沒有不建議"; },
+  bkhc(o,t,h,ds){ if(ds.length||cards(h).length) return "BK 出血性膀胱炎列藥卡"; if(!/不常規/.test(t)) return "缺 cidofovir 不常規"; },
+  adv(o,t,h,ds){ const c=cards(h);
+    if(o.h==="sot"&&o.st==="asym"&&(c.length||ds.length)) return "SOT 無症狀仍列抗病毒藥";
+    if(o.h==="hsct"&&!ds.includes("cdv")) return "HSCT 缺 cidofovir";
+    if(o.h==="sot"&&o.st==="dis"&&!ds.includes("cdv")) return "SOT 有症狀缺 cidofovir";
+    if(c.length&&!/probenecid/.test(t)) return "cidofovir 缺 probenecid 與水化";
+    if(!/brincidofovir/.test(t)) return "缺 brincidofovir 說明"; }
 };
 const PINV={
   hbvpx(o,t,h,ds){ const c=cards(h); if(o.s==="sag"&&!c.length) return "HBsAg 陽性未列預防"; if(o.s==="core"&&o.t==="o"&&c.length) return "低風險 anti-HBc 陽性仍列預防"; if(o.s==="core"&&o.t==="b"&&!c.length) return "anti-HBc 陽性＋anti-CD20 未列預防"; if(ds.includes("rib")) return "HBV 預防列 ribavirin"; },
   cmvsot(o,t,h,ds){ if(o.sero==="nn"&&ds.includes("vgc")) return "D−/R− 列 valganciclovir"; if(o.sero!=="nn"&&!ds.includes("vgc")) return "缺 valganciclovir 預防"; if(ds.includes("let")&&!(o.org==="kid"&&o.sero==="dr")) return "letermovir 出現在非腎 D+/R−"; },
   flupep(o,t,h,ds){ if(ds.includes("per")) return "peramivir 用於預防"; },
-  cmvhsct(o,t,h,ds){ if(!/HSV／VZV 活性/.test(t)) return "缺 letermovir 無 HSV 活性提醒"; }
+  cmvhsct(o,t,h,ds){ if(!/HSV／VZV 活性/.test(t)) return "缺 letermovir 無 HSV 活性提醒"; },
+  hivnpep(o,t,h,ds){ const c=cards(h); const go=o.x==="hi"&&o.s==="u"&&o.t!=="c";
+    if(!go&&c.length) return "非適應症仍列 nPEP 藥卡";
+    if(go){ if(c.length!==3) return "nPEP 方案卡數不是 3："+c.length;
+      if(!c.every(x=>/28 天/.test(txt(x)))) return "nPEP 缺 28 天";
+      if(c.some(x=>/dolutegravir/.test(txt(x))&&!/emtricitabine/.test(txt(x)))) return "DTG 沒有搭配 NRTI 骨幹";
+      if(/raltegravir/.test(txt(h).replace(/英國[^]*?raltegravir ＋ 另開 TDF\/FTC/,""))) return "首選列 raltegravir";
+      if(o.l==="lai"&&!/HIV NAT/.test(t)) return "長效藥史缺 HIV NAT";
+      if(o.l!=="lai"&&/INSTI 抗藥風險/.test(t)) return "無長效藥史卻提 INSTI 抗藥";
+      if(!/12 週/.test(t)) return "缺 12 週追蹤"; }
+    if(o.x==="hi"&&o.s==="u"&&o.t==="c"&&!/證據不足/.test(t)) return ">72 小時缺證據不足";
+    if(o.x==="lo"&&!/不建議 nPEP/.test(t)) return "無實質風險缺不建議";
+    if(o.s==="n"&&o.x==="hi"&&!/不需 nPEP/.test(t)) return "來源陰性缺不需 nPEP";
+    if(/DTG\/3TC/.test(t)&&c.length&&!/不建議/.test(t)) return "DTG/3TC 雙藥未標不建議"; },
+  hivopep(o,t,h,ds){ const c=cards(h);
+    if(o.s==="u"&&(c.length!==3||!c.every(x=>/28 天/.test(txt(x))))) return "oPEP 方案卡或療程錯誤";
+    if(o.s!=="u"&&c.length) return "oPEP 非適應症仍列藥";
+    if(o.s==="v"&&!/未取得/.test(t)) return "來源測不到缺全文未取得提示";
+    if(o.s==="u"&&o.p==="cab"&&!/HIV 檢驗/.test(t)) return "CAB 史缺加做 HIV 檢驗";
+    if(o.s==="u"&&!/darunavir/.test(t)) return "缺 darunavir 替代說明"; },
+  hivprep(o,t,h,ds){ const c=cards(h); if(c.length!==1) return "PrEP 卡數不是 1";
+    if(o.m==="o"&&!(ds.includes("ftd")&&ds.includes("fta"))) return "口服缺 F/TDF 或 F/TAF";
+    if(o.m==="e"&&(!ds.includes("ftd")||ds.includes("fta")||/200\/300 mg QD/.test(t)||!/2 錠/.test(t))) return "事件型卡內容錯誤";
+    if(o.m==="c"&&!ds.includes("cab")) return "缺 CAB";
+    if(o.m==="l"&&(!ds.includes("len")||!/927/.test(t)||!/26 週/.test(t))) return "LEN 劑量或間隔缺漏";
+    if(!/HBV/.test(t)) return "缺 HBV 提醒";
+    if(!/非健保給付/.test(t)) return "缺台灣非健保說明"; }
 };
 if(on("tx")) for(const x of A.DX) for(const o of A.allOpts(x)) for(const [pk,pt] of Object.entries(PTS)) for(const preg of [false,true])
   run(`tx ${x.id} ${JSON.stringify(o)} ${pk}`,Object.assign({tab:"tx",dx:x.id,o:{[x.id]:o},preg},JSON.parse(JSON.stringify(pt))),"tx",(t,h,ds)=>INV[x.id]&&INV[x.id](o,t,h,ds));
