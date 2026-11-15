@@ -425,6 +425,9 @@ const REF = {
   IDSA_ENC08:{s:"IDSA 腦炎 2008",f:"Tunkel AR, et al. The Management of Encephalitis: Clinical Practice Guidelines by the IDSA. Clin Infect Dis 2008;47:303–27。HSV 腦炎：IV acyclovir 10 mg/kg q8h 14–21 天（A-III）；疑似時盡快經驗性開始。VZV 腦炎：acyclovir（B-III）。本版依二手摘要（MedLink、AMBOSS）核對 HSV 部分，VZV 劑量與療程請確認。"},
   UK_ENC12:{s:"英國 ABN/BIA 腦炎 2012",f:"Solomon T, et al. Management of suspected viral encephalitis in adults – ABN and BIA National Guidelines. J Infect 2012（Hosp Med 2014 流程圖）。入院 6 小時內開始 IV acyclovir；確診 HSV/VZV 腦炎 14 天後重做 LP；免疫低下（及 3 個月–12 歲兒童）21 天；PCR 仍陽性則繼續。"},
   HSE_DK26:{s:"丹麥 HSV-1 腦炎世代（CID 2026）",f:"Clin Infect Dis 2026;82(6):e1384。丹麥全國 HSV-1 腦炎世代：LP 後延遲 acyclovir >6 小時，6 個月死亡相對風險 1.85（95% CI 1.01–3.45）；英、法、丹麥指引建議入院 6 小時內開始。觀察性研究。",u:"https://academic.oup.com/cid/article/82/6/e1384/8495099"},
+  UK_MEN16:{s:"英國腦膜炎指引 2016",f:"McGill F, et al. The UK joint specialist societies guideline on the diagnosis and management of acute meningitis and meningococcal sepsis in immunocompetent adults. J Infect 2016;72:405–38（BMJ Best Practice 轉引）。病毒性腦膜炎沒有證實有效的特定治療，抗病毒藥不常規使用，由專科決定；acyclovir／valacyclovir 不常規作為反覆 HSV 腦膜炎的預防；若專科開始長期治療，1 年後停。"},
+  AURELIUS12:{s:"Aurelius RCT（CID 2012）",f:"Aurelius E, et al. Long-term valacyclovir suppressive treatment after herpes simplex virus type 2 meningitis: a double-blind, randomized controlled trial. Clin Infect Dis 2012;54:1304–13。101 名原發或復發 HSV-2 腦膜炎，先 valacyclovir 1 g TID 1 週，之後 0.5 g BID 或安慰劑 1 年：未減少復發，停藥後第 2 年復發風險反而較高；不建議用於預防復發。",u:"https://pubmed.ncbi.nlm.nih.gov/22460966/"},
+  HSVM_SURV22:{s:"HSV-2 腦膜炎治療調查（OFID 2022）",f:"Open Forum Infect Dis 2022（ofac644）醫師問卷（223 人）：39% 一律治療、34% 重症才治療、10% 很少治療；最常用 IV acyclovir 後改 valacyclovir（61%）；IV 劑量多為 10 mg/kg TID（91%）；總療程中位數 7 天（IQR 7–10）；58% 對免疫低下者處置不同（延長療程或 IV）。屬實務調查，非指引。",u:"https://pmc.ncbi.nlm.nih.gov/articles/PMC9772874/"},
   ACV_IV_LABEL:{s:"Acyclovir 注射劑仿單",f:"Acyclovir sodium injection US PI／加拿大 monograph：免疫低下黏膜皮膚 HSV 5 mg/kg q8h × 7 天；HSV 腦炎 10 mg/kg q8h × 10 天；免疫低下 VZV 10 mg/kg q8h × 7 天；最大相當 20 mg/kg q8h。肥胖者以理想體重（IBW）計。腎調整：CrCl >50 q8h；>25–50 q12h；>10–25 q24h；≤10：50% 劑量 q24h；HD 6 小時約清除 60%，透析後給。英國 SmPC：CAPD 劑量減半 q24h；並註明依實際體重給藥的肥胖者血中濃度較高。",u:"https://pdf.hres.ca/dpd_pm/00074361.PDF"},
   ACV_OBESE:{s:"肥胖者 acyclovir 劑量（文獻與院內）",f:"Aboelezz A, Mahmoud SH. Acyclovir dosing in herpes encephalitis: a scoping review. J Am Pharm Assoc 2024;64:102040：肥胖者用哪個體重缺乏一致證據。UCSF 院內劑量建議：肥胖者先用 adjusted BW，密切監測腎功能與神智；NHS Fife 院內指引（2026-04 審閱）：BMI ≥30 用 adjusted BW＝IBW＋0.4 ×（實際－IBW）。與仿單（IBW）不同。",u:"https://idmp.ucsf.edu/node/8236"},
   ACV_PO_LABEL:{s:"Acyclovir 口服仿單",f:"Acyclovir tablets／capsules US PI：帶狀疱疹 800 mg q4h 5 次／日 × 7–10 天；初次生殖器疱疹 200 mg 5 次／日 × 10 天；抑制 400 mg BID；成人水痘 800 mg QID × 5 天。腎調整：800 mg q4h → CrCl 10–25：800 mg q8h；0–10：800 mg q12h；200 mg q4h 或 400 mg q12h → CrCl 0–10：200 mg q12h。"},
@@ -522,6 +525,8 @@ const REG = {
   val_rec:{d:"val",r:"PO",ind:"復發（間歇）",b:[[30,"500 mg BID × 3 天（或 1 g QD × 5 天）"],[0,"500 mg q24h × 3 天"]],hd:"500 mg q24h，HD 後給",src:["CDC_STI21","VAL_LABEL"]},
   val_sup:{d:"val",r:"PO",ind:"抑制",b:[[30,"500 mg QD 或 1 g QD（≥10 次／年用 1 g）"],[10,"500 mg q24h（原 1 g）或 500 mg q48h（原 500 mg）"],[0,"500 mg q24h（原 1 g）或 500 mg q48h（原 500 mg）"]],hd:"HD 後給",src:["CDC_STI21","VAL_LABEL"]},
   val_hivsup:{d:"val",r:"PO",ind:"HIV 抑制／懷孕抑制",b:[[30,"500 mg BID"],[0,"500 mg q24h"]],hd:"500 mg q24h，HD 後給",src:["CDC_STI21","VAL_LABEL"]},
+  val_step:{d:"val",r:"PO",ind:"IV 改口服（VZV、HSV）",b:[[50,"1 g TID"],[30,"1 g q12h"],[10,"1 g q24h"],[0,"500 mg q24h"]],hd:"500 mg q24h，HD 後給",note:"腎調整依帶狀疱疹表；完成總療程。",src:["VAL_LABEL"]},
+  val_men:{d:"val",r:"PO",ind:"HSV 腦膜炎（若治療）",b:[[50,"1 g TID"],[30,"1 g q12h"],[10,"1 g q24h"],[0,"500 mg q24h"]],hd:"500 mg q24h，HD 後給",note:"RCT 起始治療用 1 g TID × 1 週（Aurelius 2012）；腎調整依帶狀疱疹表。",src:["AURELIUS12","VAL_LABEL"]},
   val_hsl:{d:"val",r:"PO",ind:"口唇疱疹",b:[[50,"2 g BID × 1 天"],[30,"1 g BID × 1 天"],[10,"500 mg BID × 1 天"],[0,"500 mg 單次"]],hd:"500 mg 單次，HD 後給",note:"療程不超過 1 天；症狀出現（刺痛、癢）時盡早服用。",src:["VAL_LABEL"]},
   fam_hz:{d:"fam",r:"PO",ind:"帶狀疱疹",b:[[60,"500 mg TID × 7 天"],[40,"500 mg q12h × 7 天"],[20,"500 mg q24h × 7 天"],[0,"250 mg q24h × 7 天"]],hd:"每次透析後 250 mg",src:["FAM_LABEL"]},
   fam_first:{d:"fam",r:"PO",ind:"初次生殖器疱疹",b:[[40,"250 mg TID × 7–10 天"],[0,"腎功能不全：仿單未列此用法・請確認"]],hd:"仿單未列此用法・請確認",note:"CDC 方案；仿單未列此用法，CrCl <40 的劑量請確認。",src:["CDC_STI21"]},
@@ -690,7 +695,7 @@ const DX = [
   const r={o:[],pre:[],post:[],diff:[],tests:[]};
   if(o.k==="arn"){
     r.key="ARN：IV acyclovir 10 mg/kg TID 7–10 天，之後口服 acyclovir 800 mg 5 次／日 3–4 個月＋類固醇（EDF ↑↑／↑）；眼科急會診。";
-    r.o.push(O("首選",["acv_iv10"],{note:"IV 7–10 天後接口服 acyclovir 800 mg 5 次／日 3–4 個月（EDF）。",src:["EDF_HZ17"]}));
+    r.o.push(O("首選",["acv_iv10"],{dur:"IV 7–10 天，之後口服 acyclovir 800 mg 5 次／日 3–4 個月（EDF）",src:["EDF_HZ17"]}));
   } else {
     r.key="同帶狀疱疹口服抗病毒藥 7 天，不論年齡、盡早開始（EDF ↑↑）；眼科會診。";
     r.o.push(O("首選",["val_hz","fam_hz"],{src:["EDF_HZ17","MSD_HZ"]}));
@@ -704,7 +709,7 @@ const DX = [
  gen(){
   const r={o:[],pre:[],post:[],diff:[],tests:[]};
   r.key="IV acyclovir ＋ 口服類固醇（EDF ↑）；耳鼻喉科會診。";
-  r.o.push(O("建議",["acv_iv10"],{note:"EDF 未指定劑量；此處用仿單免疫低下 VZV 劑量 10 mg/kg q8h。",src:["EDF_HZ17","ACV_IV_LABEL"]}));
+  r.o.push(O("建議",["acv_iv10"],{dur:"EDF 未指定；仿單 VZV 為 7 天，改善後可改口服完成",note:"EDF 未指定劑量；此處用仿單免疫低下 VZV 劑量 10 mg/kg q8h。",src:["EDF_HZ17","ACV_IV_LABEL"]}));
   r.o.push(O("輕症改口服（無指引直接建議）",["val_hz"],{src:["NOGL"]}));
   r.diff.push(["EDF/EADV 2017","IV acyclovir 合併口服類固醇（↑ #28）。美國無學會指引。",["EDF_HZ17"]]);
   return r; }},
@@ -713,8 +718,8 @@ const DX = [
  gen(o){
   const r={o:[],pre:[],post:[],diff:[],tests:[],res:"hsv"};
   r.key="IV acyclovir 10 mg/kg q8h，改善後改口服，直到全部結痂（仿單 7 天；免疫低下常需更久）。";
-  r.o.push(O("首選",["acv_iv10"],{src:["ACV_IV_LABEL","EDF_HZ17","CDC_VAR"]}));
-  r.o.push(O("改善後改口服",["val_hz"],{src:["MSD_HZ"],note:"完成總療程，至全部結痂。"}));
+  r.o.push(O("首選",["acv_iv10"],{dur:o.k==="visc"?"內臟侵犯：EDF 最長 21 天；改善後改口服":"改善後改口服；仿單 7 天，免疫低下延長到全部結痂（MSD）",src:["ACV_IV_LABEL","EDF_HZ17","CDC_VAR","MSD_HZ"]}));
+  r.o.push(O("改善後改口服",["val_step"],{dur:"IV＋口服總療程至全部結痂（仿單 IV 7 天；免疫低下常需更久）",src:["MSD_HZ"]}));
   if(o.k==="visc") r.pre.push(N("內臟或 CNS 侵犯：EDF 可升到 15 mg/kg q8h、療程最長 21 天。",["EDF_HZ17"],"warn"));
   r.post.push(N("治療 7–10 天仍有新病灶或不癒合 → 考慮 acyclovir 抗藥（見抗藥分頁）。",["HIV_OI_VZV","EDF_HZ17"],"warn"));
   r.diff.push(["仿單","免疫低下 VZV：10 mg/kg q8h × 7 天。",["ACV_IV_LABEL"]],["EDF/EADV 2017","複雜 HZ 或高風險用 IV（↑）；內臟／CNS 最高 15 mg/kg、21 天。",["EDF_HZ17"]],["CDC（水痘）","重症與免疫低下（含高劑量類固醇 >14 天）用 IV acyclovir。",["CDC_VAR"]]);
@@ -728,7 +733,7 @@ const DX = [
     r.o.push(O("建議",["acv_var","val_var"],{src:["CDC_VAR","ACV_PO_LABEL"]}));
   } else {
     r.key="肺炎、腦炎、血小板低下、嚴重肝炎或免疫低下：IV acyclovir（CDC）。";
-    r.o.push(O("首選",["acv_iv10"],{src:["CDC_VAR","ACV_IV_LABEL"]}));
+    r.o.push(O("首選",["acv_iv10"],{dur:"仿單免疫低下 VZV 7 天；改善後可改口服完成",src:["CDC_VAR","ACV_IV_LABEL"]}));
   }
   if(S.preg) r.post.push(N("懷孕：併發症（如肺炎）用 IV acyclovir（CDC）；無併發症時部分專家建議口服 acyclovir 或 valacyclovir。",["CDC_VAR"],"warn"));
   r.diff.push(["CDC／AAP","如上；VariZIG 用於暴露後（見預防）。",["CDC_VAR"]]);
@@ -748,9 +753,9 @@ const DX = [
   const S21=["CDC_STI21"];
   if(o.k==="first"){ r.key="所有初次發作都治療，7–10 天，未癒合可延長（CDC 2021）。"; r.o.push(O("建議",["val_first","acv_400t","fam_first"],{src:S21})); }
   else if(o.k==="rec"){ r.key="前驅症狀或發作 1 天內開始效果最好（CDC 2021）。"; r.o.push(O("建議",["val_rec","acv_800b","fam_rec"],{src:S21})); }
-  else if(o.k==="sup"){ r.key="每日抑制可減少復發 70–80%；每年重新評估（CDC 2021、仿單）。"; r.o.push(O("建議",["val_sup","acv_400b","fam_sup"],{src:S21})); r.post.push(N("valacyclovir 500 mg QD 對每年 ≥10 次復發者可能較差（CDC）。",S21)); }
-  else if(o.k==="hiv"){ r.key="HIV：間歇治療 5–10 天；抑制劑量較高（CDC 2021）。"; r.o.push(O("間歇（5–10 天）",["val_hiv","acv_400t","fam_hiv"],{src:S21})); r.o.push(O("抑制",["val_hivsup","acv_hivsup","fam_hiv"],{src:S21})); }
-  else { r.key="懷孕：36 週起每日抑制至分娩（CDC 2021，引用 ACOG）。"; r.o.push(O("建議",["acv_400t","val_hivsup"],{src:S21})); }
+  else if(o.k==="sup"){ r.key="每日抑制可減少復發 70–80%；每年重新評估（CDC 2021、仿單）。"; r.o.push(O("建議",["val_sup","acv_400b","fam_sup"],{dur:"長期，每年重新評估是否需要",src:S21})); r.post.push(N("valacyclovir 500 mg QD 對每年 ≥10 次復發者可能較差（CDC）。",S21)); }
+  else if(o.k==="hiv"){ r.key="HIV：間歇治療 5–10 天；抑制劑量較高（CDC 2021）。"; r.o.push(O("間歇（5–10 天）",["val_hiv","acv_400t","fam_hiv"],{src:S21})); r.o.push(O("抑制",["val_hivsup","acv_hivsup","fam_hiv"],{dur:"長期，定期重新評估",src:S21})); }
+  else { r.key="懷孕：36 週起每日抑制至分娩（CDC 2021，引用 ACOG）。"; r.o.push(O("建議",["acv_400t","val_hivsup"],{dur:"36 週起至分娩",src:S21})); }
   r.post.push(N("局部抗病毒藥效益極小，不建議（CDC）。",S21));
   r.diff.push(["CDC 2021","如上。",S21],["歐洲","IUSTI 生殖器疱疹指引本版未核對。",["NOGL"]]);
   r.tests=[["病灶 NAAT（或培養）分型確認 HSV-1／HSV-2（CDC）。",S21]];
@@ -759,8 +764,8 @@ const DX = [
  gen(){
   const r={o:[],pre:[],post:[],diff:[],tests:[],res:"hsv"};
   r.key="IV acyclovir，改善後改口服，總療程 ≥10 天（CDC 2021）。";
-  r.o.push(O("首選",["acv_iv5"],{src:["ACV_IV_LABEL","CDC_STI21"]}));
-  r.o.push(O("改善後改口服",["val_hiv"],{src:["CDC_STI21"]}));
+  r.o.push(O("首選",["acv_iv5"],{dur:"IV 2–7 天或至改善（CDC 2021）；仿單 7 天",src:["ACV_IV_LABEL","CDC_STI21"]}));
+  r.o.push(O("改善後改口服",["val_hiv"],{dur:"IV＋口服總療程 ≥10 天（CDC 2021）",src:["CDC_STI21"]}));
   r.post.push(N("治療 7–10 天無改善 → 考慮 acyclovir 抗藥（見抗藥分頁）。",["HIV_OI_VZV"],"warn"));
   r.diff.push(["仿單","免疫低下黏膜皮膚 HSV：5 mg/kg q8h × 7 天。",["ACV_IV_LABEL"]],["CDC 2021","重症：5–10 mg/kg q8h 2–7 天或至改善，再口服完成總療程 ≥10 天。",["CDC_STI21"]]);
   return r; }},
@@ -772,7 +777,7 @@ const DX = [
   if(o.k==="sus"){ r.key="立即 IV acyclovir 10 mg/kg q8h，不等 LP 或 PCR；入院 6 小時內開始（英、法、丹麥指引）。"; r.pre.push(N("LP 後延遲 >6 小時與死亡率上升相關（觀察性）。",["HSE_DK26"],"warn","HSE26")); }
   else if(o.k==="conf") r.key="IV acyclovir 10 mg/kg q8h，14–21 天（IDSA 2008・A-III）。";
   else r.key="免疫低下：IV acyclovir 10 mg/kg q8h 21 天，結束前重做 LP（英國 ABN/BIA 2012）。";
-  r.o.push(O("首選",["acv_iv10"],{src:["IDSA_ENC08","ACV_IV_LABEL","ACV_OBESE"],note:"充分水化、每日追蹤 Cr；肥胖者的計算體重各來源不同（仿單 IBW、部分院內 AdjBW）。"}));
+  r.o.push(O("首選",["acv_iv10"],{dur:o.k==="sus"?"確診前持續；排除 HSV 才停（早期 PCR 陰性但臨床高度懷疑者重做 PCR）":o.k==="conf"?"14–21 天（IDSA 2008）；英國 14 天後重做 LP，PCR 仍陽性則繼續":"21 天，結束前重做 LP，PCR 仍陽性則繼續（英國 2012）",src:["IDSA_ENC08","UK_ENC12","ACV_IV_LABEL","ACV_OBESE"],note:"充分水化、每日追蹤 Cr；肥胖者的計算體重各來源不同（仿單 IBW、部分院內 AdjBW）。"}));
   r.diff.push(["IDSA 2008","14–21 天（A-III）。",["IDSA_ENC08"]],["英國 ABN/BIA 2012","14 天後重做 LP，免疫低下 21 天；PCR 仍陽性則繼續。",["UK_ENC12"]],["美國仿單","10 mg/kg q8h × 10 天。",["ACV_IV_LABEL"]]);
   r.tests=[["CSF HSV-1／2 PCR；發病 72 小時內 PCR 可能偽陰性，臨床高度懷疑時繼續 acyclovir 並在 3–7 天後重做（英國指引）。",["UK_ENC12","IDSA_ENC08"]],["MRI（顳葉）；疑似非痙攣性癲癇時 EEG。",["UK_ENC12"]],["HSV 腦炎後數週可發生 anti-NMDAR 自體免疫腦炎（丹麥世代約 6%）。",["HSE_DK26"]]];
   return r; }},
@@ -782,21 +787,25 @@ const DX = [
   const r={o:[],pre:[],post:[],diff:[],tests:[]};
   if(o.k==="enc"){
     r.key="IV acyclovir（IDSA 2008・B-III）；EDF：CNS 侵犯可升到 15 mg/kg q8h、最長 21 天。";
-    r.o.push(O("首選",["acv_iv10"],{src:["IDSA_ENC08","EDF_HZ17"],note:"IDSA 2008 的 VZV 劑量與療程本版未核對原文・請確認。"}));
+    r.o.push(O("首選",["acv_iv10"],{dur:"IDSA 2008 療程本版未核對・請確認；EDF：CNS 侵犯最長 21 天",src:["IDSA_ENC08","EDF_HZ17"],note:"IDSA 2008 的 VZV 劑量與療程本版未核對原文・請確認。"}));
     r.diff.push(["IDSA 2008","acyclovir（B-III）。",["IDSA_ENC08"]],["EDF/EADV 2017","最高 15 mg/kg TID、最長 21 天。",["EDF_HZ17"]]);
   } else {
     r.key="VZV 血管病變：IV acyclovir ± 類固醇；本版未找到指引直接建議，請會診神經科與感染科。";
-    r.o.push(O("個別考慮",["acv_iv10"],{src:["NOGL"]}));
+    r.o.push(O("個別考慮",["acv_iv10"],{dur:"無指引直接建議・請確認",src:["NOGL"]}));
   }
   r.tests=[["CSF VZV PCR；血管病變時 PCR 可能陰性，需加驗 CSF anti-VZV IgG（請確認）。",["NOGL"]]];
   return r; }},
-{id:"hsvm",g:"中樞神經",n:"HSV 腦膜炎",opts:[],
- gen(){
+{id:"hsvm",g:"中樞神經",n:"HSV 腦膜炎",opts:[
+  {k:"k",q:"狀況",ch:[["ic","免疫正常、症狀輕"],["sev","症狀重或免疫低下"]]}],
+ gen(o){
   const r={o:[],pre:[],post:[],diff:[],tests:[]};
-  r.key="本版未找到指引直接建議；常見做法為 IV acyclovir，改善後改口服 valacyclovir，總療程約 10–14 天・請確認。";
-  r.o.push(O("常見做法",["acv_iv10"],{src:["NOGL"]}));
-  r.o.push(O("改善後改口服",["val_hz"],{src:["NOGL"],note:"口服劑量各來源不同・請確認。"}));
-  r.pre.push(N("腦膜炎合併意識改變、局部神經學徵象 → 依 HSV 腦炎處理。",["IDSA_ENC08"],"warn"));
+  r.key=o.k==="ic"?"多數自限；沒有證實有效的抗病毒治療，抗病毒藥不常規使用（英國 2016）。若治療：IV acyclovir 後改口服 valacyclovir，總療程約 7–10 天（實務調查）。":"症狀重或免疫低下：多數醫師會治療；IV acyclovir 後改口服 valacyclovir，總療程約 7–10 天，免疫低下常延長（實務調查・無指引直接建議）。";
+  r.o.push(O(o.k==="ic"?"若治療（常見做法）":"常見做法",["acv_iv10"],{dur:"改善後改口服；IV＋口服總療程中位數 7 天（7–10 天）",src:["HSVM_SURV22","UK_MEN16"]}));
+  r.o.push(O("改善後改口服",["val_men"],{dur:"完成總療程約 7–10 天；免疫低下可延長",src:["AURELIUS12","HSVM_SURV22"]}));
+  r.pre.push(N("意識改變、局部神經學徵象或癲癇 → 依 HSV 腦炎處理。",["IDSA_ENC08"],"warn"));
+  r.post.push(N("不建議長期 valacyclovir 抑制來預防復發：RCT 未減少復發，停藥後復發反而增加（Aurelius 2012；英國 2016）。",["AURELIUS12","UK_MEN16"],"warn"));
+  r.diff.push(["英國 2016","抗病毒藥不常規使用，由專科決定。",["UK_MEN16"]],["醫師調查（OFID 2022）","61% 用 IV acyclovir 後改 valacyclovir；總療程中位數 7 天（IQR 7–10）；免疫低下多延長。",["HSVM_SURV22"]],["美國","IDSA 沒有 HSV 腦膜炎專門建議。",["NOGL"]]);
+  r.tests=[["CSF HSV-1／2 PCR（腦膜炎多為 HSV-2）；同時評估生殖器病灶。",["UK_MEN16"]]];
   return r; }},
 /* ===== CMV ===== */
 {id:"cmvpre",g:"CMV",n:"CMV DNAemia（preemptive）",opts:[
@@ -805,13 +814,14 @@ const DX = [
   const r={o:[],pre:[],post:[],diff:[],tests:[],res:"cmv"};
   if(o.host==="sot"){
     r.key="超過院內閾值 → valganciclovir 900 mg BID；每週追蹤，至低於閾值且至少 2 週（CMV 國際共識 2025・strong）。";
-    r.o.push(O("首選",["vgc_ind"],{src:["CMV_SOT25"],upd:"CMV25"}));
-    r.o.push(O("吸收有疑慮時",["gcv_ind"],{src:["CMV_SOT25","GCV_LABEL"]}));
+    const D2="至少 2 週，至 DNAemia 低於院內閾值（共識 2025）";
+    r.o.push(O("首選",["vgc_ind"],{dur:D2,src:["CMV_SOT25"],upd:"CMV25"}));
+    r.o.push(O("吸收有疑慮時",["gcv_ind"],{dur:D2,src:["CMV_SOT25","GCV_LABEL"]}));
     r.diff.push(["CMV SOT 共識 2025","閾值由各院自訂，D+/R− 用較低閾值；同一病人固定同一檢體與檢驗法。",["CMV_SOT25"],"CMV25"]);
   } else {
     r.key="依院內 preemptive 閾值開始 ganciclovir 或 valganciclovir；ECIL-7（2019）本版未取得全文，閾值與療程請確認。";
-    r.o.push(O("可選",["gcv_ind","vgc_ind"],{src:["GCV_LABEL","ECIL7_CMV"],note:"仿單 preemptive 誘導 5 mg/kg q12h × 7–14 天。"}));
-    r.o.push(O("骨髓抑制時",["fos_cmv"],{src:["ECIL7_CMV","FOS_LABEL"]}));
+    r.o.push(O("可選",["gcv_ind","vgc_ind"],{dur:"仿單 preemptive 誘導 7–14 天；之後依院內閾值（ECIL-7 未核對）",src:["GCV_LABEL","ECIL7_CMV"]}));
+    r.o.push(O("骨髓抑制時",["fos_cmv"],{dur:"依院內閾值・請確認",src:["ECIL7_CMV","FOS_LABEL"]}));
     r.diff.push(["ECIL-7（2019）","本版未核對全文・請確認。",["ECIL7_CMV"]]);
   }
   r.post.push(N("不因白血球低而減量；改用 G-CSF 或調整其他骨髓抑制藥（共識 2025・strong）。",["CMV_SOT25"]));
@@ -822,8 +832,9 @@ const DX = [
   {k:"sev",q:"嚴重度",ch:[["mild","輕中度、可口服"],["sev","重度或危及生命"]]}],
  gen(o){
   const r={o:[],pre:[],post:[],diff:[],tests:[],res:"cmv"};
-  if(o.sev==="mild"){ r.key="valganciclovir 900 mg BID（共識 2025・strong, moderate）。"; r.o.push(O("首選",["vgc_ind"],{src:["CMV_SOT25"]})); r.o.push(O("替代",["gcv_ind"],{src:["CMV_SOT25"]})); }
-  else { r.key="IV ganciclovir 5 mg/kg q12h，改善且可口服後改 valganciclovir（共識 2025・strong, low）。"; r.o.push(O("首選",["gcv_ind"],{src:["CMV_SOT25","GCV_LABEL"]})); r.o.push(O("改善後",["vgc_ind"],{src:["CMV_SOT25"]})); }
+  const DD="至少 2 週，至臨床緩解且 DNAemia 低於院內閾值；腸胃道、肺炎常需更久（共識 2025）";
+  if(o.sev==="mild"){ r.key="valganciclovir 900 mg BID（共識 2025・strong, moderate）。"; r.o.push(O("首選",["vgc_ind"],{dur:DD,src:["CMV_SOT25"]})); r.o.push(O("替代",["gcv_ind"],{dur:DD,src:["CMV_SOT25"]})); }
+  else { r.key="IV ganciclovir 5 mg/kg q12h，改善且可口服後改 valganciclovir（共識 2025・strong, low）。"; r.o.push(O("首選",["gcv_ind"],{dur:"改善且可口服後改 valganciclovir",src:["CMV_SOT25","GCV_LABEL"]})); r.o.push(O("改善後",["vgc_ind"],{dur:DD,src:["CMV_SOT25"]})); }
   r.post.push(N("療程至少 2 週，至臨床緩解且 DNAemia 低於院內閾值（高敏感度檢驗單次 <LLOQ，或兩次每週檢體）；腸胃道組織侵犯、肺移植肺炎、CNS 或視網膜病變常需更久。",["CMV_SOT25"]));
   r.post.push(N("沒有排斥時可減免疫抑制（weak, very low）；重症、抗藥或 IgG <400 mg/dL 可考慮 IVIG（weak, low）。",["CMV_SOT25"]));
   r.post.push(N("不用 acyclovir、valacyclovir 或口服 ganciclovir 治療 CMV 疾病（strong）。",["CMV_SOT25"],"warn"));
@@ -835,8 +846,8 @@ const DX = [
  gen(){
   const r={o:[],pre:[],post:[],diff:[],tests:[],res:"cmv"};
   r.key="誘導 valganciclovir 900 mg BID 21 天或 IV ganciclovir 14–21 天，之後維持 900 mg QD（仿單）；眼科共同照護。";
-  r.o.push(O("誘導",["vgc_ind","gcv_ind"],{src:["VGC_LABEL","GCV_LABEL"]}));
-  r.o.push(O("維持",["vgc_px"],{src:["VGC_LABEL"]}));
+  r.o.push(O("誘導",["vgc_ind","gcv_ind"],{dur:"valganciclovir 21 天；IV ganciclovir 14–21 天（仿單）",src:["VGC_LABEL","GCV_LABEL"]}));
+  r.o.push(O("維持",["vgc_px"],{dur:"依免疫恢復與眼科追蹤決定，請會診",src:["VGC_LABEL"]}));
   r.post.push(N("maribavir 不用於視網膜炎（共識 2025）。眼內注射與 HIV 族群的處置（HIV OI 指引）本版未核對。",["CMV_SOT25"],"warn"));
   return r; }}
 ];
@@ -849,13 +860,13 @@ const PX = [
   const r={o:[],pre:[],post:[],diff:[]};
   if(o.k==="hh"){
     r.key="不常規建議；極高風險者在接觸 48 小時內可考慮（CDC、WHO 2024）。";
-    r.o.push(O("可考慮",["ose_px","zan_px","bx_px"],{src:["CDC_FLU26","OSE_LABEL","BX_TW"]}));
+    r.o.push(O("可考慮",["ose_px","zan_px","bx_px"],{dur:"oseltamivir、zanamivir：最後一次接觸後 7 天（CDC；仿單 ≥10 天）；baloxavir 單次",src:["CDC_FLU26","OSE_LABEL","BX_TW"]}));
     r.post.push(N("指標病人用 baloxavir 治療，可降低家戶傳播（CENTERSTONE）。",["CENTERSTONE"],"","CTS25"));
     r.post.push(N("peramivir 不用於預防（CDC）。",["CDC_FLU26"]));
     r.diff.push(["CDC 2026","最後一次接觸後 7 天；baloxavir 接觸 48 小時內單次。",["CDC_FLU26"]],["WHO 2024","季節性流感只建議極高風險者（conditional）；人畜共通流感所有暴露者。",["WHO_FLU24"],"WHO24"],["仿單","oseltamivir 預防至少 10 天。",["OSE_LABEL"]]);
   } else {
     r.key="所有住民（含已接種）oseltamivir 至少 2 週，持續到最後一例後 1 週（CDC）。";
-    r.o.push(O("建議",["ose_px","zan_px"],{src:["CDC_FLU26"]}));
+    r.o.push(O("建議",["ose_px","zan_px"],{dur:"至少 2 週，持續到最後一例後 1 週（CDC）",src:["CDC_FLU26"]}));
     r.post.push(N("部分群聚改用治療劑量（oseltamivir BID × 5 天）作暴露後處置（CDC）。",["CDC_FLU26"]));
     r.diff.push(["CDC 2026","如上。",["CDC_FLU26"]],["IDSA 2018","機構群聚的檢測與預防（與 CDC 一致）。",["IDSA_FLU18"]]);
   }
@@ -878,14 +889,14 @@ const PX = [
   const src=["CMV_SOT25"];
   if(o.sero==="nn"){
     r.key="D−/R−：使用去白血球或 CMV 陰性血品時不需 CMV 預防；應考慮其他疱疹病毒（HSV、VZV）預防（strong, high）。";
-    r.o.push(O("考慮（HSV／VZV）",["acv_400b","val_hivsup"],{src,note:"共識未指定劑量；此為常用劑量，請依院內規範。"}));
+    r.o.push(O("考慮（HSV／VZV）",["acv_400b","val_hivsup"],{dur:"共識未指定・請依院內規範",src,note:"共識未指定劑量；此為常用劑量，請依院內規範。"}));
     return r;
   }
   const T={kid:{dr:"6 個月",r:"3 個月"},liv:{dr:"3–6 個月",r:"3 個月"},hrt:{dr:"3–6 個月",r:"3 個月"},lung:{dr:"12 個月（部分專家更久）",r:"6–12 個月"},oth:{dr:"胰臟、胰島 3 個月；小腸、VCA 至少 6 個月",r:"同左"}}[o.org][o.sero];
   const how={kid:o.sero==="dr"?"prophylaxis 或 preemptive（strong）":"prophylaxis（strong, high）或 preemptive（strong, moderate）",liv:"prophylaxis（strong, moderate）或 preemptive（strong, high）",hrt:o.sero==="dr"?"建議 prophylaxis 優於 preemptive（weak, low）":"prophylaxis（strong, moderate）",lung:o.sero==="dr"?"建議 prophylaxis（weak, low）":"prophylaxis（strong, moderate）",oth:"建議 prophylaxis（preemptive 資料少；weak, very low）"}[o.org];
   r.key=`${how}；預防期間 ${T}（CMV 國際共識 2025）。`;
-  r.o.push(O("Prophylaxis",["vgc_px"],{src:["CMV_SOT25","VGC_LABEL"],upd:"CMV25"}));
-  if(o.org==="kid"&&o.sero==="dr") r.o.push(O("Prophylaxis（替代）",["let_ktx"],{src:["LET_LABEL","CMV_SOT25"],upd:"CMV25",note:"較少骨髓抑制；無 HSV／VZV 活性，需另加 HSV 預防。"}));
+  r.o.push(O("Prophylaxis",["vgc_px"],{dur:T,src:["CMV_SOT25","VGC_LABEL"],upd:"CMV25"}));
+  if(o.org==="kid"&&o.sero==="dr") r.o.push(O("Prophylaxis（替代）",["let_ktx"],{dur:"到移植後第 200 天（仿單）；共識：6 個月",src:["LET_LABEL","CMV_SOT25"],upd:"CMV25",note:"較少骨髓抑制；無 HSV／VZV 活性，需另加 HSV 預防。"}));
   if(o.org==="kid"&&o.sero==="r") r.post.push(N("de novo mTOR inhibitor 為主的免疫抑制：preemptive 或密切臨床監測即可（strong, high）。",src));
   r.post.push(N("Preemptive：至少每週 1 次、持續 12–16 週；D+/R− 用較低閾值（strong, moderate）。",src));
   r.post.push(N("預防結束後高風險者可每週監測 8–12 週（weak, low）。",src));
@@ -895,7 +906,7 @@ const PX = [
  gen(){
   const r={o:[],pre:[],post:[],diff:[]};
   r.key="allo-HSCT CMV R+：letermovir 480 mg QD（併 cyclosporine 240 mg），移植後 28 天內開始用到第 100 天；晚發高風險延到第 200 天（仿單）。";
-  r.o.push(O("Prophylaxis",["let_hsct"],{src:["LET_LABEL","LET_200","TW_LET"],upd:"LET24"}));
+  r.o.push(O("Prophylaxis",["let_hsct"],{dur:"到移植後第 100 天；晚發高風險到第 200 天",src:["LET_LABEL","LET_200","TW_LET"],upd:"LET24"}));
   r.post.push(N("letermovir 沒有 HSV／VZV 活性 → 另加 acyclovir 或 valacyclovir 預防（見「HSV／VZV：免疫低下」）。",["LET_LABEL","ECIL7_CMV"],"warn"));
   r.post.push(N("預防期間仍需依院內規範監測 CMV DNAemia；HSCT 的 preemptive 閾值依 ECIL-7（本版未核對全文）。",["ECIL7_CMV"]));
   r.diff.push(["仿單","100 天，高風險可到 200 天。",["LET_LABEL","LET_200"],"LET24"],["ECIL-7（2019）","本版未核對全文・請確認。",["ECIL7_CMV"]]);
@@ -905,15 +916,15 @@ const PX = [
   const r={o:[],pre:[],post:[],diff:[]};
   if(o.k==="hsct"||o.k==="leuk"){
     r.key="HSV 血清陽性：nucleoside analog 預防，至白血球恢復或黏膜炎緩解（較晚者）；反覆發作或 GVHD 可延長，可延續作 VZV 預防最多 1 年（ASCO/IDSA 2018・strong, high）。";
-    r.o.push(O("建議",["acv_400b","val_hivsup"],{src:["ASCO_PX18","INST_HEMEPX"],note:"指引未指定劑量；acyclovir 400 mg BID 為院內常用劑量（UC Davis），SCT 劑量依院內表。"}));
+    r.o.push(O("建議",["acv_400b","val_hivsup"],{dur:"至白血球恢復或黏膜炎緩解（較晚者）；可延續作 VZV 預防最多 1 年",src:["ASCO_PX18","INST_HEMEPX"],note:"指引未指定劑量；acyclovir 400 mg BID 為院內常用劑量（UC Davis），SCT 劑量依院內表。"}));
     r.diff.push(["ASCO/IDSA 2018","如上。",["ASCO_PX18"]],["NCCN","需登入，本版依院內轉引（UC Davis：SCT 由 conditioning 前 1 天到移植後 365 天）。",["INST_HEMEPX"]]);
   } else if(o.k==="pi"){
     r.key="Proteasome inhibitor（bortezomib、carfilzomib）治療期間常規 VZV 預防（NCCN，依院內轉引）。";
-    r.o.push(O("建議",["acv_400b","val_hivsup"],{src:["INST_HEMEPX"],note:"劑量依院內規範。"}));
+    r.o.push(O("建議",["acv_400b","val_hivsup"],{dur:"治療期間（停藥後持續時間依院內規範）",src:["INST_HEMEPX"],note:"劑量依院內規範。"}));
     r.diff.push(["NCCN","需登入，本版依 UC Davis 院內指引轉引・請確認。",["INST_HEMEPX"]]);
   } else {
     r.key="器官移植 D−/R−（未用 CMV 預防）：考慮 HSV／VZV 預防（CMV 國際共識 2025・strong, high）。";
-    r.o.push(O("考慮",["acv_400b","val_hivsup"],{src:["CMV_SOT25"],note:"共識未指定劑量。"}));
+    r.o.push(O("考慮",["acv_400b","val_hivsup"],{dur:"共識未指定・請依院內規範",src:["CMV_SOT25"],note:"共識未指定劑量。"}));
   }
   return r; }}
 ];
@@ -925,19 +936,19 @@ const RES = [
  key:"免疫低下或治療中仍持續陽性、惡化 → 懷疑抗藥；H275Y（N1）對 oseltamivir、peramivir 抗藥；zanamivir 通常仍有效（請以病毒抗藥檢測確認）。",
  when:[["嚴重免疫低下、幼兒：oseltamivir 治療中容易產生抗藥（CDC）。",["CDC_FLU26"]],["baloxavir 治療後抗藥變異：12 歲以下較常見；CENTERSTONE 成人與青少年 7.2%（未傳給家戶接觸者）。",["CDC_FLU26","CENTERSTONE"]],["台灣 2025–26 季 A(H1N1) 約 6.5% 對 oseltamivir、peramivir 抗藥（新聞引述疾管署）。",["TW_FLU_RES"]]],
  bad:[["oseltamivir","H275Y 突變","CDC_FLU26"],["peramivir","與 oseltamivir 交叉抗藥（H275Y）","TW_FLU_RES"],["amantadine、rimantadine","循環 A 型病毒普遍抗藥，不建議","CDC_FLU26"]],
- tx:{o:[O("可考慮",["zan_tx","bx_tx"],{cond:"zanamivir 不用於呼吸道疾病；baloxavir 不建議單用於嚴重免疫低下或住院者（CDC）。",src:["CDC_FLU26","TW_FLU_RES"]})],note:"送病毒抗藥基因檢測（疾管署或院內檢驗）；請會診感染科。"},
+ tx:{o:[O("可考慮",["zan_tx","bx_tx"],{dur:"zanamivir 5 天（免疫低下常延長）；baloxavir 單次",cond:"zanamivir 不用於呼吸道疾病；baloxavir 不建議單用於嚴重免疫低下或住院者（CDC）。",src:["CDC_FLU26","TW_FLU_RES"]})],note:"送病毒抗藥基因檢測（疾管署或院內檢驗）；請會診感染科。"},
  src:["CDC_FLU26"]},
 {id:"hsv",n:"HSV／VZV：acyclovir 抗藥",
  key:"免疫低下、治療 7–10 天病灶仍擴大或不癒合 → 懷疑 TK 突變；valacyclovir、famciclovir、ganciclovir 同時無效，改 foscarnet 或 cidofovir。",
  when:[["HZ：acyclovir 治療 10–21 天失敗，尤其疣狀病灶（EDF）。",["EDF_HZ17"]],["HSV 黏膜皮膚：免疫低下者治療 7–10 天無改善。",["CDC_STI21"]]],
  bad:[["acyclovir、valacyclovir","TK 突變（最常見機轉）","HIV_OI_VZV"],["famciclovir","同樣依賴 TK 活化","HIV_OI_VZV"],["ganciclovir","同樣依賴 TK","HIV_OI_VZV"]],
- tx:{o:[O("首選",["fos_hsv"],{src:["FOS_LABEL","CDC_VAR"]}),O("替代",["cdv"],{src:["CDV_LABEL"],note:"腎毒性高；需 probenecid 與水化。"})],note:"盡量取病灶做病毒分離與藥敏（HIV OI 指引）。EDF：foscarnet、cidofovir 未核准用於 HZ，限極嚴重個案且經專家討論。"},
+ tx:{o:[O("首選",["fos_hsv"],{dur:"2–3 週或至癒合（仿單）",src:["FOS_LABEL","CDC_VAR"]}),O("替代",["cdv"],{dur:"每週 1 次 × 2 週後每 2 週，依臨床反應",src:["CDV_LABEL"],note:"腎毒性高；需 probenecid 與水化。"})],note:"盡量取病灶做病毒分離與藥敏（HIV OI 指引）。EDF：foscarnet、cidofovir 未核准用於 HZ，限極嚴重個案且經專家討論。"},
  src:["HIV_OI_VZV","EDF_HZ17"]},
 {id:"cmv",n:"CMV：難治或抗藥",
  key:"≥2 週適當治療後下降 ≤1 log10 → 難治；累積 ≥4 週且 ≥2 週反應不佳時送基因型（UL97、UL54；letermovir 看 UL56）（共識 2025・strong, high）。",
  when:[["先確認劑量依腎功能給足、吸收與服藥正常；可行時減免疫抑制（strong, low）。",["CMV_SOT25"]],["基因型檢體需 >3 log10 IU/mL（strong, high）。",["CMV_SOT25"]]],
  bad:[["ganciclovir、valganciclovir","UL97 突變（最常見）；UL54 也可能","CMV_SOT25"],["cidofovir","部分 UL54 突變交叉抗藥","FOS_LABEL"],["letermovir（治療）","單用治療證據不足，抗藥門檻低（UL56 C325）","CMV_SOT25"]],
- tx:{o:[O("首選（ganciclovir 或 foscarnet 抗藥）",["mar"],{cond:"病毒量較低者效果較好；不用於 CNS、視網膜炎；不可與 ganciclovir 併用。",src:["CMV_SOT25","MAR_LABEL","TW_MAR"],upd:"CMV25"}),O("病況差、病毒量高（常用 ≥4.7 log10）",["fos_cmv"],{src:["CMV_SOT25","FOS_LABEL"]}),O("其他",["cdv"],{src:["CMV_SOT25"],note:"試驗表現差（共識 2025）。"})],note:"IVIG、CMV 特異性 T 細胞可考慮於抗藥或難治（weak, low）。"},
+ tx:{o:[O("首選（ganciclovir 或 foscarnet 抗藥）",["mar"],{dur:"8 週（EU 仿單）；依病毒量個別化",cond:"病毒量較低者效果較好；不用於 CNS、視網膜炎；不可與 ganciclovir 併用。",src:["CMV_SOT25","MAR_LABEL","TW_MAR"],upd:"CMV25"}),O("病況差、病毒量高（常用 ≥4.7 log10）",["fos_cmv"],{dur:"誘導 2–3 週（仿單），之後依病毒量",src:["CMV_SOT25","FOS_LABEL"]}),O("其他",["cdv"],{dur:"每週 1 次 × 2 週後每 2 週",src:["CMV_SOT25"],note:"試驗表現差（共識 2025）。"})],note:"IVIG、CMV 特異性 T 細胞可考慮於抗藥或難治（weak, low）。"},
  src:["CMV_SOT25"]}
 ];
 const RES_OF = id=>RES.find(x=>x.id===id);
@@ -1041,12 +1052,14 @@ function rxRow(id){
   const g=REG[id]; if(!g) return "";
   const d=D[g.d], ds=doseOf(id), fl=drugFlags(g.d);
   const band=R&&ds.adj?`<span class="adj">${ds.band}</span>`:"";
+  // 透析或腎調整後的劑量文字沒有療程時，補上正常腎功能方案的療程
+  const bd=(g.b[0][1].match(/×\s*[\d–.]+\s*(天|週)/)||[])[0], durLine=bd&&!/×/.test(ds.plain)?`<div class="rx-meta">療程 ${bd}（同一般方案）</div>`:"";
   const more=[d.brand?`<span class="brand">商品名：${d.brand}</span>`:"",S.preg&&d.preg?`<span>懷孕：${lt(d.preg.t)}</span>`:"",g.note?`<span>${lt(g.note)}</span>`:"",!band&&ds.band&&!/^未輸入腎功能/.test(ds.band)?`<span>${ds.band}</span>`:"",S.tab!=="drug"?`<span><button class="linkbtn" type="button" data-act="go-drug" data-v="${g.d}">藥物頁 ›</button></span>`:""].filter(Boolean);
   const copyTxt=`${d.n} ${g.r} ${ds.plain}${R?`（${R.short}）`:""}`;
   return `<div class="rx${S.preg&&d.preg&&d.preg.l==="x"?" blocked":""}">
     <div class="rx-head">${nameHTML(g.d,more.length)}<span class="route">${g.r}</span>${fl.join("")}</div>
     <div class="rx-dose">${ds.html}</div>
-    ${band?`<div class="rx-meta">${band}</div>`:""}
+    ${band?`<div class="rx-meta">${band}</div>`:""}${durLine}
     ${more.length?`<div class="rx-more" hidden>${more.join("")}</div>`:""}
     <button class="copy" type="button" data-act="copy" data-txt="${encodeURIComponent(copyTxt)}">複製</button>
   </div>`;
@@ -1061,6 +1074,7 @@ function optCard(o){
   return `<div class="opt${cls==="primary"?" primary":""}">
     <div class="opt-head"><span class="tier ${cls}">${o.tier}</span>${updOf(o.upd)}</div>
     ${formula}${body}
+    ${o.dur?`<div class="dur mt"><span class="k">療程</span><span class="v">${lt(o.dur)}</span></div>`:""}
     ${o.cond?`<div class="cond">條件：${lt(o.cond)}</div>`:""}
     ${foot.length?`<div class="opt-foot">${foot.join("")}</div>`:""}
     ${o.note?`<div class="onote fold" hidden>${lt(o.note)}</div>`:""}

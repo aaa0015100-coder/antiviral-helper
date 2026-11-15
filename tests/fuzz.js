@@ -20,6 +20,8 @@ function run(lab,o,tab,inv){
   if(o.preg&&x.length&&!/class="note danger"><b>懷孕：/.test(h)) F(lab,o,"懷孕禁忌藥沒有提醒 "+x.join(","));
   if(o.preg&&x.length&&(h.match(/孕：不建議/g)||[]).length<x.length) F(lab,o,"懷孕禁忌藥沒有逐藥標示");
   if(!o.preg&&/孕：不建議|孕：注意/.test(h)) F(lab,o,"未勾懷孕卻有懷孕標示");
+  // 每張方案卡都要看得到療程（劑量內含天數／單次，或另有療程列）
+  if(tab!=="drug") cards(h).forEach((c,i)=>{ if(!/class="dur|天|週|單次|個月|單日/.test(c.replace(/<button[^>]*data-act="go-drug"[^>]*>.*?<\/button>/g,""))) F(lab,o,"方案卡缺療程 #"+i+" "+txt(c).slice(0,40)); });
   const e=inv&&inv(t,h,ds); if(e) F(lab,o,e);
 }
 // 臨床不變式
